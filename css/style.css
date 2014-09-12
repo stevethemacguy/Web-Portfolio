@@ -40,7 +40,7 @@ header {
 header .headerContainer {
   padding: 6px 0;
   margin: 0 auto;
-  width: 92%;
+  width: 80%;
 }
 header .headerContainer .sdunnLogo {
   width: 50px;
@@ -49,7 +49,6 @@ header .headerContainer .sdunnLogo {
 }
 header .headerContainer nav {
   float: right;
-  margin-right: 49px;
   margin-top: 13px;
 }
 header .headerContainer nav ul {
