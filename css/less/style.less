@@ -24,6 +24,15 @@ html, body {
    background: #fff;
 }
 
+p{
+   margin-top: 8px;
+}
+body.dark
+{
+   background: black;
+   color: grey;
+}
+
 body {
    /*  height: 100%; //Needed?
      width: 100%; //Needed?*/
@@ -31,13 +40,13 @@ body {
 }
 
 header {
-   background: #000;
+   background: #fff;
    min-height: 55px;
    min-width: 100%;
    z-index: 1000;
    position: fixed;
-   opacity: .91;
    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
+   font-size: 19px;
 
    .headerContainer {
       padding: 6px 0;
@@ -47,9 +56,12 @@ header {
 
 
       .sdunnLogo {
+         position: relative;
+         top: 2px;
          width: 50px;
          height: 50px;
          display: inline-block;
+         cursor: pointer;
       }
 
       nav {
@@ -57,36 +69,38 @@ header {
          float: right;
         // margin-right: 10px;
          margin-top: 13px;
-
+         color: #000;
 
          ul {
             list-style: none;
 
             li {
-               a {
-                  font-weight: bold;
-                  display: inline-block;
-                  height: 30px;
-                  color: #CECECE;
-               }
+               font-family: arial;
+               padding: 5px 30px 5px 30px;
+               float: left;
 
                &:hover {
                   //currently no background color
                }
 
-               font-size: 20px;
-               font-family: arial;
-               cursor: pointer;
-               padding: 5px 30px 5px 30px;
-               float: left;
+               a, a:link, a:visited {
+                  cursor: pointer;
+                  font-weight: bold;
+                  display: inline-block;
+                  height: 28px;
+               }
+
+               a:active{
+                  color: orangered;
+               }
 
                a:hover {
                   opacity: 1;
-                  border-bottom: 2px solid white;
-                  color: white;
+                  border-bottom: 2px solid #ff7116;
+                  color: #ffa500;
                }
 
-               a.portfolio:hover {
+              /* a.portfolio:hover {
                   border-color: red;
                }
                a.sourceCode:hover {
@@ -100,7 +114,7 @@ header {
                }
                a.contact:hover {
                   border-color: green;
-               }
+               }*/
 
             }
          }
@@ -120,14 +134,20 @@ header {
    border-bottom: 1px solid grey;
 }
 
-//Dark specific styles
+
+///////////////////////////  Dark specific styles   ///////////////////////////
+
+
 .dark {
 
    header {
+      background: #000;
+      opacity: .91;
 
       .headerContainer {
 
          nav {
+            color: #40919b;
 
             ul {
 
@@ -140,16 +160,14 @@ header {
                      //currently no background color
                   }
 
-                  font-size: 20px;
                   font-family: arial;
-                  cursor: pointer;
                   padding: 5px 30px 5px 30px;
                   float: left;
-                  color: white;
 
                   a:hover {
-                     color: teal;
-                     border:none;
+                     color: white;
+                     border: none;
+                   //  border-bottom: 2px solid white;
                   }
                }
             }

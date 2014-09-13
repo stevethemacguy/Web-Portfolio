@@ -23,19 +23,26 @@ html,
 body {
   background: #fff;
 }
+p {
+  margin-top: 8px;
+}
+body.dark {
+  background: black;
+  color: grey;
+}
 body {
   /*  height: 100%; //Needed?
      width: 100%; //Needed?*/
   position: relative;
 }
 header {
-  background: #000;
+  background: #fff;
   min-height: 55px;
   min-width: 100%;
   z-index: 1000;
   position: fixed;
-  opacity: .91;
   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
+  font-size: 19px;
 }
 header .headerContainer {
   padding: 6px 0;
@@ -43,49 +50,56 @@ header .headerContainer {
   width: 80%;
 }
 header .headerContainer .sdunnLogo {
+  position: relative;
+  top: 2px;
   width: 50px;
   height: 50px;
   display: inline-block;
+  cursor: pointer;
 }
 header .headerContainer nav {
   float: right;
   margin-top: 13px;
+  color: #000;
 }
 header .headerContainer nav ul {
   list-style: none;
 }
 header .headerContainer nav ul li {
-  font-size: 20px;
   font-family: arial;
-  cursor: pointer;
   padding: 5px 30px 5px 30px;
   float: left;
+  /* a.portfolio:hover {
+                  border-color: red;
+               }
+               a.sourceCode:hover {
+                  border-color: yellow;
+               }
+               a.videos:hover {
+                  border-color: lightskyblue;
+               }
+               a.about:hover {
+                  border-color: mediumpurple;
+               }
+               a.contact:hover {
+                  border-color: green;
+               }*/
 }
-header .headerContainer nav ul li a {
+header .headerContainer nav ul li a,
+header .headerContainer nav ul li a:link,
+header .headerContainer nav ul li a:visited {
+  cursor: pointer;
   font-weight: bold;
   display: inline-block;
-  height: 30px;
-  color: #CECECE;
+  height: 28px;
+}
+header .headerContainer nav ul li a:active {
+  color: orangered;
 }
 header .headerContainer nav ul li a:hover {
   opacity: 1;
   border-bottom: 2px solid white;
-  color: white;
-}
-header .headerContainer nav ul li a.portfolio:hover {
-  border-color: red;
-}
-header .headerContainer nav ul li a.sourceCode:hover {
-  border-color: yellow;
-}
-header .headerContainer nav ul li a.videos:hover {
-  border-color: lightskyblue;
-}
-header .headerContainer nav ul li a.about:hover {
-  border-color: mediumpurple;
-}
-header .headerContainer nav ul li a.contact:hover {
-  border-color: green;
+  color: #ff7116;
 }
 .mainImage {
   width: 100%;
@@ -97,15 +111,19 @@ header .headerContainer nav ul li a.contact:hover {
   background-size: cover;
   border-bottom: 1px solid grey;
 }
+.dark header {
+  background: #000;
+  opacity: .91;
+}
+.dark header .headerContainer nav {
+  color: #40919b;
+}
 .dark header .headerContainer nav ul li {
-  font-size: 20px;
   font-family: arial;
-  cursor: pointer;
   padding: 5px 30px 5px 30px;
   float: left;
-  color: white;
 }
 .dark header .headerContainer nav ul li a:hover {
-  color: teal;
+  color: white;
   border: none;
 }
