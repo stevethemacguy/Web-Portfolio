@@ -1,3 +1,6 @@
+/*---------------------------------------------------
+Re-usable Colors
+-----------------------------------------------------*/
 /************** Fonts ***************/
 /*@font-face {
   font-family: 'Segoe';
@@ -34,6 +37,16 @@ body {
   /*  height: 100%; //Needed?
      width: 100%; //Needed?*/
   position: relative;
+}
+a.toggleTheme {
+  font-size: 14px;
+  position: fixed;
+  top: 28px;
+  left: 10px;
+}
+a.toggleTheme:hover {
+  color: #ffa500;
+  cursor: pointer;
 }
 header {
   background: #fff;
@@ -94,12 +107,12 @@ header .headerContainer nav ul li a:visited {
   height: 28px;
 }
 header .headerContainer nav ul li a:active {
-  color: orangered;
+  color: #ffa500;
 }
 header .headerContainer nav ul li a:hover {
   opacity: 1;
-  border-bottom: 2px solid white;
-  color: #ff7116;
+  /*border-bottom: 2px solid #ff7116;*/
+  color: #ffa500;
 }
 .mainImage {
   width: 100%;
@@ -115,6 +128,12 @@ header .headerContainer nav ul li a:hover {
   background: #000;
   opacity: .91;
 }
+.dark header a.toggleTheme {
+  color: #40919b;
+}
+.dark header a.toggleTheme:hover {
+  color: #ffffff;
+}
 .dark header .headerContainer nav {
   color: #40919b;
 }
@@ -124,6 +143,6 @@ header .headerContainer nav ul li a:hover {
   float: left;
 }
 .dark header .headerContainer nav ul li a:hover {
-  color: white;
+  color: #ffffff;
   border: none;
 }
