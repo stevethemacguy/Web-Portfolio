@@ -29,26 +29,19 @@ body {
 p {
   margin-top: 8px;
 }
-body.dark {
-  background: black;
-  color: grey;
+a.toggleTheme {
+  font-size: 14px;
+}
+a.toggleTheme:hover {
+  color: #ffa500;
+  cursor: pointer;
 }
 body {
   /*  height: 100%; //Needed?
      width: 100%; //Needed?*/
   position: relative;
 }
-a.toggleTheme {
-  font-size: 14px;
-  position: fixed;
-  top: 28px;
-  left: 10px;
-}
-a.toggleTheme:hover {
-  color: #ffa500;
-  cursor: pointer;
-}
-header {
+body header {
   background: #fff;
   min-height: 55px;
   min-width: 100%;
@@ -57,12 +50,12 @@ header {
   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
   font-size: 19px;
 }
-header .headerContainer {
-  padding: 6px 0;
+body header .headerContainer {
+  padding: 4px 0;
   margin: 0 auto;
   width: 80%;
 }
-header .headerContainer .sdunnLogo {
+body header .headerContainer .sdunnLogo {
   position: relative;
   top: 2px;
   width: 50px;
@@ -70,51 +63,54 @@ header .headerContainer .sdunnLogo {
   display: inline-block;
   cursor: pointer;
 }
-header .headerContainer nav {
+body header .headerContainer nav {
+  display: inline-block;
   float: right;
   margin-top: 13px;
   color: #000;
+  position: relative;
+  right: 2%;
 }
-header .headerContainer nav ul {
+body header .headerContainer nav ul {
   list-style: none;
 }
-header .headerContainer nav ul li {
+body header .headerContainer nav ul li {
   font-family: arial;
-  padding: 5px 30px 5px 30px;
+  padding: 5px 30px;
   float: left;
   /* a.portfolio:hover {
-                  border-color: red;
-               }
-               a.sourceCode:hover {
-                  border-color: yellow;
-               }
-               a.videos:hover {
-                  border-color: lightskyblue;
-               }
-               a.about:hover {
-                  border-color: mediumpurple;
-               }
-               a.contact:hover {
-                  border-color: green;
-               }*/
+                     border-color: red;
+                  }
+                  a.sourceCode:hover {
+                     border-color: yellow;
+                  }
+                  a.videos:hover {
+                     border-color: lightskyblue;
+                  }
+                  a.about:hover {
+                     border-color: mediumpurple;
+                  }
+                  a.contact:hover {
+                     border-color: green;
+                  }*/
 }
-header .headerContainer nav ul li a,
-header .headerContainer nav ul li a:link,
-header .headerContainer nav ul li a:visited {
+body header .headerContainer nav ul li a,
+body header .headerContainer nav ul li a:link,
+body header .headerContainer nav ul li a:visited {
   cursor: pointer;
   font-weight: bold;
   display: inline-block;
   height: 28px;
 }
-header .headerContainer nav ul li a:active {
+body header .headerContainer nav ul li a:active {
   color: #ffa500;
 }
-header .headerContainer nav ul li a:hover {
+body header .headerContainer nav ul li a:hover {
   opacity: 1;
   /*border-bottom: 2px solid #ff7116;*/
   color: #ffa500;
 }
-.mainImage {
+body .mainImage {
   width: 100%;
   height: 445px;
   background: url("../images/searching2.jpg") no-repeat center;
@@ -124,25 +120,24 @@ header .headerContainer nav ul li a:hover {
   background-size: cover;
   border-bottom: 1px solid grey;
 }
-.dark header {
+body.dark {
+  background: black;
+  color: grey;
+}
+body.dark a.toggleTheme {
+  color: #40919b;
+}
+body.dark a.toggleTheme:hover {
+  color: #ffffff;
+}
+body.dark header {
   background: #000;
   opacity: .91;
 }
-.dark header a.toggleTheme {
+body.dark header .headerContainer nav {
   color: #40919b;
 }
-.dark header a.toggleTheme:hover {
-  color: #ffffff;
-}
-.dark header .headerContainer nav {
-  color: #40919b;
-}
-.dark header .headerContainer nav ul li {
-  font-family: arial;
-  padding: 5px 30px 5px 30px;
-  float: left;
-}
-.dark header .headerContainer nav ul li a:hover {
+body.dark header .headerContainer nav ul li a:hover {
   color: #ffffff;
   border: none;
 }

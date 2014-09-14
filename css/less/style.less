@@ -37,24 +37,10 @@ html, body {
 p{
    margin-top: 8px;
 }
-body.dark
-{
-   background: black;
-   color: grey;
-}
-
-body {
-   /*  height: 100%; //Needed?
-     width: 100%; //Needed?*/
-   position: relative;
-}
 
 a.toggleTheme
 {
    font-size: 14px;
-   position: fixed;
-   top: 28px;
-   left: 10px;
 }
 
 a.toggleTheme:hover
@@ -63,120 +49,131 @@ a.toggleTheme:hover
    cursor: pointer;
 }
 
-header {
-   background: #fff;
-   min-height: 55px;
-   min-width: 100%;
-   z-index: 1000;
-   position: fixed;
-   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
-   font-size: 19px;
+body {
+   /*  height: 100%; //Needed?
+     width: 100%; //Needed?*/
+   position: relative;
 
-   .headerContainer {
-      padding: 6px 0;
-      margin: 0 auto;
-      width: 80%;
-      //max-width: 1150px;
+   header {
+      background: #fff;
+      min-height: 55px;
+      min-width: 100%;
+      z-index: 1000;
+      position: fixed;
+      box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
+      font-size: 19px;
 
+      .headerContainer {
+         padding: 4px 0;
+         margin: 0 auto;
+         width: 80%;
+         //max-width: 1150px;
 
-      .sdunnLogo {
-         position: relative;
-         top: 2px;
-         width: 50px;
-         height: 50px;
-         display: inline-block;
-         cursor: pointer;
-      }
+         .sdunnLogo {
+            position: relative;
+            top: 2px;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            cursor: pointer;
+         }
 
-      nav {
-         // overflow: hidden;
-         float: right;
-        // margin-right: 10px;
-         margin-top: 13px;
-         color: #000;
+         nav {
+            display: inline-block;
+            float: right;
+            margin-top: 13px;
+            color: #000;
+            position: relative;
+            right: 2%;
 
-         ul {
-            list-style: none;
+            ul {
+               list-style: none;
 
-            li {
-               font-family: arial;
-               padding: 5px 30px 5px 30px;
-               float: left;
+               li {
+                  font-family: arial;
+                  padding: 5px 30px;
+                  float: left;
 
-               &:hover {
-                  //currently no background color
+                  &:hover {
+                     //currently no background color
+                  }
+
+                  a, a:link, a:visited {
+                     cursor: pointer;
+                     font-weight: bold;
+                     display: inline-block;
+                     height: 28px;
+                  }
+
+                  a:active{
+                     color: @lightHeaderHover;
+                  }
+
+                  a:hover {
+                     opacity: 1;
+                     /*border-bottom: 2px solid #ff7116;*/
+                     color: @lightHeaderHover;
+                  }
+
+                  //Multi-color underlines
+                 /* a.portfolio:hover {
+                     border-color: red;
+                  }
+                  a.sourceCode:hover {
+                     border-color: yellow;
+                  }
+                  a.videos:hover {
+                     border-color: lightskyblue;
+                  }
+                  a.about:hover {
+                     border-color: mediumpurple;
+                  }
+                  a.contact:hover {
+                     border-color: green;
+                  }*/
+
                }
-
-               a, a:link, a:visited {
-                  cursor: pointer;
-                  font-weight: bold;
-                  display: inline-block;
-                  height: 28px;
-               }
-
-               a:active{
-                  color: @lightHeaderHover;
-               }
-
-               a:hover {
-                  opacity: 1;
-                  /*border-bottom: 2px solid #ff7116;*/
-                  color: @lightHeaderHover;
-               }
-
-               //Multi-color underlines
-              /* a.portfolio:hover {
-                  border-color: red;
-               }
-               a.sourceCode:hover {
-                  border-color: yellow;
-               }
-               a.videos:hover {
-                  border-color: lightskyblue;
-               }
-               a.about:hover {
-                  border-color: mediumpurple;
-               }
-               a.contact:hover {
-                  border-color: green;
-               }*/
-
             }
          }
       }
    }
-}
-//end header
+   //end header
 
-.mainImage {
-   width: 100%;
-   height: 445px;
-   background: url("../images/searching2.jpg") no-repeat center;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-   border-bottom: 1px solid grey;
+   .mainImage {
+      width: 100%;
+      height: 445px;
+      background: url("../images/searching2.jpg") no-repeat center;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      border-bottom: 1px solid grey;
+   }
 }
 
 
 ///////////////////////////  Dark specific styles   ///////////////////////////
 
 
-.dark {
+body.dark {
+
+   background: black;
+   color: grey;
+
+   a.toggleTheme
+   {
+
+      color: @darkHeaderText;
+   }
+   a.toggleTheme:hover
+   {
+      color: @darkHeaderHover;
+   }
 
    header {
       background: #000;
       opacity: .91;
 
-      a.toggleTheme
-      {
-         color: @darkHeaderText;
-      }
-      a.toggleTheme:hover
-      {
-         color: @darkHeaderHover;
-      }
 
       .headerContainer {
 
@@ -194,10 +191,6 @@ header {
                      //currently no background color
                   }
 
-                  font-family: arial;
-                  padding: 5px 30px 5px 30px;
-                  float: left;
-
                   a:hover {
                      color: @darkHeaderHover;
                      border: none;
@@ -208,11 +201,13 @@ header {
          }
       }
    } //end header
-} //end .dark styles
 
-.mainImage {
+   .mainImage {
 
-}
+   }
+} //end body.dark styles
+
+
 
 .main {
 
