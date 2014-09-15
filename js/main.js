@@ -26,14 +26,15 @@ $(document).ready(function()
         {
             $(this).find("nav ul").show();
             navItems.css("background", "#000");
-            $(this).find("nav ul li a").css("color","#40919b")
+            $(this).find("nav ul li a").css("color","#40919b");
         }
         else
         {
             $(this).find("nav ul").hide();
         }
     });
-    navItems.mousedown(function()
+    
+    $("nav ul li").on("tap", function()
     {
         $(this).css("background", "#fff");
     });
