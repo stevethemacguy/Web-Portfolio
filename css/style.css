@@ -62,6 +62,10 @@ body header .headerContainer .sdunnLogo {
   height: 50px;
   display: inline-block;
   cursor: pointer;
+  background: url("../images/sdunnLogo-black.png") center no-repeat;
+}
+body header .headerContainer .sdunnLogo:hover {
+  background: url("../images/smileLogo-orange.png") center no-repeat;
 }
 body header .headerContainer nav {
   display: inline-block;
@@ -133,6 +137,12 @@ body.dark a.toggleTheme:hover {
 body.dark header {
   background: #000;
   opacity: .91;
+}
+body.dark header .headerContainer .sdunnLogo {
+  background: url("../images/sdunnLogo-teal.png") center no-repeat;
+}
+body.dark header .headerContainer .sdunnLogo:hover {
+  background: url("../images/smileLogo-white.png") center no-repeat;
 }
 body.dark header .headerContainer nav {
   color: #40919b;

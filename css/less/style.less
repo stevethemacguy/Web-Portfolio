@@ -76,6 +76,11 @@ body {
             height: 50px;
             display: inline-block;
             cursor: pointer;
+            background: url("../images/sdunnLogo-black.png") center no-repeat;
+            &:hover
+            {
+               background: url("../images/smileLogo-orange.png") center no-repeat;
+            }
          }
 
          nav {
@@ -176,6 +181,14 @@ body.dark {
 
 
       .headerContainer {
+
+         .sdunnLogo {
+            background: url("../images/sdunnLogo-teal.png") center no-repeat;
+            &:hover
+            {
+               background: url("../images/smileLogo-white.png") center no-repeat;
+            }
+         }
 
          nav {
             color: @darkHeaderText;
