@@ -173,11 +173,13 @@ body.dark header .headerContainer nav ul li a:hover {
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
   body header {
-    height: 47px;
+    height: 48px;
+  }
+  body header:hover {
+    cursor: pointer;
   }
   body header .headerContainer {
     width: 100%;
-    text-align: center;
   }
   body header .headerContainer .logo {
     display: none;
@@ -185,8 +187,8 @@ body.dark header .headerContainer nav ul li a:hover {
   body header .headerContainer .mobile-logo {
     display: inline-block;
     position: fixed;
-    left: 5px;
-    top: 4px;
+    left: 6px;
+    top: 5px;
     width: 38px;
     height: 38px;
     background: url("../images/mobile/logo-teal-small.png") center no-repeat;
@@ -198,12 +200,12 @@ body.dark header .headerContainer nav ul li a:hover {
     font-size: 30px;
     font-weight: bold;
   }
-  body header .headerContainer .mobileMenu:hover {
-    cursor: pointer;
-  }
   body header .headerContainer .mobileMenu .mobile-button {
-    width: 29px;
-    height: 25px;
+    float: right;
+    margin-top: 6px;
+    margin-right: 7px;
+    width: 27px;
+    height: 19px;
   }
   body header .headerContainer nav {
     width: 100%;

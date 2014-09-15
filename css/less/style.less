@@ -258,12 +258,17 @@ body.dark {
 @media (min-width : 320px) and (max-width : 767px) {
    body {
       header {
-         height: 47px;
+         height: 48px;
+         &:hover
+         {
+            // color: @darkHeaderHover;
+            cursor: pointer;
+         }
 
          .headerContainer {
             width: 100%;
-            text-align: center;
-               
+            //text-align: center;
+
             .logo
             {
                display: none;
@@ -272,8 +277,8 @@ body.dark {
             {
                display: inline-block;
                position: fixed;
-               left: 5px;
-               top: 4px;
+               left: 6px;
+               top: 5px;
                width: 38px;
                height: 38px;
                background: url("../images/mobile/logo-teal-small.png") center no-repeat;
@@ -284,15 +289,13 @@ body.dark {
                color: @darkHeaderText;
                font-size: 30px;
                font-weight: bold;
-               &:hover
-               {
-                 // color: @darkHeaderHover;
-                  cursor: pointer;
-               }
 
                .mobile-button{
-                  width: 29px;
-                  height: 25px;
+                  float: right;
+                  margin-top: 6px;
+                  margin-right: 7px;
+                  width: 27px;
+                  height: 19px;
                }
             }
 
