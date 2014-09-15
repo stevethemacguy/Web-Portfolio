@@ -2,6 +2,7 @@ $(document).ready(function()
 {
     var body = $("body");
     var navItems = $("nav ul li");
+    var mobileLogo = $(".mobile-logo");
     $(".toggleTheme").click(function()
     {
         body.toggleClass("dark");
@@ -17,12 +18,17 @@ $(document).ready(function()
         }
     });
 
+
+    ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
     //This code only affects the mobile version of the site.
     $("header").click(function()
     {
-        $(".mobile-logo").toggleClass("selected");
+        //Exit if not mobile
+        if($(window).width() >= 767)
+            return;
+        mobileLogo.toggleClass("selected");
         $(".mobile-button").toggleClass("selected");
-        if($(".mobile-logo").hasClass("selected"))
+        if(mobileLogo.hasClass("selected"))
         {
             $(this).find("nav ul").show();
             navItems.css("background", "#000");
@@ -34,8 +40,11 @@ $(document).ready(function()
         }
     });
 
-    $("nav ul li").on("tap", function()
+    navItems.on("tap", function()
     {
+        //Exit if not mobile
+        if($(window).width() >= 767)
+            return;
         $(this).css("background", "#fff");
     });
 });
