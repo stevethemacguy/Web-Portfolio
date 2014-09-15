@@ -213,6 +213,50 @@ body.dark {
 
 }
 
+//iPads in portrait and landscape-----------
+@media (min-width : 768px) and (max-width : 1024px) {
+   body {
+      p {
+         color: pink;
+      }
+      header {
+         .headerContainer {
+            width: 88%;
+            nav {
+               right: 0%;
+               ul {
+                  li {
+                     padding-left: 20px;
+                     padding-right: 20px;
+                  }
+               }
+            }
+         }
+      }
+   }
+} // iPad media query
+
+/*Smartphones in portrait and landscape ----------- */
+@media (min-width : 320px) and (max-width : 767px) {
+   body {
+      header {
+         .headerContainer {
+            width: 100%;
+            margin-left: 6px;
+            nav {
+               display: none;
+            }
+         }
+      }
+   }
+}
+
+/* Only iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+   /* YOUR STYLE GOES HERE */
+}
+
 
 
 

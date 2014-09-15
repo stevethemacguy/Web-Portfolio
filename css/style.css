@@ -141,3 +141,32 @@ body.dark header .headerContainer nav ul li a:hover {
   color: #ffffff;
   border: none;
 }
+@media (min-width: 768px) and (max-width: 1024px) {
+  body p {
+    color: pink;
+  }
+  body header .headerContainer {
+    width: 88%;
+  }
+  body header .headerContainer nav {
+    right: 0%;
+  }
+  body header .headerContainer nav ul li {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+/*Smartphones in portrait and landscape ----------- */
+@media (min-width: 320px) and (max-width: 767px) {
+  body header .headerContainer {
+    width: 100%;
+    margin-left: 6px;
+  }
+  body header .headerContainer nav {
+    display: none;
+  }
+}
+/* Only iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* YOUR STYLE GOES HERE */
+}
