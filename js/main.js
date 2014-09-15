@@ -30,10 +30,10 @@ $(document).ready(function()
         }
         else
         {
-            $(this).find("nav ul").hide();
+            $(this).find("nav ul").slideUp("fast");
         }
     });
-    
+
     $("nav ul li").on("tap", function()
     {
         $(this).css("background", "#fff");
