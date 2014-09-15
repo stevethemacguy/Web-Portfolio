@@ -25,6 +25,8 @@ $(document).ready(function()
         if($(".mobile-logo").hasClass("selected"))
         {
             $(this).find("nav ul").show();
+            navItems.css("background", "#000");
+            $(this).find("nav ul li a").css("color","#40919b")
         }
         else
         {
@@ -34,11 +36,5 @@ $(document).ready(function()
     navItems.mousedown(function()
     {
         $(this).css("background", "#fff");
-        $(this).find("a").css("color", "#40919b");
     });
-    navItems.mouseout(function()
-    {
-        $(this).css("background", "#000");
-    }
-    );
 });
