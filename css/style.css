@@ -25,6 +25,7 @@ Re-usable Colors
 html,
 body {
   background: #fff;
+  font-family: Arial;
 }
 p {
   margin-top: 8px;
@@ -56,16 +57,16 @@ body header .headerContainer {
   margin: 0 auto;
   width: 80%;
 }
-body header .headerContainer .sdunnLogo {
+body header .headerContainer .logo {
   position: relative;
   top: 2px;
   width: 50px;
   height: 50px;
   display: inline-block;
   cursor: pointer;
-  background: url("../images/sdunnLogo-black.png") center no-repeat;
+  background: url("../images/logo-black.png") center no-repeat;
 }
-body header .headerContainer .sdunnLogo:hover {
+body header .headerContainer .logo:hover {
   background: url("../images/smileLogo-orange.png") center no-repeat;
 }
 body header .headerContainer nav {
@@ -80,7 +81,6 @@ body header .headerContainer nav ul {
   list-style: none;
 }
 body header .headerContainer nav ul li {
-  font-family: arial;
   padding: 5px 30px;
   float: left;
   /* a.portfolio:hover {
@@ -115,6 +115,9 @@ body header .headerContainer nav ul li a:hover {
   /*border-bottom: 2px solid #ff7116;*/
   color: #ffa500;
 }
+body header .mobileMenu {
+  display: none;
+}
 body .mainImage {
   width: 100%;
   height: 445px;
@@ -139,10 +142,10 @@ body.dark header {
   background: #000;
   opacity: .91;
 }
-body.dark header .headerContainer .sdunnLogo {
-  background: url("../images/sdunnLogo-teal.png") center no-repeat;
+body.dark header .headerContainer .logo {
+  background: url("../images/logo-teal.png") center no-repeat;
 }
-body.dark header .headerContainer .sdunnLogo:hover {
+body.dark header .headerContainer .logo:hover {
   background: url("../images/smileLogo-white.png") center no-repeat;
 }
 body.dark header .headerContainer nav {
@@ -166,12 +169,34 @@ body.dark header .headerContainer nav ul li a:hover {
 }
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
+  body header {
+    height: 30px;
+  }
   body header .headerContainer {
     width: 100%;
     margin-left: 6px;
   }
-  body header .headerContainer nav {
+  body header .headerContainer .logo {
+    width: 25px;
+    height: 25px;
+    background: url("../images/logo-black.png") center no-repeat;
+  }
+  body header .headerContainer nav ul {
     display: none;
+  }
+  body header .mobileMenu {
+    display: inline-block;
+    color: #40919b;
+    font-size: 30px;
+  }
+  body header .mobileMenu:hover {
+    color: #ffffff;
+  }
+  body.dark header .headerContainer .logo {
+    background: url("../images/mobile/logo-teal-small.png") center no-repeat;
+  }
+  body.dark header .headerContainer .logo:hover {
+    background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
   }
 }
 /* Only iPhone 4 ----------- */

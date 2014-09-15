@@ -32,6 +32,7 @@ Re-usable Colors
 
 html, body {
    background: #fff;
+   font-family: Arial;
 }
 
 p{
@@ -69,14 +70,14 @@ body {
          width: 80%;
          //max-width: 1150px;
 
-         .sdunnLogo {
+         .logo {
             position: relative;
             top: 2px;
             width: 50px;
             height: 50px;
             display: inline-block;
             cursor: pointer;
-            background: url("../images/sdunnLogo-black.png") center no-repeat;
+            background: url("../images/logo-black.png") center no-repeat;
             &:hover
             {
                background: url("../images/smileLogo-orange.png") center no-repeat;
@@ -95,7 +96,6 @@ body {
                list-style: none;
 
                li {
-                  font-family: arial;
                   padding: 5px 30px;
                   float: left;
 
@@ -141,6 +141,10 @@ body {
             }
          }
       }
+      .mobileMenu
+      {
+         display: none;
+      }
    }
    //end header
 
@@ -182,8 +186,8 @@ body.dark {
 
       .headerContainer {
 
-         .sdunnLogo {
-            background: url("../images/sdunnLogo-teal.png") center no-repeat;
+         .logo {
+            background: url("../images/logo-teal.png") center no-repeat;
             &:hover
             {
                background: url("../images/smileLogo-white.png") center no-repeat;
@@ -250,11 +254,49 @@ body.dark {
 @media (min-width : 320px) and (max-width : 767px) {
    body {
       header {
+         height: 30px;
          .headerContainer {
             width: 100%;
             margin-left: 6px;
-            nav {
+
+            .logo
+            {
+               width: 25px;
+               height: 25px;
+               background: url("../images/logo-black.png") center no-repeat;
+            }
+
+            nav ul {
                display: none;
+            }
+         }
+
+         .mobileMenu
+         {
+            display: inline-block;
+            color: @darkHeaderText;
+            font-size: 30px;
+
+            &:hover
+            {
+               color: @darkHeaderHover;
+            }
+         }
+      }
+   }
+
+   ////DARK STYLES
+   body.dark
+   {
+      header {
+         .headerContainer {
+            .logo
+            {
+               background: url("../images/mobile/logo-teal-small.png") center no-repeat;
+               &:hover
+               {
+                  background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
+               }
             }
          }
       }
