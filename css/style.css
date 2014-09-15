@@ -44,7 +44,7 @@ body {
 }
 body header {
   background: #fff;
-  min-height: 55px;
+  height: 61px;
   min-width: 100%;
   z-index: 1000;
   position: fixed;
@@ -56,6 +56,9 @@ body header .headerContainer {
   padding: 4px 0;
   margin: 0 auto;
   width: 80%;
+}
+body header .headerContainer .mobile-logo {
+  display: none;
 }
 body header .headerContainer .logo {
   position: relative;
@@ -170,32 +173,44 @@ body.dark header .headerContainer nav ul li a:hover {
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
   body header {
-    height: 30px;
+    height: 47px;
   }
   body header .headerContainer {
     width: 100%;
-    margin-left: 6px;
+    text-align: center;
   }
   body header .headerContainer .logo {
-    width: 25px;
-    height: 25px;
-    background: url("../images/logo-black.png") center no-repeat;
+    display: none;
+  }
+  body header .headerContainer .mobile-logo {
+    display: inline-block;
+    position: fixed;
+    left: 5px;
+    top: 4px;
+    width: 38px;
+    height: 38px;
+    background: url("../images/mobile/logo-teal-small.png") center no-repeat;
+  }
+  body header .headerContainer .mobileMenu {
+    display: block;
+    width: 100%;
+    color: #40919b;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  body header .headerContainer .mobileMenu:hover {
+    color: #ffffff;
+    cursor: pointer;
+  }
+  body header .headerContainer nav {
+    width: 100%;
+    margin-top: 4px;
+    float: none;
   }
   body header .headerContainer nav ul {
     display: none;
   }
-  body header .mobileMenu {
-    display: inline-block;
-    color: #40919b;
-    font-size: 30px;
-  }
-  body header .mobileMenu:hover {
-    color: #ffffff;
-  }
-  body.dark header .headerContainer .logo {
-    background: url("../images/mobile/logo-teal-small.png") center no-repeat;
-  }
-  body.dark header .headerContainer .logo:hover {
+  body.dark header .headerContainer:hover .mobile-logo {
     background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
   }
 }
