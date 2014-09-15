@@ -1,7 +1,6 @@
 $(document).ready(function() 
 {
     var body = $("body");
-    var navItems = $("nav ul li");
     var mobileLogo = $(".mobile-logo");
     $(".toggleTheme").click(function()
     {
@@ -30,21 +29,18 @@ $(document).ready(function()
         $(".mobile-button").toggleClass("selected");
         if(mobileLogo.hasClass("selected"))
         {
-            $(this).find("nav ul").show();
-            navItems.css("background", "#000");
-            $(this).find("nav ul li a").css("color","#40919b");
+            $(this).find(".mobileNav ul").show();
+            $(this).find(".mobileNav ul li").css("background", "#000");
+            $(this).find(".mobileNav ul li a").css("color","#40919b");
         }
         else
         {
-            $(this).find("nav ul").slideUp("fast");
+            $(this).find(".mobileNav ul").slideUp("fast");
         }
     });
 
-    navItems.on("tap", function()
+    $(".mobileNav ul li").on("tap", function()
     {
-        //Exit if not mobile
-        if($(window).width() >= 767)
-            return;
         $(this).css("background", "#fff");
     });
 });

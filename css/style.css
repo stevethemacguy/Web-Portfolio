@@ -72,6 +72,9 @@ body header .headerContainer .logo {
 body header .headerContainer .logo:hover {
   background: url("../images/smileLogo-orange.png") center no-repeat;
 }
+body header .headerContainer nav.mobileNav {
+  display: none;
+}
 body header .headerContainer nav {
   display: inline-block;
   float: right;
@@ -217,12 +220,16 @@ body.dark header .headerContainer nav ul li a:hover {
     background: url("../images/mobile/menu-button-white.png") center no-repeat;
   }
   body header .headerContainer nav {
+    display: none;
+  }
+  body header .headerContainer nav.mobileNav {
+    display: inline-block;
     width: 100%;
     margin-top: 4px;
     float: none;
     right: 0;
   }
-  body header .headerContainer nav ul {
+  body header .headerContainer nav.mobileNav ul {
     opacity: 1;
     display: none;
     position: fixed;
@@ -232,7 +239,7 @@ body.dark header .headerContainer nav ul li a:hover {
     background: #000;
     margin-left: 0;
   }
-  body header .headerContainer nav ul li {
+  body header .headerContainer nav.mobileNav ul li {
     font-size: 24px;
     padding: 0;
     margin: 0;
@@ -240,11 +247,8 @@ body.dark header .headerContainer nav ul li a:hover {
     float: none;
     border-bottom: 1px solid #252525;
   }
-  body header .headerContainer nav ul li:first-child {
+  body header .headerContainer nav.mobileNav ul li:first-child {
     border-top: 1px solid #252525;
-  }
-  body.dark header .headerContainer nav ul li a:hover {
-    color: #40919b;
   }
 }
 /* Only iPhone 4 ----------- */
