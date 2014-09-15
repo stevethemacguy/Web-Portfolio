@@ -44,7 +44,7 @@ body {
 }
 body header {
   background: #fff;
-  height: 61px;
+  height: 62px;
   min-width: 100%;
   z-index: 1000;
   position: fixed;
@@ -199,8 +199,11 @@ body.dark header .headerContainer nav ul li a:hover {
     font-weight: bold;
   }
   body header .headerContainer .mobileMenu:hover {
-    color: #ffffff;
     cursor: pointer;
+  }
+  body header .headerContainer .mobileMenu .mobile-button {
+    width: 29px;
+    height: 25px;
   }
   body header .headerContainer nav {
     width: 100%;
@@ -210,8 +213,11 @@ body.dark header .headerContainer nav ul li a:hover {
   body header .headerContainer nav ul {
     display: none;
   }
-  body.dark header .headerContainer:hover .mobile-logo {
-    background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
+  body.dark header .headerContainer {
+    /* //When the headerContainer is hovered, change the logo image
+            &:hover .mobile-logo {
+               background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
+            }*/
   }
 }
 /* Only iPhone 4 ----------- */

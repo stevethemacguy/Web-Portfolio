@@ -57,7 +57,7 @@ body {
 
    header {
       background: #fff;
-      height: 61px;
+      height: 62px;
       min-width: 100%;
       z-index: 1000;
       position: fixed;
@@ -286,8 +286,13 @@ body.dark {
                font-weight: bold;
                &:hover
                {
-                  color: @darkHeaderHover;
+                 // color: @darkHeaderHover;
                   cursor: pointer;
+               }
+
+               .mobile-button{
+                  width: 29px;
+                  height: 25px;
                }
             }
 
@@ -310,10 +315,10 @@ body.dark {
       header {
          .headerContainer
          {
-            //When the headerContainer is hovered, change the logo image
+           /* //When the headerContainer is hovered, change the logo image
             &:hover .mobile-logo {
                background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
-            }
+            }*/
          }
 
       }
