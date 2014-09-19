@@ -17,8 +17,8 @@ $(document).ready(function()
         }
     });
 
-    //Scroll to Anchor
-    $('a').click(function(event){
+    //Scroll to Anchor (Desktop)
+    $(".desktopNav").find("a").click(function(event){
         event.preventDefault();
         //Normal div offset minus the height of the header, since it's fixed.
         var sectionTop = $(this.hash).offset().top - $("header").outerHeight();
@@ -27,9 +27,22 @@ $(document).ready(function()
         }, 180);
     });
 
+    //Scroll to Anchor (Mobile)
+    $(".mobileNav ul li").on("tap",function(){
+        $(this).css("background", "#fff");
+        $(".mobileNav ul").slideUp("fast");
+        var anchor = $(this).find("a").attr("href");
+        //Normal div offset minus the height of the header, since it's fixed.
+        var sectionTop = $(anchor).offset().top - $("header").outerHeight();
+        $('html, body').animate({
+            scrollTop: sectionTop
+        }, 180);
+
+    });
+
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
     //This code only affects the mobile version of the site.
-    $("header").click(function()
+    $("header").on("tap", function()
     {
         //Exit if not mobile
         if($(window).width() >= 767)
@@ -46,10 +59,5 @@ $(document).ready(function()
         {
             $(this).find(".mobileNav ul").slideUp("fast");
         }
-    });
-
-    $(".mobileNav ul li").on("tap", function()
-    {
-        $(this).css("background", "#fff");
     });
 });
