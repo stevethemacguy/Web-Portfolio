@@ -41,10 +41,6 @@ body {
    position: relative;
 }
 
-p {
-   margin-top: 8px;
-}
-
 a.toggleTheme {
    font-size: 14px;
 }
@@ -85,6 +81,13 @@ header {
 
          &:hover {
             background: url("../images/smileLogo-orange.png") center no-repeat;
+         }
+
+         a {
+            //The link has no content, so set height/width to make it clickable
+            display: block;
+            width: 50px;
+            height: 50px;
          }
       }
 
@@ -129,7 +132,7 @@ header {
                }
 
                //Multi-color underlines
-               /* a.portfolio:hover {
+               /* a.projects:hover {
                    border-color: red;
                 }
                 a.sourceCode:hover {
@@ -165,6 +168,28 @@ header {
    border-bottom: 1px solid #252525;
 }
 
+.main {
+   #projects {
+      background: #494180;
+   }
+
+   #sourceCode {
+      background: #253139;
+   }
+
+   #videos {
+      background: white;
+   }
+
+   #about {
+      background: blue;
+   }
+
+   #contact {
+      background: orange;
+   }
+}
+
 
 ///////////////////////////  Dark specific styles   ///////////////////////////
 
@@ -195,16 +220,16 @@ header {
          }
 
          nav {
-            color: @darkHeaderText;
-
             ul {
                li {
-                  a {
-                     //height: 26px;
-                  }
 
                   &:hover {
                      //currently no background color
+                  }
+
+                  a, a:link, a:visited {
+                     //height: 26px;
+                     color: @darkHeaderText;
                   }
 
                   a:hover {

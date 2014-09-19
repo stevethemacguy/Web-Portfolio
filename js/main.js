@@ -17,6 +17,15 @@ $(document).ready(function()
         }
     });
 
+    //Scroll to Anchor
+    $('a').click(function(event){
+        event.preventDefault();
+        //Normal div offset minus the height of the header, since it's fixed.
+        var sectionTop = $(this.hash).offset().top - $("header").outerHeight();
+        $('html, body').animate({
+            scrollTop: sectionTop
+        }, 180);
+    });
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
     //This code only affects the mobile version of the site.
