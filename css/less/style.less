@@ -35,155 +35,148 @@ html, body {
    font-family: Arial;
 }
 
-p{
-   margin-top: 8px;
-}
-
-a.toggleTheme
-{
-   font-size: 14px;
-}
-
-a.toggleTheme:hover
-{
-   color: @lightHeaderHover;
-   cursor: pointer;
-}
-
 body {
    /*  height: 100%; //Needed?
      width: 100%; //Needed?*/
    position: relative;
+}
 
-   header {
-      background: #fff;
-      height: 62px;
-      min-width: 100%;
-      z-index: 1000;
-      position: fixed;
-      box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
-      font-size: 19px;
-      border-bottom: 1px solid #252525;
-      .headerContainer {
-         padding: 4px 0;
-         margin: 0 auto;
-         width: 80%;
-         //max-width: 1150px;
+p {
+   margin-top: 8px;
+}
 
-         .mobile-logo{
-            display: none;
-         }
+a.toggleTheme {
+   font-size: 14px;
+}
 
-         .logo {
-            position: relative;
-            top: 2px;
-            width: 50px;
-            height: 50px;
-            display: inline-block;
-            cursor: pointer;
-            background: url("../images/logo-black.png") center no-repeat;
-            &:hover
-            {
-               background: url("../images/smileLogo-orange.png") center no-repeat;
-            }
-         }
+a.toggleTheme:hover {
+   color: @lightHeaderHover;
+   cursor: pointer;
+}
 
-         nav.mobileNav {
-            display: none;
-         }
+header {
+   background: #fff;
+   height: 62px;
+   min-width: 100%;
+   z-index: 1000;
+   position: fixed;
+   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
+   font-size: 19px;
+   border-bottom: 1px solid #252525;
 
-         nav {
-            display: inline-block;
-            float: right;
-            margin-top: 13px;
-            color: #000;
-            position: relative;
-            right: 2%;
+   .headerContainer {
+      padding: 4px 0;
+      margin: 0 auto;
+      width: 80%;
+      //max-width: 1150px;
 
-            ul {
-               list-style: none;
-
-               li {
-                  padding: 5px 30px;
-                  float: left;
-
-                  &:hover {
-                     //currently no background color
-                  }
-
-                  a, a:link, a:visited {
-                     cursor: pointer;
-                     font-weight: bold;
-                     display: inline-block;
-                     height: 28px;
-                  }
-
-                  a:active{
-                     color: @lightHeaderHover;
-                  }
-
-                  a:hover {
-                     opacity: 1;
-                     /*border-bottom: 2px solid #ff7116;*/
-                     color: @lightHeaderHover;
-                  }
-
-                  //Multi-color underlines
-                 /* a.portfolio:hover {
-                     border-color: red;
-                  }
-                  a.sourceCode:hover {
-                     border-color: yellow;
-                  }
-                  a.videos:hover {
-                     border-color: lightskyblue;
-                  }
-                  a.about:hover {
-                     border-color: mediumpurple;
-                  }
-                  a.contact:hover {
-                     border-color: green;
-                  }*/
-
-               }
-            }
-         }
-      }
-      .mobileMenu
-      {
+      .mobile-logo {
          display: none;
       }
-   }
-   //end header
 
-   .mainImage {
-      width: 100%;
-      height: 445px;
-      background: url("../images/searching2.jpg") no-repeat center;
-      -webkit-background-size: cover;
-      -moz-background-size: cover;
-      -o-background-size: cover;
-      background-size: cover;
-      border-bottom: 1px solid #252525;
+      .logo {
+         position: relative;
+         top: 2px;
+         width: 50px;
+         height: 50px;
+         display: inline-block;
+         cursor: pointer;
+         background: url("../images/logo-black.png") center no-repeat;
+
+         &:hover {
+            background: url("../images/smileLogo-orange.png") center no-repeat;
+         }
+      }
+
+      nav.mobileNav {
+         display: none;
+      }
+
+      nav {
+         display: inline-block;
+         float: right;
+         margin-top: 13px;
+         color: #000;
+         position: relative;
+         right: 2%;
+
+         ul {
+            list-style: none;
+
+            li {
+               padding: 5px 30px;
+               float: left;
+
+               &:hover {
+                  //currently no background color
+               }
+
+               a, a:link, a:visited {
+                  cursor: pointer;
+                  font-weight: bold;
+                  display: inline-block;
+                  height: 28px;
+               }
+
+               a:active {
+                  color: @lightHeaderHover;
+               }
+
+               a:hover {
+                  opacity: 1;
+                  /*border-bottom: 2px solid #ff7116;*/
+                  color: @lightHeaderHover;
+               }
+
+               //Multi-color underlines
+               /* a.portfolio:hover {
+                   border-color: red;
+                }
+                a.sourceCode:hover {
+                   border-color: yellow;
+                }
+                a.videos:hover {
+                   border-color: lightskyblue;
+                }
+                a.about:hover {
+                   border-color: mediumpurple;
+                }
+                a.contact:hover {
+                   border-color: green;
+                }*/
+            }
+         }
+      }
    }
+
+   .mobileMenu {
+      display: none;
+   }
+} //end header
+
+.mainImage {
+   width: 100%;
+   height: 445px;
+   background: url("../images/searching2.jpg") no-repeat center;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   border-bottom: 1px solid #252525;
 }
 
 
 ///////////////////////////  Dark specific styles   ///////////////////////////
 
-
-body.dark {
-
+.dark {
    background: black;
    color: grey;
 
-   a.toggleTheme
-   {
+   a.toggleTheme {
 
       color: @darkHeaderText;
    }
-   a.toggleTheme:hover
-   {
+   a.toggleTheme:hover {
       color: @darkHeaderHover;
    }
 
@@ -191,13 +184,12 @@ body.dark {
       background: #000;
       opacity: .91;
 
-
       .headerContainer {
 
          .logo {
             background: url("../images/logo-teal.png") center no-repeat;
-            &:hover
-            {
+
+            &:hover {
                background: url("../images/smileLogo-white.png") center no-repeat;
             }
          }
@@ -206,7 +198,6 @@ body.dark {
             color: @darkHeaderText;
 
             ul {
-
                li {
                   a {
                      //height: 26px;
@@ -219,7 +210,7 @@ body.dark {
                   a:hover {
                      color: @darkHeaderHover;
                      border: none;
-                   //  border-bottom: 2px solid white;
+                     //border-bottom: 2px solid white;
                   }
                }
             }
@@ -230,21 +221,19 @@ body.dark {
    .mainImage {
 
    }
-} //end body.dark styles
+} //end .dark styles
 
 //iPads in portrait and landscape-----------
 @media (min-width : 768px) and (max-width : 1024px) {
-   body {
-      header {
-         .headerContainer {
-            width: 88%;
-            nav {
-               right: 0%;
-               ul {
-                  li {
-                     padding-left: 20px;
-                     padding-right: 20px;
-                  }
+   header {
+      .headerContainer {
+         width: 88%;
+         nav {
+            right: 0%;
+            ul {
+               li {
+                  padding-left: 20px;
+                  padding-right: 20px;
                }
             }
          }
@@ -254,91 +243,89 @@ body.dark {
 
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width : 320px) and (max-width : 767px) {
-   body {
-      header {
-         height: 48px;
-         &:hover
-         {
-            // color: @darkHeaderHover;
-            cursor: pointer;
+   header {
+      height: 48px;
+
+      &:hover {
+         // color: @darkHeaderHover;
+         cursor: pointer;
+      }
+
+      .headerContainer {
+         width: 100%;
+         //text-align: center;
+
+         .logo {
+            display: none;
          }
 
-         .headerContainer {
+         .mobile-logo {
+            display: inline-block;
+            position: fixed;
+            left: 5px;
+            top: 5px;
+            width: 38px;
+            height: 38px;
+            background: url("../images/mobile/logo-teal-small.png") center no-repeat;
+
+            &.selected {
+               background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
+            }
+         }
+
+         .mobileMenu {
+            display: block;
             width: 100%;
-            //text-align: center;
+            color: @darkHeaderText;
+            font-size: 30px;
+            font-weight: bold;
 
-            .logo
-            {
-               display: none;
+            .mobile-button {
+               float: right;
+               position: relative;
+               right: 2%;
+               margin-top: 6px;
+               margin-right: 7px;
+               width: 27px;
+               height: 19px;
+               background: url("../images/mobile/menu-button-teal.png") center no-repeat;
+
+               &.selected {
+                  background: url("../images/mobile/menu-button-white.png") center no-repeat;
+               }
             }
-            .mobile-logo
-            {
-               display: inline-block;
+         }
+
+         //Hide the standard nav
+         nav {
+            display: none;
+         }
+
+         nav.mobileNav {
+            display: inline-block;
+            width: 100%;
+            margin-top: 4px;
+            float: none;
+            right: 0;
+            ul {
+               opacity: 1;
+               display: none;
                position: fixed;
-               left: 5px;
-               top: 5px;
-               width: 38px;
-               height: 38px;
-               background: url("../images/mobile/logo-teal-small.png") center no-repeat;
-
-               &.selected{
-                  background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
-               }
-            }
-            .mobileMenu {
-               display: block;
+               top: 48px;
+               text-align: center;
                width: 100%;
-               color: @darkHeaderText;
-               font-size: 30px;
-               font-weight: bold;
+               background: #000;
+               margin-left: 0;
 
-               .mobile-button{
-                  float: right;
-                  position: relative;
-                  right: 2%;
-                  margin-top: 6px;
-                  margin-right: 7px;
-                  width: 27px;
-                  height: 19px;
-                  background: url("../images/mobile/menu-button-teal.png") center no-repeat;
-
-                  &.selected{
-                     background: url("../images/mobile/menu-button-white.png") center no-repeat;
-                  }
-               }
-            }
-
-            //Hide the standard nav
-            nav{
-               display: none;
-            }
-
-            nav.mobileNav {
-               display: inline-block;
-               width: 100%;
-               margin-top: 4px;
-               float: none;
-               right: 0;
-               ul {
-                  opacity: 1;
-                  display: none;
-                  position: fixed;
-                  top: 48px;
-                  text-align: center;
-                  width: 100%;
-                  background: #000;
-                  margin-left: 0;
-
-                  li{
-                     font-size: 24px;
-                     padding:0;
-                     margin:0;
-                     padding:13px 0;
-                     float: none;
-                     border-bottom: 1px solid #252525;
-                     &:first-child{
-                        border-top: 1px solid #252525;
-                     }
+               li {
+                  font-size: 24px;
+                  padding: 0;
+                  margin: 0;
+                  padding: 13px 0;
+                  float: none;
+                  border-bottom: 1px solid #252525;
+                  &:first-child {
+                     border-top: 1px solid #252525;
                   }
                }
             }
