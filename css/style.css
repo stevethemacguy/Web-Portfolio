@@ -243,17 +243,12 @@ header nav ul li a:hover {
     padding: 13px 0;
     float: none;
     border-bottom: 1px solid #252525;
-    /*Technically only the desktop can hover*/
   }
   header nav.mobileNav ul li:first-child {
     border-top: 1px solid #252525;
   }
-  header nav.mobileNav ul li a,
-  header nav.mobileNav ul li a:hover {
+  header nav.mobileNav ul li a {
     color: #40919b;
-  }
-  header nav.mobileNav ul li:hover {
-    background: #fff;
   }
   header nav.mobileNav ul li.selected {
     background: #fff;
