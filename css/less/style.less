@@ -1,9 +1,9 @@
-
 /*---------------------------------------------------
 Re-usable Colors
 -----------------------------------------------------*/
 @lightHeaderText: #000;
-@darkHeaderText: #40919b; //Teal
+@darkHeaderText: #40919b;
+//Teal
 
 @lightHeaderHover: orange;
 @darkHeaderHover: #FFF;
@@ -60,102 +60,95 @@ header {
    font-size: 19px;
    border-bottom: 1px solid #252525;
 
-   .headerContainer {
+   nav.mobileNav {
+      display: none;
+   }
+
+   .navContainer {
       padding: 4px 0;
       margin: 0 auto;
       width: 80%;
       //max-width: 1150px;
+   }
 
-      .mobile-logo {
-         display: none;
+   .logo {
+      position: relative;
+      top: 2px;
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      cursor: pointer;
+      background: url("../images/logo-black.png") center no-repeat;
+
+      &:hover {
+         background: url("../images/smileLogo-orange.png") center no-repeat;
       }
 
-      .logo {
-         position: relative;
-         top: 2px;
+      a {
+         //The link has no content, so set height/width to make it clickable
+         display: block;
          width: 50px;
          height: 50px;
-         display: inline-block;
-         cursor: pointer;
-         background: url("../images/logo-black.png") center no-repeat;
-
-         &:hover {
-            background: url("../images/smileLogo-orange.png") center no-repeat;
-         }
-
-         a {
-            //The link has no content, so set height/width to make it clickable
-            display: block;
-            width: 50px;
-            height: 50px;
-         }
       }
+   }
 
-      nav.mobileNav {
-         display: none;
-      }
+   nav {
+      display: inline-block;
+      float: right;
+      margin-top: 13px;
+      color: #000;
+      position: relative;
+      right: 2%;
 
-      nav {
-         display: inline-block;
-         float: right;
-         margin-top: 13px;
-         color: #000;
-         position: relative;
-         right: 2%;
+      ul {
+         list-style: none;
 
-         ul {
-            list-style: none;
+         li {
+            padding: 5px 30px;
+            float: left;
 
-            li {
-               padding: 5px 30px;
-               float: left;
-
-               &:hover {
-                  //currently no background color
-               }
-
-               a, a:link, a:visited {
-                  cursor: pointer;
-                  font-weight: bold;
-                  display: inline-block;
-                  height: 28px;
-               }
-
-               a:active {
-                  color: @lightHeaderHover;
-               }
-
-               a:hover {
-                  opacity: 1;
-                  /*border-bottom: 2px solid #ff7116;*/
-                  color: @lightHeaderHover;
-               }
-
-               //Multi-color underlines
-               /* a.projects:hover {
-                   border-color: red;
-                }
-                a.sourceCode:hover {
-                   border-color: yellow;
-                }
-                a.videos:hover {
-                   border-color: lightskyblue;
-                }
-                a.about:hover {
-                   border-color: mediumpurple;
-                }
-                a.contact:hover {
-                   border-color: green;
-                }*/
+            &:hover {
+               //currently no background color
             }
+
+            a, a:link, a:visited {
+               cursor: pointer;
+               font-weight: bold;
+               display: inline-block;
+               height: 28px;
+            }
+
+            a:active {
+               color: @lightHeaderHover;
+            }
+
+            a:hover {
+               /*border-bottom: 2px solid #ff7116;*/
+               color: @lightHeaderHover;
+            }
+
+            //Multi-color underlines
+            /* a.projects:hover {
+                border-color: red;
+             }
+             a.sourceCode:hover {
+                border-color: yellow;
+             }
+             a.videos:hover {
+                border-color: lightskyblue;
+             }
+             a.about:hover {
+                border-color: mediumpurple;
+             }
+             a.contact:hover {
+                border-color: green;
+             }*/
          }
       }
    }
+}
 
-   .mobileMenu {
-      display: none;
-   }
-} //end header
+//end header
 
 .mainImage {
    width: 100%;
@@ -190,7 +183,6 @@ header {
    }
 }
 
-
 ///////////////////////////  Dark specific styles   ///////////////////////////
 
 .dark {
@@ -207,51 +199,49 @@ header {
 
    header {
       background: #000;
-      opacity: .91;
 
-      .headerContainer {
+      .logo {
+         background: url("../images/logo-teal.png") center no-repeat;
 
-         .logo {
-            background: url("../images/logo-teal.png") center no-repeat;
-
-            &:hover {
-               background: url("../images/smileLogo-white.png") center no-repeat;
-            }
+         &:hover {
+            background: url("../images/smileLogo-white.png") center no-repeat;
          }
+      }
 
-         nav {
-            ul {
-               li {
+      nav {
+         ul {
+            li {
+               &:hover {
+                  //currently no background color
+               }
 
-                  &:hover {
-                     //currently no background color
-                  }
+               a, a:link, a:visited {
+                  //height: 26px;
+                  color: @darkHeaderText;
+               }
 
-                  a, a:link, a:visited {
-                     //height: 26px;
-                     color: @darkHeaderText;
-                  }
-
-                  a:hover {
-                     color: @darkHeaderHover;
-                     border: none;
-                     //border-bottom: 2px solid white;
-                  }
+               a:hover {
+                  color: @darkHeaderHover;
+                  border: none;
+                  //border-bottom: 2px solid white;
                }
             }
          }
       }
-   } //end header
+   }
+   //end header
 
    .mainImage {
 
    }
-} //end .dark styles
+}
+
+//end .dark styles
 
 //iPads in portrait and landscape-----------
 @media (min-width : 768px) and (max-width : 1024px) {
    header {
-      .headerContainer {
+      .navContainer {
          width: 88%;
          nav {
             right: 0%;
@@ -264,7 +254,9 @@ header {
          }
       }
    }
-} // iPad media query
+}
+
+// iPad media query
 
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width : 320px) and (max-width : 767px) {
@@ -276,13 +268,18 @@ header {
          cursor: pointer;
       }
 
-      .headerContainer {
-         width: 100%;
-         //text-align: center;
+      //Hide the standard nav
+      .navContainer {
+         display: none;
+      }
 
-         .logo {
-            display: none;
-         }
+      nav.mobileNav {
+         display: inline-block;
+         width: 100%;
+         margin-top: 0;
+         float: none;
+         right: 0;
+         height: 48px;
 
          .mobile-logo {
             display: inline-block;
@@ -300,8 +297,8 @@ header {
 
          .mobile-button {
             float: right;
-            margin-top: 6px;
-            margin-right: 19px;
+            margin-top: 14px;
+            margin-right: 20px;
             width: 27px;
             height: 19px;
             background: url("../images/mobile/menu-button-teal.png") center no-repeat;
@@ -311,37 +308,25 @@ header {
             }
          }
 
-         //Hide the standard nav
-         nav {
+         ul {
+            opacity: .91;
             display: none;
-         }
-
-         nav.mobileNav {
-            display: inline-block;
+            position: fixed;
+            top: 48px;
+            text-align: center;
             width: 100%;
-            margin-top: 4px;
-            float: none;
-            right: 0;
-            ul {
-               opacity: 1;
-               display: none;
-               position: fixed;
-               top: 48px;
-               text-align: center;
-               width: 100%;
-               background: #000;
-               margin-left: 0;
+            background: #000;
+            margin-left: 0;
 
-               li {
-                  font-size: 24px;
-                  padding: 0;
-                  margin: 0;
-                  padding: 13px 0;
-                  float: none;
-                  border-bottom: 1px solid #252525;
-                  &:first-child {
-                     border-top: 1px solid #252525;
-                  }
+            li {
+               font-size: 24px;
+               padding: 0;
+               margin: 0;
+               padding: 13px 0;
+               float: none;
+               border-bottom: 1px solid #252525;
+               &:first-child {
+                  border-top: 1px solid #252525;
                }
             }
          }
@@ -350,8 +335,7 @@ header {
 }
 
 /* Only iPhone 4 ----------- */
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5),
-only screen and (min-device-pixel-ratio : 1.5) {
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
    /* YOUR STYLE GOES HERE */
 }
 

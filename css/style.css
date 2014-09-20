@@ -49,15 +49,15 @@ header {
   font-size: 19px;
   border-bottom: 1px solid #252525;
 }
-header .headerContainer {
+header nav.mobileNav {
+  display: none;
+}
+header .navContainer {
   padding: 4px 0;
   margin: 0 auto;
   width: 80%;
 }
-header .headerContainer .mobile-logo {
-  display: none;
-}
-header .headerContainer .logo {
+header .logo {
   position: relative;
   top: 2px;
   width: 50px;
@@ -66,18 +66,15 @@ header .headerContainer .logo {
   cursor: pointer;
   background: url("../images/logo-black.png") center no-repeat;
 }
-header .headerContainer .logo:hover {
+header .logo:hover {
   background: url("../images/smileLogo-orange.png") center no-repeat;
 }
-header .headerContainer .logo a {
+header .logo a {
   display: block;
   width: 50px;
   height: 50px;
 }
-header .headerContainer nav.mobileNav {
-  display: none;
-}
-header .headerContainer nav {
+header nav {
   display: inline-block;
   float: right;
   margin-top: 13px;
@@ -85,46 +82,42 @@ header .headerContainer nav {
   position: relative;
   right: 2%;
 }
-header .headerContainer nav ul {
+header nav ul {
   list-style: none;
 }
-header .headerContainer nav ul li {
+header nav ul li {
   padding: 5px 30px;
   float: left;
   /* a.projects:hover {
-                   border-color: red;
-                }
-                a.sourceCode:hover {
-                   border-color: yellow;
-                }
-                a.videos:hover {
-                   border-color: lightskyblue;
-                }
-                a.about:hover {
-                   border-color: mediumpurple;
-                }
-                a.contact:hover {
-                   border-color: green;
-                }*/
+                border-color: red;
+             }
+             a.sourceCode:hover {
+                border-color: yellow;
+             }
+             a.videos:hover {
+                border-color: lightskyblue;
+             }
+             a.about:hover {
+                border-color: mediumpurple;
+             }
+             a.contact:hover {
+                border-color: green;
+             }*/
 }
-header .headerContainer nav ul li a,
-header .headerContainer nav ul li a:link,
-header .headerContainer nav ul li a:visited {
+header nav ul li a,
+header nav ul li a:link,
+header nav ul li a:visited {
   cursor: pointer;
   font-weight: bold;
   display: inline-block;
   height: 28px;
 }
-header .headerContainer nav ul li a:active {
+header nav ul li a:active {
   color: #ffa500;
 }
-header .headerContainer nav ul li a:hover {
-  opacity: 1;
+header nav ul li a:hover {
   /*border-bottom: 2px solid #ff7116;*/
   color: #ffa500;
-}
-header .mobileMenu {
-  display: none;
 }
 .mainImage {
   width: 100%;
@@ -163,31 +156,30 @@ header .mobileMenu {
 }
 .dark header {
   background: #000;
-  opacity: .91;
 }
-.dark header .headerContainer .logo {
+.dark header .logo {
   background: url("../images/logo-teal.png") center no-repeat;
 }
-.dark header .headerContainer .logo:hover {
+.dark header .logo:hover {
   background: url("../images/smileLogo-white.png") center no-repeat;
 }
-.dark header .headerContainer nav ul li a,
-.dark header .headerContainer nav ul li a:link,
-.dark header .headerContainer nav ul li a:visited {
+.dark header nav ul li a,
+.dark header nav ul li a:link,
+.dark header nav ul li a:visited {
   color: #40919b;
 }
-.dark header .headerContainer nav ul li a:hover {
+.dark header nav ul li a:hover {
   color: #ffffff;
   border: none;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  header .headerContainer {
+  header .navContainer {
     width: 88%;
   }
-  header .headerContainer nav {
+  header .navContainer nav {
     right: 0%;
   }
-  header .headerContainer nav ul li {
+  header .navContainer nav ul li {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -200,13 +192,18 @@ header .mobileMenu {
   header:hover {
     cursor: pointer;
   }
-  header .headerContainer {
-    width: 100%;
-  }
-  header .headerContainer .logo {
+  header .navContainer {
     display: none;
   }
-  header .headerContainer .mobile-logo {
+  header nav.mobileNav {
+    display: inline-block;
+    width: 100%;
+    margin-top: 0;
+    float: none;
+    right: 0;
+    height: 48px;
+  }
+  header nav.mobileNav .mobile-logo {
     display: inline-block;
     position: fixed;
     left: 5px;
@@ -215,32 +212,22 @@ header .mobileMenu {
     height: 38px;
     background: url("../images/mobile/logo-teal-small.png") center no-repeat;
   }
-  header .headerContainer .mobile-logo.selected {
+  header nav.mobileNav .mobile-logo.selected {
     background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
   }
-  header .headerContainer .mobile-button {
+  header nav.mobileNav .mobile-button {
     float: right;
-    margin-top: 6px;
-    margin-right: 19px;
+    margin-top: 14px;
+    margin-right: 20px;
     width: 27px;
     height: 19px;
     background: url("../images/mobile/menu-button-teal.png") center no-repeat;
   }
-  header .headerContainer .mobile-button.selected {
+  header nav.mobileNav .mobile-button.selected {
     background: url("../images/mobile/menu-button-white.png") center no-repeat;
   }
-  header .headerContainer nav {
-    display: none;
-  }
-  header .headerContainer nav.mobileNav {
-    display: inline-block;
-    width: 100%;
-    margin-top: 4px;
-    float: none;
-    right: 0;
-  }
-  header .headerContainer nav.mobileNav ul {
-    opacity: 1;
+  header nav.mobileNav ul {
+    opacity: .91;
     display: none;
     position: fixed;
     top: 48px;
@@ -249,7 +236,7 @@ header .mobileMenu {
     background: #000;
     margin-left: 0;
   }
-  header .headerContainer nav.mobileNav ul li {
+  header nav.mobileNav ul li {
     font-size: 24px;
     padding: 0;
     margin: 0;
@@ -257,7 +244,7 @@ header .mobileMenu {
     float: none;
     border-bottom: 1px solid #252525;
   }
-  header .headerContainer nav.mobileNav ul li:first-child {
+  header nav.mobileNav ul li:first-child {
     border-top: 1px solid #252525;
   }
 }
