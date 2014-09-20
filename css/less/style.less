@@ -262,6 +262,7 @@ header {
 @media (min-width : 320px) and (max-width : 767px) {
    header {
       height: 48px;
+      opacity: .91;
 
       &:hover {
          // color: @darkHeaderHover;
@@ -309,7 +310,6 @@ header {
          }
 
          ul {
-            opacity: .91;
             display: none;
             position: fixed;
             top: 48px;
@@ -327,6 +327,21 @@ header {
                border-bottom: 1px solid #252525;
                &:first-child {
                   border-top: 1px solid #252525;
+               }
+
+               a, a:hover {
+                  color: @darkHeaderText;
+               }
+
+               /*Technically only the desktop can hover*/
+               &:hover
+               {
+                  background: #fff;
+               }
+
+               &.selected
+               {
+                  background: #fff;
                }
             }
          }

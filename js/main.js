@@ -28,8 +28,9 @@ $(document).ready(function()
     });
 
     //Scroll to Anchor (Mobile)
-    $(".mobileNav ul li").on("tap",function(){
-        $(this).css("background", "#fff");
+    $(".mobileNav ul li").on("tap",function(event){
+        event.preventDefault();
+        $(this).addClass("selected");
         $(".mobileNav ul").slideUp("fast");
         var anchor = $(this).find("a").attr("href");
         //Normal div offset minus the height of the header, since it's fixed.
@@ -37,7 +38,6 @@ $(document).ready(function()
         $('html, body').animate({
             scrollTop: sectionTop
         }, 180);
-
     });
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
@@ -47,16 +47,15 @@ $(document).ready(function()
         //Exit if not mobile
         if($(window).width() >= 767)
             return;
+        $(this).removeClass("selected");
         mobileLogo.toggleClass("selected");
         $(".mobile-button").toggleClass("selected");
-        if(mobileLogo.hasClass("selected"))
-        {
+
+        if (mobileLogo.hasClass("selected")) {
             $(this).find(".mobileNav ul").show();
-            $(this).find(".mobileNav ul li").css("background", "#000");
-            $(this).find(".mobileNav ul li a").css("color","#40919b");
+            $(".mobileNav ul li").removeClass("selected");
         }
-        else
-        {
+        else {
             $(this).find(".mobileNav ul").slideUp("fast");
         }
     });

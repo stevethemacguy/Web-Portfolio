@@ -188,6 +188,7 @@ header nav ul li a:hover {
 @media (min-width: 320px) and (max-width: 767px) {
   header {
     height: 48px;
+    opacity: .91;
   }
   header:hover {
     cursor: pointer;
@@ -227,7 +228,6 @@ header nav ul li a:hover {
     background: url("../images/mobile/menu-button-white.png") center no-repeat;
   }
   header nav.mobileNav ul {
-    opacity: .91;
     display: none;
     position: fixed;
     top: 48px;
@@ -243,9 +243,20 @@ header nav ul li a:hover {
     padding: 13px 0;
     float: none;
     border-bottom: 1px solid #252525;
+    /*Technically only the desktop can hover*/
   }
   header nav.mobileNav ul li:first-child {
     border-top: 1px solid #252525;
+  }
+  header nav.mobileNav ul li a,
+  header nav.mobileNav ul li a:hover {
+    color: #40919b;
+  }
+  header nav.mobileNav ul li:hover {
+    background: #fff;
+  }
+  header nav.mobileNav ul li.selected {
+    background: #fff;
   }
 }
 /* Only iPhone 4 ----------- */
