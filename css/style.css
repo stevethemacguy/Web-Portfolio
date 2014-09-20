@@ -218,24 +218,15 @@ header .mobileMenu {
   header .headerContainer .mobile-logo.selected {
     background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
   }
-  header .headerContainer .mobileMenu {
-    display: block;
-    width: 100%;
-    color: #40919b;
-    font-size: 30px;
-    font-weight: bold;
-  }
-  header .headerContainer .mobileMenu .mobile-button {
+  header .headerContainer .mobile-button {
     float: right;
-    position: relative;
-    right: 2%;
     margin-top: 6px;
-    margin-right: 7px;
+    margin-right: 19px;
     width: 27px;
     height: 19px;
     background: url("../images/mobile/menu-button-teal.png") center no-repeat;
   }
-  header .headerContainer .mobileMenu .mobile-button.selected {
+  header .headerContainer .mobile-button.selected {
     background: url("../images/mobile/menu-button-white.png") center no-repeat;
   }
   header .headerContainer nav {
