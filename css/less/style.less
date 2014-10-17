@@ -3,6 +3,7 @@ Re-usable Colors
 -----------------------------------------------------*/
 @lightHeaderText: #000;
 @darkHeaderText: #40919b;
+@darkHeaderNavHover: #31757E;
 //Teal
 
 @lightHeaderHover: orange;
@@ -108,7 +109,7 @@ header {
             float: left;
 
             &:hover {
-               background: @darkHeaderText;
+               background: @darkHeaderNavHover;
                //currently no background color
             }
 
@@ -117,6 +118,7 @@ header {
                font-weight: bold;
                display: inline-block;
                padding: 22px 27px;
+               padding-bottom: 21px; //account for bottom border
             }
 
             a:active {

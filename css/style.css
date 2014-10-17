@@ -103,7 +103,7 @@ header nav ul li {
              }*/
 }
 header nav ul li:hover {
-  background: #40919b;
+  background: #31757e;
 }
 header nav ul li a,
 header nav ul li a:link,
@@ -112,6 +112,7 @@ header nav ul li a:visited {
   font-weight: bold;
   display: inline-block;
   padding: 22px 27px;
+  padding-bottom: 21px;
 }
 header nav ul li a:active {
   color: #ffa500;
