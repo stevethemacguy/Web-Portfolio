@@ -64,10 +64,10 @@ header .logo {
   height: 50px;
   display: inline-block;
   cursor: pointer;
-  background: url("../images/logo-black.png") center no-repeat;
+  background: url("../images/smile-logo-sprite.png") no-repeat;
 }
 header .logo:hover {
-  background: url("../images/smileLogo-orange.png") center no-repeat;
+  background-position: bottom;
 }
 header .logo a {
   display: block;
@@ -158,10 +158,10 @@ header nav ul li a:hover {
   background: #000;
 }
 .dark header .logo {
-  background: url("../images/logo-teal.png") center no-repeat;
+  background: url("../images/smile-logo-sprite.png") no-repeat;
 }
 .dark header .logo:hover {
-  background: url("../images/smileLogo-white.png") center no-repeat;
+  background-position: bottom;
 }
 .dark header nav ul li a,
 .dark header nav ul li a:link,
