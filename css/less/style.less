@@ -65,7 +65,7 @@ header {
    }
 
    .navContainer {
-      padding: 4px 0;
+      //padding: 4px 0;
       margin: 0 auto;
       width: 80%;
       //max-width: 1150px;
@@ -76,6 +76,7 @@ header {
       top: 2px;
       width: 50px;
       height: 50px;
+      margin: 4px 0;
       display: inline-block;
       cursor: pointer;
       background: url("../images/smile-logo-sprite.png") no-repeat;
@@ -95,7 +96,6 @@ header {
    nav {
       display: inline-block;
       float: right;
-      margin-top: 13px;
       color: #000;
       position: relative;
       right: 2%;
@@ -104,10 +104,11 @@ header {
          list-style: none;
 
          li {
-            padding: 5px 30px;
+
             float: left;
 
             &:hover {
+               background: @darkHeaderText;
                //currently no background color
             }
 
@@ -115,7 +116,7 @@ header {
                cursor: pointer;
                font-weight: bold;
                display: inline-block;
-               height: 28px;
+               padding: 22px 27px;
             }
 
             a:active {
@@ -246,7 +247,7 @@ header {
          nav {
             right: 0%;
             ul {
-               li {
+               li a{
                   padding-left: 20px;
                   padding-right: 20px;
                }
@@ -320,9 +321,7 @@ header {
 
             li {
                font-size: 24px;
-               padding: 0;
-               margin: 0;
-               padding: 13px 0;
+               padding: 12px 0;
                float: none;
                border-bottom: 1px solid #252525;
                &:first-child {
@@ -330,6 +329,8 @@ header {
                }
 
                a {
+                  padding: 0;
+                  margin: 0;
                   color: @darkHeaderText;
                }
 

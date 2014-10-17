@@ -53,7 +53,6 @@ header nav.mobileNav {
   display: none;
 }
 header .navContainer {
-  padding: 4px 0;
   margin: 0 auto;
   width: 80%;
 }
@@ -62,6 +61,7 @@ header .logo {
   top: 2px;
   width: 50px;
   height: 50px;
+  margin: 4px 0;
   display: inline-block;
   cursor: pointer;
   background: url("../images/smile-logo-sprite.png") no-repeat;
@@ -77,7 +77,6 @@ header .logo a {
 header nav {
   display: inline-block;
   float: right;
-  margin-top: 13px;
   color: #000;
   position: relative;
   right: 2%;
@@ -86,7 +85,6 @@ header nav ul {
   list-style: none;
 }
 header nav ul li {
-  padding: 5px 30px;
   float: left;
   /* a.projects:hover {
                 border-color: red;
@@ -104,13 +102,16 @@ header nav ul li {
                 border-color: green;
              }*/
 }
+header nav ul li:hover {
+  background: #40919b;
+}
 header nav ul li a,
 header nav ul li a:link,
 header nav ul li a:visited {
   cursor: pointer;
   font-weight: bold;
   display: inline-block;
-  height: 28px;
+  padding: 22px 27px;
 }
 header nav ul li a:active {
   color: #ffa500;
@@ -179,7 +180,7 @@ header nav ul li a:hover {
   header .navContainer nav {
     right: 0%;
   }
-  header .navContainer nav ul li {
+  header .navContainer nav ul li a {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -238,9 +239,7 @@ header nav ul li a:hover {
   }
   header nav.mobileNav ul li {
     font-size: 24px;
-    padding: 0;
-    margin: 0;
-    padding: 13px 0;
+    padding: 12px 0;
     float: none;
     border-bottom: 1px solid #252525;
   }
@@ -248,6 +247,8 @@ header nav ul li a:hover {
     border-top: 1px solid #252525;
   }
   header nav.mobileNav ul li a {
+    padding: 0;
+    margin: 0;
     color: #40919b;
   }
   header nav.mobileNav ul li.selected {
