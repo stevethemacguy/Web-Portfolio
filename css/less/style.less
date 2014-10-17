@@ -239,6 +239,8 @@ header {
 
 //end .dark styles
 
+///////////////////////////  Responsive styles   ///////////////////////////
+
 //iPads in portrait and landscape-----------
 @media (min-width : 768px) and (max-width : 1024px) {
    header {
@@ -256,8 +258,6 @@ header {
       }
    }
 }
-
-// iPad media query
 
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width : 320px) and (max-width : 767px) {
@@ -290,23 +290,23 @@ header {
             top: 5px;
             width: 38px;
             height: 38px;
-            background: url("../images/mobile/logo-teal-small.png") center no-repeat;
+            background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
 
             &.selected {
-               background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
+               background-position: bottom;
             }
          }
 
          .mobile-button {
             float: right;
-            margin-top: 14px;
+            margin-top: 15px;
             margin-right: 20px;
             width: 27px;
-            height: 19px;
-            background: url("../images/mobile/menu-button-teal.png") center no-repeat;
+            height: 17px;
+            background: url("../images/mobile/menu-button-sprite.png") no-repeat;
 
             &.selected {
-               background: url("../images/mobile/menu-button-white.png") center no-repeat;
+               background-position: bottom;
             }
          }
 

@@ -212,21 +212,21 @@ header nav ul li a:hover {
     top: 5px;
     width: 38px;
     height: 38px;
-    background: url("../images/mobile/logo-teal-small.png") center no-repeat;
+    background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
   }
   header nav.mobileNav .mobile-logo.selected {
-    background: url("../images/mobile/smileLogo-white-small.png") center no-repeat;
+    background-position: bottom;
   }
   header nav.mobileNav .mobile-button {
     float: right;
-    margin-top: 14px;
+    margin-top: 15px;
     margin-right: 20px;
     width: 27px;
-    height: 19px;
-    background: url("../images/mobile/menu-button-teal.png") center no-repeat;
+    height: 17px;
+    background: url("../images/mobile/menu-button-sprite.png") no-repeat;
   }
   header nav.mobileNav .mobile-button.selected {
-    background: url("../images/mobile/menu-button-white.png") center no-repeat;
+    background-position: bottom;
   }
   header nav.mobileNav ul {
     display: none;
