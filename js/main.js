@@ -24,7 +24,7 @@ $(document).ready(function()
         var sectionTop = $(this.hash).offset().top - $("header").outerHeight();
         $('html, body').animate({
             scrollTop: sectionTop
-        }, 180);
+        }, 500,"easeOutCubic");
     });
 
     //Scroll to Anchor (Mobile)
@@ -37,7 +37,7 @@ $(document).ready(function()
         var sectionTop = $(anchor).offset().top - $("header").outerHeight();
         $('html, body').animate({
             scrollTop: sectionTop
-        }, 180);
+        }, 500);
     });
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
@@ -58,5 +58,11 @@ $(document).ready(function()
         else {
             $(this).find(".mobileNav ul").slideUp("fast");
         }
+    });
+
+    //Enable parallax effects
+    $.stellar({
+        horizontalScrolling: false,
+        verticalOffset: 0
     });
 });

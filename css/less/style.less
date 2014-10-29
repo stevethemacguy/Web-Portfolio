@@ -51,6 +51,95 @@ a.toggleTheme:hover {
    cursor: pointer;
 }
 
+//Parallax section
+section
+{
+   height: 450px;
+   width: 100%;
+   background: url("11.jpg") no-repeat;
+   position: relative;
+   overflow: hidden;
+   background-attachment: fixed; /*not supported by mobile?*/
+}
+
+.inner
+{
+   width: 100%;
+   position: relative;
+   top: 200px; /*delay before bringing up other elements*/
+}
+
+.first, .second, .jss, .fourth, .five, .six, .seven, .theCSS, .eight
+{
+   position: absolute;
+   width: 50px;
+   height: 50px;
+   top: 0;
+}
+
+.first
+{
+   top: 250px;
+   left: 19%;
+   background: purple;
+}
+
+.theCSS
+{
+   top: 250px;
+   left: 45%;
+   background: red;
+}
+
+.jss
+{
+   top: 250px; /*The final resting position*/
+   left: 70%;
+   background: teal;
+}
+
+.second
+{
+   top: 30px;
+   left: 350px;
+   background: blue;
+}
+
+
+.fourth{
+   top: 200px;
+   left: 280px;
+   background: green;
+}
+
+.five{
+   top: 170px;
+   left: 560px;
+   background: pink;
+}
+
+.six
+{
+   top: 100px;
+   left: 860px;
+   background: red;
+}
+
+.eight
+{
+   top: 220px; /*The final resting position*/
+   left: 650px;
+   background: darkred;
+}
+
+.seven
+{
+   top: 200px; /*The final resting position*/
+   left: 70px;
+   background: darkred;
+}
+//END Parallax
+
 header {
    background: #fff;
    height: 62px;
@@ -154,9 +243,10 @@ header {
 //end header
 
 .mainImage {
+   padding-top: 61px; //Move below the header
    width: 100%;
-   height: 445px;
-   background: url("../images/searching2.jpg") no-repeat center;
+   height: 700px;
+   background: url("../images/searching.jpg") no-repeat center;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
