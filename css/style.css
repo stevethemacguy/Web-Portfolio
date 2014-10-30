@@ -39,14 +39,13 @@ a.toggleTheme:hover {
   color: #ffa500;
   cursor: pointer;
 }
-section {
+section#test {
+  display: block;
   height: 450px;
   width: 100%;
   background: url("11.jpg") no-repeat;
   position: relative;
   overflow: hidden;
-  background-attachment: fixed;
-  /*not supported by mobile?*/
 }
 .inner {
   width: 100%;
@@ -199,15 +198,16 @@ header nav ul li a:hover {
   color: #ffa500;
 }
 .mainImage {
-  padding-top: 61px;
   width: 100%;
-  height: 700px;
+  height: 740px;
   background: url("../images/searching.jpg") no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   border-bottom: 1px solid #252525;
+  background-attachment: fixed;
+  /*not supported by mobile*/
 }
 .main #projects {
   background: #494180;
@@ -266,8 +266,12 @@ header nav ul li a:hover {
 }
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
+  section#test {
+    display: none;
+  }
   .mainImage {
-    padding-top: 48px;
+    background-attachment: scroll;
+    /*Fixed is not supported by mobile*/
   }
   header {
     height: 48px;
