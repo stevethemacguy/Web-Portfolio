@@ -41,9 +41,8 @@ a.toggleTheme:hover {
 }
 section#test {
   display: block;
-  height: 450px;
+  height: 650px;
   width: 100%;
-  background: url("11.jpg") no-repeat;
   position: relative;
   overflow: hidden;
 }
@@ -53,37 +52,42 @@ section#test {
   top: 200px;
   /*delay before bringing up other elements*/
 }
-.first,
-.second,
-.jss,
+.htmlLogo,
+.jqueryLogo,
+.jsLogo,
 .fourth,
 .five,
 .six,
 .seven,
-.theCSS,
+.cssLogo,
 .eight {
   position: absolute;
-  width: 50px;
-  height: 50px;
   top: 0;
 }
-.first {
+.htmlLogo {
+  width: 154px;
+  height: 154px;
   top: 250px;
   left: 19%;
-  background: purple;
+  background: url("../images/tech/htmlLogo-white.png") no-repeat;
 }
-.theCSS {
+.cssLogo {
+  width: 110px;
+  height: 154px;
   top: 250px;
   left: 45%;
-  background: red;
+  background: url("../images/tech/cssLogo-white.png") no-repeat;
 }
-.jss {
-  top: 250px;
+.jsLogo {
+  top: 245px;
   /*The final resting position*/
   left: 70%;
+  width: 120px;
+  height: 167px;
   background: teal;
+  background: url("../images/tech/js-white.png") no-repeat;
 }
-.second {
+.jqueryLogo {
   top: 30px;
   left: 350px;
   background: blue;
