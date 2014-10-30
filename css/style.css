@@ -266,6 +266,9 @@ header nav ul li a:hover {
 }
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
+  .mainImage {
+    padding-top: 48px;
+  }
   header {
     height: 48px;
     opacity: .91;
