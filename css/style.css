@@ -272,6 +272,7 @@ header nav ul li a:hover {
   .mainImage {
     background-attachment: scroll;
     /*Fixed is not supported by mobile*/
+    height: 500px;
   }
   header {
     height: 48px;
