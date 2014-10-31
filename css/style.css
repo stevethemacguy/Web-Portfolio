@@ -137,7 +137,7 @@ header nav ul li a:hover {
   margin: 0 auto;
   border: 1px solid red;
 }
-section#test {
+#parallax {
   display: block;
   height: 650px;
   width: 100%;
@@ -145,14 +145,17 @@ section#test {
   overflow: hidden;
 }
 .htmlLogo,
+.cssLogo,
 .jqueryLogo,
 .jsLogo,
-.fourth,
-.five,
-.six,
-.seven,
-.cssLogo,
-.eight {
+.xamarinLogo,
+.lessLogo,
+.jiraLogo,
+.javaLogo,
+.sassLogo,
+.phpLogo,
+.angularLogo,
+.photoshopLogo {
   position: absolute;
   top: 0;
 }
@@ -163,6 +166,7 @@ section#test {
   left: 22%;
   margin-left: -55px;
   background: url("../images/tech/htmlLogo-white.png") no-repeat;
+  z-index: 5;
 }
 .cssLogo {
   width: 110px;
@@ -171,6 +175,7 @@ section#test {
   left: 50%;
   margin-left: -55px;
   background: url("../images/tech/css-white.png") no-repeat;
+  z-index: 5;
 }
 .jsLogo {
   top: 248px;
@@ -180,26 +185,63 @@ section#test {
   height: 155px;
   margin-left: -55px;
   background: url("../images/tech/js-white.png") no-repeat;
+  z-index: 5;
 }
 .jqueryLogo {
   top: 30px;
-  left: 350px;
-  background: blue;
+  left: 321px;
+  width: 115px;
+  height: 123px;
+  background: url("../images/tech/jquery.png") no-repeat;
 }
-.fourth {
+.jiraLogo {
+  top: 30px;
+  left: 321px;
+  width: 120px;
+  height: 54px;
+  background: url("../images/tech/jira.png") no-repeat;
+}
+.xamarinLogo {
   top: 200px;
   left: 280px;
-  background: green;
+  width: 280px;
+  height: 75px;
+  background: url("../images/tech/xamarin.png") no-repeat;
 }
-.five {
+.phpLogo {
+  top: 200px;
+  left: 280px;
+  width: 144px;
+  height: 76px;
+  background: url("../images/tech/php.png") no-repeat;
+}
+.photoshopLogo {
+  top: 200px;
+  left: 280px;
+  width: 88px;
+  height: 86px;
+  background: url("../images/tech/photoshop.png") no-repeat;
+}
+.angularLogo {
+  top: 200px;
+  left: 480px;
+  width: 89px;
+  height: 93px;
+  background: url("../images/tech/angular.png") no-repeat;
+}
+.lessLogo {
   top: 170px;
   left: 560px;
-  background: pink;
+  width: 120px;
+  height: 51px;
+  background: url("../images/tech/less.png") no-repeat;
 }
-.six {
+.sassLogo {
   top: 100px;
   left: 860px;
-  background: red;
+  width: 108px;
+  height: 81px;
+  background: url("../images/tech/sass.png") no-repeat;
 }
 .eight {
   top: 220px;
@@ -207,11 +249,13 @@ section#test {
   left: 650px;
   background: darkred;
 }
-.seven {
+.javaLogo {
   top: 200px;
   /*The final resting position*/
-  left: 70px;
-  background: darkred;
+  left: 20px;
+  width: 94px;
+  height: 171px;
+  background: url("../images/tech/java.png") no-repeat;
 }
 #projects {
   background: #494180;
@@ -259,7 +303,6 @@ section#test {
 @media (min-width: 768px) and (max-width: 1024px) {
   header .navContainer {
     width: 88%;
-    outline: 1px solid red;
   }
   header .navContainer nav {
     right: 0%;
@@ -277,7 +320,7 @@ section#test {
   .contentContainer {
     width: 100%;
   }
-  section#test {
+  #parallax {
     display: none;
   }
   .mainImage {
