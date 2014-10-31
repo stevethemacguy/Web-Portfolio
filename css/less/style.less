@@ -171,22 +171,30 @@ header {
 {
    width: @contentWidth;
    margin: 0 auto;
-   border: 1px solid red;
 }
 
 //Parallax section
 #parallax {
    display: block;
-   height: 650px;
-   width: 100%;
+   height: 850px;
+   width: 95%;
    position: relative;
    overflow: hidden;
    //background-attachment: fixed; /*not supported by mobile*/
 }
 
+//For all "parallax" logos:
+//    top: Determines the final "resting" position (i.e. how far the element needs to travel from bottom to top)
+//    data-stellar-ratio: How quickly the element should move to it's final position when the page scrolls
+
 .htmlLogo, .cssLogo, .jqueryLogo, .jsLogo, .xamarinLogo, .lessLogo, .jiraLogo, .javaLogo, .sassLogo, .phpLogo, .angularLogo, .photoshopLogo {
    position: absolute;
-   top: 0;
+   z-index: 1; //Nothing should come in front of the html, css, or jq logos.
+}
+
+.htmlLogo, .cssLogo, .jsLogo
+{
+   z-index: 5;
 }
 
 .htmlLogo {
@@ -196,7 +204,6 @@ header {
    left: 22%;
    margin-left: -55px;
    background: url("../images/tech/htmlLogo-white.png") no-repeat;
-   z-index: 5;
 }
 
 .cssLogo {
@@ -206,97 +213,89 @@ header {
    left: 50%; //Center the middle logo (see negative margin below)
    margin-left: -55px; //Half of width is 55px
    background: url("../images/tech/css-white.png") no-repeat;
-   z-index: 5;
 }
 
 .jsLogo {
    top: 248px; /*The final resting position*/
-   left: 78%;
+   left: 82%;
    width: 110px;
    height: 155px;
    margin-left: -55px;
    background: url("../images/tech/js-white.png") no-repeat;
-   z-index: 5;
+}
+
+.javaLogo {
+   top: 550px;
+   left: 24%;
+   width: 94px;
+   height: 171px;
+   background: url("../images/tech/java.png") no-repeat;
 }
 
 .jqueryLogo {
-   top: 30px;
-   left: 321px;
+   top: 350px;
+   left: 31%;
    width: 115px;
    height: 123px;
    background: url("../images/tech/jquery.png") no-repeat;
 }
 
-.jiraLogo
-{
-   top: 30px;
-   left: 321px;
-   width: 120px;
-   height: 54px;
-   background: url("../images/tech/jira.png") no-repeat;
-}
-
-
-.xamarinLogo {
-   top: 200px;
-   left: 280px;
-   width: 280px;
-   height: 75px;
-   background: url("../images/tech/xamarin.png") no-repeat;
-}
-
-.phpLogo {
-   top: 200px;
-   left: 280px;
-   width: 144px;
-   height: 76px;
-   background: url("../images/tech/php.png") no-repeat;
-}
-
-.photoshopLogo {
-   top: 200px;
-   left: 280px;
-   width: 88px;
-   height: 86px;
-   background: url("../images/tech/photoshop.png") no-repeat;
-}
-
-.angularLogo {
-   top: 200px;
-   left: 480px;
-   width: 89px;
-   height: 93px;
-   background: url("../images/tech/angular.png") no-repeat;
-}
-
 .lessLogo {
    top: 170px;
-   left: 560px;
+   left: 60%;
    width: 120px;
    height: 51px;
    background: url("../images/tech/less.png") no-repeat;
 }
 
 .sassLogo {
-   top: 100px;
-   left: 860px;
+   top: 300px;
+   left: 46%;
    width: 108px;
    height: 81px;
    background: url("../images/tech/sass.png") no-repeat;
 }
 
-.eight {
-   top: 220px; /*The final resting position*/
-   left: 650px;
-   background: darkred;
+.jiraLogo
+{
+   top: 300px;
+   left: 86%;
+   width: 126px;
+   height: 49px;
+   background: url("../images/tech/jira-light.png") no-repeat;
 }
 
-.javaLogo {
-   top: 200px; /*The final resting position*/
-   left: 20px;
-   width: 94px;
-   height: 171px;
-   background: url("../images/tech/java.png") no-repeat;
+
+.xamarinLogo {
+   top: 650px;
+   left: 40%;
+   width: 280px;
+   height: 75px;
+   background: url("../images/tech/xamarin.png") no-repeat;
+}
+
+.phpLogo {
+   top: 400px; /*The final resting position*/
+   left: 4%;
+   width: 144px;
+   height: 76px;
+   background: url("../images/tech/php.png") no-repeat;
+}
+
+.photoshopLogo {
+   top: 300px;
+   left: 63%;
+   width: 88px;
+   height: 86px;
+   background: url("../images/tech/photoshop.png") no-repeat;
+}
+
+.angularLogo {
+   top: 300px;
+   left: 88%;
+   width: 89px;
+   height: 93px;
+   background: url("../images/tech/angular.png") no-repeat;
 }
 
 //END Parallax
