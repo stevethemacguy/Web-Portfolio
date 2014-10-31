@@ -8,6 +8,8 @@ Re-usable Colors
 
 @lightHeaderHover: orange;
 @darkHeaderHover: #FFF;
+@contentWidth: 80%; //All content is centered in the middle of the page. This width determines the left/right "margins" of all content.
+@mobileContentWidth: 88%; //responsive contentWidth
 
 /************** Fonts ***************/
 /*@font-face {
@@ -33,12 +35,12 @@ Re-usable Colors
 
 html, body {
    background: #fff;
-   font-family: Arial;
+   font-family: Arial
 }
 
 body {
    /*  height: 100%; //Needed?
-     width: 100%; //Needed?*/
+   width: 100%; //Needed?*/
    position: relative;
 }
 
@@ -50,102 +52,6 @@ a.toggleTheme:hover {
    color: @lightHeaderHover;
    cursor: pointer;
 }
-
-//Parallax section
-section#test
-{
-   display: block;
-   height: 650px;
-   width: 100%;
-   position: relative;
-   overflow: hidden;
-  //background-attachment: fixed; /*not supported by mobile*/
-}
-
-.inner
-{
-   width: 100%;
-   position: relative;
-   top: 200px; /*delay before bringing up other elements*/
-}
-
-.htmlLogo, .jqueryLogo, .jsLogo, .fourth, .five, .six, .seven, .cssLogo, .eight
-{
-   position: absolute;
-   top: 0;
-}
-
-.htmlLogo
-{
-   width: 154px;
-   height: 154px;
-   top: 250px;
-   left: 19%;
-   background: url("../images/tech/htmlLogo-white.png") no-repeat;
-}
-
-.cssLogo
-{
-   width: 110px;
-   height: 154px;
-   top: 250px;
-   left: 45%;
-   background: url("../images/tech/cssLogo-white.png") no-repeat;
-}
-
-.jsLogo
-{
-   top: 245px; /*The final resting position*/
-   left: 70%;
-   width: 120px;
-   height: 167px;
-   background: teal;
-   background: url("../images/tech/js-white.png") no-repeat;
-}
-
-.jqueryLogo
-{
-   top: 30px;
-   left: 350px;
-   background: blue;
-   //width: 144px;
-   //height: 154px;
-}
-
-
-.fourth{
-   top: 200px;
-   left: 280px;
-   background: green;
-}
-
-.five{
-   top: 170px;
-   left: 560px;
-   background: pink;
-}
-
-.six
-{
-   top: 100px;
-   left: 860px;
-   background: red;
-}
-
-.eight
-{
-   top: 220px; /*The final resting position*/
-   left: 650px;
-   background: darkred;
-}
-
-.seven
-{
-   top: 200px; /*The final resting position*/
-   left: 70px;
-   background: darkred;
-}
-//END Parallax
 
 header {
    background: #fff;
@@ -164,7 +70,7 @@ header {
    .navContainer {
       //padding: 4px 0;
       margin: 0 auto;
-      width: 80%;
+      width: @contentWidth;
       //max-width: 1150px;
    }
 
@@ -195,7 +101,7 @@ header {
       float: right;
       color: #000;
       position: relative;
-      right: 2%;
+      //right: 2%;
 
       ul {
          list-style: none;
@@ -261,26 +167,113 @@ header {
    background-attachment: fixed; /*not supported by mobile*/
 }
 
-.main {
-   #projects {
-      background: #494180;
-   }
+.contentContainer //Center all content in the middle of the page
+{
+   width: @contentWidth;
+   margin: 0 auto;
+   border: 1px solid red;
+}
 
-   #sourceCode {
-      background: #253139;
-   }
+//Parallax section
+section#test {
+   display: block;
+   height: 650px;
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+   //background-attachment: fixed; /*not supported by mobile*/
+}
 
-   #videos {
-      background: white;
-   }
+.htmlLogo, .jqueryLogo, .jsLogo, .fourth, .five, .six, .seven, .cssLogo, .eight {
+   position: absolute;
+   top: 0;
+}
 
-   #about {
-      background: blue;
-   }
+.htmlLogo {
+   width: 110px;
+   height: 155px;
+   top: 250px;
+   left: 22%;
+   margin-left: -55px;
+   background: url("../images/tech/htmlLogo-white.png") no-repeat;
+}
 
-   #contact {
-      background: orange;
-   }
+.cssLogo {
+   width: 110px;
+   height: 154px;
+   top: 250px;
+   left: 50%; //Center the middle logo (see negative margin below)
+   margin-left: -55px; //Half of width is 55px
+   background: url("../images/tech/css-white.png") no-repeat;
+}
+
+.jsLogo {
+   top: 248px; /*The final resting position*/
+   left: 78%;
+   width: 110px;
+   height: 155px;
+   margin-left: -55px;
+   background: url("../images/tech/js-white.png") no-repeat;
+}
+
+.jqueryLogo {
+   top: 30px;
+   left: 350px;
+   background: blue;
+   //width: 144px;
+   //height: 154px;
+}
+
+.fourth {
+   top: 200px;
+   left: 280px;
+   background: green;
+}
+
+.five {
+   top: 170px;
+   left: 560px;
+   background: pink;
+}
+
+.six {
+   top: 100px;
+   left: 860px;
+   background: red;
+}
+
+.eight {
+   top: 220px; /*The final resting position*/
+   left: 650px;
+   background: darkred;
+}
+
+.seven {
+   top: 200px; /*The final resting position*/
+   left: 70px;
+   background: darkred;
+}
+
+//END Parallax
+
+#projects {
+   background: #494180;
+}
+
+#sourceCode {
+   background: #253139;
+}
+
+#videos {
+   background: white;
+}
+
+#about {
+   background: blue;
+}
+
+#contact {
+   background: orange;
 }
 
 ///////////////////////////  Dark specific styles   ///////////////////////////
@@ -344,10 +337,11 @@ header {
 @media (min-width : 768px) and (max-width : 1024px) {
    header {
       .navContainer {
-         width: 88%;
+         width: @mobileContentWidth;
+         outline: 1px solid red;
          nav {
             right: 0%;
-            ul {
+            ul { //TODO: Remove. Unneccisary nesting
                li a{
                   padding-left: 20px;
                   padding-right: 20px;
@@ -356,10 +350,23 @@ header {
          }
       }
    }
+
+   .main
+   {
+      .contentContainer //Center all content in the middle of the page
+      {
+         width: @mobileContentWidth;
+      }
+   }
 }
 
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width : 320px) and (max-width : 767px) {
+
+   .contentContainer //Center all content in the middle of the page
+   {
+      width: 100%;
+   }
 
    //Hide the parallax section on mobile.
    section#test
