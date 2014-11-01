@@ -231,7 +231,7 @@ header nav ul li a:hover {
   opacity: 1;
 }
 #jiraLogo {
-  top: 600px;
+  top: 607px;
   left: -8000px;
   opacity: 0;
   width: 126px;
@@ -241,9 +241,10 @@ header nav ul li a:hover {
   -moz-transition: left .5s ease, opacity .5s linear;
   -o-transition: left .5s ease, opacity .5s linear;
   transition: left .5s ease, opacity .5s linear;
+  margin-left: -63px;
 }
 #jiraLogo.reveal {
-  left: 7%;
+  left: 11%;
   opacity: 1;
 }
 #phpLogo {
@@ -432,6 +433,23 @@ header nav ul li a:hover {
   }
   header nav.mobileNav ul li.selected {
     background: #fff;
+  }
+}
+@media (max-width: 1393px) {
+  #xamarinLogo {
+    background: url("../images/tech/xamarin-tiny.png") no-repeat;
+    width: 86px;
+    height: 76px;
+    margin-left: -43px;
+  }
+}
+@media (max-width: 1008px) {
+  #jiraLogo {
+    background: url("../images/tech/jira-tiny.png") no-repeat;
+    width: 58px;
+    height: 77px;
+    margin-left: -29px;
+    top: 592px;
   }
 }
 /* Only iPhone 4 ----------- */

@@ -75,7 +75,7 @@ $(document).ready(function()
     //Animate logos from left to right (and vice versa) as the user scrolls
     $(window).scroll(function(){
         if (hasRevealed)
-            return false;
+            return;
         var scrollpos = $(this).scrollTop();
         if (scrollpos >= 630 ) {
             flyInIcons.addClass("reveal");
