@@ -182,24 +182,26 @@ header nav ul li a:hover {
 #jsLogo {
   top: 298px;
   /*The final resting position*/
-  left: 81%;
+  left: 77%;
   width: 110px;
   height: 155px;
   margin-left: -55px;
   background: url("../images/tech/js-white.png") no-repeat;
 }
 #sassLogo {
-  top: 180px;
-  left: 33%;
+  top: 150px;
+  left: 36.5%;
   width: 108px;
   height: 81px;
+  margin-left: -54px;
   background: url("../images/tech/sass.png") no-repeat;
 }
 #lessLogo {
-  top: 200px;
-  left: 60.5%;
+  top: 170px;
+  left: 63.5%;
   width: 120px;
   height: 51px;
+  margin-left: -60px;
   background: url("../images/tech/less.png") no-repeat;
 }
 #angularLogo {
@@ -217,15 +219,15 @@ header nav ul li a:hover {
   opacity: 0;
   width: 260px;
   height: 66px;
-  background: url("../images/tech/xamarin-small2.png") no-repeat;
-  margin-left: -1px;
+  background: url("../images/tech/xamarin-small.png") no-repeat;
+  margin-left: -133px;
   -webkit-transition: left .5s ease, opacity .5s linear;
   -moz-transition: left .5s ease, opacity .5s linear;
   -o-transition: left .5s ease, opacity .5s linear;
   transition: left .5s ease, opacity .5s linear;
 }
 #xamarinLogo.reveal {
-  left: 27%;
+  left: 36.5%;
   opacity: 1;
 }
 #jiraLogo {
@@ -250,6 +252,7 @@ header nav ul li a:hover {
   opacity: 0;
   width: 144px;
   height: 76px;
+  margin-left: -72px;
   background: url("../images/tech/php.png") no-repeat;
   -webkit-transition: left .5s ease, opacity .5s linear;
   -moz-transition: left .5s ease, opacity .5s linear;
@@ -257,7 +260,7 @@ header nav ul li a:hover {
   transition: left .5s ease, opacity .5s linear;
 }
 #phpLogo.reveal {
-  left: 60%;
+  left: 63.5%;
   opacity: 1;
 }
 #photoshopLogo {
@@ -273,21 +276,23 @@ header nav ul li a:hover {
   transition: left .5s ease, opacity .5s linear;
 }
 #photoshopLogo.reveal {
-  left: 89%;
+  left: 86%;
   opacity: 1;
 }
 #jqueryLogo {
   top: 902px;
-  left: 32%;
+  left: 36.5%;
   width: 121px;
   height: 137px;
+  margin-left: -61px;
   background: url("../images/tech/jquery.png") no-repeat;
 }
 #javaLogo {
   top: 874px;
-  left: 62%;
+  left: 63.5%;
   width: 94px;
   height: 171px;
+  margin-left: -47px;
   background: url("../images/tech/java.png") no-repeat;
 }
 #projects {
