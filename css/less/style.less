@@ -187,17 +187,17 @@ header {
 //    top: Determines the final "resting" position (i.e. how far the element needs to travel from bottom to top)
 //    data-stellar-ratio: How quickly the element should move to it's final position when the page scrolls
 
-.htmlLogo, .cssLogo, .jqueryLogo, .jsLogo, .xamarinLogo, .lessLogo, .jiraLogo, .javaLogo, .sassLogo, .phpLogo, .angularLogo, .photoshopLogo {
+#htmlLogo, #cssLogo, #jqueryLogo, #jsLogo, #xamarinLogo, #lessLogo, #jiraLogo, #javaLogo, #sassLogo, #phpLogo, #angularLogo, #photoshopLogo {
    position: absolute;
    z-index: 3; //Nothing should come in front of the html, css, or jq logos.
 }
 
-.htmlLogo, .cssLogo, .jsLogo
+#htmlLogo, #cssLogo, #jsLogo
 {
    z-index: 5;
 }
 
-.htmlLogo {
+#htmlLogo {
    width: 110px;
    height: 155px;
    top: 300px;
@@ -206,7 +206,7 @@ header {
    background: url("../images/tech/htmlLogo-white.png") no-repeat;
 }
 
-.cssLogo {
+#cssLogo {
    width: 110px;
    height: 154px;
    top: 300px;
@@ -215,7 +215,7 @@ header {
    background: url("../images/tech/css-white.png") no-repeat;
 }
 
-.jsLogo {
+#jsLogo {
    top: 298px; /*The final resting position*/
    left: 81%;
    width: 110px;
@@ -224,75 +224,115 @@ header {
    background: url("../images/tech/js-white.png") no-repeat;
 }
 
-.sassLogo {
-   top: 230px;
+#sassLogo {
+   top: 180px;
    left: 33%;;
    width: 108px;
    height: 81px;
    background: url("../images/tech/sass.png") no-repeat;
 }
 
-.lessLogo {
-   top: 250px;
+#lessLogo {
+   top: 200px;
    left: 60.5%;
    width: 120px;
    height: 51px;
    background: url("../images/tech/less.png") no-repeat;
 }
 
-.angularLogo {
+#angularLogo {
    top: 800px;
-   left: 46.5%;
+   left: 50%;
    width: 89px;
    height: 93px;
+   margin-left: -45px;
    background: url("../images/tech/angular.png") no-repeat;
    z-index: 2;
 }
 
-.phpLogo {
-   top: 645px; /*The final resting position*/
-   left: 60%;
-   width: 144px;
-   height: 76px;
-   background: url("../images/tech/php.png") no-repeat;
-}
-
-.xamarinLogo {
-   top: 645px;
-   left: 27%;
+#xamarinLogo {
+   top: 600px;
+   left: -8000px;
+   opacity: 0;
    width: 260px;
    height: 66px;
    background: url("../images/tech/xamarin-small2.png") no-repeat;
    margin-left: -1px;
+   -webkit-transition: left .5s ease, opacity .5s linear;
+   -moz-transition: left .5s ease, opacity .5s linear;
+   -o-transition: left .5s ease, opacity .5s linear;
+   transition: left .5s ease, opacity .5s linear;
+
+   &.reveal{
+      left: 27%;
+      opacity: 1;
+   }
 }
 
-.jiraLogo
-{
-   top: 650px;
-   left: 7%;
+#jiraLogo {
+   top: 600px;
+   left: -8000px;
+   opacity: 0;
    width: 126px;
    height: 49px;
    background: url("../images/tech/jira-light.png") no-repeat;
+   -webkit-transition: left .5s ease, opacity .5s linear;
+   -moz-transition: left .5s ease, opacity .5s linear;
+   -o-transition: left .5s ease, opacity .5s linear;
+   transition: left .5s ease, opacity .5s linear;
+
+   &.reveal {
+      left: 7%;
+      opacity: 1;
+   }
 }
 
-.photoshopLogo {
-   top: 644px;
-   left: 89%;
+#phpLogo {
+   top: 599px;
+   left: 8000px;
+   opacity: 0;
+   width: 144px;
+   height: 76px;
+   background: url("../images/tech/php.png") no-repeat;
+   -webkit-transition: left .5s ease, opacity .5s linear;
+   -moz-transition: left .5s ease, opacity .5s linear;
+   -o-transition: left .5s ease, opacity .5s linear;
+   transition: left .5s ease, opacity .5s linear;
+
+   &.reveal{
+      left: 60%;
+      opacity: 1;
+   }
+}
+
+#photoshopLogo {
+   top: 597px;
+   left: 8000px;
+   opacity: 0;
    width: 110px;
    height: 108px;
    background: url("../images/tech/photoshop.png") no-repeat;
+   -webkit-transition: left .5s ease, opacity .5s linear;
+   -moz-transition: left .5s ease, opacity .5s linear;
+   -o-transition: left .5s ease, opacity .5s linear;
+   transition: left .5s ease, opacity .5s linear;
+
+   &.reveal{
+      left: 89%;
+      opacity: 1;
+   }
 }
 
-.jqueryLogo {
-   top: 822px;
+#jqueryLogo {
+   top: 902px;
    left: 32%;
    width: 121px;
    height: 137px;
    background: url("../images/tech/jquery.png") no-repeat;
 }
 
-.javaLogo {
-   top: 800px;
+#javaLogo {
+   top: 874px;
    left: 62%;
    width: 94px;
    height: 171px;
