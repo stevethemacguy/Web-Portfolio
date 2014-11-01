@@ -231,7 +231,7 @@ header nav ul li a:hover {
   opacity: 1;
 }
 #jiraLogo {
-  top: 607px;
+  top: 605px;
   left: -8000px;
   opacity: 0;
   width: 126px;
@@ -268,8 +268,8 @@ header nav ul li a:hover {
   top: 597px;
   left: 8000px;
   opacity: 0;
-  width: 110px;
-  height: 108px;
+  width: 88px;
+  height: 86px;
   background: url("../images/tech/photoshop.png") no-repeat;
   -webkit-transition: left .5s ease, opacity .5s linear;
   -moz-transition: left .5s ease, opacity .5s linear;
@@ -441,6 +441,10 @@ header nav ul li a:hover {
     width: 86px;
     height: 76px;
     margin-left: -43px;
+    margin-top: -2px;
+  }
+  #photoshopLogo {
+    maring-top: -2px;
   }
 }
 @media (max-width: 1008px) {
@@ -449,7 +453,7 @@ header nav ul li a:hover {
     width: 58px;
     height: 77px;
     margin-left: -29px;
-    top: 592px;
+    margin-top: -8px;
   }
 }
 /* Only iPhone 4 ----------- */
