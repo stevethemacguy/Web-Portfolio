@@ -24,7 +24,7 @@ $(document).ready(function()
         var sectionTop = $(this.hash).offset().top - $("header").outerHeight();
         $('html, body').animate({
             scrollTop: sectionTop
-        }, 500,"easeOutCubic");
+        }, 600,"easeOutCubic");
     });
 
     //Scroll to Anchor (Mobile)
@@ -37,7 +37,7 @@ $(document).ready(function()
         var sectionTop = $(anchor).offset().top - $("header").outerHeight();
         $('html, body').animate({
             scrollTop: sectionTop
-        }, 500);
+        }, 400);
     });
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
@@ -64,5 +64,21 @@ $(document).ready(function()
     $.stellar({
         horizontalScrolling: false,
         verticalOffset: 0
+    });
+
+    //These four logos animate at the same time, so cache the jquery objects
+    var flyInIcons = $("#jiraLogo, #xamarinLogo, #phpLogo, #photoshopLogo");
+
+    //Flag is true when animated logos are now visible
+    var hasRevealed = false;
+
+    //Animate logos from left to right (and vice versa) as the user scrolls
+    $(window).scroll(function(){
+        if (hasRevealed)
+            return;
+        var scrollpos = $(this).scrollTop();
+        if (scrollpos >= 630 ) {
+            flyInIcons.addClass("reveal");
+        }
     });
 });

@@ -187,17 +187,20 @@ header {
 //    top: Determines the final "resting" position (i.e. how far the element needs to travel from bottom to top)
 //    data-stellar-ratio: How quickly the element should move to it's final position when the page scrolls
 
-.htmlLogo, .cssLogo, .jqueryLogo, .jsLogo, .xamarinLogo, .lessLogo, .jiraLogo, .javaLogo, .sassLogo, .phpLogo, .angularLogo, .photoshopLogo {
+#htmlLogo, #cssLogo, #jqueryLogo, #jsLogo, #xamarinLogo, #lessLogo, #jiraLogo, #javaLogo, #sassLogo, #phpLogo, #angularLogo, #photoshopLogo {
    position: absolute;
    z-index: 3; //Nothing should come in front of the html, css, or jq logos.
 }
 
-.htmlLogo, .cssLogo, .jsLogo
+#htmlLogo, #cssLogo, #jsLogo
 {
    z-index: 5;
 }
 
-.htmlLogo {
+//All logos are positioned at percentages and "centered" using negative margins (half the element's width)
+//This ensures the elements stay in the correct position when the browser is resized.
+
+#htmlLogo {
    width: 110px;
    height: 155px;
    top: 300px;
@@ -206,7 +209,7 @@ header {
    background: url("../images/tech/htmlLogo-white.png") no-repeat;
 }
 
-.cssLogo {
+#cssLogo {
    width: 110px;
    height: 154px;
    top: 300px;
@@ -215,88 +218,133 @@ header {
    background: url("../images/tech/css-white.png") no-repeat;
 }
 
-.jsLogo {
+#jsLogo {
    top: 298px; /*The final resting position*/
-   left: 81%;
+   left: 77%;
    width: 110px;
    height: 155px;
    margin-left: -55px;
    background: url("../images/tech/js-white.png") no-repeat;
 }
 
-.jqueryLogo {
-   top: 450px;
-   left: 32%;
-   width: 121px;
-   height: 137px;
-   background: url("../images/tech/jquery.png") no-repeat;
-}
-
-.sassLogo {
-   top: 400px;
-   left: 63%;
+#sassLogo {
+   top: 150px;
+   left: 36.5%;
    width: 108px;
    height: 81px;
+   margin-left: -54px;
    background: url("../images/tech/sass.png") no-repeat;
 }
 
-.lessLogo {
-   top: 450px;
-   left: 88%;
+#lessLogo {
+   top: 170px;
+   left: 63.5%;
    width: 120px;
    height: 51px;
+   margin-left: -60px;
    background: url("../images/tech/less.png") no-repeat;
 }
 
-.angularLogo {
+#angularLogo {
    top: 800px;
-   left: 46.5%;
+   left: 50%;
    width: 89px;
    height: 93px;
+   margin-left: -45px;
    background: url("../images/tech/angular.png") no-repeat;
    z-index: 2;
 }
 
+#xamarinLogo {
+   top: 600px;
+   left: -8000px;
+   opacity: 0;
+   width: 260px;
+   height: 66px;
+   background: url("../images/tech/xamarin-small.png") no-repeat;
+   margin-left: -133px;
+   -webkit-transition: left .5s ease, opacity .5s linear;
+   -moz-transition: left .5s ease, opacity .5s linear;
+   -o-transition: left .5s ease, opacity .5s linear;
+   transition: left .5s ease, opacity .5s linear;
 
-.photoshopLogo {
-   top: 400px;
-   left: 62%;
-   width: 110px;
-   height: 108px;
-   background: url("../images/tech/photoshop.png") no-repeat;
+   &.reveal{
+      left: 36.5%;
+      opacity: 1;
+   }
 }
 
-
-.jiraLogo
-{
-   top: 800px;
-   left: 87%;
+#jiraLogo {
+   top: 607px;
+   left: -8000px;
+   opacity: 0;
    width: 126px;
    height: 49px;
    background: url("../images/tech/jira-light.png") no-repeat;
+   -webkit-transition: left .5s ease, opacity .5s linear;
+   -moz-transition: left .5s ease, opacity .5s linear;
+   -o-transition: left .5s ease, opacity .5s linear;
+   transition: left .5s ease, opacity .5s linear;
+   margin-left: -63px;
+
+   &.reveal {
+      left: 11%;
+      opacity: 1;
+   }
 }
 
-.phpLogo {
-   top: 800px; /*The final resting position*/
-   left: 10%;
+#phpLogo {
+   top: 599px;
+   left: 8000px;
+   opacity: 0;
    width: 144px;
    height: 76px;
+   margin-left: -72px;
    background: url("../images/tech/php.png") no-repeat;
+   -webkit-transition: left .5s ease, opacity .5s linear;
+   -moz-transition: left .5s ease, opacity .5s linear;
+   -o-transition: left .5s ease, opacity .5s linear;
+   transition: left .5s ease, opacity .5s linear;
+
+   &.reveal{
+      left: 63.5%;
+      opacity: 1;
+   }
 }
 
-.xamarinLogo {
-   top: 800px;
-   left: 50%;
-   width: 280px;
-   height: 75px;
-   background: url("../images/tech/xamarin.png") no-repeat;
+#photoshopLogo {
+   top: 597px;
+   left: 8000px;
+   opacity: 0;
+   width: 110px;
+   height: 108px;
+   background: url("../images/tech/photoshop.png") no-repeat;
+   -webkit-transition: left .5s ease, opacity .5s linear;
+   -moz-transition: left .5s ease, opacity .5s linear;
+   -o-transition: left .5s ease, opacity .5s linear;
+   transition: left .5s ease, opacity .5s linear;
+
+   &.reveal{
+      left: 86%;
+      opacity: 1;
+   }
 }
 
-.javaLogo {
-   top: 700px;
-   left: 62%;
+#jqueryLogo {
+   top: 902px;
+   left: 36.5%;
+   width: 121px;
+   height: 137px;
+   margin-left: -61px;
+   background: url("../images/tech/jquery.png") no-repeat;
+}
+
+#javaLogo {
+   top: 874px;
+   left: 63.5%;
    width: 94px;
    height: 171px;
+   margin-left: -47px;
    background: url("../images/tech/java.png") no-repeat;
 }
 //END Parallax
@@ -503,6 +551,26 @@ header {
             }
          }
       }
+   }
+}
+
+/////////////// Tech Logo Adjustments (i.e. Remove logo text when the screen is too small).
+@media (max-width : 1393px) {
+   #xamarinLogo {
+      background: url("../images/tech/xamarin-tiny.png") no-repeat;
+      width: 86px;
+      height: 76px;
+      margin-left: -43px;
+   }
+}
+
+@media (max-width : 1008px) {
+   #jiraLogo {
+      background: url("../images/tech/jira-tiny.png") no-repeat;
+      width: 58px;
+      height: 77px;
+      margin-left: -29px;
+      top: 592px;
    }
 }
 
