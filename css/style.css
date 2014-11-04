@@ -458,20 +458,10 @@ header nav ul li a:hover {
     width: 80px;
     height: 71px;
     margin-left: -40px;
-    margin-top: -2px;
+    margin-top: -4px;
   }
   #photoshopLogo {
     margin-top: -2px;
-  }
-}
-@media (max-width: 1008px) {
-  #jiraLogo {
-    background: url("../images/tech/jira-tiny.png") no-repeat;
-    width: 58px;
-    height: 77px;
-    margin-left: -29px;
-    margin-top: -14px;
-    left: 91%;
   }
 }
 @media (max-width: 1051px) {
@@ -480,6 +470,20 @@ header nav ul li a:hover {
     width: 68px;
     height: 68px;
     margin-left: -34px;
+  }
+  #jiraLogo {
+    background: url("../images/tech/jira-tiny.png") no-repeat;
+    width: 58px;
+    height: 77px;
+    margin-left: -29px;
+    margin-top: -14px;
+  }
+  #phpLogo {
+    background: url("../images/tech/php-text.png") no-repeat;
+    width: 100px;
+    height: 48px;
+    margin-left: -50px;
+    margin-top: 14px;
   }
 }
 /* Only iPhone 4 ----------- */
