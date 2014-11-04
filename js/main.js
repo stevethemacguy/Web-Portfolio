@@ -67,7 +67,7 @@ $(document).ready(function()
     });
 
     //These four logos animate at the same time, so cache the jquery objects
-    var flyInIcons = $("#jiraLogo, #xamarinLogo, #phpLogo, #photoshopLogo");
+    var flyInIcons = $("#jiraLogo, #xamarinLogo, #phpLogo, #gitLogo");
 
     //Flag is true when animated logos are now visible
     var hasRevealed = false;
