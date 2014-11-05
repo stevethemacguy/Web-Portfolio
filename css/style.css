@@ -402,7 +402,7 @@ header nav ul li a:hover {
     right: 0;
     height: 48px;
   }
-  header nav.mobileNav .mobile-logo {
+  header nav.mobileNav #mobile-logo {
     display: inline-block;
     position: fixed;
     left: 5px;
@@ -411,7 +411,7 @@ header nav ul li a:hover {
     height: 38px;
     background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
   }
-  header nav.mobileNav .mobile-logo.selected {
+  header nav.mobileNav #mobile-logo.selected {
     background-position: bottom;
   }
   header nav.mobileNav .mobile-button {
