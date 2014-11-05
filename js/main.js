@@ -1,5 +1,18 @@
-$(document).ready(function() 
+$(document).ready(function()
 {
+    //Resizes the main background image to fill the viewable area of the window.
+    function resizeBackground()
+    {
+        var viewportHeight = $(window).height();
+        //Optionally account for the header height to add a border to the bottom of the screen.
+        /*var headerHeight = $('header').outerHeight(false);
+        viewportHeight = viewportHeight - headerHeight; //The current viewable area of the viewport window.*/
+        $("#mainImage").css('height', viewportHeight);
+    }
+
+    //Resize the background when the page first loads
+    resizeBackground();
+
     var body = $("body");
     var mobileLogo = $(".mobile-logo");
     $(".toggleTheme").click(function()
@@ -42,11 +55,11 @@ $(document).ready(function()
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
     //This code only affects the mobile version of the site.
-    $("header").on("tap", function()
-    {
+    $("header").on("tap", function() {
         //Exit if not mobile
-        if($(window).width() >= 767)
+        if ($(window).width() >= 767) {
             return;
+        }
         $(this).removeClass("selected");
         mobileLogo.toggleClass("selected");
         $(".mobile-button").toggleClass("selected");
@@ -80,5 +93,10 @@ $(document).ready(function()
         if (scrollpos >= 630 ) {
             flyInIcons.addClass("reveal");
         }
+    });
+
+    //Re-size the background when the browser is resized.
+    $(window).resize(function() {
+        resizeBackground();
     });
 });
