@@ -86,18 +86,14 @@ $(document).ready(function() {
     //These four logos animate at the same time, so cache the jquery objects
     var flyInIcons = $("#jiraLogo, #xamarinLogo, #phpLogo, #gitLogo");
 
-    //Flag is true when animated logos are now visible
-    var hasRevealed = false;
-
-    //Animate logos from left to right (and vice versa) as the user scrolls
-    $(window).scroll(function() {
-        if (hasRevealed) {
-            return;
+    //When the any "fly-in" logo is in view, show all fly-in icons
+    $("#xamarinLogo").on('inview', function(event, offscreen) {
+        if (offscreen) {
+            //no longer visible
         }
-        var scrollpos = $(this).scrollTop();
-        if (scrollpos >= 630) {
+        else {
             flyInIcons.addClass("reveal");
+            $(this).unbind('inview'); //Elements are now visible, so remove the binding
         }
     });
-
 });
