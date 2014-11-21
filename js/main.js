@@ -62,15 +62,15 @@ $(document).ready(function() {
     });
     $("#project2Link").click(function()
     {
-        $(".sliderContainer").css("transform","translateX(-1000px)");
+        $(".sliderContainer").css("transform","translateX(-1250px)");
     });
     $("#project3Link").click(function()
     {
-        $(".sliderContainer").css("transform","translateX(-2000px");
+        $(".sliderContainer").css("transform","translateX(-2500px");
     });
     $("#project4Link").click(function()
     {
-        $(".sliderContainer").css("transform","translateX(-3000px");
+        $(".sliderContainer").css("transform","translateX(-3750px");
     });
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////

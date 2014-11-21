@@ -316,25 +316,34 @@ header nav ul li a:hover {
 #projects {
   width: 100%;
   background: #494180;
+}
+#projects .contentContainer {
+  width: 80%;
+  margin: 0 auto;
+  outline: 1px solid red;
   overflow: hidden;
 }
 .sliderContainer {
   height: 600px;
   transform: translateX(0);
   transition: all 0.7s ease 0s;
-  width: 4000px;
-  overflow: hidden;
+  width: 400%;
 }
 .sliderContainer .project {
+  width: 25%;
   height: 600px;
-  width: 1000px;
+  color: red;
   float: left;
 }
+.sliderContainer .project p {
+  word-break: normal;
+  width: 90%;
+}
 #project1Link {
-  background: red;
+  background: grey;
 }
 #project2Link {
-  background: teal;
+  background: white;
 }
 #project3Link {
   background: green;
@@ -349,10 +358,10 @@ header nav ul li a:hover {
   cursor: pointer;
 }
 #project1 {
-  background: red;
+  background: grey;
 }
 #project2 {
-  background: teal;
+  background: white;
 }
 #project3 {
   background: green;

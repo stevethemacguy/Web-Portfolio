@@ -10,6 +10,10 @@ Re-usable Colors
 @contentWidth: 80%; //All content is centered in the middle of the page. This width determines the left/right "margins" of all content.
 @mobileContentWidth: 88%; //responsive contentWidth
 
+//The .sliderContainer's width is devided into eqaul parts, one for each project contained within the slider div
+//The container "moves" left and right to each prohect using CSS translateX
+@sliderContainerWidth: 400%;  //Changing this width will automatically change the widths of the project divs inside
+
 /************** Fonts ***************/
 /*@font-face {
   font-family: 'Segoe';
@@ -372,8 +376,17 @@ header {
 //Projects Section
 #projects {
    width: 100%; //TODO: this can probably be moved up to Body element and just inherit
-   background: #494180; overflow: hidden;
+   background: #494180;
+
+   .contentContainer
+   {
+      width: @contentWidth;
+      margin: 0 auto;
+      outline: 1px solid red;
+      overflow: hidden;
+   }
 }
+
 
 //A large container div that "moves" left and right using CSS translateX
 .sliderContainer
@@ -381,24 +394,29 @@ header {
    height: 600px;
    transform: translateX(0); //original position
    transition: all 0.7s ease 0s;
-   width: 4000px; //enough widht to hold all projects + a margin? or no margin
-   overflow: hidden;
-
+   width: @sliderContainerWidth; //The slider container width determines size of the project divs (see below)
+  // overflow: hidden;
    .project
    {
+      width: 25%; //Full width of the container devided by number of projects
       height: 600px;
-      width: 1000px;
+      color: red;
       float: left; //Inline-block doesn't work properly for whatever reason
+      p
+      {
+         word-break: normal;
+         width: 90%;
+      }
    }
 }
 
 #project1Link
 {
-   background: red;
+   background: grey;
 }
 #project2Link
 {
-   background: teal;
+   background: white;
 }
 #project3Link
 {
@@ -418,11 +436,11 @@ header {
 
 #project1
 {
-   background: red;
+   background: grey;
 }
 #project2
 {
-   background: teal;
+   background: white;
 }
 #project3
 {
