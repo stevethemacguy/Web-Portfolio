@@ -323,21 +323,17 @@ header nav ul li a:hover {
   outline: 1px solid red;
   overflow: hidden;
 }
-.sliderContainer {
+#sliderContainer {
   height: 600px;
   transform: translateX(0);
   transition: all 0.7s ease 0s;
   width: 400%;
 }
-.sliderContainer .project {
+#sliderContainer .project {
   width: 25%;
   height: 600px;
   color: red;
   float: left;
-}
-.sliderContainer .project p {
-  word-break: normal;
-  width: 90%;
 }
 #project1Link {
   background: grey;

@@ -13,7 +13,7 @@ Re-usable Colors
 //The .sliderContainer's width is devided into eqaul parts, one for each project contained within the slider div
 //The container "moves" left and right to each prohect using CSS translateX
 @sliderContainerWidth: 400%;  //Changing this width will automatically change the widths of the project divs inside
-
+//Currently 4 times the width of contentContainer (which is 80% of the browser width)
 /************** Fonts ***************/
 /*@font-face {
   font-family: 'Segoe';
@@ -389,7 +389,7 @@ header {
 
 
 //A large container div that "moves" left and right using CSS translateX
-.sliderContainer
+#sliderContainer
 {
    height: 600px;
    transform: translateX(0); //original position
@@ -402,11 +402,6 @@ header {
       height: 600px;
       color: red;
       float: left; //Inline-block doesn't work properly for whatever reason
-      p
-      {
-         word-break: normal;
-         width: 90%;
-      }
    }
 }
 

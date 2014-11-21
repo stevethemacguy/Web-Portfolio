@@ -4,6 +4,17 @@ $(document).ready(function() {
     var body = $("body");
     var mobileLogo = $("#mobile-logo");
 
+    /* The width of each project section is 80% of the viewport (in order to stay centered). The Project sections are contained
+       within a larger ".sliderContainer", which is repositioned left or right to display the appropriate project section.
+
+       (Technically, The width of .sliderContainer is always N times the viewport, where N is the number of projects to display.
+       For example, if there are 4 projects, than the width .sliderContainer will be 400%. But you can ignore this fact for the JS below)
+    */
+    //Used to calculate which project to "display" by using translateX on the sliderContainer.
+    //The base width is always 80% of the body (i.e. viewport), and is recalculated when the window is resized.
+    var projectBaseWidth, base2, base3, base4;
+    updateProjectWidths();
+
     //Resizes the main background image to fill the viewable area of the window.
     function resizeBackground() {
         var viewportHeight = $(window).height();
@@ -11,6 +22,7 @@ $(document).ready(function() {
         /*var headerHeight = $('header').outerHeight(false);
         viewportHeight = viewportHeight - headerHeight; //The current viewable area of the viewport window.*/
         $("#mainImage").css('height', viewportHeight);
+
     }
 
     //Resize the background when the page first loads
@@ -19,7 +31,16 @@ $(document).ready(function() {
     //Re-size the background when the browser is resized.
     $(window).resize(function() {
         resizeBackground();
+        updateProjectWidths();
     });
+
+    function updateProjectWidths()
+    {
+        projectBaseWidth = $(body).width() *.80;
+        base2 = projectBaseWidth * 2;
+        base3 = projectBaseWidth * 3;
+        base4 = projectBaseWidth * 4;
+    }
 
     $(".toggleTheme").click(function() {
         body.toggleClass("dark");
@@ -58,19 +79,19 @@ $(document).ready(function() {
 
     $("#project1Link").click(function()
     {
-        $(".sliderContainer").css("transform","translateX(0)");
+        $("#sliderContainer").css("transform","translateX(0)");
     });
     $("#project2Link").click(function()
     {
-        $(".sliderContainer").css("transform","translateX(-1250px)");
+        $("#sliderContainer").css("transform","translateX("+ (-projectBaseWidth) + "px");
     });
     $("#project3Link").click(function()
     {
-        $(".sliderContainer").css("transform","translateX(-2500px");
+        $("#sliderContainer").css("transform","translateX("+ (-base2) + "px");
     });
     $("#project4Link").click(function()
     {
-        $(".sliderContainer").css("transform","translateX(-3750px");
+        $("#sliderContainer").css("transform","translateX("+ (-base3) + "px");
     });
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
