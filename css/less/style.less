@@ -369,11 +369,72 @@ header {
 }
 //END Parallax
 
+//Projects Section
 #projects {
-   background: #494180;
+   width: 100%; //TODO: this can probably be moved up to Body element and just inherit
+   background: #494180; overflow: hidden;
+}
+
+//A large container div that "moves" left and right using CSS translateX
+.sliderContainer
+{
+   height: 600px;
+   transform: translateX(0); //original position
+   transition: all 0.7s ease 0s;
+   width: 4000px; //enough widht to hold all projects + a margin? or no margin
+   overflow: hidden;
+
+   .project
+   {
+      height: 600px;
+      width: 1000px;
+      float: left; //Inline-block doesn't work properly for whatever reason
+   }
+}
+
+#project1Link
+{
+   background: red;
+}
+#project2Link
+{
+   background: teal;
+}
+#project3Link
+{
+   background: green;
+}
+#project4Link
+{
+   background: blue;
+}
+.projectThumbnail
+{
+   display: inline-block;
+   width: 50px;
+   height: 50px;
+   cursor: pointer;
+}
+
+#project1
+{
+   background: red;
+}
+#project2
+{
+   background: teal;
+}
+#project3
+{
+   background: green;
+}
+#project4
+{
+   background: blue;
 }
 
 #sourceCode {
+   clear:both;
    background: #253139;
 }
 

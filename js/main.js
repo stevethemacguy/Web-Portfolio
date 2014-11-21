@@ -56,6 +56,23 @@ $(document).ready(function() {
         }, 400);
     });
 
+    $("#project1Link").click(function()
+    {
+        $(".sliderContainer").css("transform","translateX(0)");
+    });
+    $("#project2Link").click(function()
+    {
+        $(".sliderContainer").css("transform","translateX(-1000px)");
+    });
+    $("#project3Link").click(function()
+    {
+        $(".sliderContainer").css("transform","translateX(-2000px");
+    });
+    $("#project4Link").click(function()
+    {
+        $(".sliderContainer").css("transform","translateX(-3000px");
+    });
+
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
     //This code only affects the mobile version of the site.
     $("header").on("tap", function() {

@@ -314,9 +314,54 @@ header nav ul li a:hover {
   background: url("../images/tech/java.png") no-repeat;
 }
 #projects {
+  width: 100%;
   background: #494180;
+  overflow: hidden;
+}
+.sliderContainer {
+  height: 600px;
+  transform: translateX(0);
+  transition: all 0.7s ease 0s;
+  width: 4000px;
+  overflow: hidden;
+}
+.sliderContainer .project {
+  height: 600px;
+  width: 1000px;
+  float: left;
+}
+#project1Link {
+  background: red;
+}
+#project2Link {
+  background: teal;
+}
+#project3Link {
+  background: green;
+}
+#project4Link {
+  background: blue;
+}
+.projectThumbnail {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+#project1 {
+  background: red;
+}
+#project2 {
+  background: teal;
+}
+#project3 {
+  background: green;
+}
+#project4 {
+  background: blue;
 }
 #sourceCode {
+  clear: both;
   background: #253139;
 }
 #videos {
