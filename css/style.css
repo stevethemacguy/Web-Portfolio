@@ -320,7 +320,6 @@ header nav ul li a:hover {
 #projects .contentContainer {
   width: 80%;
   margin: 0 auto;
-  outline: 1px solid red;
   overflow: hidden;
 }
 #sliderContainer {
@@ -329,17 +328,29 @@ header nav ul li a:hover {
   transition: all 0.7s ease 0s;
   width: 400%;
 }
+#sliderContainer.trans1 {
+  transform: translateX(-25%);
+}
+#sliderContainer.trans2 {
+  transform: translateX(-50%);
+}
+#sliderContainer.trans3 {
+  transform: translateX(-75%);
+}
 #sliderContainer .project {
   width: 25%;
   height: 600px;
-  color: red;
   float: left;
+  color: white;
+}
+.projectContent {
+  padding: 15px;
 }
 #project1Link {
   background: grey;
 }
 #project2Link {
-  background: white;
+  background: teal;
 }
 #project3Link {
   background: green;
@@ -357,7 +368,7 @@ header nav ul li a:hover {
   background: grey;
 }
 #project2 {
-  background: white;
+  background: teal;
 }
 #project3 {
   background: green;

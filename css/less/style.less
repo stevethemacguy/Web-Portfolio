@@ -14,6 +14,7 @@ Re-usable Colors
 //The container "moves" left and right to each prohect using CSS translateX
 @sliderContainerWidth: 400%;  //Changing this width will automatically change the widths of the project divs inside
 //Currently 4 times the width of contentContainer (which is 80% of the browser width)
+
 /************** Fonts ***************/
 /*@font-face {
   font-family: 'Segoe';
@@ -382,7 +383,7 @@ header {
    {
       width: @contentWidth;
       margin: 0 auto;
-      outline: 1px solid red;
+      //outline: 1px solid red; //For testing
       overflow: hidden;
    }
 }
@@ -395,23 +396,42 @@ header {
    transform: translateX(0); //original position
    transition: all 0.7s ease 0s;
    width: @sliderContainerWidth; //The slider container width determines size of the project divs (see below)
-  // overflow: hidden;
+   // overflow: hidden;
+   @projectWidth: 25%;
+
+   &.trans1
+   {
+      transform: translateX(-@projectWidth);
+   }
+   &.trans2
+   {
+      transform: translateX(-@projectWidth * 2);
+   }
+   &.trans3
+   {
+      transform: translateX(-@projectWidth * 3);
+   }
+
    .project
    {
       width: 25%; //Full width of the container devided by number of projects
       height: 600px;
-      color: red;
       float: left; //Inline-block doesn't work properly for whatever reason
+      color: white;
    }
 }
 
+.projectContent
+{
+   padding: 15px;
+}
 #project1Link
 {
    background: grey;
 }
 #project2Link
 {
-   background: white;
+   background: teal;
 }
 #project3Link
 {
@@ -435,7 +455,7 @@ header {
 }
 #project2
 {
-   background: white;
+   background: teal;
 }
 #project3
 {
