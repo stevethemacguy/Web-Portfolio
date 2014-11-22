@@ -378,13 +378,12 @@ header {
 #projects {
    width: 100%; //TODO: this can probably be moved up to Body element and just inherit
    background: #494180;
-
+   overflow: hidden;
    .contentContainer
    {
       width: @contentWidth;
       margin: 0 auto;
       //outline: 1px solid red; //For testing
-      overflow: hidden;
    }
 }
 
@@ -393,22 +392,34 @@ header {
 #sliderContainer
 {
    height: 600px;
-   transform: translateX(0); //original position
+   //original position
+   -webkit-transform: translateX(0);
+   -moz-transform: translateX(0);
+   -o-transform: translateX(0);
+   transform: translateX(0);
    transition: all 0.7s ease 0s;
    width: @sliderContainerWidth; //The slider container width determines size of the project divs (see below)
-   // overflow: hidden;
    @projectWidth: 25%;
 
    &.trans1
    {
+      -webkit-transform: translateX(-@projectWidth);
+      -moz-transform: translateX(-@projectWidth);
+      -o-transform: translateX(-@projectWidth);
       transform: translateX(-@projectWidth);
    }
    &.trans2
    {
+      -webkit-transform: translateX(-@projectWidth * 2);
+      -moz-transform: translateX(-@projectWidth * 2);
+      -o-transform: translateX(-@projectWidth * 2);
       transform: translateX(-@projectWidth * 2);
    }
    &.trans3
    {
+      -webkit-transform: translateX(-@projectWidth * 3);
+      -moz-transform: translateX(-@projectWidth * 3);
+      -o-transform: translateX(-@projectWidth * 3);
       transform: translateX(-@projectWidth * 3);
    }
 

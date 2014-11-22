@@ -316,25 +316,37 @@ header nav ul li a:hover {
 #projects {
   width: 100%;
   background: #494180;
+  overflow: hidden;
 }
 #projects .contentContainer {
   width: 80%;
   margin: 0 auto;
-  overflow: hidden;
 }
 #sliderContainer {
   height: 600px;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
   transform: translateX(0);
   transition: all 0.7s ease 0s;
   width: 400%;
 }
 #sliderContainer.trans1 {
+  -webkit-transform: translateX(-25%);
+  -moz-transform: translateX(-25%);
+  -o-transform: translateX(-25%);
   transform: translateX(-25%);
 }
 #sliderContainer.trans2 {
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
   transform: translateX(-50%);
 }
 #sliderContainer.trans3 {
+  -webkit-transform: translateX(-75%);
+  -moz-transform: translateX(-75%);
+  -o-transform: translateX(-75%);
   transform: translateX(-75%);
 }
 #sliderContainer .project {
