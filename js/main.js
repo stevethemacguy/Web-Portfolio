@@ -56,36 +56,20 @@ $(document).ready(function() {
         }, 400);
     });
 
+    //Cache a few jQuery objects
     var sliderDiv = $("#sliderContainer");
-    $(".projectThumbnail").click(function()
+    var thumbnails = $(".projectThumbnail");
+
+    thumbnails.click(function()
     {
         sliderDiv.removeClass(); //remove all classes
-        if ($(this).hasClass("two"))
-            sliderDiv.addClass("trans1");
-        else if ($(this).hasClass("three"))
-            sliderDiv.addClass("trans2");
-        else if ($(this).hasClass("four"))
-            sliderDiv.addClass("trans3");
+        thumbnails.removeClass("active"); //Make other thumbnails inactive
+        $(this).addClass("active"); //Make the thumbnail active
+
+        //Use the index position of the thumbnail element to determine which class to add
+        var thumbIndex = thumbnails.index(this);
+            sliderDiv.addClass("trans" + thumbIndex);
     });
-    /*$("#project1Link").click(function()
-    {
-        sliderDiv.removeClass(); //remove all classes
-    });
-    $("#project2Link").click(function()
-    {
-        sliderDiv.removeClass(); //remove all classes
-        sliderDiv.addClass("trans1");
-    });
-    $("#project3Link").click(function()
-    {
-        sliderDiv.removeClass(); //remove all classes
-        sliderDiv.addClass("trans2");
-    });
-    $("#project4Link").click(function()
-    {
-        sliderDiv.removeClass(); //remove all classes
-        sliderDiv.addClass("trans3");
-    });*/
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
     //This code only affects the mobile version of the site.
