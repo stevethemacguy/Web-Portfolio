@@ -13,7 +13,8 @@ Re-usable Colors
 //The .sliderContainer's width is devided into eqaul parts, one for each project contained within the slider div
 //The container "moves" left and right to each prohect using CSS translateX
 @sliderContainerWidth: 500%;  //Changing this width will automatically change the widths of the project divs inside
-//Currently 4 times the width of contentContainer (which is 80% of the browser width)
+                              //Currently 5 times the width of contentContainer (which is 80% of the browser width)
+@projectWidth: 20%; //Eeach project div fills 100% of the screen. 500% * .20 = 100%
 
 /************** Fonts ***************/
 /*@font-face {
@@ -49,27 +50,22 @@ body {
    position: relative;
 }
 
-a.toggleTheme {
-   font-size: 14px;
-}
-
-a.toggleTheme:hover {
-   color: @lightHeaderHover;
-   cursor: pointer;
-}
-
-h1
-{
+h1 {
    font-family: Arial;
    font-size: 36px;
    color: #fff;
 }
 
-.mobileContentContainer
-{
-   display: none;
+.toggleTheme {
+   font-size: 14px;
 }
 
+.toggleTheme:hover {
+   color: @lightHeaderHover;
+   cursor: pointer;
+}
+
+//////////// Header Section ////////////
 header {
    background: #fff;
    height: 62px;
@@ -79,98 +75,108 @@ header {
    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
    font-size: 19px;
    border-bottom: 1px solid #252525;
+}
 
-   nav.mobileNav {
-      display: none;
+.navContainer {
+   //padding: 4px 0;
+   margin: 0 auto;
+   width: @contentWidth;
+   //max-width: 1150px;
+}
+
+.headerLogo {
+   position: relative;
+   top: 2px;
+   width: 50px;
+   height: 50px;
+   margin: 4px 0;
+   display: inline-block;
+   cursor: pointer;
+   background: url("../images/smile-logo-sprite.png") no-repeat;
+
+   &:hover {
+      background-position: bottom;
    }
 
-   .navContainer {
-      //padding: 4px 0;
-      margin: 0 auto;
-      width: @contentWidth;
-      //max-width: 1150px;
-   }
-
-   .logo {
-      position: relative;
-      top: 2px;
+   a {
+      //The link has no content, so set height/width to make it clickable
+      display: block;
       width: 50px;
       height: 50px;
-      margin: 4px 0;
-      display: inline-block;
-      cursor: pointer;
-      background: url("../images/smile-logo-sprite.png") no-repeat;
-
-      &:hover {
-        background-position: bottom;
-      }
-
-      a {
-         //The link has no content, so set height/width to make it clickable
-         display: block;
-         width: 50px;
-         height: 50px;
-      }
-   }
-
-   nav {
-      display: inline-block;
-      float: right;
-      color: #000;
-      position: relative;
-      //right: 2%;
-
-      ul {
-         list-style: none;
-
-         li {
-
-            float: left;
-
-            &:hover {
-               background: @darkHeaderNavHover;
-               //currently no background color
-            }
-
-            a, a:link, a:visited {
-               cursor: pointer;
-               font-weight: bold;
-               display: inline-block;
-               padding: 22px 27px;
-               padding-bottom: 21px; //account for bottom border
-            }
-
-            a:active {
-               color: @lightHeaderHover;
-            }
-
-            a:hover {
-               /*border-bottom: 2px solid #ff7116;*/
-               color: @lightHeaderHover;
-            }
-
-            //Multi-color underlines
-            /* a.projects:hover {
-                border-color: red;
-             }
-             a.sourceCode:hover {
-                border-color: yellow;
-             }
-             a.videos:hover {
-                border-color: lightskyblue;
-             }
-             a.about:hover {
-                border-color: mediumpurple;
-             }
-             a.contact:hover {
-                border-color: green;
-             }*/
-         }
-      }
    }
 }
 
-//end header
+nav {
+   display: inline-block;
+   float: right;
+   color: #000;
+   position: relative;
+   //right: 2%;
+
+   ul {
+      list-style: none;
+   }
+
+   li {
+      float: left;
+
+      /*-webkit-transition: background .35s ease;
+      -moz-transition: background .35s ease;
+      -o-transition: background .35s ease;
+      transition: background .35s ease;*/
+
+      &:hover {
+         background: @darkHeaderNavHover;
+         //currently no background color
+      }
+   }
+
+   a, a:link, a:visited {
+      cursor: pointer;
+      font-weight: bold;
+      display: inline-block;
+      padding: 22px 27px;
+      padding-bottom: 21px; //account for bottom border
+      //height: 26px;
+      color: @darkHeaderText;
+   }
+
+   a:active, a:focus {
+      color: @darkHeaderText;
+   }
+
+   a:hover {
+      color: @darkHeaderHover;
+      border: none;
+      //light style
+      /*border-bottom: 2px solid #ff7116;*/
+      //border-bottom: 2px solid white;
+      //color: @lightHeaderHover;
+   }
+
+   //Multi-color underlines
+   /* a.projects:hover {
+       border-color: red;
+    }
+    a.sourceCode:hover {
+       border-color: yellow;
+    }
+    a.videos:hover {
+       border-color: lightskyblue;
+    }
+    a.about:hover {
+       border-color: mediumpurple;
+    }
+    a.contact:hover {
+       border-color: green;
+    }*/
+} //End Nav
+
+.mobileNav {
+   display: none;
+}
+
+//////////// End Header Section ////////////
 
 #mainImage {
    width: 100%;
@@ -184,13 +190,7 @@ header {
    background-attachment: fixed; /*not supported by mobile*/
 }
 
-.contentContainer //Center all content in the middle of the page
-{
-   width: @contentWidth;
-   margin: 0 auto;
-}
-
-//Parallax section
+///////////// Parallax section /////////////
 #parallax {
    display: block;
    height: 1000px;
@@ -204,7 +204,7 @@ header {
 //    top: Determines the final "resting" position (i.e. how far the element needs to travel from bottom to top)
 //    data-stellar-ratio: How quickly the element should move to it's final position when the page scrolls
 
-#htmlLogo, #cssLogo, #jqueryLogo, #jsLogo, #xamarinLogo, #lessLogo, #jiraLogo, #javaLogo, #sassLogo, #phpLogo, #angularLogo, #photoshopLogo, #gitLogo {
+.techLogo {
    position: absolute;
    z-index: 3; //Nothing should come in front of the html, css, or jq logos.
 }
@@ -385,98 +385,37 @@ header {
    margin-left: -47px;
    background: url("../images/tech/java.png") no-repeat;
 }
-//END Parallax
+
+///////////// END Parallax Section /////////////
+
+.contentContainer //Center all content in the middle of the page
+{
+   width: @contentWidth;
+   margin: 0 auto;
+}
 
 //Projects Section
 #projects {
    width: 100%; //TODO: this can probably be moved up to Body element and just inherit
    overflow: hidden;
    position: relative;
-   height: 800px; //600 -48px;
-   /*.contentContainer
-   {
-      width: @contentWidth;
-      margin: 0 auto;
-      //outline: 1px solid red; //For testing
-   }*/
+   height: 800px;
 }
 
-//A large container div that "moves" left and right using CSS translateX
-#sliderContainer
-{
-   //Negative positioning allows the "Projects" title and links to appear over this section, without being shifted left/right by the css translateX
-   position: relative;
-   top: -51px;
-
-   //original position
-   -webkit-transform: translateX(0);
-   -moz-transform: translateX(0);
-   -o-transform: translateX(0);
-   transform: translateX(0);
-
-   -webkit-transition: all 0.65s ease 0s;
-   -moz-transition: all 0.65s ease 0s;
-   -o-transition: all 0.65s ease 0s;
-   transition: all 0.65s ease 0s;
-
-   width: @sliderContainerWidth; //The slider container width determines size of the project divs (see below)
-   height: 100%;
-   @projectWidth: 20%; //500% * .20 = 100%
-
-   &.trans1
-   {
-      -webkit-transform: translateX(-@projectWidth);
-      -moz-transform: translateX(-@projectWidth);
-      -o-transform: translateX(-@projectWidth);
-      transform: translateX(-@projectWidth);
-   }
-   &.trans2
-   {
-      -webkit-transform: translateX(-@projectWidth * 2);
-      -moz-transform: translateX(-@projectWidth * 2);
-      -o-transform: translateX(-@projectWidth * 2);
-      transform: translateX(-@projectWidth * 2);
-   }
-   &.trans3
-   {
-      -webkit-transform: translateX(-@projectWidth * 3);
-      -moz-transform: translateX(-@projectWidth * 3);
-      -o-transform: translateX(-@projectWidth * 3);
-      transform: translateX(-@projectWidth * 3);
-   }
-   &.trans4
-   {
-      -webkit-transform: translateX(-@projectWidth * 4);
-      -moz-transform: translateX(-@projectWidth * 4);
-      -o-transform: translateX(-@projectWidth * 4);
-      transform: translateX(-@projectWidth * 4);
-   }
-
-   .project
-   {
-      width: @projectWidth; //Full width of the container devided by the number of projects
-      height: 100%;
-      float: left; //Inline-block doesn't work properly for whatever reason
-      color: white;
-      padding-top: 125px;
-   }
-}
-
-
-.projectNavGroup
-{
+//Project Links Section
+.projectNavGroup {
    position: relative;
    z-index: 5;
    top: 30px;
    width: 100%; //not needed?
-   h1
-   {
-      display: inline-block;
-   }
 }
 
-.projectLinks
-{
+//Project Title (h1 element)
+.projectTitle {
+   display: inline-block;
+}
+
+.projectLinks {
    display: inline-block;
    margin-left: 45px;
    position: absolute;
@@ -484,11 +423,6 @@ header {
    width: 100%;
    //position: relative;
    //top: 8px;
-}
-
-.projectContent
-{
-   padding: 18px;
 }
 
 .projectThumbnail
@@ -553,30 +487,91 @@ header {
       background: url("../images/nfcu.png") no-repeat;
    }
 }
+/////////////////// End Project Links Section ///////////////////
 
+//A large container div that "moves" left and right using CSS translateX
+#sliderContainer {
+   //Negative positioning allows the "Projects" title and links to appear over this section, without being shifted left/right by the css translateX
+   position: relative;
+   top: -51px;
 
-#project1
+   //The slider container width determines the size of the project divs. (see @projectWidth)
+   width: @sliderContainerWidth;
+   height: 100%;
+
+   //original position
+   -webkit-transform: translateX(0);
+   -moz-transform: translateX(0);
+   -o-transform: translateX(0);
+   transform: translateX(0);
+
+   -webkit-transition: all 0.65s ease 0s;
+   -moz-transition: all 0.65s ease 0s;
+   -o-transition: all 0.65s ease 0s;
+   transition: all 0.65s ease 0s;
+
+   &.trans1 {
+      -webkit-transform: translateX(-@projectWidth);
+      -moz-transform: translateX(-@projectWidth);
+      -o-transform: translateX(-@projectWidth);
+      transform: translateX(-@projectWidth);
+   }
+   &.trans2 {
+      -webkit-transform: translateX(-@projectWidth * 2);
+      -moz-transform: translateX(-@projectWidth * 2);
+      -o-transform: translateX(-@projectWidth * 2);
+      transform: translateX(-@projectWidth * 2);
+   }
+   &.trans3 {
+      -webkit-transform: translateX(-@projectWidth * 3);
+      -moz-transform: translateX(-@projectWidth * 3);
+      -o-transform: translateX(-@projectWidth * 3);
+      transform: translateX(-@projectWidth * 3);
+   }
+   &.trans4 {
+      -webkit-transform: translateX(-@projectWidth * 4);
+      -moz-transform: translateX(-@projectWidth * 4);
+      -o-transform: translateX(-@projectWidth * 4);
+      transform: translateX(-@projectWidth * 4);
+   }
+}
+
+.projectContent
 {
+   padding: 18px;
+}
+
+.project {
+   width: @projectWidth; //Full width of the container devided by the number of projects
+   height: 100%;
+   float: left; //Inline-block doesn't work properly for whatever reason
+   color: white;
+   padding-top: 125px;
+}
+
+#project1 {
    background: #1C0025;
 }
-#project2
-{
+
+#project2 {
    background: #0C2032;
 }
-#project3
-{
+
+#project3 {
    //background: #4B211C; //pinkish
    background: #833700; //Orange
    //background: #4B2100;//orange 2
 }
-#project4
-{
+
+#project4 {
    background: #132400;
 }
-#project5
-{
+
+#project5 {
    background: #000625;
 }
+
+////////////// End Project and Slider Container Sections //////////////
 
 #sourceCode {
    clear:both;
@@ -601,52 +596,27 @@ header {
    background: black;
    color: grey;
 
-   a.toggleTheme {
+   .toggleTheme {
 
       color: @darkHeaderText;
    }
-   a.toggleTheme:hover {
+
+   .toggleTheme:hover {
       color: @darkHeaderHover;
    }
 
    header {
       background: #000;
 
-      .logo {
-         background: url("../images/smile-logo-sprite.png") no-repeat;
-
-         &:hover {
-            background-position: bottom;
-         }
-      }
-
-      nav {
-         ul {
-            li {
-               &:hover {
-                  //currently no background color
-               }
-
-               a, a:link, a:visited {
-                  //height: 26px;
-                  color: @darkHeaderText;
-               }
-
-               a:hover {
-                  color: @darkHeaderHover;
-                  border: none;
-                  //border-bottom: 2px solid white;
-               }
-            }
-         }
+      &:hover {
+         background-position: bottom;
       }
    }
-   //end header
 
-   #mainImage {
-
+   .headerLogo {
+      background: url("../images/smile-logo-sprite.png") no-repeat;
    }
-}
+} //end header
 
 //end .dark styles
 
@@ -654,18 +624,18 @@ header {
 
 //iPads in portrait and landscape-----------
 @media (min-width : 768px) and (max-width : 1024px) {
-   header {
-      .navContainer {
-         width: @mobileContentWidth;
-         nav {
-            right: 0%;
-            ul { //TODO: Remove. Unneccisary nesting
-               li a{
-                  padding-left: 20px;
-                  padding-right: 20px;
-               }
-            }
-         }
+
+   .navContainer {
+      width: @mobileContentWidth;
+
+      nav {
+         right: 0%;
+      }
+
+      a, a:link, a:visited
+      {
+         padding-left: 20px;
+         padding-right: 20px;
       }
    }
 
@@ -677,7 +647,6 @@ header {
 
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width : 320px) and (max-width : 767px) {
-
 
    .contentContainer //Center all content in the middle of the page
    {
@@ -713,77 +682,76 @@ header {
          // color: @darkHeaderHover;
          cursor: pointer;
       }
+   }
 
-      //Hide the standard nav
-      .navContainer {
+   //Hide the standard nav
+   .navContainer {
+      display: none;
+   }
+
+   .mobileNav {
+      display: inline-block;
+      width: 100%;
+      margin-top: 0;
+      float: none;
+      right: 0;
+      height: 48px;
+
+      ul {
          display: none;
+         position: fixed;
+         top: 48px;
+         text-align: center;
+         width: 100%;
+         background: #000;
+         margin-left: 0;
       }
 
-      nav.mobileNav {
-         display: inline-block;
-         width: 100%;
-         margin-top: 0;
+      li {
+         font-size: 24px;
+         padding: 12px 0;
          float: none;
-         right: 0;
-         height: 48px;
+         border-bottom: 1px solid #252525;
 
-         #mobile-logo {
-            display: inline-block;
-            position: fixed;
-            left: 5px;
-            top: 5px;
-            width: 38px;
-            height: 38px;
-            background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
-
-            &.selected {
-               background-position: bottom;
-            }
+         &:first-child {
+            border-top: 1px solid #252525;
          }
 
-         .mobile-button {
-            float: right;
-            margin-top: 15px;
-            margin-right: 20px;
-            width: 27px;
-            height: 17px;
-            background: url("../images/mobile/menu-button-sprite.png") no-repeat;
-
-            &.selected {
-               background-position: bottom;
-            }
+         &.selected {
+            background: #fff;
          }
+      }
 
-         ul {
-            display: none;
-            position: fixed;
-            top: 48px;
-            text-align: center;
-            width: 100%;
-            background: #000;
-            margin-left: 0;
+      a, a:link, a:visited {
+         padding: 0;
+         margin: 0;
+      }
+   }
 
-            li {
-               font-size: 24px;
-               padding: 12px 0;
-               float: none;
-               border-bottom: 1px solid #252525;
-               &:first-child {
-                  border-top: 1px solid #252525;
-               }
+   #mobile-logo {
+      display: inline-block;
+      position: fixed;
+      left: 5px;
+      top: 5px;
+      width: 38px;
+      height: 38px;
+      background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
 
-               a {
-                  padding: 0;
-                  margin: 0;
-                  color: @darkHeaderText;
-               }
+      &.selected {
+         background-position: bottom;
+      }
+   }
 
-               &.selected
-               {
-                  background: #fff;
-               }
-            }
-         }
+   .mobile-button {
+      float: right;
+      margin-top: 15px;
+      margin-right: 20px;
+      width: 27px;
+      height: 17px;
+      background: url("../images/mobile/menu-button-sprite.png") no-repeat;
+
+      &.selected {
+         background-position: bottom;
       }
    }
 }
@@ -909,19 +877,6 @@ header {
             padding-top: 26px;
          }
       }
-   }
-
-   h1.desktop
-   {
-      display: none;
-   }
-
-   .mobileContentContainer
-   {
-      display: block;
-      width: @mobileContentWidth;
-      margin: 0 auto;
-      margin-top: 18px;
    }
 
    .projectLinks
