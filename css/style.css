@@ -521,8 +521,10 @@ header nav ul li a:hover {
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
   .contentContainer {
-    width: 100%;
     padding: 0 20px;
+  }
+  .projectContent {
+    width: 94%;
   }
   #projects .mobileContentContainer {
     margin: 18px;
