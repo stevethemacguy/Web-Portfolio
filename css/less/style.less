@@ -538,7 +538,7 @@ nav {
 
 .projectContent
 {
-   padding: 18px;
+   /*padding: 18px;*/
 }
 
 .project {
@@ -642,117 +642,6 @@ nav {
    .contentContainer //Center all content in the middle of the page
    {
       width: @mobileContentWidth;
-   }
-}
-
-/*Smartphones in portrait and landscape ----------- */
-@media (min-width : 320px) and (max-width : 767px) {
-
-   .contentContainer //Center all content in the middle of the page
-   {
-      padding: 0 20px;
-   }
-
-   .projectContent
-   {
-      width: 94%;
-   }
-
-   #projects .mobileContentContainer
-   {
-      margin: 18px;
-   }
-
-   //Hide the parallax section on mobile.
-   #parallax
-   {
-      display: none;
-   }
-
-   #mainImage {
-      background-attachment: scroll; /*Fixed is not supported by mobile*/
-      height: 500px;
-   }
-
-   header {
-      height: 48px;
-      opacity: .91;
-
-      &:hover {
-         // color: @darkHeaderHover;
-         cursor: pointer;
-      }
-   }
-
-   //Hide the standard nav
-   .navContainer {
-      display: none;
-   }
-
-   .mobileNav {
-      display: inline-block;
-      width: 100%;
-      margin-top: 0;
-      float: none;
-      right: 0;
-      height: 48px;
-
-      ul {
-         display: none;
-         position: fixed;
-         top: 48px;
-         text-align: center;
-         width: 100%;
-         background: #000;
-         margin-left: 0;
-      }
-
-      li {
-         font-size: 24px;
-         padding: 12px 0;
-         float: none;
-         border-bottom: 1px solid #252525;
-
-         &:first-child {
-            border-top: 1px solid #252525;
-         }
-
-         &.selected {
-            background: #fff;
-         }
-      }
-
-      a, a:link, a:visited {
-         padding: 0;
-         margin: 0;
-      }
-   }
-
-   #mobile-logo {
-      display: inline-block;
-      position: fixed;
-      left: 5px;
-      top: 5px;
-      width: 38px;
-      height: 38px;
-      background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
-
-      &.selected {
-         background-position: bottom;
-      }
-   }
-
-   .mobile-button {
-      float: right;
-      margin-top: 15px;
-      margin-right: 20px;
-      width: 27px;
-      height: 17px;
-      background: url("../images/mobile/menu-button-sprite.png") no-repeat;
-
-      &.selected {
-         background-position: bottom;
-      }
    }
 }
 
@@ -861,7 +750,6 @@ nav {
 
    #sliderContainer
    {
-      position: static;
       width: 100%; //The slider container width determines size of the project divs (see below)
       height: 100%;
 
@@ -883,6 +771,123 @@ nav {
    {
       float: none;
       display: none;
+   }
+}
+
+/*Smartphones in portrait and landscape ----------- */
+@media (min-width : 320px) and (max-width : 767px) {
+
+   #sliderContainer
+   {
+      width: 100%; //The slider container width determines size of the project divs (see below)
+      height: 100%;
+   }
+
+   .contentContainer //Center all content in the middle of the page
+   {
+      padding: 0 20px;
+   }
+
+   .projectContent
+   {
+      width: 100%;
+   }
+
+   #projects .mobileContentContainer
+   {
+      margin: 18px;
+   }
+
+   //Hide the parallax section on mobile.
+   #parallax
+   {
+      display: none;
+   }
+
+   #mainImage {
+      background-attachment: scroll; /*Fixed is not supported by mobile*/
+      height: 500px;
+   }
+
+   header {
+      height: 48px;
+      opacity: .91;
+
+      &:hover {
+         // color: @darkHeaderHover;
+         cursor: pointer;
+      }
+   }
+
+   //Hide the standard nav
+   .navContainer {
+      display: none;
+   }
+
+   .mobileNav {
+      display: inline-block;
+      width: 100%;
+      margin-top: 0;
+      float: none;
+      right: 0;
+      height: 48px;
+
+      ul {
+         display: none;
+         position: fixed;
+         top: 48px;
+         text-align: center;
+         width: 100%;
+         background: #000;
+         margin-left: 0;
+      }
+
+      li {
+         font-size: 24px;
+         padding: 12px 0;
+         float: none;
+         border-bottom: 1px solid #252525;
+
+         &:first-child {
+            border-top: 1px solid #252525;
+         }
+
+         &.selected {
+            background: #fff;
+         }
+      }
+
+      a, a:link, a:visited {
+         padding: 0;
+         margin: 0;
+      }
+   }
+
+   #mobile-logo {
+      display: inline-block;
+      position: fixed;
+      left: 5px;
+      top: 5px;
+      width: 38px;
+      height: 38px;
+      background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
+
+      &.selected {
+         background-position: bottom;
+      }
+   }
+
+   .mobile-button {
+      float: right;
+      margin-top: 15px;
+      margin-right: 20px;
+      width: 27px;
+      height: 17px;
+      background: url("../images/mobile/menu-button-sprite.png") no-repeat;
+
+      &.selected {
+         background-position: bottom;
+      }
    }
 }
 
