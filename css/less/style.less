@@ -622,158 +622,6 @@ nav {
 
 ///////////////////////////  Responsive styles   ///////////////////////////
 
-//iPads in portrait and landscape-----------
-@media (min-width : 768px) and (max-width : 1024px) {
-
-   .navContainer {
-      width: @mobileContentWidth;
-
-      nav {
-         right: 0%;
-      }
-
-      a, a:link, a:visited
-      {
-         padding-left: 20px;
-         padding-right: 20px;
-      }
-   }
-
-   .contentContainer //Center all content in the middle of the page
-   {
-      width: @mobileContentWidth;
-   }
-}
-
-/////////////// Tech Logo Adjustments (i.e. Remove logo text when the screen is too small).
-@media (max-width : 1350px) {
-   #xamarinLogo {
-      background: url("../images/tech/xamarin-tiny.png") no-repeat;
-      width: 80px;
-      height: 71px;
-      margin-left: -40px;
-      margin-top: -4px;
-   }
-
-   #photoshopLogo
-   {
-      margin-top: -2px
-   }
-}
-
-@media (max-width : 1051px) {
-   #gitLogo {
-      background: url("../images/tech/git-tiny.png") no-repeat;
-      width: 68px;
-      height: 68px;
-      margin-left: -34px;
-   }
-
-   #jiraLogo {
-      background: url("../images/tech/jira-tiny.png") no-repeat;
-      width: 58px;
-      height: 77px;
-      margin-left: -29px;
-      margin-top: -14px;
-   }
-
-   #phpLogo {
-      background: url("../images/tech/php-text.png") no-repeat;
-      width: 100px;
-      height: 48px;
-      margin-left: -50px;
-      margin-top: 14px;
-   }
-}
-
-@media (min-width : 768px) and (max-width : 1188px) {
-
-   .projectLinks
-   {
-      position: relative;
-      float: right;
-      margin-left: 0;
-      top: -5px;
-      width: 81%;
-   }
-
-   .projectThumbnail:nth-child(1)
-   {
-      margin-left: 12px;
-   }
-
-   .projectThumbnail:nth-child(2) {
-      width: 51px;
-      height: 45px;
-      top: 4px;
-      left: -3px;
-      background: url("../images/xamarin-tiny.png") no-repeat;
-   }
-
-   .projectThumbnail
-   {
-      margin-right: 28px;
-
-      &:nth-child(2)
-      {
-         left: 0;
-      }
-      &:nth-child(3)
-      {
-         top: -5px;
-         left: 0;
-      }
-      &:nth-child(4)
-      {
-         top: 5px;
-         left: 0;
-         width: 143px;
-      }
-      &:nth-child(5)
-      {
-         left: 0;
-         top: 1px;
-         margin-right: 14px;
-      }
-   }
-}
-
-@media (max-width : 914px) {
-
-   //MOBILE PROJECT SECTION
-
-   #projects
-   {
-      height: 100%;
-      background: #1C0025;
-   }
-
-   #sliderContainer
-   {
-      width: 100%; //The slider container width determines size of the project divs (see below)
-      height: 100%;
-
-      .project
-      {
-         width: 100%;
-         height: 600px;
-         display: block;
-         float: none;
-         padding-top: 5px;
-         &:first-child
-         {
-            padding-top: 26px;
-         }
-      }
-   }
-
-   .projectLinks
-   {
-      float: none;
-      display: none;
-   }
-}
-
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width : 320px) and (max-width : 767px) {
 
@@ -783,15 +631,15 @@ nav {
       height: 100%;
    }
 
-   .contentContainer //Center all content in the middle of the page
+   /*.contentContainer //Center all content in the middle of the page
    {
       padding: 0 20px;
-   }
+   }*/
 
-   .projectContent
+   /*.projectContent
    {
       width: 100%;
-   }
+   }*/
 
    #projects .mobileContentContainer
    {
@@ -888,6 +736,158 @@ nav {
       &.selected {
          background-position: bottom;
       }
+   }
+}
+
+//iPads in portrait and landscape-----------
+@media (min-width : 768px) and (max-width : 1024px) {
+
+   .navContainer {
+      width: @mobileContentWidth;
+
+      nav {
+         right: 0%;
+      }
+
+      a, a:link, a:visited
+      {
+         padding-left: 20px;
+         padding-right: 20px;
+      }
+   }
+
+   .contentContainer //Center all content in the middle of the page
+   {
+      width: @mobileContentWidth;
+   }
+}
+
+@media (min-width : 768px) and (max-width : 1188px) {
+
+   .projectLinks
+   {
+      position: relative;
+      float: right;
+      margin-left: 0;
+      top: -5px;
+      width: 81%;
+   }
+
+   .projectThumbnail:nth-child(1)
+   {
+      margin-left: 12px;
+   }
+
+   .projectThumbnail:nth-child(2) {
+      width: 51px;
+      height: 45px;
+      top: 4px;
+      left: -3px;
+      background: url("../images/xamarin-tiny.png") no-repeat;
+   }
+
+   .projectThumbnail
+   {
+      margin-right: 28px;
+
+      &:nth-child(2)
+      {
+         left: 0;
+      }
+      &:nth-child(3)
+      {
+         top: -5px;
+         left: 0;
+      }
+      &:nth-child(4)
+      {
+         top: 5px;
+         left: 0;
+         width: 143px;
+      }
+      &:nth-child(5)
+      {
+         left: 0;
+         top: 1px;
+         margin-right: 14px;
+      }
+   }
+}
+
+/////////////// Tech Logo Adjustments (i.e. Remove logo text when the screen is too small).
+@media (max-width : 914px) {
+
+   //MOBILE PROJECT SECTION
+
+   #projects
+   {
+      height: 100%;
+      background: #1C0025;
+   }
+
+   #sliderContainer
+   {
+      width: 100%; //The slider container width determines size of the project divs (see below)
+      height: 100%;
+
+      .project
+      {
+         width: 100%;
+         height: 600px;
+         display: block;
+         float: none;
+         padding-top: 5px;
+         &:first-child
+         {
+            padding-top: 26px;
+         }
+      }
+   }
+
+   .projectLinks
+   {
+      float: none;
+      display: none;
+   }
+}
+
+@media (max-width : 1051px) {
+   #gitLogo {
+      background: url("../images/tech/git-tiny.png") no-repeat;
+      width: 68px;
+      height: 68px;
+      margin-left: -34px;
+   }
+
+   #jiraLogo {
+      background: url("../images/tech/jira-tiny.png") no-repeat;
+      width: 58px;
+      height: 77px;
+      margin-left: -29px;
+      margin-top: -14px;
+   }
+
+   #phpLogo {
+      background: url("../images/tech/php-text.png") no-repeat;
+      width: 100px;
+      height: 48px;
+      margin-left: -50px;
+      margin-top: 14px;
+   }
+}
+
+@media (max-width : 1350px) {
+   #xamarinLogo {
+      background: url("../images/tech/xamarin-tiny.png") no-repeat;
+      width: 80px;
+      height: 71px;
+      margin-left: -40px;
+      margin-top: -4px;
+   }
+
+   #photoshopLogo
+   {
+      margin-top: -2px
    }
 }
 
