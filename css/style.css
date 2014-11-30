@@ -429,7 +429,7 @@ nav a:hover {
   height: 100%;
   float: left;
   color: white;
-  padding-top: 125px;
+  padding-top: 120px;
 }
 .point {
   margin: 1px 0 ;
@@ -668,7 +668,7 @@ nav a:hover {
     padding-top: 5px;
   }
   #sliderContainer .project:first-child {
-    padding-top: 26px;
+    padding-top: 120px;
   }
   .projectLinks {
     float: none;
