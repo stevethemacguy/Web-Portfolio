@@ -60,7 +60,6 @@ header {
   width: 80%;
 }
 .headerLogo {
-  position: relative;
   top: 2px;
   width: 50px;
   height: 50px;
@@ -68,6 +67,8 @@ header {
   display: inline-block;
   cursor: pointer;
   background: url("../images/smile-logo-sprite.png") no-repeat;
+  position: relative;
+  left: -2px;
 }
 .headerLogo:hover {
   background-position: bottom;
@@ -508,12 +509,12 @@ nav a:hover {
     display: none;
   }
   .mobileNav {
-    display: inline-block;
-    width: 100%;
+    display: block;
     margin-top: 0;
     float: none;
     right: 0;
     height: 48px;
+    margin: 0 auto;
   }
   .mobileNav ul {
     display: none;
@@ -544,9 +545,7 @@ nav a:hover {
   }
   #mobile-logo {
     display: inline-block;
-    position: fixed;
-    left: 5px;
-    top: 5px;
+    margin-top: 5px;
     width: 38px;
     height: 38px;
     background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
@@ -555,9 +554,9 @@ nav a:hover {
     background-position: bottom;
   }
   .mobile-button {
+    display: inline-block;
     float: right;
     margin-top: 15px;
-    margin-right: 20px;
     width: 27px;
     height: 17px;
     background: url("../images/mobile/menu-button-sprite.png") no-repeat;
@@ -567,7 +566,6 @@ nav a:hover {
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .navContainer,
   .contentContainer {
     width: 88%;
   }

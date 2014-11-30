@@ -71,7 +71,6 @@ h1 {
 header {
    background: #fff;
    height: 62px;
-   //min-width: 100%;
    width: 100%;
    z-index: 1000;
    position: fixed;
@@ -94,7 +93,9 @@ header {
    display: inline-block;
    cursor: pointer;
    background: url("../images/smile-logo-sprite.png") no-repeat;
-
+   position: relative;
+   left: -2px;
+   
    &:hover {
       background-position: bottom;
    }
@@ -112,7 +113,7 @@ nav {
    float: right;
    color: #000;
    position: relative;
-   //right: 2%;
+   //The Center positioning of the nav is based on the navContainer width (i.e. the content width)
 
    ul {
       list-style: none;
@@ -665,12 +666,12 @@ nav {
    }
 
    .mobileNav {
-      display: inline-block;
-      width: 100%;
+      display: block;
       margin-top: 0;
       float: none;
       right: 0;
       height: 48px;
+      margin: 0 auto;
 
       ul {
          display: none;
@@ -703,11 +704,10 @@ nav {
       }
    }
 
+   //#mobile-logo and .mobileButton are centered using the width of the contentContainer
    #mobile-logo {
       display: inline-block;
-      position: fixed;
-      left: 5px;
-      top: 5px;
+      margin-top: 5px;
       width: 38px;
       height: 38px;
       background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
@@ -717,10 +717,11 @@ nav {
       }
    }
 
+   //#mobile-logo and .mobileButton are centered using the width of the contentContainer
    .mobile-button {
+      display: inline-block;
       float: right;
       margin-top: 15px;
-      margin-right: 20px;
       width: 27px;
       height: 17px;
       background: url("../images/mobile/menu-button-sprite.png") no-repeat;
@@ -735,7 +736,7 @@ nav {
 @media (min-width : 768px) and (max-width : 1024px) {
 
    //Center the nav and all content using the "medium" width
-   .navContainer, .contentContainer
+   .contentContainer
    {
       width: @contentWidthMedium;
    }
