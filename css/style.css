@@ -1,6 +1,5 @@
-/*---------------------------------------------------
-Re-usable Colors
------------------------------------------------------*/
+/************** Reusable Colors ***************/
+/************** Responsive Widths***************/
 /************** Fonts ***************/
 /*@font-face {
   font-family: 'Segoe';
@@ -326,6 +325,7 @@ nav a:hover {
   z-index: 5;
   top: 30px;
   width: 100%;
+  height: 47px;
 }
 .projectTitle {
   display: inline-block;
@@ -650,6 +650,15 @@ nav a:hover {
   #sliderContainer {
     width: 100%;
     height: 100%;
+  }
+  #sliderContainer.trans1,
+  #sliderContainer.trans2,
+  #sliderContainer.trans3,
+  #sliderContainer.trans4 {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
   }
   #sliderContainer .project {
     width: 100%;
