@@ -431,6 +431,28 @@ nav a:hover {
   color: white;
   padding-top: 125px;
 }
+.point {
+  margin: 1px 0 ;
+}
+.rightSide {
+  margin-left: 50px;
+  position: relative;
+  left: 10px;
+  width: 400px;
+  display: inline-block;
+}
+.summary {
+  clear: both;
+}
+.leftSide {
+  display: inline-block;
+  float: left;
+}
+.term {
+  font-size: 18px;
+  margin: 1px 0;
+  font-weight: bold;
+}
 #project1 {
   background: #1C0025;
 }
