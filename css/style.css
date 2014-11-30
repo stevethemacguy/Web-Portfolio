@@ -68,7 +68,7 @@ header {
   cursor: pointer;
   background: url("../images/smile-logo-sprite.png") no-repeat;
   position: relative;
-  left: -2px;
+  left: -1px;
 }
 .headerLogo:hover {
   background-position: bottom;
