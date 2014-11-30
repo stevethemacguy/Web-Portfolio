@@ -7,8 +7,10 @@ Re-usable Colors
 
 @lightHeaderHover: orange;
 @darkHeaderHover: #FFF;
+
 @contentWidth: 80%; //All content is centered in the middle of the page. This width determines the left/right "margins" of all content.
-@mobileContentWidth: 88%; //responsive contentWidth
+@contentWidthMedium: 88%;
+@contentWidthMobile: 95%;
 
 //The .sliderContainer's width is devided into eqaul parts, one for each project contained within the slider div
 //The container "moves" left and right to each prohect using CSS translateX
@@ -69,7 +71,8 @@ h1 {
 header {
    background: #fff;
    height: 62px;
-   min-width: 100%;
+   //min-width: 100%;
+   width: 100%;
    z-index: 1000;
    position: fixed;
    box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
@@ -78,10 +81,8 @@ header {
 }
 
 .navContainer {
-   //padding: 4px 0;
    margin: 0 auto;
    width: @contentWidth;
-   //max-width: 1150px;
 }
 
 .headerLogo {
@@ -536,11 +537,6 @@ nav {
    }
 }
 
-.projectContent
-{
-   /*padding: 18px;*/
-}
-
 .project {
    width: @projectWidth; //Full width of the container devided by the number of projects
    height: 100%;
@@ -631,15 +627,11 @@ nav {
       height: 100%;
    }
 
-   /*.contentContainer //Center all content in the middle of the page
+   //Center the nav and all content using the mobile width
+   .contentContainer
    {
-      padding: 0 20px;
-   }*/
-
-   /*.projectContent
-   {
-      width: 100%;
-   }*/
+      width: @contentWidthMobile;
+   }
 
    #projects .mobileContentContainer
    {
@@ -742,9 +734,13 @@ nav {
 //iPads in portrait and landscape-----------
 @media (min-width : 768px) and (max-width : 1024px) {
 
-   .navContainer {
-      width: @mobileContentWidth;
+   //Center the nav and all content using the "medium" width
+   .navContainer, .contentContainer
+   {
+      width: @contentWidthMedium;
+   }
 
+   .navContainer {
       nav {
          right: 0%;
       }
@@ -754,11 +750,6 @@ nav {
          padding-left: 20px;
          padding-right: 20px;
       }
-   }
-
-   .contentContainer //Center all content in the middle of the page
-   {
-      width: @mobileContentWidth;
    }
 }
 

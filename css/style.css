@@ -48,7 +48,7 @@ h1 {
 header {
   background: #fff;
   height: 62px;
-  min-width: 100%;
+  width: 100%;
   z-index: 1000;
   position: fixed;
   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
@@ -423,9 +423,6 @@ nav a:hover {
   -o-transform: translateX(-80%);
   transform: translateX(-80%);
 }
-.projectContent {
-  /*padding: 18px;*/
-}
 .project {
   width: 20%;
   height: 100%;
@@ -486,14 +483,9 @@ nav a:hover {
     width: 100%;
     height: 100%;
   }
-  /*.contentContainer //Center all content in the middle of the page
-   {
-      padding: 0 20px;
-   }*/
-  /*.projectContent
-   {
-      width: 100%;
-   }*/
+  .contentContainer {
+    width: 95%;
+  }
   #projects .mobileContentContainer {
     margin: 18px;
   }
@@ -575,7 +567,8 @@ nav a:hover {
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  .navContainer {
+  .navContainer,
+  .contentContainer {
     width: 88%;
   }
   .navContainer nav {
@@ -586,9 +579,6 @@ nav a:hover {
   .navContainer a:visited {
     padding-left: 20px;
     padding-right: 20px;
-  }
-  .contentContainer {
-    width: 88%;
   }
 }
 @media (min-width: 768px) and (max-width: 1188px) {
