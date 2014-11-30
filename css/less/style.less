@@ -10,7 +10,7 @@ Re-usable Colors
 
 @contentWidth: 80%; //All content is centered in the middle of the page. This width determines the left/right "margins" of all content.
 @contentWidthMedium: 88%;
-@contentWidthMobile: 95%;
+@contentWidthMobile: 94%;
 
 //The .sliderContainer's width is devided into eqaul parts, one for each project contained within the slider div
 //The container "moves" left and right to each prohect using CSS translateX
@@ -95,7 +95,7 @@ header {
    background: url("../images/smile-logo-sprite.png") no-repeat;
    position: relative;
    left: -2px;
-   
+
    &:hover {
       background-position: bottom;
    }
@@ -711,7 +711,9 @@ nav {
       width: 38px;
       height: 38px;
       background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
-
+      position: relative;
+      left: -2px;
+      
       &.selected {
          background-position: bottom;
       }
