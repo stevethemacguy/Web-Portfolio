@@ -1,34 +1,50 @@
-$(document).ready(function() 
-{
+$(document).ready(function() {
+
+    //Cache jQuery references
     var body = $("body");
-    var mobileLogo = $(".mobile-logo");
-    $(".toggleTheme").click(function()
-    {
+    var mobileLogo = $("#mobile-logo");
+
+    //Resizes the main background image to fill the viewable area of the window.
+    function resizeBackground() {
+        var viewportHeight = $(window).height();
+        //Optionally account for the header height to add a border to the bottom of the screen.
+        /*var headerHeight = $('header').outerHeight(false);
+        viewportHeight = viewportHeight - headerHeight; //The current viewable area of the viewport window.*/
+        $("#mainImage").css('height', viewportHeight);
+    }
+
+    //Resize the background when the page first loads
+    resizeBackground();
+
+    //Re-size the background when the browser is resized.
+    $(window).resize(function() {
+        resizeBackground();
+    });
+
+    $(".toggleTheme").click(function() {
         body.toggleClass("dark");
 
         //Change logo to black or teal based on light/dark theme
-        if(body.hasClass("dark"))
-        {
+        if (body.hasClass("dark")) {
             $(this).text("Light Theme");
         }
-        else
-        {
+        else {
             $(this).text("Dark Theme");
         }
     });
 
     //Scroll to Anchor (Desktop)
-    $(".navContainer").find("a").click(function(event){
+    $(".navContainer").find("a").click(function(event) {
         event.preventDefault();
         //Normal div offset minus the height of the header, since it's fixed.
         var sectionTop = $(this.hash).offset().top - $("header").outerHeight();
         $('html, body').animate({
             scrollTop: sectionTop
-        }, 600,"easeOutCubic");
+        }, 600, "easeOutCubic");
     });
 
     //Scroll to Anchor (Mobile)
-    $(".mobileNav ul li").on("tap",function(event){
+    $(".mobileNav ul li").on("tap", function(event) {
         event.preventDefault();
         $(this).addClass("selected");
         $(".mobileNav ul").slideUp("fast");
@@ -40,13 +56,28 @@ $(document).ready(function()
         }, 400);
     });
 
+    //Cache a few jQuery objects
+    var sliderDiv = $("#sliderContainer");
+    var thumbnails = $(".projectThumbnail");
+
+    thumbnails.click(function()
+    {
+        sliderDiv.removeClass(); //remove all classes
+        thumbnails.removeClass("active"); //Make other thumbnails inactive
+        $(this).addClass("active"); //Make the thumbnail active
+
+        //Use the index position of the thumbnail element to determine which class to add
+        var thumbIndex = thumbnails.index(this);
+            sliderDiv.addClass("trans" + thumbIndex);
+    });
+
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
     //This code only affects the mobile version of the site.
-    $("header").on("tap", function()
-    {
+    $("header").on("tap", function() {
         //Exit if not mobile
-        if($(window).width() >= 767)
+        if ($(window).width() >= 767) {
             return;
+        }
         $(this).removeClass("selected");
         mobileLogo.toggleClass("selected");
         $(".mobile-button").toggleClass("selected");
@@ -59,6 +90,7 @@ $(document).ready(function()
             $(this).find(".mobileNav ul").slideUp("fast");
         }
     });
+    ////////////////// END MOBILE-ONLY SECTION //////////////////
 
     //Enable parallax effects
     $.stellar({
@@ -69,16 +101,14 @@ $(document).ready(function()
     //These four logos animate at the same time, so cache the jquery objects
     var flyInIcons = $("#jiraLogo, #xamarinLogo, #phpLogo, #gitLogo");
 
-    //Flag is true when animated logos are now visible
-    var hasRevealed = false;
-
-    //Animate logos from left to right (and vice versa) as the user scrolls
-    $(window).scroll(function(){
-        if (hasRevealed)
-            return;
-        var scrollpos = $(this).scrollTop();
-        if (scrollpos >= 630 ) {
+    //When the any "fly-in" logo is in view, show all fly-in icons
+    $("#xamarinLogo").on('inview', function(event, offscreen) {
+        if (offscreen) {
+            //no longer visible
+        }
+        else {
             flyInIcons.addClass("reveal");
+            $(this).unbind('inview'); //Elements are now visible, so remove the binding
         }
     });
 });

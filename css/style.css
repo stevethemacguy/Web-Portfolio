@@ -1,6 +1,5 @@
-/*---------------------------------------------------
-Re-usable Colors
------------------------------------------------------*/
+/************** Reusable Colors ***************/
+/************** Responsive Widths***************/
 /************** Fonts ***************/
 /*@font-face {
   font-family: 'Segoe';
@@ -26,38 +25,40 @@ html,
 body {
   background: #fff;
   font-family: Arial;
+  color: #fff;
 }
 body {
   /*  height: 100%; //Needed?
    width: 100%; //Needed?*/
   position: relative;
 }
-a.toggleTheme {
+h1 {
+  font-family: Arial;
+  font-size: 36px;
+  color: #fff;
+}
+.toggleTheme {
   font-size: 14px;
 }
-a.toggleTheme:hover {
+.toggleTheme:hover {
   color: #ffa500;
   cursor: pointer;
 }
 header {
   background: #fff;
   height: 62px;
-  min-width: 100%;
+  width: 100%;
   z-index: 1000;
   position: fixed;
   box-shadow: 0 1px 7px 0 rgba(0, 0, 0, 0.56);
   font-size: 19px;
   border-bottom: 1px solid #252525;
 }
-header nav.mobileNav {
-  display: none;
-}
-header .navContainer {
+.navContainer {
   margin: 0 auto;
   width: 80%;
 }
-header .logo {
-  position: relative;
+.headerLogo {
   top: 2px;
   width: 50px;
   height: 50px;
@@ -65,62 +66,74 @@ header .logo {
   display: inline-block;
   cursor: pointer;
   background: url("../images/smile-logo-sprite.png") no-repeat;
+  position: relative;
+  left: -1px;
 }
-header .logo:hover {
+.headerLogo:hover {
   background-position: bottom;
 }
-header .logo a {
+.headerLogo a {
   display: block;
   width: 50px;
   height: 50px;
 }
-header nav {
+nav {
   display: inline-block;
   float: right;
   color: #000;
   position: relative;
+  /* a.projects:hover {
+       border-color: red;
+    }
+    a.sourceCode:hover {
+       border-color: yellow;
+    }
+    a.videos:hover {
+       border-color: lightskyblue;
+    }
+    a.about:hover {
+       border-color: mediumpurple;
+    }
+    a.contact:hover {
+       border-color: green;
+    }*/
 }
-header nav ul {
+nav ul {
   list-style: none;
 }
-header nav ul li {
+nav li {
   float: left;
-  /* a.projects:hover {
-                border-color: red;
-             }
-             a.sourceCode:hover {
-                border-color: yellow;
-             }
-             a.videos:hover {
-                border-color: lightskyblue;
-             }
-             a.about:hover {
-                border-color: mediumpurple;
-             }
-             a.contact:hover {
-                border-color: green;
-             }*/
+  /*-webkit-transition: background .35s ease;
+      -moz-transition: background .35s ease;
+      -o-transition: background .35s ease;
+      transition: background .35s ease;*/
 }
-header nav ul li:hover {
+nav li:hover {
   background: #31757e;
 }
-header nav ul li a,
-header nav ul li a:link,
-header nav ul li a:visited {
+nav a,
+nav a:link,
+nav a:visited {
   cursor: pointer;
   font-weight: bold;
   display: inline-block;
   padding: 22px 27px;
   padding-bottom: 21px;
+  color: #40919b;
 }
-header nav ul li a:active {
-  color: #ffa500;
+nav a:active,
+nav a:focus {
+  color: #40919b;
 }
-header nav ul li a:hover {
+nav a:hover {
+  color: #ffffff;
+  border: none;
   /*border-bottom: 2px solid #ff7116;*/
-  color: #ffa500;
 }
-.mainImage {
+.mobileNav {
+  display: none;
+}
+#mainImage {
   width: 100%;
   height: 740px;
   background: url("../images/searching.jpg") no-repeat center;
@@ -132,10 +145,6 @@ header nav ul li a:hover {
   background-attachment: fixed;
   /*not supported by mobile*/
 }
-.contentContainer {
-  width: 80%;
-  margin: 0 auto;
-}
 #parallax {
   display: block;
   height: 1000px;
@@ -143,19 +152,7 @@ header nav ul li a:hover {
   position: relative;
   overflow: hidden;
 }
-#htmlLogo,
-#cssLogo,
-#jqueryLogo,
-#jsLogo,
-#xamarinLogo,
-#lessLogo,
-#jiraLogo,
-#javaLogo,
-#sassLogo,
-#phpLogo,
-#angularLogo,
-#photoshopLogo,
-#gitLogo {
+.techLogo {
   position: absolute;
   z-index: 3;
 }
@@ -313,10 +310,161 @@ header nav ul li a:hover {
   margin-left: -47px;
   background: url("../images/tech/java.png") no-repeat;
 }
+.contentContainer {
+  width: 80%;
+  margin: 0 auto;
+}
 #projects {
-  background: #494180;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.projectNavGroup {
+  position: absolute;
+  z-index: 5;
+  margin-top: 16px;
+  width: 100%;
+  height: 47px;
+}
+.projectTitle {
+  display: inline-block;
+}
+.projectLinks {
+  display: inline-block;
+  margin-left: 41px;
+  position: relative;
+  top: 9px;
+}
+.projectThumbnail {
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  cursor: pointer;
+  margin-right: 22px;
+  opacity: .3;
+  -webkit-transition: opacity .28s linear;
+  -moz-transition: opacity .28s linear;
+  -o-transition: opacity .28s linear;
+  transition: opacity .28s linear;
+}
+.projectThumbnail.active {
+  opacity: 1;
+}
+.projectThumbnail:hover {
+  opacity: 1;
+}
+.projectThumbnail:nth-child(1) {
+  background: url("../images/twc-small2.png") no-repeat;
+  width: 102px;
+}
+.projectThumbnail:nth-child(2) {
+  width: 177px;
+  height: 45px;
+  background: url("../images/xamarin-white.png") no-repeat;
+  top: 3px;
+  left: -3px;
+}
+.projectThumbnail:nth-child(3) {
+  width: 112px;
+  height: 30px;
+  top: -5px;
+  background: url("../images/ehow-small.png") no-repeat;
+}
+.projectThumbnail:nth-child(4) {
+  width: 143px;
+  height: 40px;
+  top: 5px;
+  margin-left: 4px;
+  background: url("../images/pennington-small.png") no-repeat;
+}
+.projectThumbnail:nth-child(5) {
+  width: 69px;
+  height: 40px;
+  top: 1px;
+  left: 4px;
+  background: url("../images/nfcu.png") no-repeat;
+}
+#sliderContainer {
+  width: 500%;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: all 0.65s ease 0s;
+  -moz-transition: all 0.65s ease 0s;
+  -o-transition: all 0.65s ease 0s;
+  transition: all 0.65s ease 0s;
+}
+#sliderContainer.trans1 {
+  -webkit-transform: translateX(-20%);
+  -moz-transform: translateX(-20%);
+  -o-transform: translateX(-20%);
+  transform: translateX(-20%);
+}
+#sliderContainer.trans2 {
+  -webkit-transform: translateX(-40%);
+  -moz-transform: translateX(-40%);
+  -o-transform: translateX(-40%);
+  transform: translateX(-40%);
+}
+#sliderContainer.trans3 {
+  -webkit-transform: translateX(-60%);
+  -moz-transform: translateX(-60%);
+  -o-transform: translateX(-60%);
+  transform: translateX(-60%);
+}
+#sliderContainer.trans4 {
+  -webkit-transform: translateX(-80%);
+  -moz-transform: translateX(-80%);
+  -o-transform: translateX(-80%);
+  transform: translateX(-80%);
+}
+.project {
+  width: 20%;
+  min-height: 750px;
+  float: left;
+  color: white;
+  padding-top: 116px;
+}
+.point {
+  margin: 1px 0 ;
+}
+.rightSide {
+  margin-left: 50px;
+  position: relative;
+  left: 10px;
+  width: 400px;
+  display: inline-block;
+}
+.summary {
+  clear: both;
+}
+.leftSide {
+  display: inline-block;
+  float: left;
+}
+.term {
+  font-size: 18px;
+  margin: 1px 0;
+  font-weight: bold;
+}
+#project1 {
+  background: #1C0025;
+}
+#project2 {
+  background: #0C2032;
+}
+#project3 {
+  background: #833700;
+}
+#project4 {
+  background: #132400;
+}
+#project5 {
+  background: #000625;
 }
 #sourceCode {
+  clear: both;
   background: #253139;
 }
 #videos {
@@ -332,54 +480,37 @@ header nav ul li a:hover {
   background: black;
   color: grey;
 }
-.dark a.toggleTheme {
+.dark .toggleTheme {
   color: #40919b;
 }
-.dark a.toggleTheme:hover {
+.dark .toggleTheme:hover {
   color: #ffffff;
 }
 .dark header {
   background: #000;
 }
-.dark header .logo {
-  background: url("../images/smile-logo-sprite.png") no-repeat;
-}
-.dark header .logo:hover {
+.dark header:hover {
   background-position: bottom;
 }
-.dark header nav ul li a,
-.dark header nav ul li a:link,
-.dark header nav ul li a:visited {
-  color: #40919b;
-}
-.dark header nav ul li a:hover {
-  color: #ffffff;
-  border: none;
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  header .navContainer {
-    width: 88%;
-  }
-  header .navContainer nav {
-    right: 0%;
-  }
-  header .navContainer nav ul li a {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-  .main .contentContainer {
-    width: 88%;
-  }
+.dark .headerLogo {
+  background: url("../images/smile-logo-sprite.png") no-repeat;
 }
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
-  .contentContainer {
+  #sliderContainer {
     width: 100%;
+    height: 100%;
+  }
+  .contentContainer {
+    width: 94%;
+  }
+  #projects .mobileContentContainer {
+    margin: 18px;
   }
   #parallax {
     display: none;
   }
-  .mainImage {
+  #mainImage {
     background-attachment: scroll;
     /*Fixed is not supported by mobile*/
     height: 500px;
@@ -391,41 +522,18 @@ header nav ul li a:hover {
   header:hover {
     cursor: pointer;
   }
-  header .navContainer {
+  .navContainer {
     display: none;
   }
-  header nav.mobileNav {
-    display: inline-block;
-    width: 100%;
+  .mobileNav {
+    display: block;
     margin-top: 0;
     float: none;
     right: 0;
     height: 48px;
+    margin: 0 auto;
   }
-  header nav.mobileNav .mobile-logo {
-    display: inline-block;
-    position: fixed;
-    left: 5px;
-    top: 5px;
-    width: 38px;
-    height: 38px;
-    background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
-  }
-  header nav.mobileNav .mobile-logo.selected {
-    background-position: bottom;
-  }
-  header nav.mobileNav .mobile-button {
-    float: right;
-    margin-top: 15px;
-    margin-right: 20px;
-    width: 27px;
-    height: 17px;
-    background: url("../images/mobile/menu-button-sprite.png") no-repeat;
-  }
-  header nav.mobileNav .mobile-button.selected {
-    background-position: bottom;
-  }
-  header nav.mobileNav ul {
+  .mobileNav ul {
     display: none;
     position: fixed;
     top: 48px;
@@ -434,34 +542,131 @@ header nav ul li a:hover {
     background: #000;
     margin-left: 0;
   }
-  header nav.mobileNav ul li {
+  .mobileNav li {
     font-size: 24px;
     padding: 12px 0;
     float: none;
     border-bottom: 1px solid #252525;
   }
-  header nav.mobileNav ul li:first-child {
+  .mobileNav li:first-child {
     border-top: 1px solid #252525;
   }
-  header nav.mobileNav ul li a {
-    padding: 0;
-    margin: 0;
-    color: #40919b;
-  }
-  header nav.mobileNav ul li.selected {
+  .mobileNav li.selected {
     background: #fff;
   }
-}
-@media (max-width: 1350px) {
-  #xamarinLogo {
-    background: url("../images/tech/xamarin-tiny.png") no-repeat;
-    width: 80px;
-    height: 71px;
-    margin-left: -40px;
-    margin-top: -4px;
+  .mobileNav a,
+  .mobileNav a:link,
+  .mobileNav a:visited {
+    padding: 0;
+    margin: 0;
   }
-  #photoshopLogo {
-    margin-top: -2px;
+  #mobile-logo {
+    display: inline-block;
+    margin-top: 5px;
+    width: 38px;
+    height: 38px;
+    background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
+    position: relative;
+    left: -2px;
+  }
+  #mobile-logo.selected {
+    background-position: bottom;
+  }
+  .mobile-button {
+    display: inline-block;
+    float: right;
+    margin-top: 15px;
+    width: 27px;
+    height: 17px;
+    background: url("../images/mobile/menu-button-sprite.png") no-repeat;
+  }
+  .mobile-button.selected {
+    background-position: bottom;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .contentContainer {
+    width: 88%;
+  }
+  .navContainer nav {
+    right: 0%;
+  }
+  .navContainer a,
+  .navContainer a:link,
+  .navContainer a:visited {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 1188px) {
+  .projectLinks {
+    float: right;
+    margin-left: 0;
+    width: 81%;
+  }
+  h1 {
+    padding-top: 14px;
+  }
+  .projectThumbnail:nth-child(1) {
+    margin-left: 12px;
+  }
+  .projectThumbnail:nth-child(2) {
+    width: 51px;
+    height: 45px;
+    top: 4px;
+    left: -3px;
+    background: url("../images/xamarin-tiny.png") no-repeat;
+  }
+  .projectThumbnail {
+    margin-right: 28px;
+  }
+  .projectThumbnail:nth-child(2) {
+    left: 0;
+  }
+  .projectThumbnail:nth-child(3) {
+    top: -5px;
+    left: 0;
+  }
+  .projectThumbnail:nth-child(4) {
+    top: 5px;
+    left: 0;
+    width: 143px;
+  }
+  .projectThumbnail:nth-child(5) {
+    left: 0;
+    top: 1px;
+    margin-right: 14px;
+  }
+}
+@media (max-width: 914px) {
+  #projects {
+    height: 100%;
+    background: #1C0025;
+  }
+  #sliderContainer {
+    width: 100%;
+  }
+  #sliderContainer.trans1,
+  #sliderContainer.trans2,
+  #sliderContainer.trans3,
+  #sliderContainer.trans4 {
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+  }
+  #sliderContainer .project {
+    width: 100%;
+    display: block;
+    float: none;
+    padding-top: 5px;
+  }
+  #sliderContainer .project:first-child {
+    padding-top: 116px;
+  }
+  .projectLinks {
+    float: none;
+    display: none;
   }
 }
 @media (max-width: 1051px) {
@@ -486,7 +691,22 @@ header nav ul li a:hover {
     margin-top: 14px;
   }
 }
-/* Only iPhone 4 ----------- */
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
-  /* YOUR STYLE GOES HERE */
+@media (max-width: 1350px) {
+  #xamarinLogo {
+    background: url("../images/tech/xamarin-tiny.png") no-repeat;
+    width: 80px;
+    height: 71px;
+    margin-left: -40px;
+    margin-top: -4px;
+  }
+  #photoshopLogo {
+    margin-top: -2px;
+  }
 }
+/* Only iPhone 4 ----------- */
+/*
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+   */
+/* YOUR STYLE GOES HERE */
+/*
+}*/

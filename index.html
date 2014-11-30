@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Steven Dunn's Portfolio</title>
     <link rel="shortcut icon" href="images/favicon/5.ico"/>
     <link rel="stylesheet" href="css/reset.css" type="text/css" media="screen">
@@ -10,8 +10,8 @@
 </head>
     <body class="dark" id="top">
         <header>
-            <div class="navContainer">
-                <div class="logo"><a href="#top"></a></div>
+            <div class="navContainer contentContainer">
+                <div class="headerLogo"><a href="#top"></a></div>
                 <nav>
                     <ul>
                         <li><a class="projects" href="#projects">Projects</a></li>
@@ -23,8 +23,10 @@
                 </nav>
             </div>
             <nav class="mobileNav">
-                <div class="mobile-logo"></div>
-                <div class="mobile-button"></div>
+                <div class="contentContainer">
+                    <div id="mobile-logo"></div>
+                    <div class="mobile-button"></div>
+                </div>
                 <ul>
                     <li><a class="projects" href="#projects">Projects</a></li>
                     <li><a class="sourceCode" href="#sourceCode">Source Code</a></li>
@@ -34,41 +36,110 @@
                 </ul>
             </nav>
         </header>
-        <div class="mainImage"></div>
+        <div id="mainImage"></div>
             <section id="parallax">
-                <div id="htmlLogo" data-stellar-ratio=".3"></div>
-                <div id="cssLogo" data-stellar-ratio=".3"></div>
-                <div id="jsLogo" data-stellar-ratio= ".3"></div>
-                <div id="lessLogo" data-stellar-ratio = "2"></div>
-                <div id="sassLogo" data-stellar-ratio="2"></div> <!--How fast to move to the final resting position-->
-                <!--<div id="angularLogo" data-stellar-ratio= "3.8"></div>-->
-                <div id="jiraLogo" data-stellar-ratio="1.5"></div>
-                <div id="phpLogo" data-stellar-ratio= "1.5"></div>
-                <div id="gitLogo" data-stellar-ratio= "1.5"></div>
+                <div id="htmlLogo" class="techLogo" data-stellar-ratio=".3"></div>
+                <div id="cssLogo" class="techLogo" data-stellar-ratio=".3"></div>
+                <div id="jsLogo" class="techLogo" data-stellar-ratio= ".3"></div>
+                <div id="lessLogo" class="techLogo" data-stellar-ratio = "2"></div>
+                <div id="sassLogo" class="techLogo" data-stellar-ratio="2"></div> <!--How fast to move to the final resting position-->
+                <!--<div id="angularLogo" class="techLogo" data-stellar-ratio= "3.8"></div>-->
+                <div id="jiraLogo" class="techLogo" data-stellar-ratio="1.5"></div>
+                <div id="phpLogo" class="techLogo" data-stellar-ratio= "1.5"></div>
+                <div id="gitLogo" class="techLogo" data-stellar-ratio= "1.5"></div>
                 <!--<div id="photoshopLogo" data-stellar-ratio= "1.5"></div>-->
-                <div id="xamarinLogo" data-stellar-ratio= 1.5></div>
-                <div id="javaLogo" data-stellar-ratio="1.3"></div> <!--How fast to move to the final resting position-->
-                <div id="jqueryLogo" data-stellar-ratio="1.3"></div>
+                <div id="xamarinLogo" class="techLogo" data-stellar-ratio= 1.5></div>
+                <div id="javaLogo" class="techLogo" data-stellar-ratio="1.3"></div> <!--How fast to move to the final resting position-->
+                <div id="jqueryLogo" class="techLogo" data-stellar-ratio="1.3"></div>
             </section>
-        <a class="toggleTheme">Dark Theme</a>
+        <!--<a class="toggleTheme">Dark Theme</a>-->
+
         <section id="projects">
-            <div class="contentContainer">
-                <p>PROJECTS</p>
-                <p>This page is currently under construction.</p>
-                <p>Please check back in a few weeks!</p>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-                   Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.
-                   Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                   Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-                   Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.
-                   Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                   Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
-                   Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.
-                   Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit.
-                   Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+            <div class="projectNavGroup">
+                <div class="contentContainer">
+                    <h1 class="projectTitle">Projects</h1>
+                    <div class="projectLinks">
+                        <div id="project1Link" class="projectThumbnail active"></div>
+                        <div id="project2Link" class="projectThumbnail"></div>
+                        <div id="project3Link" class="projectThumbnail"></div>
+                        <div id="project4Link" class="projectThumbnail"></div>
+                        <div id="project5Link" class="projectThumbnail"></div>
+                    </div>
+                </div>
             </div>
+            <div id="sliderContainer">
+                <div class="project" id="project1">
+                    <div class="projectContent contentContainer">
+                        <article>
+                            <div class="leftSide">
+                                <p class="term">Company</p>
+                                <p class="term">Role</p>
+                                <p class="term">Base Technologies</p>
+                                <p class="term">Unique Technologies</p>
+                                <p class="term">Summary</p>
+                            </div>
+                            <div class="rightSide">
+                                <p class="point">Time Warner Cable</p>
+                                <p class="point">Lead Front-End Developer, Client Liason at SiteWorx</p>
+                                <p class="point">HTML5, CSS3, JavaScript, jQuery, Git</p>
+                                <p class="point">Ajax, JSON, Google Map API, Graph/Chart plugins</p>
+                            </div>
+                            <p class="summary point">
+                                Time Warner Cable needed a dashboard for network administrators to manage WiFi access points at various "HotSpot" locations in California. Siteworx designed and developed a solution that allows admins to view detailed statistical data via graphs and chart and easily manage user privelages and network settings.
+                            </p>
+                            <!--<div class="row"><span class="term">Accomplishmnets: </span></div>-->
+                            <!--<ul>
+                                <li>Created custom form validation</li>
+                                <li>Managed cImplemented the Git branching model and release strategy. Managed all code releases, documentation and client liason (led weekly phone conferences). Graph/Chart, Custom Select Box plugins, Google Maps. Heavy Ajax + Json parsoning.
+                                    7. Dramatically improved/restructured existing HTML/CSS to meet standards and actually removed more code than added, despite adding a ton of new features!
+                                    8. Worked with select-box plugin for <select> elements
+                                </li>
+                            </ul>-->
+                        </article>
+                    </div>
+                </div>
+                <div class="project" id="project2">
+                    <div class="projectContent contentContainer">
+                        <p>Xamarin</p>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
+                           Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.
+                           Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                           Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        </p>
+                    </div>
+                </div>
+                <div class="project" id="project3">
+                    <div class="projectContent contentContainer">
+                        <p>eHow</p>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
+                           Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.
+                           Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                           Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        </p>
+                    </div>
+                </div>
+                <div class="project" id="project4">
+                    <div class="projectContent contentContainer">
+                        <p>Pennington Seed (Central Garden and Pet)</p>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
+                           Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.
+                           Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                           Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        </p>
+                    </div>
+                </div>
+                <div class="project" id="project5">
+                    <div class="projectContent contentContainer">
+                        <p>NFCU</p>
+                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Sed posuere consectetur est at lobortis. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Nullam quis risus eget urna mollis ornare vel eu leo.
+                           Aenean lacinia bibendum nulla sed consectetur. Donec id elit non mi porta gravida at eget metus. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Nulla vitae elit libero, a pharetra augue. Nullam quis risus eget urna mollis ornare vel eu leo.
+                           Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Curabitur blandit tempus porttitor. Nullam id dolor id nibh ultricies vehicula ut id elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. Nullam id dolor id nibh ultricies vehicula ut id elit.
+                           Nullam id dolor id nibh ultricies vehicula ut id elit. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--</div>-->
         </section>
         <section id="sourceCode">
             <div class="contentContainer">
@@ -161,6 +232,7 @@
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/jquery.stellar.js"></script>
+        <script type="text/javascript" src="js/jquery.inview.min.js"></script>
         <script type="text/javascript">
         //Use jQuery-Mobile for touch-events only, otherwise leave the page alone.
         $(document).on( "mobileinit", function() {
