@@ -489,11 +489,11 @@ nav a:hover {
 .dark header {
   background: #000;
 }
-.dark header:hover {
-  background-position: bottom;
-}
 .dark .headerLogo {
   background: url("../images/smile-logo-sprite.png") no-repeat;
+}
+.dark .headerLogo:hover {
+  background-position: bottom;
 }
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
