@@ -400,6 +400,24 @@ nav {
    margin: 0 auto;
 }
 
+.inProgress {
+   height: 650px;
+   color: #ffffff;
+   font-size: 20px;
+   margin-top: 34px;
+   word-spacing: .8px;
+}
+
+.inProgressTextOnly {
+   color: #ffffff;
+   font-size: 20px;
+   word-spacing: .8px;
+}
+
+.sectionHeader {
+   padding-top: 26px;
+}
+
 //Projects Section
 #projects {
    width: 100%; //TODO: this can probably be moved up to Body element and just inherit
@@ -547,18 +565,17 @@ nav {
    margin: 1px 0 ;
 }
 
-.rightSide
-{
+.rightSide {
    margin-left: 50px;
- position: relative;
- left: 10px;
+   position: relative;
+   left: 10px;
    width: 400px;
    display: inline-block;
 }
 
-.summary
-{
-clear: both;
+.summary {
+   clear: both;
+   margin-top: 48px;
 }
 
 .leftSide
@@ -604,15 +621,15 @@ clear: both;
 }
 
 #videos {
-   background: white;
+   background: #000625;
 }
 
 #about {
-   background: blue;
+   background: darkslategrey;
 }
 
 #contact {
-   background: orange;
+   background: #000000;
 }
 
 ///////////////////////////  Dark specific styles   ///////////////////////////
@@ -680,7 +697,7 @@ clear: both;
 
    header {
       height: 48px;
-      opacity: .91;
+      opacity: .97;
 
       &:hover {
          // color: @darkHeaderHover;
@@ -723,6 +740,12 @@ clear: both;
 
          &.selected {
             background: #fff;
+         }
+
+         //There is no hover on mobile. This is here for desktop resizing.
+         &:hover a
+         {
+            color: @darkHeaderHover;
          }
       }
 

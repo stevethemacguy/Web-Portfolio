@@ -314,6 +314,21 @@ nav a:hover {
   width: 80%;
   margin: 0 auto;
 }
+.inProgress {
+  height: 650px;
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 34px;
+  word-spacing: .8px;
+}
+.inProgressTextOnly {
+  color: #ffffff;
+  font-size: 20px;
+  word-spacing: .8px;
+}
+.sectionHeader {
+  padding-top: 26px;
+}
 #projects {
   width: 100%;
   overflow: hidden;
@@ -438,6 +453,7 @@ nav a:hover {
 }
 .summary {
   clear: both;
+  margin-top: 48px;
 }
 .leftSide {
   display: inline-block;
@@ -468,13 +484,13 @@ nav a:hover {
   background: #253139;
 }
 #videos {
-  background: white;
+  background: #000625;
 }
 #about {
-  background: blue;
+  background: darkslategrey;
 }
 #contact {
-  background: orange;
+  background: #000000;
 }
 .dark {
   background: black;
@@ -517,7 +533,7 @@ nav a:hover {
   }
   header {
     height: 48px;
-    opacity: .91;
+    opacity: .97;
   }
   header:hover {
     cursor: pointer;
@@ -553,6 +569,9 @@ nav a:hover {
   }
   .mobileNav li.selected {
     background: #fff;
+  }
+  .mobileNav li:hover a {
+    color: #ffffff;
   }
   .mobileNav a,
   .mobileNav a:link,
