@@ -441,6 +441,23 @@ nav a:hover {
   color: white;
   padding-top: 116px;
 }
+blockquote {
+  clear: both;
+  font-size: 20px;
+  margin: 10px 28px;
+  word-spacing: 0.8px;
+  width: 88%;
+}
+blockquote:nth-of-type(2) {
+  margin-top: 60px;
+  margin-bottom: 17px;
+}
+.quoteSource {
+  float: right;
+  font-size: 18px;
+  font-style: italic;
+  margin-right: 112px;
+}
 .point {
   margin: 1px 0 ;
 }
