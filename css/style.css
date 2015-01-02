@@ -739,6 +739,9 @@ blockquote:after {
   .quoteGroup {
     margin-left: 25px;
   }
+  #project1 {
+    margin-bottom: 40px;
+  }
 }
 @media (min-width: 0) and (max-width: 634px) {
   .more {
