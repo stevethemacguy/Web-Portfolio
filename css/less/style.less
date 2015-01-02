@@ -615,6 +615,7 @@ blockquote
    font-size: 18px;
    font-style: italic;
    margin-right: 12%;
+   z-index: 2;
 
    a:link {
       color: @lightContentText;
@@ -626,7 +627,7 @@ blockquote
       color: @lightContentText;
    }
    a:hover {
-      color: @darkHeaderNavHover;
+      color: #F6BA4E;
    }
    a:active {
       color: @lightContentText;
@@ -698,10 +699,9 @@ blockquote
    line-height: 1.2;
    margin-top: 40px;
    color: @lightContentText;
+   clear: both;
 
-
-   &.first
-   {
+   &.first {
       margin-top: 46px;
    }
 
@@ -750,13 +750,12 @@ blockquote
    display: inline-block;
 }
 
-.leftSide
-{
+.leftSide {
    display: inline-block;
    float: left;
 }
-.term
-{
+
+.term {
    font-size: 18px;
    //display: inline-block;
    margin: 1px 0;
@@ -957,26 +956,37 @@ blockquote
       }
    }
 
-   .quoteContainer
-   {
-      height: 150px;
-   }
-
 }
 
-@media (max-width : 635px)
+//Responsive styling for TWC Project quotes
+@media (min-width: 0) and (max-width : 634px)
 {
-   .more
-   {
+   .more {
       display: none;
    }
+
+   .quoteContainer {
+      height: auto;
+   }
+
+   .quoteGroup {
+      position: static;
+
+      &.hide {
+         display: none;
+      }
+   }
+
+   .summary.first {
+      margin-top: 70px;
+   }
 }
 
-@media (max-width : 515px)
+@media (min-width: 635px) and (max-width : 914px)
 {
    .quoteContainer
    {
-      height: 240px;
+      height: 145px;
    }
 }
 
@@ -1090,11 +1100,6 @@ blockquote
    .projectLinks {
       float: none;
       display: none;
-   }
-
-   .quoteContainer
-   {
-      height: 145px;
    }
 }
 

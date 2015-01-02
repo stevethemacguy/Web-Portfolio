@@ -484,6 +484,7 @@ blockquote:after {
   font-size: 18px;
   font-style: italic;
   margin-right: 12%;
+  z-index: 2;
 }
 .quoteSource a:link {
   color: #e5e5e5;
@@ -495,7 +496,7 @@ blockquote:after {
   color: #e5e5e5;
 }
 .quoteSource a:hover {
-  color: #31757e;
+  color: #F6BA4E;
 }
 .quoteSource a:active {
   color: #e5e5e5;
@@ -545,6 +546,7 @@ blockquote:after {
   line-height: 1.2;
   margin-top: 40px;
   color: #e5e5e5;
+  clear: both;
 }
 .summary.first {
   margin-top: 46px;
@@ -734,18 +736,27 @@ blockquote:after {
   .mobile-button.selected {
     background-position: bottom;
   }
-  .quoteContainer {
-    height: 150px;
-  }
 }
-@media (max-width: 635px) {
+@media (min-width: 0) and (max-width: 634px) {
   .more {
     display: none;
   }
-}
-@media (max-width: 515px) {
   .quoteContainer {
-    height: 240px;
+    height: auto;
+  }
+  .quoteGroup {
+    position: static;
+  }
+  .quoteGroup.hide {
+    display: none;
+  }
+  .summary.first {
+    margin-top: 70px;
+  }
+}
+@media (min-width: 635px) and (max-width: 914px) {
+  .quoteContainer {
+    height: 145px;
   }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -831,9 +842,6 @@ blockquote:after {
   .projectLinks {
     float: none;
     display: none;
-  }
-  .quoteContainer {
-    height: 145px;
   }
 }
 @media (max-width: 1051px) {
