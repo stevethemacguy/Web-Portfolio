@@ -1,4 +1,5 @@
 /************** Reusable Colors ***************/
+@lightContentText: #fff;
 @lightHeaderText: #000;
 @darkHeaderText: #40919b;
 @darkHeaderNavHover: #31757E; //Teal
@@ -47,7 +48,7 @@
 html, body {
    background: #fff;
    font-family: Arial;
-   color: #fff;
+   color: @lightContentText;
 }
 
 body {
@@ -59,7 +60,7 @@ body {
 h1 {
    font-family: Arial;
    font-size: 36px;
-   color: #fff;
+   color: @lightContentText;
 }
 
 .toggleTheme {
@@ -402,14 +403,14 @@ nav {
 
 .inProgress {
    height: 650px;
-   color: #ffffff;
+   color: @lightContentText;
    font-size: 20px;
    margin-top: 34px;
    word-spacing: .8px;
 }
 
 .inProgressTextOnly {
-   color: #ffffff;
+   color: @lightContentText;
    font-size: 20px;
    word-spacing: .8px;
 }
@@ -562,25 +563,67 @@ nav {
 
 blockquote
 {
+   display: inline-block;
    clear: both;
-   font-size: 20px;
-   margin: 10px 28px;
-   word-spacing: 0.8px;
+   font-size: 19px;
+   margin: 10px 34px;
+   margin-bottom: 16px;
+   word-spacing: 0.3px;
    width: 88%;
+   line-height: 1.1;
+   letter-spacing: .3px;
 
-   &:nth-of-type(2)
+   &:nth-child(2)
    {
       margin-top: 60px;
-      margin-bottom: 17px;
+   }
+
+   &:before, &:after
+   {
+      content: '';
+      height: 13px;
+      width: 13px;
+      position: relative;
+   }
+
+   &:before {
+      background: url("../images/icons/quote-open-white.png") no-repeat;
+      display: block; //Inline-block indents the text to the right. Used for the open quote only.
+      top: 13px;
+      left: -22px;
+   }
+
+   &:after{
+      background: url("../images/icons/quote-close-white.png") no-repeat;
+      display: inline-block;
+      top: -3px;
+      left: 7px;
    }
 }
 
-.quoteSource
-{
+.quoteSource {
    float: right;
    font-size: 18px;
    font-style: italic;
-   margin-right: 112px;
+   margin-right: 12%;
+   /*margin-top: 16px;*/
+
+   a:link {
+      color: @lightContentText;
+   }
+   a:visited {
+      color: @lightContentText;
+   }
+   a:focus {
+      color: @lightContentText;
+   }
+   a:hover {
+      color: @darkHeaderNavHover;
+   }
+   a:active {
+      color: @lightContentText;
+   }
+
 }
 
 .point

@@ -25,7 +25,7 @@ html,
 body {
   background: #fff;
   font-family: Arial;
-  color: #fff;
+  color: #ffffff;
 }
 body {
   /*  height: 100%; //Needed?
@@ -35,7 +35,7 @@ body {
 h1 {
   font-family: Arial;
   font-size: 36px;
-  color: #fff;
+  color: #ffffff;
 }
 .toggleTheme {
   font-size: 14px;
@@ -442,21 +442,59 @@ nav a:hover {
   padding-top: 116px;
 }
 blockquote {
+  display: inline-block;
   clear: both;
-  font-size: 20px;
-  margin: 10px 28px;
-  word-spacing: 0.8px;
+  font-size: 19px;
+  margin: 10px 34px;
+  margin-bottom: 16px;
+  word-spacing: 0.3px;
   width: 88%;
+  line-height: 1.1;
+  letter-spacing: .3px;
 }
-blockquote:nth-of-type(2) {
+blockquote:nth-child(2) {
   margin-top: 60px;
-  margin-bottom: 17px;
+}
+blockquote:before,
+blockquote:after {
+  content: '';
+  height: 13px;
+  width: 13px;
+  position: relative;
+}
+blockquote:before {
+  background: url("../images/icons/quote-open-white.png") no-repeat;
+  display: block;
+  top: 13px;
+  left: -22px;
+}
+blockquote:after {
+  background: url("../images/icons/quote-close-white.png") no-repeat;
+  display: inline-block;
+  top: -3px;
+  left: 7px;
 }
 .quoteSource {
   float: right;
   font-size: 18px;
   font-style: italic;
-  margin-right: 112px;
+  margin-right: 12%;
+  /*margin-top: 16px;*/
+}
+.quoteSource a:link {
+  color: #ffffff;
+}
+.quoteSource a:visited {
+  color: #ffffff;
+}
+.quoteSource a:focus {
+  color: #ffffff;
+}
+.quoteSource a:hover {
+  color: #31757e;
+}
+.quoteSource a:active {
+  color: #ffffff;
 }
 .point {
   margin: 1px 0 ;
