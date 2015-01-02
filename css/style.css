@@ -474,6 +474,9 @@ blockquote:after {
   top: -3px;
   left: 6px;
 }
+#project1 article {
+  position: relative;
+}
 .quoteSource {
   float: right;
   font-size: 18px;
@@ -495,6 +498,33 @@ blockquote:after {
 }
 .quoteSource a:active {
   color: #ffffff;
+}
+.quoteGroup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+.quoteGroup.hide {
+  opacity: 0;
+}
+.more {
+  position: absolute;
+  padding: 5px 0;
+  color: #CECECE;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 15px;
+  margin-left: 42px;
+  margin-top: 81px;
+  z-index: 2;
+}
+.more:hover {
+  color: lightblue;
 }
 .point {
   margin: 1px 0 ;

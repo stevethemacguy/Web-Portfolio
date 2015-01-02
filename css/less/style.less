@@ -602,6 +602,11 @@ blockquote
    }
 }
 
+#project1 article
+{
+   position: relative;
+}
+
 .quoteSource {
    float: right;
    font-size: 18px;
@@ -624,7 +629,40 @@ blockquote
    a:active {
       color: @lightContentText;
    }
+}
 
+.quoteGroup
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   opacity: 1;
+   -webkit-transition: opacity 1s ease;
+         -moz-transition: opacity 1s ease;
+         -o-transition: opacity 1s ease;
+         transition: opacity 1s ease;
+   &.hide
+   {
+      opacity: 0;
+   }
+}
+
+
+.more {
+   position: absolute;
+   padding: 5px 0;
+   color: #CECECE;
+   cursor: pointer;
+   display: inline-block;
+   font-size: 15px;
+   margin-left: 42px;
+   margin-top: 81px;
+   z-index: 2;
+
+   &:hover
+   {
+      color: lightblue;
+   }
 }
 
 .point
@@ -1011,11 +1049,6 @@ blockquote
 @media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
    *//* YOUR STYLE GOES HERE *//*
 }*/
-
-
-
-
-
 
 
 

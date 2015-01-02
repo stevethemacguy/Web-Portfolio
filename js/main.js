@@ -60,15 +60,18 @@ $(document).ready(function() {
     var sliderDiv = $("#sliderContainer");
     var thumbnails = $(".projectThumbnail");
 
-    thumbnails.click(function()
-    {
+    thumbnails.click(function() {
         sliderDiv.removeClass(); //remove all classes
         thumbnails.removeClass("active"); //Make other thumbnails inactive
         $(this).addClass("active"); //Make the thumbnail active
 
         //Use the index position of the thumbnail element to determine which class to add
         var thumbIndex = thumbnails.index(this);
-            sliderDiv.addClass("trans" + thumbIndex);
+        sliderDiv.addClass("trans" + thumbIndex);
+    });
+
+    $(".more").click(function() {
+        $(".quoteGroup").toggleClass("hide");
     });
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
