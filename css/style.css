@@ -139,55 +139,81 @@ nav a:hover {
   top: -125px;
   width: 64px;
   cursor: pointer;
-  -webkit-animation: arrow-bounce 3s infinite;
-  -moz-animation: arrow-bounce 3s infinite;
-  -o-animation: arrow-bounce 3s infinite;
-  animation: arrow-bounce 3s infinite;
+  /*
+animation-name: bounce;
+animation-duration: 4s;
+animation-iteration-count: 10;
+animation-direction: alternate;
+animation-timing-function: ease-out;
+animation-fill-mode: forwards;
+animation-delay: 2s;
+
+Shorthand: Name, duration, iteration-count, direction, timing (easing), fill-mode, delay
+Example:
+
+.elementToAnimate {
+   -webkit-animation: arrow-bounce 3s infinite;
+   -moz-animation:    arrow-bounce 3s infinite;
+   -o-animation:      arrow-bounce 3s infinite;
+   animation:         arrow-bounce 3s infinite;
 }
+
+//Down Arrow Animation
 @-webkit-keyframes arrow-bounce {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+   0%   { opacity: 0; }
+   50% { opacity: 1; }
 }
-@-moz-keyframes arrow-bounce {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+
+*/
+  -webkit-animation: arrow-bounce 2.5s infinite 2s;
+  -moz-animation: arrow-bounce 2.5s infinite 2s;
+  -o-animation: arrow-bounce 2.5s infinite 2s;
+  animation: arrow-bounce 2.5s infinite 2s;
 }
-@-o-keyframes arrow-bounce {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+/*//Down Arrow Animation
+@-webkit-keyframes arrow-bounce {
+   0%   { opacity: 0; }
+   50% { opacity: 1; }
+   100% { opacity: 0; }
+}*/
 @keyframes arrow-bounce {
   0% {
-    opacity: 0;
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-8px);
   }
   50% {
-    opacity: 1;
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(-8px);
+  }
+  70% {
+    transform: translateY(0);
   }
   100% {
-    opacity: 0;
+    transform: translateY(0);
   }
 }
+/*@-moz-keyframes arrow-bounce {
+   0%   { opacity: 0; }
+   50% { opacity: 1; }
+   100% { opacity: 0; }
+}
+@-o-keyframes arrow-bounce {
+   0%   { opacity: 0; }
+   50% { opacity: 1; }
+   100% { opacity: 0; }
+}
+@keyframes arrow-bounce {
+   0%   { opacity: 0; }
+   50% { opacity: 1; }
+   100% { opacity: 0; }
+}*/
 #parallax {
   display: block;
   height: 1000px;
