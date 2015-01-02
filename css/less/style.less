@@ -195,7 +195,6 @@ nav {
    top: -125px;
    width: 64px;
    cursor: pointer;
-   opacity: .85;
    //Animate the arrow
    -webkit-animation: arrow-bounce 2.4s infinite 1s;
    -moz-animation: arrow-bounce 2.4s infinite 1s;
@@ -210,7 +209,7 @@ nav {
 
    //Pause the animation when hovered
    &:hover {
-      opacity: 1;
+      background: url("@{icons}/down-arrow-orange.png");
       -webkit-animation-play-state: paused;
       -moz-animation-play-state: paused;
       -o-animation-play-state: paused;

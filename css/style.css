@@ -139,7 +139,6 @@ nav a:hover {
   top: -125px;
   width: 64px;
   cursor: pointer;
-  opacity: .85;
   -webkit-animation: arrow-bounce 2.4s infinite 1s;
   -moz-animation: arrow-bounce 2.4s infinite 1s;
   -o-animation: arrow-bounce 2.4s infinite 1s;
@@ -150,7 +149,7 @@ nav a:hover {
    animation: drop-and-bounce 2.5s infinite 2s;*/
 }
 .downArrow:hover {
-  opacity: 1;
+  background: url("../images/icons/down-arrow-orange.png");
   -webkit-animation-play-state: paused;
   -moz-animation-play-state: paused;
   -o-animation-play-state: paused;
