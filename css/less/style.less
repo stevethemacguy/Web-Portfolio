@@ -566,16 +566,17 @@ blockquote
    display: inline-block;
    clear: both;
    font-size: 19px;
-   margin: 10px 34px;
-   margin-bottom: 16px;
+   margin: -9px 42px;
+   margin-bottom: 12px;
    word-spacing: 0.3px;
    width: 88%;
-   line-height: 1.1;
+   line-height: 1.17;
    letter-spacing: .3px;
 
-   &:nth-child(2)
+   &:nth-of-type(2)
    {
-      margin-top: 60px;
+      margin-top: 12px;
+
    }
 
    &:before, &:after
@@ -590,14 +591,14 @@ blockquote
       background: url("../images/icons/quote-open-white.png") no-repeat;
       display: block; //Inline-block indents the text to the right. Used for the open quote only.
       top: 13px;
-      left: -22px;
+      left: -20px;
    }
 
    &:after{
       background: url("../images/icons/quote-close-white.png") no-repeat;
       display: inline-block;
       top: -3px;
-      left: 7px;
+      left: 6px;
    }
 }
 
