@@ -71,7 +71,10 @@ $(document).ready(function() {
     });
 
     $(".more").click(function() {
-        $(".quoteGroup").toggleClass("hide");
+        var quoteGroup = $(".quoteGroup");
+        quoteGroup.toggleClass("hide"); //Sets opacity to 0, but does not remove the element
+        quoteGroup.find($(".more")).toggleClass("hide"); //Actually remove the element
+        quoteGroup.find($(".quoteSource")).toggleClass("hide"); //Actually remove the element
     });
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////

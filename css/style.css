@@ -500,6 +500,9 @@ blockquote:after {
 .quoteSource a:active {
   color: #e5e5e5;
 }
+.quoteSource.hide {
+  display: none;
+}
 .quoteContainer {
   height: 105px;
 }
@@ -528,6 +531,9 @@ blockquote:after {
 }
 .more:hover {
   color: #FFB639;
+}
+.more.hide {
+  display: none;
 }
 .highlight {
   color: #F6BA4E;
@@ -728,6 +734,19 @@ blockquote:after {
   .mobile-button.selected {
     background-position: bottom;
   }
+  .quoteContainer {
+    height: 150px;
+  }
+}
+@media (max-width: 635px) {
+  .more {
+    display: none;
+  }
+}
+@media (max-width: 515px) {
+  .quoteContainer {
+    height: 240px;
+  }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .contentContainer {
@@ -812,6 +831,9 @@ blockquote:after {
   .projectLinks {
     float: none;
     display: none;
+  }
+  .quoteContainer {
+    height: 145px;
   }
 }
 @media (max-width: 1051px) {

@@ -631,6 +631,11 @@ blockquote
    a:active {
       color: @lightContentText;
    }
+
+   &.hide
+   {
+      display: none;
+   }
 }
 
 .quoteContainer
@@ -649,6 +654,7 @@ blockquote
    -moz-transition: opacity 1s ease;
    -o-transition: opacity 1s ease;
    transition: opacity 1s ease;
+
    &.hide
    {
       opacity: 0;
@@ -667,6 +673,11 @@ blockquote
    &:hover
    {
       color: #FFB639;
+   }
+
+   &.hide
+   {
+      display: none;
    }
 }
 
@@ -945,6 +956,28 @@ blockquote
          background-position: bottom;
       }
    }
+
+   .quoteContainer
+   {
+      height: 150px;
+   }
+
+}
+
+@media (max-width : 635px)
+{
+   .more
+   {
+      display: none;
+   }
+}
+
+@media (max-width : 515px)
+{
+   .quoteContainer
+   {
+      height: 240px;
+   }
 }
 
 //iPads in portrait and landscape-----------
@@ -1057,6 +1090,11 @@ blockquote
    .projectLinks {
       float: none;
       display: none;
+   }
+
+   .quoteContainer
+   {
+      height: 145px;
    }
 }
 
