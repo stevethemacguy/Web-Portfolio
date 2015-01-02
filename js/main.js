@@ -33,15 +33,16 @@ $(document).ready(function() {
         }
     });
 
-    //Down Arrow Scroll to Project Section
-    $(".downArrow").click(function(event) {
+    //Currently not used to encouraging scrolling instead of clicking since it's smoother
+    //Arrow Scroll to Project Section
+    /*$(".downArrow").click(function(event) {
         event.preventDefault();
         //Normal div offset minus the height of the header, since it's fixed.
         var sectionTop = $("#projects").offset().top - $("header").outerHeight();
         $('html, body').animate({
             scrollTop: sectionTop
-        }, 8000, "linear");
-    });
+        }, 7000, "linear");
+    });*/
 
     //Scroll to Anchor (Desktop)
     $(".navContainer").find("a").click(function(event) {

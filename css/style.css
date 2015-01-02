@@ -138,7 +138,6 @@ nav a:hover {
   position: relative;
   top: -125px;
   width: 64px;
-  cursor: pointer;
   -webkit-animation: arrow-bounce 2.4s infinite 0.5s;
   -moz-animation: arrow-bounce 2.4s infinite 0.5s;
   -o-animation: arrow-bounce 2.4s infinite 0.5s;
@@ -147,13 +146,14 @@ nav a:hover {
    -moz-animation: drop-and-bounce 2.5s infinite 2s;
    -o-animation: drop-and-bounce 2.5s infinite 2s;
    animation: drop-and-bounce 2.5s infinite 2s;*/
-}
-.downArrow:hover {
-  background: url("../images/icons/down-arrow-orange.png");
-  -webkit-animation-play-state: paused;
-  -moz-animation-play-state: paused;
-  -o-animation-play-state: paused;
-  animation-play-state: paused;
+  /*&:hover {
+      cursor: pointer;
+      background: url("@{icons}/down-arrow-orange.png");
+      -webkit-animation-play-state: paused;
+      -moz-animation-play-state: paused;
+      -o-animation-play-state: paused;
+      animation-play-state: paused;
+   }*/
 }
 @-webkit-keyframes arrow-bounce {
   0% {

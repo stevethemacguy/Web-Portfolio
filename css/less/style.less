@@ -194,7 +194,6 @@ nav {
    position: relative;
    top: -125px;
    width: 64px;
-   cursor: pointer;
    //Animate the arrow
    -webkit-animation: arrow-bounce 2.4s infinite .5s;
    -moz-animation: arrow-bounce 2.4s infinite .5s;
@@ -207,14 +206,16 @@ nav {
    -o-animation: drop-and-bounce 2.5s infinite 2s;
    animation: drop-and-bounce 2.5s infinite 2s;*/
 
+   //Currently not using hover to encourage scrolling instead since it's smoother
    //Pause the animation when hovered
-   &:hover {
+   /*&:hover {
+      cursor: pointer;
       background: url("@{icons}/down-arrow-orange.png");
       -webkit-animation-play-state: paused;
       -moz-animation-play-state: paused;
       -o-animation-play-state: paused;
       animation-play-state: paused;
-   }
+   }*/
 }
 
 //Arrow Bounces Downward.
