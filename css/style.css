@@ -5,22 +5,8 @@
   font-family: 'Segoe';
   src: url('/fonts/segoeui.eot');
   src: url('/fonts/segoeui.eot?#iefix') format('embedded-opentype'), url('/fonts/segoeui.ttf') format('opentype');
-}
-@font-face {
-  font-family: 'Segoe Bold';
-  src: url('/fonts/segoeuib.eot');
-  src: url('/fonts/segoeuib.eot?#iefix') format('embedded-opentype'), url('/fonts/segoeuib.ttf') format('opentype');
-}
-@font-face {
-  font-family: 'Segoe Italic';
-  src: url('/fonts/segoeuii.eot');
-  src: url('/fonts/segoeuii.eot?#iefix') format('embedded-opentype'), url('/fonts/segoeuii.ttf') format('opentype');
-}
-@font-face {
-  font-family: 'Segoe Bold Italic';
-  src: url('/fonts/segoeuiz.eot');
-  src: url('/fonts/segoeuiz.eot?#iefix') format('embedded-opentype'), url('/fonts/segoeuiz.ttf') format('opentype');
 }*/
+/************** Base URLs ***************/
 html,
 body {
   background: #fff;
@@ -144,6 +130,63 @@ nav a:hover {
   border-bottom: 1px solid #252525;
   background-attachment: fixed;
   /*not supported by mobile*/
+}
+.downArrow {
+  background: url("../images/icons/down-arrow-thick.png");
+  height: 64px;
+  margin: 0 auto;
+  position: relative;
+  top: -125px;
+  width: 64px;
+  cursor: pointer;
+  -webkit-animation: arrow-bounce 3s infinite;
+  -moz-animation: arrow-bounce 3s infinite;
+  -o-animation: arrow-bounce 3s infinite;
+  animation: arrow-bounce 3s infinite;
+}
+@-webkit-keyframes arrow-bounce {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes arrow-bounce {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes arrow-bounce {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes arrow-bounce {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 #parallax {
   display: block;

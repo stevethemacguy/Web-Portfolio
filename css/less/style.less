@@ -28,22 +28,11 @@
   font-family: 'Segoe';
   src: url('/fonts/segoeui.eot');
   src: url('/fonts/segoeui.eot?#iefix') format('embedded-opentype'), url('/fonts/segoeui.ttf') format('opentype');
-}
-@font-face {
-  font-family: 'Segoe Bold';
-  src: url('/fonts/segoeuib.eot');
-  src: url('/fonts/segoeuib.eot?#iefix') format('embedded-opentype'), url('/fonts/segoeuib.ttf') format('opentype');
-}
-@font-face {
-  font-family: 'Segoe Italic';
-  src: url('/fonts/segoeuii.eot');
-  src: url('/fonts/segoeuii.eot?#iefix') format('embedded-opentype'), url('/fonts/segoeuii.ttf') format('opentype');
-}
-@font-face {
-  font-family: 'Segoe Bold Italic';
-  src: url('/fonts/segoeuiz.eot');
-  src: url('/fonts/segoeuiz.eot?#iefix') format('embedded-opentype'), url('/fonts/segoeuiz.ttf') format('opentype');
 }*/
+
+/************** Base URLs ***************/
+@images: "../images";
+@icons: "../images/icons";
 
 html, body {
    background: #fff;
@@ -97,7 +86,7 @@ header {
    margin: 4px 0;
    display: inline-block;
    cursor: pointer;
-   background: url("../images/smile-logo-sprite.png") no-repeat;
+   background: url("@{images}/smile-logo-sprite.png") no-repeat;
    position: relative;
    left: -1px;
 
@@ -188,13 +177,51 @@ nav {
 #mainImage {
    width: 100%;
    height: 740px;
-   background: url("../images/searching.jpg") no-repeat center;
+   background: url("@{images}/searching.jpg") no-repeat center;
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;
    background-size: cover;
    border-bottom: 1px solid #252525;
    background-attachment: fixed; /*not supported by mobile*/
+}
+
+.downArrow {
+   background: url("@{icons}/down-arrow-thick.png");
+   width: 64px;
+   height: 64px;
+   margin: 0 auto;
+   position: relative;
+   top: -125px;
+   width: 64px;
+   cursor: pointer;
+
+   -webkit-animation: arrow-bounce 3s infinite;
+   -moz-animation:    arrow-bounce 3s infinite;
+   -o-animation:      arrow-bounce 3s infinite;
+   animation:         arrow-bounce 3s infinite;
+}
+
+//Down Arrow Animation
+@-webkit-keyframes arrow-bounce {
+   0%   { opacity: 0; }
+   50% { opacity: 1; }
+   100% { opacity: 0; }
+}
+@-moz-keyframes arrow-bounce {
+   0%   { opacity: 0; }
+   50% { opacity: 1; }
+   100% { opacity: 0; }
+}
+@-o-keyframes arrow-bounce {
+   0%   { opacity: 0; }
+   50% { opacity: 1; }
+   100% { opacity: 0; }
+}
+@keyframes arrow-bounce {
+   0%   { opacity: 0; }
+   50% { opacity: 1; }
+   100% { opacity: 0; }
 }
 
 ///////////// Parallax section /////////////
@@ -231,7 +258,7 @@ nav {
    top: 300px;
    left: 24%; //25% would center between left edge and CSS
    margin-left: -55px;
-   background: url("../images/tech/htmlLogo-white.png") no-repeat;
+   background: url("@{images}/tech/htmlLogo-white.png") no-repeat;
 }
 
 #cssLogo {
@@ -240,7 +267,7 @@ nav {
    top: 300px;
    left: 50%; //Center the middle logo (see negative margin below)
    margin-left: -55px; //Half of width is 55px
-   background: url("../images/tech/css-white.png") no-repeat;
+   background: url("@{images}/tech/css-white.png") no-repeat;
 }
 
 #jsLogo {
@@ -249,7 +276,7 @@ nav {
    width: 110px;
    height: 155px;
    margin-left: -55px;
-   background: url("../images/tech/js-white.png") no-repeat;
+   background: url("@{images}/tech/js-white.png") no-repeat;
 }
 
 #sassLogo {
@@ -258,7 +285,7 @@ nav {
    width: 108px;
    height: 81px;
    margin-left: -54px;
-   background: url("../images/tech/sass.png") no-repeat;
+   background: url("@{images}/tech/sass.png") no-repeat;
 }
 
 #lessLogo {
@@ -267,7 +294,7 @@ nav {
    width: 120px;
    height: 51px;
    margin-left: -60px;
-   background: url("../images/tech/less.png") no-repeat;
+   background: url("@{images}/tech/less.png") no-repeat;
 }
 
 #xamarinLogo {
@@ -276,7 +303,7 @@ nav {
    opacity: 0;
    width: 228px;
    height: 60px;
-   background: url("../images/tech/xamarin-short-spaced.png") no-repeat;
+   background: url("@{images}/tech/xamarin-short-spaced.png") no-repeat;
    margin-left: -114px;
    -webkit-transition: left .5s ease, opacity .5s linear;
    -moz-transition: left .5s ease, opacity .5s linear;
@@ -297,7 +324,7 @@ nav {
    width: 162px;
    height: 68px;
    margin-left: -81px;
-   background: url("../images/tech/git-white.png") no-repeat;
+   background: url("@{images}/tech/git-white.png") no-repeat;
    -webkit-transition: left .5s ease, opacity .5s linear;
    -moz-transition: left .5s ease, opacity .5s linear;
    -o-transition: left .5s ease, opacity .5s linear;
@@ -316,7 +343,7 @@ nav {
    width: 144px;
    height: 76px;
    margin-left: -72px;
-   background: url("../images/tech/php.png") no-repeat;
+   background: url("@{images}/tech/php.png") no-repeat;
    -webkit-transition: left .5s ease, opacity .5s linear;
    -moz-transition: left .5s ease, opacity .5s linear;
    -o-transition: left .5s ease, opacity .5s linear;
@@ -334,7 +361,7 @@ nav {
    opacity: 0;
    width: 135px;
    height: 53px;
-   background: url("../images/tech/jira-light.png") no-repeat;
+   background: url("@{images}/tech/jira-light.png") no-repeat;
    -webkit-transition: left .5s ease, opacity .5s linear;
    -moz-transition: left .5s ease, opacity .5s linear;
    -o-transition: left .5s ease, opacity .5s linear;
@@ -353,7 +380,7 @@ nav {
    opacity: 0;
    width: 88px;
    height: 86px;
-   background: url("../images/tech/photoshop.png") no-repeat;
+   background: url("@{images}/tech/photoshop.png") no-repeat;
    -webkit-transition: left .5s ease, opacity .5s linear;
    -moz-transition: left .5s ease, opacity .5s linear;
    -o-transition: left .5s ease, opacity .5s linear;
@@ -371,7 +398,7 @@ nav {
    width: 89px;
    height: 93px;
    margin-left: -45px;
-   background: url("../images/tech/angular.png") no-repeat;
+   background: url("@{images}/tech/angular.png") no-repeat;
    z-index: 2;
 }
 
@@ -382,7 +409,7 @@ nav {
    width: 121px;
    height: 137px;
    margin-left: -61px;
-   background: url("../images/tech/jquery.png") no-repeat;
+   background: url("@{images}/tech/jquery.png") no-repeat;
 }
 
 #javaLogo {
@@ -391,7 +418,7 @@ nav {
    width: 94px;
    height: 171px;
    margin-left: -47px;
-   background: url("../images/tech/java.png") no-repeat;
+   background: url("@{images}/tech/java.png") no-repeat;
 }
 
 ///////////// END Parallax Section /////////////
@@ -473,25 +500,25 @@ nav {
 
    &:nth-child(1)
    {
-      //background: url("../images/twc-small.png") no-repeat;
-      background: url("../images/twc-small2.png") no-repeat;
+      //background: url("@{images}/twc-small.png") no-repeat;
+      background: url("@{images}/twc-small2.png") no-repeat;
       width: 102px;
    }
    &:nth-child(2)
    {
       width: 177px;
       height: 45px;
-      background: url("../images/xamarin-white.png") no-repeat;
+      background: url("@{images}/xamarin-white.png") no-repeat;
       top: 3px;
       left: -3px;
-      // background: url("../images/tech/xamarin-miny.png") no-repeat;
+      // background: url("@{images}/tech/xamarin-miny.png") no-repeat;
    }
    &:nth-child(3)
    {
       width: 112px;
       height: 30px;
       top: -5px;
-      background: url("../images/ehow-small.png") no-repeat;
+      background: url("@{images}/ehow-small.png") no-repeat;
    }
    &:nth-child(4)
    {
@@ -499,7 +526,7 @@ nav {
       height: 40px;
       top: 5px;
       margin-left: 4px;
-      background: url("../images/pennington-small.png") no-repeat;
+      background: url("@{images}/pennington-small.png") no-repeat;
    }
    &:nth-child(5)
    {
@@ -507,7 +534,7 @@ nav {
       height: 40px;
       top: 1px;
       left: 4px;
-      background: url("../images/nfcu.png") no-repeat;
+      background: url("@{images}/nfcu.png") no-repeat;
    }
 }
 /////////////////// End Project Links Section ///////////////////
@@ -591,14 +618,14 @@ blockquote
    }
 
    &:before {
-      background: url("../images/icons/quote-open-orange.png") no-repeat;
+      background: url("@{icons}/quote-open-orange.png") no-repeat;
       display: block; //Inline-block indents the text to the right. Used for the open quote only.
       top: 13px;
       left: -20px;
    }
 
    &:after{
-      background: url("../images/icons/quote-close-orange.png") no-repeat;
+      background: url("@{icons}/quote-close-orange.png") no-repeat;
       display: inline-block;
       top: -3px;
       left: 6px;
@@ -824,7 +851,7 @@ blockquote
    }
 
    .headerLogo {
-      background: url("../images/smile-logo-sprite.png") no-repeat;
+      background: url("@{images}/smile-logo-sprite.png") no-repeat;
 
       &:hover {
          background-position: bottom;
@@ -933,7 +960,7 @@ blockquote
       margin-top: 5px;
       width: 38px;
       height: 38px;
-      background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
+      background: url("@{images}/mobile/small-smile-logo-sprite.png") no-repeat;
       position: relative;
       left: -2px;
 
@@ -949,7 +976,7 @@ blockquote
       margin-top: 15px;
       width: 27px;
       height: 17px;
-      background: url("../images/mobile/menu-button-sprite.png") no-repeat;
+      background: url("@{images}/mobile/menu-button-sprite.png") no-repeat;
 
       &.selected {
          background-position: bottom;
@@ -1041,7 +1068,7 @@ blockquote
       height: 45px;
       top: 4px;
       left: -3px;
-      background: url("../images/xamarin-tiny.png") no-repeat;
+      background: url("@{images}/xamarin-tiny.png") no-repeat;
    }
 
    .projectThumbnail {
@@ -1115,14 +1142,14 @@ blockquote
 @media (max-width : 1051px) {
 
    #gitLogo {
-      background: url("../images/tech/git-tiny.png") no-repeat;
+      background: url("@{images}/tech/git-tiny.png") no-repeat;
       width: 68px;
       height: 68px;
       margin-left: -34px;
    }
 
    #jiraLogo {
-      background: url("../images/tech/jira-tiny.png") no-repeat;
+      background: url("@{images}/tech/jira-tiny.png") no-repeat;
       width: 58px;
       height: 77px;
       margin-left: -29px;
@@ -1130,7 +1157,7 @@ blockquote
    }
 
    #phpLogo {
-      background: url("../images/tech/php-text.png") no-repeat;
+      background: url("@{images}/tech/php-text.png") no-repeat;
       width: 100px;
       height: 48px;
       margin-left: -50px;
@@ -1141,7 +1168,7 @@ blockquote
 @media (max-width : 1350px) {
 
    #xamarinLogo {
-      background: url("../images/tech/xamarin-tiny.png") no-repeat;
+      background: url("@{images}/tech/xamarin-tiny.png") no-repeat;
       width: 80px;
       height: 71px;
       margin-left: -40px;
