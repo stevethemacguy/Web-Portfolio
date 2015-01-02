@@ -25,7 +25,7 @@ html,
 body {
   background: #fff;
   font-family: Arial;
-  color: #ffffff;
+  color: #e5e5e5;
 }
 body {
   /*  height: 100%; //Needed?
@@ -35,7 +35,7 @@ body {
 h1 {
   font-family: Arial;
   font-size: 36px;
-  color: #ffffff;
+  color: #e5e5e5;
 }
 .toggleTheme {
   font-size: 14px;
@@ -148,6 +148,7 @@ nav a:hover {
 #parallax {
   display: block;
   height: 1000px;
+  height: 1100px;
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -316,13 +317,13 @@ nav a:hover {
 }
 .inProgress {
   height: 650px;
-  color: #ffffff;
+  color: #e5e5e5;
   font-size: 20px;
   margin-top: 34px;
   word-spacing: .8px;
 }
 .inProgressTextOnly {
-  color: #ffffff;
+  color: #e5e5e5;
   font-size: 20px;
   word-spacing: .8px;
 }
@@ -438,19 +439,20 @@ nav a:hover {
   width: 20%;
   min-height: 750px;
   float: left;
-  color: white;
+  color: #e5e5e5;
   padding-top: 116px;
 }
 blockquote {
   display: inline-block;
   clear: both;
-  font-size: 19px;
-  margin: -9px 42px;
+  font-size: 15px;
+  margin: -9px 0;
   margin-bottom: 12px;
-  word-spacing: 0.3px;
+  font-size: 18px;
+  font-family: Verdana;
+  letter-spacing: .4px;
+  line-height: 1.2;
   width: 88%;
-  line-height: 1.17;
-  letter-spacing: .3px;
 }
 blockquote:nth-of-type(2) {
   margin-top: 12px;
@@ -463,18 +465,18 @@ blockquote:after {
   position: relative;
 }
 blockquote:before {
-  background: url("../images/icons/quote-open-white.png") no-repeat;
+  background: url("../images/icons/quote-open-orange.png") no-repeat;
   display: block;
   top: 13px;
   left: -20px;
 }
 blockquote:after {
-  background: url("../images/icons/quote-close-white.png") no-repeat;
+  background: url("../images/icons/quote-close-orange.png") no-repeat;
   display: inline-block;
   top: -3px;
   left: 6px;
 }
-#project1 article {
+#twcArticle {
   position: relative;
 }
 .quoteSource {
@@ -482,24 +484,27 @@ blockquote:after {
   font-size: 18px;
   font-style: italic;
   margin-right: 12%;
-  /*margin-top: 16px;*/
 }
 .quoteSource a:link {
-  color: #ffffff;
+  color: #e5e5e5;
 }
 .quoteSource a:visited {
-  color: #ffffff;
+  color: #e5e5e5;
 }
 .quoteSource a:focus {
-  color: #ffffff;
+  color: #e5e5e5;
 }
 .quoteSource a:hover {
   color: #31757e;
 }
 .quoteSource a:active {
-  color: #ffffff;
+  color: #e5e5e5;
+}
+.quoteContainer {
+  height: 105px;
 }
 .quoteGroup {
+  margin-left: 50px;
   position: absolute;
   top: 0;
   left: 0;
@@ -513,21 +518,60 @@ blockquote:after {
   opacity: 0;
 }
 .more {
+  display: block;
   position: absolute;
-  padding: 5px 0;
-  color: #CECECE;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 15px;
-  margin-left: 42px;
-  margin-top: 81px;
   z-index: 2;
+  margin-left: 0;
+  cursor: pointer;
+  padding: 3px 0;
+  font-size: 15px;
 }
 .more:hover {
-  color: lightblue;
+  color: #FFB639;
 }
-.point {
-  margin: 1px 0 ;
+.highlight {
+  color: #F6BA4E;
+}
+.summary {
+  font-size: 19px;
+  font-family: Verdana;
+  letter-spacing: .4px;
+  line-height: 1.2;
+  margin-top: 40px;
+  color: #e5e5e5;
+}
+.summary.first {
+  margin-top: 46px;
+}
+.summary a:link {
+  color: #e5e5e5;
+}
+.summary a:link.highlight {
+  color: #F6BA4E;
+}
+.summary a:visited {
+  color: #e5e5e5;
+}
+.summary a:visited.highlight {
+  color: #F6BA4E;
+}
+.summary a:focus {
+  color: #e5e5e5;
+}
+.summary a:focus.highlight {
+  color: #F6BA4E;
+}
+.summary a:hover {
+  color: #F6BA4E;
+}
+.summary a:hover.highlight {
+  color: #e5e5e5;
+}
+.summary a:active {
+  color: #e5e5e5;
+}
+.summary a:active.highlight {
+  color: #F6BA4E;
 }
 .rightSide {
   margin-left: 50px;
@@ -535,10 +579,6 @@ blockquote:after {
   left: 10px;
   width: 400px;
   display: inline-block;
-}
-.summary {
-  clear: both;
-  margin-top: 48px;
 }
 .leftSide {
   display: inline-block;
@@ -551,6 +591,7 @@ blockquote:after {
 }
 #project1 {
   background: #1C0025;
+  /*background: #15011C; //Darker Purple*/
 }
 #project2 {
   background: #0C2032;
@@ -575,11 +616,11 @@ blockquote:after {
   background: darkslategrey;
 }
 #contact {
-  background: #000000;
+  background: #11110C;
 }
 .dark {
-  background: black;
-  color: grey;
+  background: #000;
+  color: #e5e5e5;
 }
 .dark .toggleTheme {
   color: #40919b;

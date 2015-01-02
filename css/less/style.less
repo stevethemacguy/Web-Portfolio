@@ -1,5 +1,5 @@
 /************** Reusable Colors ***************/
-@lightContentText: #fff;
+@lightContentText: #e5e5e5;
 @lightHeaderText: #000;
 @darkHeaderText: #40919b;
 @darkHeaderNavHover: #31757E; //Teal
@@ -201,6 +201,7 @@ nav {
 #parallax {
    display: block;
    height: 1000px;
+   height: 1100px;
    width: 100%;
    position: relative;
    overflow: hidden;
@@ -557,7 +558,7 @@ nav {
    width: @projectWidth; //Full width of the container devided by the number of projects
    min-height: 750px;
    float: left; //Inline-block doesn't work properly for whatever reason
-   color: white;
+   color: @lightContentText;
    padding-top: 116px;
 }
 
@@ -565,13 +566,15 @@ blockquote
 {
    display: inline-block;
    clear: both;
-   font-size: 19px;
-   margin: -9px 42px;
+   //color: #429abe;
+   font-size: 15px;
+   margin: -9px 0;
    margin-bottom: 12px;
-   word-spacing: 0.3px;
+   font-size: 18px;
+   font-family: Verdana;
+   letter-spacing: .4px;
+   line-height: 1.2;
    width: 88%;
-   line-height: 1.17;
-   letter-spacing: .3px;
 
    &:nth-of-type(2)
    {
@@ -588,21 +591,21 @@ blockquote
    }
 
    &:before {
-      background: url("../images/icons/quote-open-white.png") no-repeat;
+      background: url("../images/icons/quote-open-orange.png") no-repeat;
       display: block; //Inline-block indents the text to the right. Used for the open quote only.
       top: 13px;
       left: -20px;
    }
 
    &:after{
-      background: url("../images/icons/quote-close-white.png") no-repeat;
+      background: url("../images/icons/quote-close-orange.png") no-repeat;
       display: inline-block;
       top: -3px;
       left: 6px;
    }
 }
 
-#project1 article
+#twcArticle
 {
    position: relative;
 }
@@ -612,7 +615,6 @@ blockquote
    font-size: 18px;
    font-style: italic;
    margin-right: 12%;
-   /*margin-top: 16px;*/
 
    a:link {
       color: @lightContentText;
@@ -631,43 +633,102 @@ blockquote
    }
 }
 
+.quoteContainer
+{
+   height: 105px;
+}
+
 .quoteGroup
 {
+   margin-left: 50px;
    position: absolute;
    top: 0;
    left: 0;
    opacity: 1;
    -webkit-transition: opacity 1s ease;
-         -moz-transition: opacity 1s ease;
-         -o-transition: opacity 1s ease;
-         transition: opacity 1s ease;
+   -moz-transition: opacity 1s ease;
+   -o-transition: opacity 1s ease;
+   transition: opacity 1s ease;
    &.hide
    {
       opacity: 0;
    }
 }
 
-
 .more {
+   display: block;
    position: absolute;
-   padding: 5px 0;
-   color: #CECECE;
-   cursor: pointer;
-   display: inline-block;
-   font-size: 15px;
-   margin-left: 42px;
-   margin-top: 81px;
    z-index: 2;
+   margin-left: 0;
+   cursor: pointer;
+   padding: 3px 0;
+   font-size: 15px;
 
    &:hover
    {
-      color: lightblue;
+      color: #FFB639;
    }
 }
 
-.point
+.highlight
 {
-   margin: 1px 0 ;
+   color: #F6BA4E; //orange
+   //color: #9BCADF; //blue
+}
+
+.summary {
+   //font-family: Arial;
+   font-size: 19px;
+   //word-spacing: 0.3px;
+   //line-height: 1.18;
+   //letter-spacing: .7px;
+   font-family: Verdana;
+   letter-spacing: .4px;
+   line-height: 1.2;
+   margin-top: 40px;
+   color: @lightContentText;
+
+
+   &.first
+   {
+      margin-top: 46px;
+   }
+
+   a:link {
+      color: @lightContentText;
+      &.highlight
+      {
+         color: #F6BA4E;
+      }
+   }
+   a:visited {
+      color: @lightContentText;
+      &.highlight
+      {
+         color: #F6BA4E;
+      }
+   }
+   a:focus {
+      color: @lightContentText;
+      &.highlight
+      {
+         color: #F6BA4E;
+      }
+   }
+   a:hover {
+      color: #F6BA4E;
+      &.highlight
+      {
+         color: @lightContentText;
+      }
+   }
+   a:active {
+      color: @lightContentText;
+      &.highlight
+      {
+         color: #F6BA4E;
+      }
+   }
 }
 
 .rightSide {
@@ -676,11 +737,6 @@ blockquote
    left: 10px;
    width: 400px;
    display: inline-block;
-}
-
-.summary {
-   clear: both;
-   margin-top: 48px;
 }
 
 .leftSide
@@ -698,6 +754,7 @@ blockquote
 
 #project1 {
    background: #1C0025;
+   /*background: #15011C; //Darker Purple*/
 }
 
 #project2 {
@@ -722,7 +779,7 @@ blockquote
 
 #sourceCode {
    clear:both;
-   background: #253139;
+   background: #253139
 }
 
 #videos {
@@ -734,14 +791,14 @@ blockquote
 }
 
 #contact {
-   background: #000000;
+   background: #11110C;
 }
 
 ///////////////////////////  Dark specific styles   ///////////////////////////
 
 .dark {
-   background: black;
-   color: grey;
+   background: #000; //#11110C for faded black
+   color: @lightContentText;
 
    .toggleTheme {
 
