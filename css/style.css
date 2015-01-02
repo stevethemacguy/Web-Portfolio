@@ -139,14 +139,22 @@ nav a:hover {
   top: -125px;
   width: 64px;
   cursor: pointer;
-  -webkit-animation: arrow-bounce 2.5s infinite 1.8s;
-  -moz-animation: arrow-bounce 2.5s infinite 1.8s;
-  -o-animation: arrow-bounce 2.5s infinite 1.8s;
-  animation: arrow-bounce 2.5s infinite 1.8s;
+  opacity: .85;
+  -webkit-animation: arrow-bounce 2.4s infinite 1s;
+  -moz-animation: arrow-bounce 2.4s infinite 1s;
+  -o-animation: arrow-bounce 2.4s infinite 1s;
+  animation: arrow-bounce 2.4s infinite 1s;
   /*-webkit-animation: drop-and-bounce 2.5s infinite 2s;
-   -moz-animation:    drop-and-bounce 2.5s infinite 2s;
-   -o-animation:      drop-and-bounce 2.5s infinite 2s;
-   animation:         drop-and-bounce 2.5s infinite 2s;*/
+   -moz-animation: drop-and-bounce 2.5s infinite 2s;
+   -o-animation: drop-and-bounce 2.5s infinite 2s;
+   animation: drop-and-bounce 2.5s infinite 2s;*/
+}
+.downArrow:hover {
+  opacity: 1;
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
 }
 @keyframes arrow-bounce {
   0% {
@@ -188,21 +196,6 @@ nav a:hover {
     transform: translateY(0);
   }
 }
-/*@-moz-keyframes arrow-bounce {
-   0%   { opacity: 0; }
-   50% { opacity: 1; }
-   100% { opacity: 0; }
-}
-@-o-keyframes arrow-bounce {
-   0%   { opacity: 0; }
-   50% { opacity: 1; }
-   100% { opacity: 0; }
-}
-@keyframes arrow-bounce {
-   0%   { opacity: 0; }
-   50% { opacity: 1; }
-   100% { opacity: 0; }
-}*/
 #parallax {
   display: block;
   height: 1000px;
