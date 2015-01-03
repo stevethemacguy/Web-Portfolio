@@ -12,7 +12,6 @@
 @contentWidthMedium: 88%;
 @contentWidthMobile: 94%;
 
-
 //The width of .sliderContainer is always N times the viewport width, where N is the number of projects to display.
 //For example, if there are 4 projects, than the width of .sliderContainer will be 400%. //The container "moves" left and right to show each project using CSS translateX.
 @numberOfProjects: 5;
@@ -186,18 +185,17 @@ nav {
    background-attachment: fixed; /*not supported by mobile*/
 }
 
-.arrowContainer
-{
-   height: 68px; //Height of Arrow + arrow top margin + Height of arrowText +
+.arrowContainer {
+   height: 68px; //.downArrow height + .downArrow margin-top + .arrowText height
    width: 200px;
-   margin: 0 auto;
    position: relative;
    top: -105px;
+   margin: 0 auto;
    margin-bottom: -68px;
    text-align: center;
 }
-.arrowText
-{
+
+.arrowText {
    height: 20px;
    font-size: 12px;
    font-style: italic;
@@ -209,6 +207,7 @@ nav {
    width: 45px;
    margin: 0 auto;
    margin-top: 3px;
+
    //Animate the arrow
    -webkit-animation: arrow-bounce 2.3s infinite .5s;
    -moz-animation: arrow-bounce 2.3s infinite .5s;
@@ -235,123 +234,51 @@ nav {
 
 //Arrow Bounces Downward.
 @-webkit-keyframes arrow-bounce {
-   0% {
-      transform: translateY(0px);
-   }
-
-   50% {
-      transform: translateY(0);
-   }
-
-   60% {
-      transform: translateY(8px);
-   }
-
-   70% {
-      transform: translateY(0);
-   }
-
-   80% {
-      transform: translateY(8px);
-   }
+   0% {transform: translateY(0);}
+   50% {transform: translateY(0);}
+   60% {transform: translateY(8px);}
+   70% {transform: translateY(0);}
+   80% {transform: translateY(8px);}
 }
 
+//Arrow Bounces Downward.
 @-moz-keyframes arrow-bounce {
-   0% {
-      transform: translateY(0px);
-   }
-
-   50% {
-      transform: translateY(0);
-   }
-
-   60% {
-      transform: translateY(8px);
-   }
-
-   70% {
-      transform: translateY(0);
-   }
-
-   80% {
-      transform: translateY(8px);
-   }
+   0% {transform: translateY(0);}
+   50% {transform: translateY(0);}
+   60% {transform: translateY(8px);}
+   70% {transform: translateY(0);}
+   80% {transform: translateY(8px);}
 }
 
+//Arrow Bounces Downward.
 @-o-keyframes arrow-bounce {
-   0% {
-      transform: translateY(0px);
-   }
-
-   50% {
-      transform: translateY(0);
-   }
-
-   60% {
-      transform: translateY(8px);
-   }
-
-   70% {
-      transform: translateY(0);
-   }
-
-   80% {
-      transform: translateY(8px);
-   }
+   0% {transform: translateY(0);}
+   50% {transform: translateY(0);}
+   60% {transform: translateY(8px);}
+   70% {transform: translateY(0);}
+   80% {transform: translateY(8px);}
 }
 
+//Arrow Bounces Downward.
 @keyframes arrow-bounce {
-   0% {
-      transform: translateY(0px);
-   }
-
-   50% {
-      transform: translateY(0);
-   }
-
-   60% {
-      transform: translateY(8px);
-   }
-
-   70% {
-      transform: translateY(0);
-   }
-
-   80% {
-      transform: translateY(8px);
-   }
+   0% {transform: translateY(0);}
+   50% {transform: translateY(0);}
+   60% {transform: translateY(8px);}
+   70% {transform: translateY(0);}
+   80% {transform: translateY(8px);}
 }
 
+//Not currently being used
 //Arrow is pulled up and then dropped.
 @keyframes drop-and-bounce {
-   0%{
-      transform: translateY(0);
-   }
-
-   20% {
-      transform: translateY(0);
-   }
-
-   40% {
-      transform: translateY(-8px);
-   }
-
-   50% {
-      transform: translateY(0);
-   }
-
-   60% {
-      transform: translateY(-8px);
-   }
-
-   70% {
-      transform: translateY(0);
-   }
-
+   0% {transform: translateY(0);}
+   20% {transform: translateY(0);}
+   40% {transform: translateY(-8px);}
+   50% {transform: translateY(0);}
+   60% {transform: translateY(-8px);}
+   70% {transform: translateY(0);}
    //Having this "extra" keyframe simulates a "pause" until bouncing again
-   100% {
-      transform: translateY(0);
-   }
+   100% {transform: translateY(0);}
 }
 
 ///////////// Parallax section /////////////
@@ -374,8 +301,7 @@ nav {
    z-index: 3; //Nothing should come in front of the html, css, or jq logos.
 }
 
-#htmlLogo, #cssLogo, #jsLogo
-{
+#htmlLogo, #cssLogo, #jsLogo {
    z-index: 5;
 }
 
@@ -446,8 +372,7 @@ nav {
    }
 }
 
-#gitLogo
-{
+#gitLogo {
    top: 596px;
    left: -8000px;
    opacity: 0;
@@ -553,8 +478,8 @@ nav {
 
 ///////////// END Parallax Section /////////////
 
-.contentContainer //Center all content in the middle of the page
-{
+//Center all content in the middle of the page
+.contentContainer {
    width: @contentWidth;
    margin: 0 auto;
 }
@@ -605,8 +530,7 @@ nav {
    top: 9px;
 }
 
-.projectThumbnail
-{
+.projectThumbnail {
    display: inline-block;
    position: relative;
    height: 40px;
@@ -618,24 +542,21 @@ nav {
    -o-transition: opacity .28s linear;
    transition: opacity .28s linear;
 
-   &.active
-   {
+   &.active {
       opacity: 1;
    }
 
-   &:hover
-   {
+   &:hover {
       opacity: 1;
    }
 
-   &:nth-child(1)
-   {
+   &:nth-child(1) {
       //background: url("@{images}/twc-small.png") no-repeat;
       background: url("@{images}/twc-small2.png") no-repeat;
       width: 102px;
    }
-   &:nth-child(2)
-   {
+
+   &:nth-child(2) {
       width: 177px;
       height: 45px;
       background: url("@{images}/xamarin-white.png") no-repeat;
@@ -643,23 +564,23 @@ nav {
       left: -3px;
       // background: url("@{images}/tech/xamarin-miny.png") no-repeat;
    }
-   &:nth-child(3)
-   {
+
+   &:nth-child(3) {
       width: 112px;
       height: 30px;
       top: -5px;
       background: url("@{images}/ehow-small.png") no-repeat;
    }
-   &:nth-child(4)
-   {
+
+   &:nth-child(4) {
       width: 143px;
       height: 40px;
       top: 5px;
       margin-left: 4px;
       background: url("@{images}/pennington-small.png") no-repeat;
    }
-   &:nth-child(5)
-   {
+
+   &:nth-child(5) {
       width: 69px;
       height: 40px;
       top: 1px;
@@ -719,28 +640,48 @@ nav {
    padding-top: 116px;
 }
 
-blockquote
-{
+#twcArticle {
+   position: relative;
+}
+
+.quoteContainer {
+   height: 105px;
+}
+
+.quoteGroup {
+   position: absolute;
+   top: 0;
+   left: 0;
+   margin-left: 50px;
+   opacity: 1;
+   -webkit-transition: opacity 1s ease;
+   -moz-transition: opacity 1s ease;
+   -o-transition: opacity 1s ease;
+   transition: opacity 1s ease;
+
+   &.hide {
+      opacity: 0;
+   }
+}
+
+blockquote {
    display: inline-block;
    clear: both;
-   //color: #429abe;
-   font-size: 15px;
    margin: -9px 0;
    margin-bottom: 12px;
+   //color: #429abe;
    font-size: 18px;
    font-family: Verdana;
    letter-spacing: .4px;
    line-height: 1.2;
    width: 88%;
 
-   &:nth-of-type(2)
-   {
+   &:nth-of-type(2) {
       margin-top: 12px;
-
    }
 
-   &:before, &:after
-   {
+   //Add quotation icons before and after the blockquote
+   &:before, &:after {
       content: '';
       height: 13px;
       width: 13px;
@@ -749,22 +690,17 @@ blockquote
 
    &:before {
       background: url("@{icons}/quote-open-orange.png") no-repeat;
-      display: block; //Inline-block indents the text to the right. Used for the open quote only.
+      display: block; //Inline-block indents the text to the right, so block is used for the open quote only.
       top: 13px;
       left: -20px;
    }
 
-   &:after{
+   &:after {
       background: url("@{icons}/quote-close-orange.png") no-repeat;
       display: inline-block;
       top: -3px;
       left: 6px;
    }
-}
-
-#twcArticle
-{
-   position: relative;
 }
 
 .quoteSource {
@@ -777,45 +713,25 @@ blockquote
    a:link {
       color: @lightContentText;
    }
+
    a:visited {
       color: @lightContentText;
    }
+
    a:focus {
       color: @lightContentText;
    }
+
    a:hover {
       color: #F6BA4E;
    }
+
    a:active {
       color: @lightContentText;
    }
 
-   &.hide
-   {
+   &.hide {
       display: none;
-   }
-}
-
-.quoteContainer
-{
-   height: 105px;
-}
-
-.quoteGroup
-{
-   margin-left: 50px;
-   position: absolute;
-   top: 0;
-   left: 0;
-   opacity: 1;
-   -webkit-transition: opacity 1s ease;
-   -moz-transition: opacity 1s ease;
-   -o-transition: opacity 1s ease;
-   transition: opacity 1s ease;
-
-   &.hide
-   {
-      opacity: 0;
    }
 }
 
@@ -828,35 +744,32 @@ blockquote
    padding: 3px 0;
    font-size: 15px;
 
-   &:hover
-   {
+   &:hover {
       color: #FFB639;
    }
 
-   &.hide
-   {
+   &.hide {
       display: none;
    }
 }
 
-.highlight
-{
+.highlight {
    color: #F6BA4E; //orange
    //color: #9BCADF; //blue
 }
 
 .summary {
-   //font-family: Arial;
+   clear: both;
+   margin-top: 40px;
+   color: @lightContentText;
    font-size: 19px;
-   //word-spacing: 0.3px;
-   //line-height: 1.18;
-   //letter-spacing: .7px;
    font-family: Verdana;
    letter-spacing: .4px;
    line-height: 1.2;
-   margin-top: 40px;
-   color: @lightContentText;
-   clear: both;
+   //font-family: Arial;
+   //word-spacing: 0.3px;
+   //line-height: 1.18;
+   //letter-spacing: .7px;
 
    &.first {
       margin-top: 46px;
@@ -864,25 +777,25 @@ blockquote
 
    a:link {
       color: @lightContentText;
-      &.highlight
-      {
+      &.highlight {
          color: #F6BA4E;
       }
    }
+
    a:visited {
       color: @lightContentText;
-      &.highlight
-      {
+      &.highlight {
          color: #F6BA4E;
       }
    }
+
    a:focus {
       color: @lightContentText;
-      &.highlight
-      {
+      &.highlight {
          color: #F6BA4E;
       }
    }
+
    a:hover {
       color: #F6BA4E;
       &.highlight
@@ -890,6 +803,7 @@ blockquote
          color: @lightContentText;
       }
    }
+
    a:active {
       color: @lightContentText;
       &.highlight
@@ -897,26 +811,6 @@ blockquote
          color: #F6BA4E;
       }
    }
-}
-
-.rightSide {
-   margin-left: 50px;
-   position: relative;
-   left: 10px;
-   width: 400px;
-   display: inline-block;
-}
-
-.leftSide {
-   display: inline-block;
-   float: left;
-}
-
-.term {
-   font-size: 18px;
-   //display: inline-block;
-   margin: 1px 0;
-   font-weight: bold;
 }
 
 #project1 {
@@ -929,9 +823,9 @@ blockquote
 }
 
 #project3 {
-   //background: #4B211C; //pinkish
    background: #833700; //Orange
-   //background: #4B2100;//orange 2
+   //background: #4B2100; //Orange2
+   //background: #4B211C; //Pinkish
 }
 
 #project4 {
@@ -996,31 +890,26 @@ blockquote
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width : 320px) and (max-width : 767px) {
 
-   .arrowContainer
-   {
+   .arrowContainer {
       top: -80px;
    }
 
-   #sliderContainer
-   {
+   #sliderContainer {
       width: 100%; //The slider container width determines size of the project divs (see below)
       height: 100%;
    }
 
    //Center the nav and all content using the mobile width
-   .contentContainer
-   {
+   .contentContainer {
       width: @contentWidthMobile;
    }
 
-   #projects .mobileContentContainer
-   {
+   #projects .mobileContentContainer {
       margin: 18px;
    }
 
    //Hide the parallax section on mobile.
-   #parallax
-   {
+   #parallax {
       display: none;
    }
 
@@ -1118,13 +1007,11 @@ blockquote
       }
    }
 
-   .quoteGroup
-   {
+   .quoteGroup {
       margin-left: 25px;
    }
 
-   #project1
-   {
+   #project1 {
       margin-bottom: 40px;
    }
 }
@@ -1153,8 +1040,7 @@ blockquote
    }
 }
 
-@media (min-width: 635px) and (max-width : 914px)
-{
+@media (min-width: 635px) and (max-width : 914px) {
    .quoteContainer
    {
       height: 145px;
@@ -1209,23 +1095,22 @@ blockquote
    .projectThumbnail {
       margin-right: 28px;
 
-      &:nth-child(2)
-      {
+      &:nth-child(2) {
          left: 0;
       }
-      &:nth-child(3)
-      {
+
+      &:nth-child(3) {
          top: -5px;
          left: 0;
       }
-      &:nth-child(4)
-      {
+
+      &:nth-child(4) {
          top: 5px;
          left: 0;
          width: 143px;
       }
-      &:nth-child(5)
-      {
+
+      &:nth-child(5) {
          left: 0;
          top: 1px;
          margin-right: 14px;
@@ -1237,14 +1122,12 @@ blockquote
 @media (max-width : 914px) {
 
    //MOBILE PROJECT SECTION
-   #projects
-   {
+   #projects {
       height: 100%;
       background: #1C0025;
    }
 
-   #sliderContainer
-   {
+   #sliderContainer {
       width: 100%; //The slider container width determines size of the project divs (see below)
 
       //Reset TranslateX back to 0 when the browser is too small to show project thumbnails.

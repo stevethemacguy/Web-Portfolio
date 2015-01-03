@@ -134,9 +134,9 @@ nav a:hover {
 .arrowContainer {
   height: 68px;
   width: 200px;
-  margin: 0 auto;
   position: relative;
   top: -105px;
+  margin: 0 auto;
   margin-bottom: -68px;
   text-align: center;
 }
@@ -170,7 +170,7 @@ nav a:hover {
 }
 @-webkit-keyframes arrow-bounce {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
     transform: translateY(0);
@@ -187,7 +187,7 @@ nav a:hover {
 }
 @-moz-keyframes arrow-bounce {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
     transform: translateY(0);
@@ -204,7 +204,7 @@ nav a:hover {
 }
 @-o-keyframes arrow-bounce {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
     transform: translateY(0);
@@ -221,7 +221,7 @@ nav a:hover {
 }
 @keyframes arrow-bounce {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
     transform: translateY(0);
@@ -556,10 +556,29 @@ nav a:hover {
   color: #e5e5e5;
   padding-top: 116px;
 }
+#twcArticle {
+  position: relative;
+}
+.quoteContainer {
+  height: 105px;
+}
+.quoteGroup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 50px;
+  opacity: 1;
+  -webkit-transition: opacity 1s ease;
+  -moz-transition: opacity 1s ease;
+  -o-transition: opacity 1s ease;
+  transition: opacity 1s ease;
+}
+.quoteGroup.hide {
+  opacity: 0;
+}
 blockquote {
   display: inline-block;
   clear: both;
-  font-size: 15px;
   margin: -9px 0;
   margin-bottom: 12px;
   font-size: 18px;
@@ -590,9 +609,6 @@ blockquote:after {
   top: -3px;
   left: 6px;
 }
-#twcArticle {
-  position: relative;
-}
 .quoteSource {
   float: right;
   font-size: 18px;
@@ -618,23 +634,6 @@ blockquote:after {
 .quoteSource.hide {
   display: none;
 }
-.quoteContainer {
-  height: 105px;
-}
-.quoteGroup {
-  margin-left: 50px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  -webkit-transition: opacity 1s ease;
-  -moz-transition: opacity 1s ease;
-  -o-transition: opacity 1s ease;
-  transition: opacity 1s ease;
-}
-.quoteGroup.hide {
-  opacity: 0;
-}
 .more {
   display: block;
   position: absolute;
@@ -654,13 +653,13 @@ blockquote:after {
   color: #F6BA4E;
 }
 .summary {
+  clear: both;
+  margin-top: 40px;
+  color: #e5e5e5;
   font-size: 19px;
   font-family: Verdana;
   letter-spacing: .4px;
   line-height: 1.2;
-  margin-top: 40px;
-  color: #e5e5e5;
-  clear: both;
 }
 .summary.first {
   margin-top: 46px;
@@ -694,22 +693,6 @@ blockquote:after {
 }
 .summary a:active.highlight {
   color: #F6BA4E;
-}
-.rightSide {
-  margin-left: 50px;
-  position: relative;
-  left: 10px;
-  width: 400px;
-  display: inline-block;
-}
-.leftSide {
-  display: inline-block;
-  float: left;
-}
-.term {
-  font-size: 18px;
-  margin: 1px 0;
-  font-weight: bold;
 }
 #project1 {
   background: #1C0025;
