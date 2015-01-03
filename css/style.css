@@ -138,6 +138,7 @@ nav a:hover {
   position: relative;
   top: -125px;
   width: 64px;
+  margin-bottom: -64px;
   -webkit-animation: arrow-bounce 2.4s infinite 0.5s;
   -moz-animation: arrow-bounce 2.4s infinite 0.5s;
   -o-animation: arrow-bounce 2.4s infinite 0.5s;
