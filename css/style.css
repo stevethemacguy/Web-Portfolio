@@ -761,8 +761,8 @@ blockquote:after {
 }
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
-  .downArrow {
-    top: -60px;
+  .arrowContainer {
+    top: -80px;
   }
   #sliderContainer {
     width: 100%;
