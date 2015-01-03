@@ -128,4 +128,21 @@ $(document).ready(function() {
             $(this).unbind('inview'); //Elements are now visible, so remove the binding
         }
     });
+
+    //When the htmlLogo logo is in view, the user has started scrolling, so hide the arrow
+    var scrollArrow = $(".arrowContainer");
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 88) {
+            if (scrollArrow.css("opacity") < 1) {
+                return; //Only call animate at the edge cases
+            }
+            scrollArrow.stop().animate({opacity: 0}, 500);
+        }
+        else {
+            if (scrollArrow.css("opacity") > 0) {
+                return; //Only call animate at the edge cases
+            }
+            scrollArrow.stop().animate({opacity: 1}, 500);
+        }
+    });
 });

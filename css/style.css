@@ -151,10 +151,10 @@ nav a:hover {
   width: 45px;
   margin: 0 auto;
   margin-top: 3px;
-  -webkit-animation: arrow-bounce 2.4s infinite 0.5s;
-  -moz-animation: arrow-bounce 2.4s infinite 0.5s;
-  -o-animation: arrow-bounce 2.4s infinite 0.5s;
-  animation: arrow-bounce 2.4s infinite 0.5s;
+  -webkit-animation: arrow-bounce 2.3s infinite 0.5s;
+  -moz-animation: arrow-bounce 2.3s infinite 0.5s;
+  -o-animation: arrow-bounce 2.3s infinite 0.5s;
+  animation: arrow-bounce 2.3s infinite 0.5s;
   /*-webkit-animation: drop-and-bounce 2.5s infinite 2s;
    -moz-animation: drop-and-bounce 2.5s infinite 2s;
    -o-animation: drop-and-bounce 2.5s infinite 2s;
