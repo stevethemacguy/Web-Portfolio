@@ -131,14 +131,26 @@ nav a:hover {
   background-attachment: fixed;
   /*not supported by mobile*/
 }
-.downArrow {
-  background: url("../images/icons/down-arrow-thick.png");
-  height: 64px;
+.arrowContainer {
+  height: 68px;
+  width: 200px;
   margin: 0 auto;
   position: relative;
-  top: -95px;
-  width: 64px;
-  margin-bottom: -64px;
+  top: -105px;
+  margin-bottom: -68px;
+  text-align: center;
+}
+.arrowText {
+  height: 20px;
+  font-size: 12px;
+  font-style: italic;
+}
+.downArrow {
+  background: url("../images/icons/down-arrow-white.png");
+  height: 45px;
+  width: 45px;
+  margin: 0 auto;
+  margin-top: 3px;
   -webkit-animation: arrow-bounce 2.4s infinite 0.5s;
   -moz-animation: arrow-bounce 2.4s infinite 0.5s;
   -o-animation: arrow-bounce 2.4s infinite 0.5s;

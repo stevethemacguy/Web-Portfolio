@@ -186,15 +186,29 @@ nav {
    background-attachment: fixed; /*not supported by mobile*/
 }
 
-.downArrow {
-   background: url("@{icons}/down-arrow-thick.png");
-   width: 64px;
-   height: 64px;
+.arrowContainer
+{
+   height: 68px; //Height of Arrow + arrow top margin + Height of arrowText +
+   width: 200px;
    margin: 0 auto;
    position: relative;
-   top: -95px;
-   width: 64px;
-   margin-bottom: -64px;
+   top: -105px;
+   margin-bottom: -68px;
+   text-align: center;
+}
+.arrowText
+{
+   height: 20px;
+   font-size: 12px;
+   font-style: italic;
+}
+
+.downArrow {
+   background: url("@{icons}/down-arrow-white.png");
+   height: 45px;
+   width: 45px;
+   margin: 0 auto;
+   margin-top: 3px;
    //Animate the arrow
    -webkit-animation: arrow-bounce 2.4s infinite .5s;
    -moz-animation: arrow-bounce 2.4s infinite .5s;
