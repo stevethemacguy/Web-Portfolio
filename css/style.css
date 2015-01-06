@@ -814,6 +814,9 @@ blockquote:after {
   .navContainer {
     display: none;
   }
+  .navArrow {
+    display: none;
+  }
   .mobileNav {
     display: block;
     margin-top: 0;
