@@ -878,6 +878,9 @@ blockquote:after {
   .tagline {
     font-size: 26px;
   }
+  .shift {
+    margin-left: 15px;
+  }
 }
 @media (min-width: 635px) and (max-width: 914px) {
   .quoteContainer {
