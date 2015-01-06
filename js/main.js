@@ -10,7 +10,7 @@ $(document).ready(function() {
         //Optionally account for the header height to add a border to the bottom of the screen.
         /*var headerHeight = $('header').outerHeight(false);
         viewportHeight = viewportHeight - headerHeight; //The current viewable area of the viewport window.*/
-        $("#mainImage").css('height', viewportHeight);
+        $("#landingArea").css('height', viewportHeight);
     }
 
     //Resize the background when the page first loads

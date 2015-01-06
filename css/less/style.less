@@ -173,7 +173,7 @@ nav {
 
 //////////// End Header Section ////////////
 
-#mainImage {
+#landingArea {
    width: 100%;
    height: 740px;
    background: url("@{images}/searching.jpg") no-repeat center;
@@ -183,13 +183,28 @@ nav {
    background-size: cover;
    border-bottom: 1px solid #252525;
    background-attachment: fixed; /*not supported by mobile*/
+   text-align: center;
+}
+
+.tagline {
+   display: inline-block;
+   position: relative;
+   top: 50%;
+   margin-top: -23px; //Centered on page (ignore header). To account for the header, use -Half of height + half of header height (+31px)
+   font-family: Verdana;
+   font-weight: bold;
+   font-size: 45px;
+}
+
+.shift {
+   margin-left: 25px;
 }
 
 .arrowContainer {
-   height: 68px; //.downArrow height + .downArrow margin-top + .arrowText height
    width: 200px;
+   height: 68px; //.downArrow height + .downArrow margin-top + .arrowText height
    position: relative;
-   top: -105px;
+   top: -95px;
    margin: 0 auto;
    margin-bottom: -68px;
    text-align: center;
@@ -913,7 +928,7 @@ blockquote {
       display: none;
    }
 
-   #mainImage {
+   #landingArea {
       background-attachment: scroll; /*Fixed is not supported by mobile*/
       height: 500px;
    }
@@ -1014,6 +1029,10 @@ blockquote {
    #project1 {
       margin-bottom: 40px;
    }
+
+   .tagline {
+      font-size: 36px;
+   }
 }
 
 //Responsive styling for TWC Project quotes
@@ -1037,6 +1056,10 @@ blockquote {
 
    .summary.first {
       margin-top: 70px;
+   }
+
+   .tagline {
+      font-size: 26px;
    }
 }
 
@@ -1196,6 +1219,19 @@ blockquote {
    #photoshopLogo
    {
       margin-top: -2px
+   }
+}
+
+//Reposition Tagline and remove scroll arrow for smaller heights
+@media (min-height : 0) and (max-height : 570px) {
+   .tagline {
+      margin-top: 8px; //Centered on page (ignore header). To account for the header, use -Half of height + half of header height (+31px)
+   }
+}
+
+@media (min-height : 0) and (max-height : 357px) {
+   .arrowText, .downArrow {
+      opacity: 0;
    }
 }
 
