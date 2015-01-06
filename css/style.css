@@ -493,6 +493,10 @@ nav a:hover {
   right: 0;
   margin-right: 2px;
 }
+.rightArrow.dim {
+  opacity: .2;
+  cursor: auto;
+}
 .projectTitle {
   display: inline-block;
 }

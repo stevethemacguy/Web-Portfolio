@@ -70,6 +70,7 @@ $(document).ready(function() {
     //Cache a few jQuery objects
     var sliderDiv = $("#sliderContainer");
     var thumbnails = $(".projectThumbnail");
+    var thumbIndex = 0;
 
     //When a project thumbnail is selected, highlight the thumbnail and "navigate" to the selected project section
     thumbnails.click(function() {
@@ -78,14 +79,57 @@ $(document).ready(function() {
         $(this).addClass("active"); //Make the thumbnail active
 
         //Use the index position of the thumbnail element to determine which class to add
-        var thumbIndex = thumbnails.index(this);
+        thumbIndex = thumbnails.index(this);
         sliderDiv.addClass("trans" + thumbIndex);
+
         if (thumbIndex == 0) {
             $(".leftArrow").addClass("dim");
         }
         else {
             $(".leftArrow").removeClass("dim");
         }
+
+        if (thumbIndex == 4) {
+            $(".rightArrow").addClass("dim");
+        }
+        else {
+            $(".rightArrow").removeClass("dim");
+        }
+    });
+
+    $(".leftArrow").click(function()
+    {
+        $(".rightArrow").removeClass("dim");
+        if (thumbIndex == 0) //If we're at the first project, then the left-arrow cannot be used
+            return;
+        thumbIndex--;
+        if (thumbIndex == 0) {
+            $(".leftArrow").addClass("dim");
+        }
+        thumbnails.removeClass("active"); //Make other thumbnails inactive
+        $("#projectLink" + thumbIndex).addClass("active");
+        sliderDiv.removeClass(); //remove all classes
+        sliderDiv.addClass("trans" + thumbIndex);
+        //get active thumbnail
+        //subtract one from active thumbnail (unless it's zero)
+    });
+
+    $(".rightArrow").click(function()
+    {
+        $(".leftArrow").removeClass("dim");
+        if (thumbIndex == 4) //If we're at the last project, then the right-arrow cannot be used
+            return;
+        thumbIndex++;
+        if (thumbIndex == 4) //If we're at the last project, then the right-arrow cannot be used
+        {
+            $(".rightArrow").addClass("dim");
+        }
+        thumbnails.removeClass("active"); //Make other thumbnails inactive
+        $("#projectLink" + thumbIndex).addClass("active");
+        sliderDiv.removeClass(); //remove all classes
+        sliderDiv.addClass("trans" + thumbIndex);
+        //get active thumbnail
+        //subtract one from active thumbnail (unless it's zero)
     });
 
     //Show/Hide additional project quotes
