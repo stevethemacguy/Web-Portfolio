@@ -70,66 +70,60 @@ $(document).ready(function() {
     //Cache a few jQuery objects
     var sliderDiv = $("#sliderContainer");
     var thumbnails = $(".projectThumbnail");
-    var thumbIndex = 0;
 
-    //When a project thumbnail is selected, highlight the thumbnail and "navigate" to the selected project section
-    thumbnails.click(function() {
-        sliderDiv.removeClass(); //remove all classes
-        thumbnails.removeClass("active"); //Make other thumbnails inactive
-        $(this).addClass("active"); //Make the thumbnail active
+    //Dims the left or right arrow if we are viewing the first or last project (respectively)
+    function toggleArrowVisibility(thumbIndex)
+    {
+        //Make both arrows visible
+        $(".navArrow").removeClass("dim");
 
-        //Use the index position of the thumbnail element to determine which class to add
-        thumbIndex = thumbnails.index(this);
-        sliderDiv.addClass("trans" + thumbIndex);
-
+        //If we're at the first project, dim the left-arrow so that it cannot be used
         if (thumbIndex == 0) {
             $(".leftArrow").addClass("dim");
         }
-        else {
-            $(".leftArrow").removeClass("dim");
-        }
 
+        //If we're at the first project, dim the right-arrow so that it cannot be used
         if (thumbIndex == 4) {
             $(".rightArrow").addClass("dim");
         }
-        else {
-            $(".rightArrow").removeClass("dim");
-        }
+    }
+
+    //Highlights the thumbnail at position "index" (a number) and changes the active (viewable) project
+    function activateThumbnail(index) {
+        sliderDiv.removeClass(); //Remove all classes
+        thumbnails.removeClass("active"); //Make all thumbnails inactive
+        $("#projectLink" + index).addClass("active"); //Active the selected thumbnail
+        sliderDiv.addClass("trans" + index); //Transition to the specified project
+        toggleArrowVisibility(index);
+    }
+
+    //When a project thumbnail is selected, highlight the thumbnail and "navigate" to the selected project section
+    thumbnails.click(function() {
+        activateThumbnail($(this).index());
     });
 
-    $(".leftArrow").click(function()
-    {
-        $(".rightArrow").removeClass("dim");
-        if (thumbIndex == 0) //If we're at the first project, then the left-arrow cannot be used
-            return;
-        thumbIndex--;
+    $(".leftArrow").click(function() {
+        //Get the index of the active thumbnail (i.e. project)
+        var thumbIndex = $(".projectThumbnail.active").index();
+
+        //If we're at the first project, then the left-arrow cannot be used
         if (thumbIndex == 0) {
-            $(".leftArrow").addClass("dim");
+            return;
         }
-        thumbnails.removeClass("active"); //Make other thumbnails inactive
-        $("#projectLink" + thumbIndex).addClass("active");
-        sliderDiv.removeClass(); //remove all classes
-        sliderDiv.addClass("trans" + thumbIndex);
-        //get active thumbnail
-        //subtract one from active thumbnail (unless it's zero)
+        //Otherwise, activate the previous thumbnail
+        activateThumbnail(--thumbIndex);
     });
 
-    $(".rightArrow").click(function()
-    {
-        $(".leftArrow").removeClass("dim");
-        if (thumbIndex == 4) //If we're at the last project, then the right-arrow cannot be used
+    $(".rightArrow").click(function() {
+        var thumbIndex = $(".projectThumbnail.active").index();
+
+        //If we're at the last project, then the right-arrow cannot be used
+        if (thumbIndex == 4) {
             return;
-        thumbIndex++;
-        if (thumbIndex == 4) //If we're at the last project, then the right-arrow cannot be used
-        {
-            $(".rightArrow").addClass("dim");
         }
-        thumbnails.removeClass("active"); //Make other thumbnails inactive
-        $("#projectLink" + thumbIndex).addClass("active");
-        sliderDiv.removeClass(); //remove all classes
-        sliderDiv.addClass("trans" + thumbIndex);
-        //get active thumbnail
-        //subtract one from active thumbnail (unless it's zero)
+
+        //Otherwise, activate the next thumbnail
+        activateThumbnail(++thumbIndex);
     });
 
     //Show/Hide additional project quotes
