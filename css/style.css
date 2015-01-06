@@ -482,7 +482,6 @@ nav a:hover {
 .leftArrow {
   background: url("../images/icons/left-arrow.png");
   left: 0;
-  margin-left: 2px;
 }
 .leftArrow.dim {
   opacity: .2;
@@ -491,7 +490,6 @@ nav a:hover {
 .rightArrow {
   background: url("../images/icons/right-arrow.png");
   right: 0;
-  margin-right: 2px;
 }
 .rightArrow.dim {
   opacity: .2;
