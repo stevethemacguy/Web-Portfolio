@@ -533,6 +533,34 @@ nav {
    height: 47px;
 }
 
+.navArrow {
+   width: 64px;
+   height: 64px;
+   position: absolute;
+   top: 320px; //375px is Exactly half way. Put it slightly above
+   top: 50%;
+   margin-top: -32px; //account for arrow's height
+   z-index: 2;
+   cursor: pointer;
+}
+
+.leftArrow {
+   background: url("@{icons}/left-arrow.png");
+   left: 0;
+   margin-left: 2px;
+
+   &.dim {
+      opacity: .2;
+      cursor: auto;
+   }
+}
+
+.rightArrow {
+   background: url("@{icons}/right-arrow.png");
+   right: 0;
+   margin-right: 2px;
+}
+
 //Project Title (h1 element)
 .projectTitle {
    display: inline-block;
@@ -649,7 +677,7 @@ nav {
 
 .project {
    width: @projectWidth; //Full width of the container devided by the number of projects
-   min-height: 750px;
+   min-height: 700px;
    float: left; //Inline-block doesn't work properly for whatever reason
    color: @lightContentText;
    padding-top: 116px;

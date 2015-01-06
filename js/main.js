@@ -71,6 +71,7 @@ $(document).ready(function() {
     var sliderDiv = $("#sliderContainer");
     var thumbnails = $(".projectThumbnail");
 
+    //When a project thumbnail is selected, highlight the thumbnail and "navigate" to the selected project section
     thumbnails.click(function() {
         sliderDiv.removeClass(); //remove all classes
         thumbnails.removeClass("active"); //Make other thumbnails inactive
@@ -79,8 +80,15 @@ $(document).ready(function() {
         //Use the index position of the thumbnail element to determine which class to add
         var thumbIndex = thumbnails.index(this);
         sliderDiv.addClass("trans" + thumbIndex);
+        if (thumbIndex == 0) {
+            $(".leftArrow").addClass("dim");
+        }
+        else {
+            $(".leftArrow").removeClass("dim");
+        }
     });
 
+    //Show/Hide additional project quotes
     $(".more").click(function() {
         var quoteGroup = $(".quoteGroup");
         quoteGroup.toggleClass("hide"); //Sets opacity to 0, but does not remove the element
