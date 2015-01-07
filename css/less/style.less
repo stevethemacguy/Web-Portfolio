@@ -939,7 +939,7 @@ blockquote {
    }
 
    #sliderContainer {
-      width: 100%; //The slider container width determines size of the project divs (see below)
+      //width: 100%; //The slider container width determines size of the project divs (see below)
       height: 100%;
    }
 
@@ -974,10 +974,6 @@ blockquote {
 
    //Hide the standard nav
    .navContainer {
-      display: none;
-   }
-
-   .navArrow {
       display: none;
    }
 
@@ -1060,11 +1056,50 @@ blockquote {
    }
 
    #project1 {
-      margin-bottom: 40px;
+      //margin-bottom: 40px;
    }
 
    .tagline {
       font-size: 36px;
+   }
+
+   .projectLinks
+   {
+      margin-left: 0;
+      text-align: center;
+      position: static;
+   }
+
+   .project{
+      min-height: 1160px;
+   }
+
+   .navArrow{
+      top: 0;
+      margin-top: 13px;
+      z-index: 5;
+   }
+
+   #projectLink1
+   {
+      margin-top: -7px;
+   }
+
+   .projectNavGroup
+   {
+      margin-top: 27px;
+   }
+
+   .projectThumbnail
+   {
+      position: static;
+      margin: 0;
+      margin-right: 3px;
+      //Hide any thumbnail that's not active
+      &:not(.active)
+      {
+         display: none;
+      }
    }
 }
 
@@ -1187,33 +1222,19 @@ blockquote {
       background: #1C0025;
    }
 
-   #sliderContainer {
-      width: 100%; //The slider container width determines size of the project divs (see below)
-
-      //Reset TranslateX back to 0 when the browser is too small to show project thumbnails.
-      &.trans1, &.trans2, &.trans3, &.trans4 {
-         -webkit-transform: translateX(0);
-         -moz-transform: translateX(0);
-         -o-transform: translateX(0);
-         transform: translateX(0);
-      }
-
-      .project
-      {
-         width: 100%;
-         display: block;
-         float: none;
-         padding-top: 5px;
-         &:first-child
-         {
-            padding-top: 116px;
-         }
-      }
+   .project
+   {
+      padding-top: 116px;
    }
 
+   .projectTitle
+   {
+      display: none;
+   }
+   
    .projectLinks {
       float: none;
-      display: none;
+      width: 100%;
    }
 }
 

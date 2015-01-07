@@ -787,7 +787,6 @@ blockquote:after {
     top: -80px;
   }
   #sliderContainer {
-    width: 100%;
     height: 100%;
   }
   .contentContainer {
@@ -812,9 +811,6 @@ blockquote:after {
     cursor: pointer;
   }
   .navContainer {
-    display: none;
-  }
-  .navArrow {
     display: none;
   }
   .mobileNav {
@@ -881,11 +877,35 @@ blockquote:after {
   .quoteGroup {
     margin-left: 25px;
   }
-  #project1 {
-    margin-bottom: 40px;
-  }
   .tagline {
     font-size: 36px;
+  }
+  .projectLinks {
+    margin-left: 0;
+    text-align: center;
+    position: static;
+  }
+  .project {
+    min-height: 1160px;
+  }
+  .navArrow {
+    top: 0;
+    margin-top: 13px;
+    z-index: 5;
+  }
+  #projectLink1 {
+    margin-top: -7px;
+  }
+  .projectNavGroup {
+    margin-top: 27px;
+  }
+  .projectThumbnail {
+    position: static;
+    margin: 0;
+    margin-right: 3px;
+  }
+  .projectThumbnail:not(.active) {
+    display: none;
   }
 }
 @media (min-width: 0) and (max-width: 634px) {
@@ -975,30 +995,15 @@ blockquote:after {
     height: 100%;
     background: #1C0025;
   }
-  #sliderContainer {
-    width: 100%;
-  }
-  #sliderContainer.trans1,
-  #sliderContainer.trans2,
-  #sliderContainer.trans3,
-  #sliderContainer.trans4 {
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -o-transform: translateX(0);
-    transform: translateX(0);
-  }
-  #sliderContainer .project {
-    width: 100%;
-    display: block;
-    float: none;
-    padding-top: 5px;
-  }
-  #sliderContainer .project:first-child {
+  .project {
     padding-top: 116px;
+  }
+  .projectTitle {
+    display: none;
   }
   .projectLinks {
     float: none;
-    display: none;
+    width: 100%;
   }
 }
 @media (max-width: 1051px) {
