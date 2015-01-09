@@ -102,8 +102,8 @@ $(document).ready(function() {
         activateThumbnail($(this).index());
     });
 
-    //When the left arrow is clicked (or tapped on mobile), show the previous project
-    $(".leftArrow").on("tap", function() {
+    //"Shifts" the .sliderContainer to the previous project
+    function showPreviousProject() {
         //Get the index of the active thumbnail (i.e. project)
         var thumbIndex = $(".projectThumbnail.active").index();
 
@@ -111,12 +111,14 @@ $(document).ready(function() {
         if (thumbIndex == 0) {
             return;
         }
+
         //Otherwise, activate the previous thumbnail
         activateThumbnail(--thumbIndex);
-    });
+    }
 
-    //When the right arrow is clicked (or tapped on mobile), show the next project
-    $(".rightArrow").on("tap", function() {
+    //Advances the .sliderContainer forward to the next project
+    function showNextProject() {
+        //Get the index of the active thumbnail (i.e. project)
         var thumbIndex = $(".projectThumbnail.active").index();
 
         //If we're at the last project, then the right-arrow cannot be used
@@ -126,6 +128,16 @@ $(document).ready(function() {
 
         //Otherwise, activate the next thumbnail
         activateThumbnail(++thumbIndex);
+    }
+
+    //When the left arrow is clicked (or tapped on mobile), show the previous project
+    $(".leftArrow").on("tap", function() {
+        showPreviousProject();
+    });
+
+    //When the right arrow is clicked (or tapped on mobile), show the next project
+    $(".rightArrow").on("tap", function() {
+        showNextProject();
     });
 
     //Show/Hide additional project quotes
@@ -159,41 +171,21 @@ $(document).ready(function() {
     //NOTE: Swiping is also recognized on desktop browsers.
     //When the user swipes left, show the next project
     sliderDiv.on("swipeleft", function() {
-
         //Do not attempt to swipe unless viewing on mobile (i.e. at small widths)
         if ($(".mobileNav").css("display") == "none") {
             return;
         }
-
-        var thumbIndex = $(".projectThumbnail.active").index();
-
-        //If we're at the last project, then you can no longer swipe left
-        if (thumbIndex == 4) {
-            return;
-        }
-
-        //Otherwise, activate the next thumbnail
-        activateThumbnail(++thumbIndex);
+        showNextProject();
     });
 
     //NOTE: Swiping is also recognized on desktop browsers.
     //When the user swipes right, show the previous project
     sliderDiv.on("swiperight", function() {
-
         //Do not attempt to swipe unless viewing on mobile (i.e. at small widths)
         if ($(".mobileNav").css("display") == "none") {
             return;
         }
-
-        //Get the index of the active thumbnail (i.e. project)
-        var thumbIndex = $(".projectThumbnail.active").index();
-
-        //If we're at the first project, then you can no longer swipe right
-        if (thumbIndex == 0) {
-            return;
-        }
-        //Otherwise, activate the previous thumbnail
-        activateThumbnail(--thumbIndex);
+        showPreviousProject();
     });
     ////////////////// END MOBILE-ONLY SECTION //////////////////
 
