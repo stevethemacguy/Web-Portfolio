@@ -128,7 +128,6 @@ $(document).ready(function() {
         activateThumbnail(++thumbIndex);
     });
 
-
     //Show/Hide additional project quotes
     $(".more").click(function() {
         var quoteGroup = $(".quoteGroup");
@@ -159,7 +158,13 @@ $(document).ready(function() {
 
     //NOTE: Swiping is also recognized on desktop browsers.
     //When the user swipes left, show the next project
-    sliderDiv.on("swipeleft", function(event) {
+    sliderDiv.on("swipeleft", function() {
+
+        //Do not attempt to swipe unless viewing on mobile (i.e. at small widths)
+        if ($(".mobileNav").css("display") == "none") {
+            return;
+        }
+
         var thumbIndex = $(".projectThumbnail.active").index();
 
         //If we're at the last project, then you can no longer swipe left
@@ -173,7 +178,13 @@ $(document).ready(function() {
 
     //NOTE: Swiping is also recognized on desktop browsers.
     //When the user swipes right, show the previous project
-    sliderDiv.on("swiperight", function(event) {
+    sliderDiv.on("swiperight", function() {
+
+        //Do not attempt to swipe unless viewing on mobile (i.e. at small widths)
+        if ($(".mobileNav").css("display") == "none") {
+            return;
+        }
+
         //Get the index of the active thumbnail (i.e. project)
         var thumbIndex = $(".projectThumbnail.active").index();
 
