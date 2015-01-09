@@ -102,7 +102,8 @@ $(document).ready(function() {
         activateThumbnail($(this).index());
     });
 
-    $(".leftArrow").click(function() {
+    //When the left arrow is clicked (or tapped on mobile), show the previous project
+    $(".leftArrow").on("tap", function() {
         //Get the index of the active thumbnail (i.e. project)
         var thumbIndex = $(".projectThumbnail.active").index();
 
@@ -114,7 +115,8 @@ $(document).ready(function() {
         activateThumbnail(--thumbIndex);
     });
 
-    $(".rightArrow").click(function() {
+    //When the right arrow is clicked (or tapped on mobile), show the next project
+    $(".rightArrow").on("tap", function() {
         var thumbIndex = $(".projectThumbnail.active").index();
 
         //If we're at the last project, then the right-arrow cannot be used
@@ -125,6 +127,7 @@ $(document).ready(function() {
         //Otherwise, activate the next thumbnail
         activateThumbnail(++thumbIndex);
     });
+
 
     //Show/Hide additional project quotes
     $(".more").click(function() {
@@ -152,6 +155,34 @@ $(document).ready(function() {
         else {
             $(this).find(".mobileNav ul").slideUp("fast");
         }
+    });
+
+    //NOTE: Swiping is also recognized on desktop browsers.
+    //When the user swipes left, show the next project
+    sliderDiv.on("swipeleft", function(event) {
+        var thumbIndex = $(".projectThumbnail.active").index();
+
+        //If we're at the last project, then you can no longer swipe left
+        if (thumbIndex == 4) {
+            return;
+        }
+
+        //Otherwise, activate the next thumbnail
+        activateThumbnail(++thumbIndex);
+    });
+
+    //NOTE: Swiping is also recognized on desktop browsers.
+    //When the user swipes right, show the previous project
+    sliderDiv.on("swiperight", function(event) {
+        //Get the index of the active thumbnail (i.e. project)
+        var thumbIndex = $(".projectThumbnail.active").index();
+
+        //If we're at the first project, then you can no longer swipe right
+        if (thumbIndex == 0) {
+            return;
+        }
+        //Otherwise, activate the previous thumbnail
+        activateThumbnail(--thumbIndex);
     });
     ////////////////// END MOBILE-ONLY SECTION //////////////////
 
