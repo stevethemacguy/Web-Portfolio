@@ -10,7 +10,7 @@ $(document).ready(function() {
         //Optionally account for the header height to add a border to the bottom of the screen.
         /*var headerHeight = $('header').outerHeight(false);
         viewportHeight = viewportHeight - headerHeight; //The current viewable area of the viewport window.*/
-        $("#mainImage").css('height', viewportHeight);
+        $("#landingArea").css('height', viewportHeight);
     }
 
     //Resize the background when the page first loads
@@ -32,6 +32,17 @@ $(document).ready(function() {
             $(this).text("Dark Theme");
         }
     });
+
+    //Currently not used to encouraging scrolling instead of clicking since it's smoother
+    //Arrow Scroll to Project Section
+    /*$(".downArrow").click(function(event) {
+        event.preventDefault();
+        //Normal div offset minus the height of the header, since it's fixed.
+        var sectionTop = $("#projects").offset().top - $("header").outerHeight();
+        $('html, body').animate({
+            scrollTop: sectionTop
+        }, 7000, "linear");
+    });*/
 
     //Scroll to Anchor (Desktop)
     $(".navContainer").find("a").click(function(event) {
@@ -60,15 +71,81 @@ $(document).ready(function() {
     var sliderDiv = $("#sliderContainer");
     var thumbnails = $(".projectThumbnail");
 
-    thumbnails.click(function()
+    //Dims the left or right arrow if we are viewing the first or last project (respectively)
+    function toggleArrowVisibility(thumbIndex)
     {
-        sliderDiv.removeClass(); //remove all classes
-        thumbnails.removeClass("active"); //Make other thumbnails inactive
-        $(this).addClass("active"); //Make the thumbnail active
+        //Make both arrows visible
+        $(".navArrow").removeClass("dim");
 
-        //Use the index position of the thumbnail element to determine which class to add
-        var thumbIndex = thumbnails.index(this);
-            sliderDiv.addClass("trans" + thumbIndex);
+        //If we're at the first project, dim the left-arrow so that it cannot be used
+        if (thumbIndex == 0) {
+            $(".leftArrow").addClass("dim");
+        }
+
+        //If we're at the first project, dim the right-arrow so that it cannot be used
+        if (thumbIndex == 4) {
+            $(".rightArrow").addClass("dim");
+        }
+    }
+
+    //Highlights the thumbnail at position "index" (a number) and changes the active (viewable) project
+    function activateThumbnail(index) {
+        sliderDiv.removeClass(); //Remove all classes
+        thumbnails.removeClass("active"); //Make all thumbnails inactive
+        $("#projectLink" + index).addClass("active"); //Active the selected thumbnail
+        sliderDiv.addClass("trans" + index); //Transition to the specified project
+        toggleArrowVisibility(index);
+    }
+
+    //When a project thumbnail is selected, highlight the thumbnail and "navigate" to the selected project section
+    thumbnails.click(function() {
+        activateThumbnail($(this).index());
+    });
+
+    //"Shifts" the .sliderContainer to the previous project
+    function showPreviousProject() {
+        //Get the index of the active thumbnail (i.e. project)
+        var thumbIndex = $(".projectThumbnail.active").index();
+
+        //If we're at the first project, then the left-arrow cannot be used
+        if (thumbIndex == 0) {
+            return;
+        }
+
+        //Otherwise, activate the previous thumbnail
+        activateThumbnail(--thumbIndex);
+    }
+
+    //Advances the .sliderContainer forward to the next project
+    function showNextProject() {
+        //Get the index of the active thumbnail (i.e. project)
+        var thumbIndex = $(".projectThumbnail.active").index();
+
+        //If we're at the last project, then the right-arrow cannot be used
+        if (thumbIndex == 4) {
+            return;
+        }
+
+        //Otherwise, activate the next thumbnail
+        activateThumbnail(++thumbIndex);
+    }
+
+    //When the left arrow is clicked (or tapped on mobile), show the previous project
+    $(".leftArrow").on("tap", function() {
+        showPreviousProject();
+    });
+
+    //When the right arrow is clicked (or tapped on mobile), show the next project
+    $(".rightArrow").on("tap", function() {
+        showNextProject();
+    });
+
+    //Show/Hide additional project quotes
+    $(".more").click(function() {
+        var quoteGroup = $(".quoteGroup");
+        quoteGroup.toggleClass("hide"); //Sets opacity to 0, but does not remove the element
+        quoteGroup.find($(".more")).toggleClass("hide"); //Actually remove the element
+        quoteGroup.find($(".quoteSource")).toggleClass("hide"); //Actually remove the element
     });
 
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
@@ -90,6 +167,26 @@ $(document).ready(function() {
             $(this).find(".mobileNav ul").slideUp("fast");
         }
     });
+
+    //NOTE: Swiping is also recognized on desktop browsers.
+    //When the user swipes left, show the next project
+    sliderDiv.on("swipeleft", function() {
+        //Do not attempt to swipe unless viewing on mobile (i.e. at small widths)
+        if ($(".mobileNav").css("display") == "none") {
+            return;
+        }
+        showNextProject();
+    });
+
+    //NOTE: Swiping is also recognized on desktop browsers.
+    //When the user swipes right, show the previous project
+    sliderDiv.on("swiperight", function() {
+        //Do not attempt to swipe unless viewing on mobile (i.e. at small widths)
+        if ($(".mobileNav").css("display") == "none") {
+            return;
+        }
+        showPreviousProject();
+    });
     ////////////////// END MOBILE-ONLY SECTION //////////////////
 
     //Enable parallax effects
@@ -109,6 +206,23 @@ $(document).ready(function() {
         else {
             flyInIcons.addClass("reveal");
             $(this).unbind('inview'); //Elements are now visible, so remove the binding
+        }
+    });
+
+    //When the htmlLogo logo is in view, the user has started scrolling, so hide the arrow
+    var scrollArrow = $(".arrowContainer");
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 88) {
+            if (scrollArrow.css("opacity") < 1) {
+                return; //Only call animate at the edge cases
+            }
+            scrollArrow.stop().animate({opacity: 0}, 500);
+        }
+        else {
+            if (scrollArrow.css("opacity") > 0) {
+                return; //Only call animate at the edge cases
+            }
+            scrollArrow.stop().animate({opacity: 1}, 500);
         }
     });
 });
