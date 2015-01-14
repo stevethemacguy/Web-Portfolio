@@ -4,9 +4,15 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        //Concat multiple files into a single index file
+        //Concat css and js files into a single file
         concat: {
-            dist: {
+            css: {
+                src: [
+                    'css/*.css' // All css in the folder.
+                ],
+                dest: 'css/build/styles.css'
+            },
+            js: {
                 src: [
                     //'js/*.js' // All JS in the js folder. Not used
                     //jQuery/ui/mobile is currently loaded as needed, so it doesn't appear here
@@ -15,6 +21,20 @@ module.exports = function(grunt) {
                     'js/main.js'
                 ],
                 dest: 'live/js/index.js'
+            }
+        },
+
+        //Minify CSS
+        cssmin: {
+            combined: {
+                files: [{
+                    expand: true,
+                    cwd: 'css/build',
+                    src: 'styles.css',
+                    //src: ['*.css', '!*.min.css'], //Use for all files
+                    dest: 'live/css',
+                    ext: '.min.css'
+                }]
             }
         },
 
@@ -59,13 +79,14 @@ module.exports = function(grunt) {
 
     //Load plugins
     grunt.loadNpmTasks('grunt-newer'); //Runs grunt tasks on new and modified files only
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-imageoptim');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     //Tasks to execute when using the "grunt" command with no arguments
-    grunt.registerTask('default', ['concat','uglify']);
+    grunt.registerTask('default', ['concat','cssmin','uglify']);
 
     //Use imageoptim manually since it compresses all images (slowly)
 };
