@@ -1,4 +1,4 @@
-/* CSS Reset. Adapted from Reset Stylesheet v1.6.1 on html5doctor.com */
+/* CSS RESET. Adapted from Reset Stylesheet v1.6.1 on html5doctor.com */
 html, body, div, span, em, h1, h2, h3, h4, h5, h6, p, strong, img, ol, ul, li, object, iframe,
 table, tbody, tfoot, thead, tr, th, td, dl, dt, dd, form, label, pre, address, code,
 article, aside, footer, header, nav, section, canvas, time, mark, audio, video {
@@ -42,3 +42,4 @@ hr {
     margin: 1em 0;
     padding: 0;
 }
+/************** END CSS RESET ***************/
