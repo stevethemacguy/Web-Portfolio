@@ -30,8 +30,8 @@
 }*/
 
 /************** Base URLs ***************/
-@images: "../images";
-@icons: "../images/icons";
+@images: "../live/images";
+@icons: "../live/images/icons";
 
 
 /************** CSS RESET. Adapted from Reset Stylesheet v1.6.1 on html5doctor.com ***************/
@@ -567,7 +567,7 @@ nav {
 
 //Projects Section
 #projects {
-   width: 100%; //TODO: this can probably be moved up to Body element and just inherit
+   width: 100%;
    overflow: hidden;
    position: relative;
 }
@@ -643,15 +643,15 @@ nav {
    }
 
    &:nth-child(1) {
-      //background: url("@{images}/twc-small.png") no-repeat;
-      background: url("@{images}/twc-small2.png") no-repeat;
+      //background: url("@{images}/thumbnails/twc-small.png") no-repeat;
+      background: url("@{images}/thumbnails/twc-small2.png") no-repeat;
       width: 102px;
    }
 
    &:nth-child(2) {
       width: 177px;
       height: 45px;
-      background: url("@{images}/xamarin-white.png") no-repeat;
+      background: url("@{images}/thumbnails/xamarin-white.png") no-repeat;
       top: 3px;
       left: -3px;
       // background: url("@{images}/tech/xamarin-miny.png") no-repeat;
@@ -661,7 +661,7 @@ nav {
       width: 112px;
       height: 30px;
       top: -5px;
-      background: url("@{images}/ehow-small.png") no-repeat;
+      background: url("@{images}/thumbnails/ehow-small.png") no-repeat;
    }
 
    &:nth-child(4) {
@@ -669,7 +669,7 @@ nav {
       height: 40px;
       top: 5px;
       margin-left: 4px;
-      background: url("@{images}/pennington-small.png") no-repeat;
+      background: url("@{images}/thumbnails/pennington-small.png") no-repeat;
    }
 
    &:nth-child(5) {
@@ -677,7 +677,7 @@ nav {
       height: 40px;
       top: 1px;
       left: 4px;
-      background: url("@{images}/nfcu.png") no-repeat;
+      background: url("@{images}/thumbnails/nfcu.png") no-repeat;
    }
 }
 /////////////////// End Project Links Section ///////////////////
@@ -1232,7 +1232,7 @@ blockquote {
       height: 45px;
       top: 4px;
       left: -3px;
-      background: url("@{images}/xamarin-tiny.png") no-repeat;
+      background: url("@{images}/thumbnails/xamarin-thumbnail.png") no-repeat;
    }
 
    .projectThumbnail {

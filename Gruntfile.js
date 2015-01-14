@@ -14,7 +14,7 @@ module.exports = function(grunt) {
                     'js/jquery.inview.min.js',
                     'js/main.js'
                 ],
-                dest: 'js/build/index.js'
+                dest: 'live/js/index.js'
             }
         },
 
@@ -24,13 +24,14 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'js/build/index.js',
-                dest: 'js/build/index.min.js'
+                src: 'live/js/index.js',
+                dest: 'live/js/index.min.js'
             }
         },
 
         //Compress images. Use imageoptim manually since it compresses all images (slowly)
-        //WARNING: You cannot specify an output folder, so the original files will be modified!
+        //WARNING: You cannot specify an output folder, so the original files WILL be modified!
+        //CURENTLY NOT USED with the default grunt command
         imageoptim: {
             myTask: {
                 options: {
@@ -38,15 +39,30 @@ module.exports = function(grunt) {
                     imageAlpha: true,
                     quitAfter: true
                 },
-                src: ['images/tech/compressed']
+                src: ['images/tech']
+            }
+        },
+
+        //Compresses all images in the image folder and outputs them to the live/images folder
+        //WARNING: Due to a current bug, the destination folder MUST be different than the source
+        imagemin: {
+            allImages: {
+                files: [{
+                    expand: true,
+                    cwd: 'images',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'live/images'
+                }]
             }
         }
     });
 
     //Load plugins
+    grunt.loadNpmTasks('grunt-newer'); //Runs grunt tasks on new and modified files only
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-imageoptim');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     //Tasks to execute when using the "grunt" command with no arguments
     grunt.registerTask('default', ['concat','uglify']);
