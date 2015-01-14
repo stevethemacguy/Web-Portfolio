@@ -27,13 +27,29 @@ module.exports = function(grunt) {
                 src: 'js/build/index.js',
                 dest: 'js/build/index.min.js'
             }
+        },
+
+        //Compress images. Use imageoptim manually since it compresses all images (slowly)
+        //WARNING: You cannot specify an output folder, so the original files will be modified!
+        imageoptim: {
+            myTask: {
+                options: {
+                    jpegMini: false,
+                    imageAlpha: true,
+                    quitAfter: true
+                },
+                src: ['images/tech/compressed']
+            }
         }
     });
 
     //Load plugins
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-imageoptim');
 
     //Tasks to execute when using the "grunt" command with no arguments
     grunt.registerTask('default', ['concat','uglify']);
+
+    //Use imageoptim manually since it compresses all images (slowly)
 };
