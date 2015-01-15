@@ -4,6 +4,20 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        //Remove all output folders
+        //Use "git clean:dry" to do a dry run.
+        clean: {
+            it: {
+                src: ["live/css", "live/js"]
+            },
+            dry: {
+                src: ["live/css", "live/js"],
+                options: {
+                    'no-write': true
+                }
+            }
+        },
+
         //Concat css and js files into a single file
         concat: {
             css: {
@@ -78,6 +92,7 @@ module.exports = function(grunt) {
     });
 
     //Load plugins
+    grunt.loadNpmTasks('grunt-contrib-clean'); //Delete files or folders
     grunt.loadNpmTasks('grunt-newer'); //Runs grunt tasks on new and modified files only
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -86,7 +101,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     //Tasks to execute when using the "grunt" command with no arguments
-    grunt.registerTask('default', ['concat','cssmin','uglify']);
+    grunt.registerTask('default', ['clean:it','concat','cssmin','uglify']);
 
     //Use imageoptim manually since it compresses all images (slowly)
 };
