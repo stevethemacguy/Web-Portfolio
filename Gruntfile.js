@@ -4,7 +4,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        //Remove all output folders
+        //Removes output folders (removes build folders with "clean:buildfiles")
         //Use "git clean:dry" to do a dry run.
         clean: {
             it: {
@@ -15,6 +15,9 @@ module.exports = function(grunt) {
                 options: {
                     'no-write': true
                 }
+            },
+            buildfiles: {
+                src: ["css/build"]
             }
         },
 
@@ -88,6 +91,18 @@ module.exports = function(grunt) {
                     dest: 'live/images'
                 }]
             }
+        },
+
+        //Watch folders for changes. Removes build folders created in the process.
+        watch: {
+            scripts: {
+                files: ['js/*.js'],
+                tasks: ['concat:js', 'uglify']
+            },
+            css: {
+                files: ['css/*.css'],
+                tasks: ['concat:css', 'cssmin', 'clean:buildfiles']
+            }
         }
     });
 
@@ -97,11 +112,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-imageoptim');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
     //Tasks to execute when using the "grunt" command with no arguments
-    grunt.registerTask('default', ['clean:it','concat','cssmin','uglify']);
+    grunt.registerTask('default', ['clean:it','concat','cssmin','uglify','clean:buildfiles']);
 
     //Use imageoptim manually since it compresses all images (slowly)
 };
