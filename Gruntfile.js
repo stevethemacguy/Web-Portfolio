@@ -21,7 +21,7 @@ module.exports = function(grunt) {
             },
             spritefiles:
             {
-                src: ["images/sprites/*"]
+                src: ["live/images/sprites/*"]
             }
         },
 
@@ -119,6 +119,7 @@ module.exports = function(grunt) {
 
         //Compresses all images in the image folder and outputs them to the live/images folder
         //WARNING: Due to a current bug with the plugin, the destination folder MUST be different than the source
+        //NOTE: Destination creates a new images folder in the live folder (i.e. it does NOT overwrite the existing images folder)
         imagemin: {
             allImages: {
                 files: [{
@@ -143,21 +144,21 @@ module.exports = function(grunt) {
             }
         },
 
-        //Create a spritesheet and corresponding CSS using all images in the image folder
-        //NOTE: If you want to just add a new image, then run 'grunt sprite".
-        //If you want to re-create the entire sprite file then clean the "sprites" folder first.
-        //This does NOT auto-update the CSS file. Currently, sprite css has to be updated manually for new images.
+        //Re-creates a spritesheet and corresponding CSS using all images in the LIVE/image folder
+        //NOTE: Always use "grunt clean:spritefiles" before creating a new stylesheet
+        //This does NOT auto-update the CSS file. However, you can overrite image positions by simply adding the sprites.css file
+        //to the existing styles.less file (there is no need to manually change image positions in style.less)
         sprite:{
             all: {
-                src: ['images/**/*.png','!images/tech/Not-Used/*.png'],
+                src: ['live/images/**/*.png','!live/images/tech/Not-Used/*.png'],
                 imgPath: '@spritesheet',
                 cssOpts: {
                     cssSelector: function (item) {
                         return '.' + item.name; //Use original classnames instead of "icon-"
                     }
                 },
-                dest: 'images/sprites/spritesheet.png',
-                destCss: 'images/sprites/sprites.css',
+                dest: 'live/images/sprites/spritesheet.png',
+                destCss: 'live/images/sprites/sprites.css',
                 engine: 'phantomjssmith'
             }
         }

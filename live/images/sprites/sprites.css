@@ -59,7 +59,7 @@ Icon classes can be used entirely standalone. They are named after their origina
   width: 50px;
   height: 100px;
 }
-.angular {
+.Angular {
   background-image: url(@spritesheet);
   background-position: -221px -171px;
   width: 89px;
