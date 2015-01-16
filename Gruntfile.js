@@ -17,11 +17,11 @@ module.exports = function(grunt) {
                 }
             },
             buildfiles: {
-                src: ["css/build"]
+                src: ["css/build","live/js/live.js"]
             }
         },
 
-        //Concat css and js files into a single file
+        //Concat all css and js files into single files
         concat: {
             css: {
                 src: [
@@ -32,26 +32,28 @@ module.exports = function(grunt) {
             js: {
                 src: [
                     //'js/*.js' // All JS in the js folder. Not used
-                    //jQuery/ui/mobile is currently loaded as needed, so it doesn't appear here
+                    //jQuery, jQueryUI, and jQuery Mobile are currently loaded as needed, so they don't appear here
                     'js/jquery.stellar.js',
                     'js/jquery.inview.min.js',
                     'js/main.js'
                 ],
-                dest: 'live/js/index.js'
+                dest: 'live/js/live.js'
             }
         },
 
-        //Minify CSS
+        //Minify the CSS
         cssmin: {
             combined: {
-                files: [{
-                    expand: true,
-                    cwd: 'css/build',
-                    src: 'styles.css',
-                    //src: ['*.css', '!*.min.css'], //Use for all files
-                    dest: 'live/css',
-                    ext: '.min.css'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'css/build',
+                        src: 'styles.css',
+                        //src: ['*.css', '!*.min.css'], //Use for all files
+                        dest: 'live/css',
+                        ext: '.min.css'
+                    }
+                ]
             }
         },
 
@@ -61,8 +63,8 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'live/js/index.js',
-                dest: 'live/js/index.min.js'
+                src: 'live/js/live.js',
+                dest: 'live/js/live.min.js'
             }
         },
 
@@ -81,7 +83,7 @@ module.exports = function(grunt) {
         },
 
         //Compresses all images in the image folder and outputs them to the live/images folder
-        //WARNING: Due to a current bug, the destination folder MUST be different than the source
+        //WARNING: Due to a current bug with the plugin, the destination folder MUST be different than the source
         imagemin: {
             allImages: {
                 files: [{
@@ -94,6 +96,7 @@ module.exports = function(grunt) {
         },
 
         //Watch folders for changes. Removes build folders created in the process.
+        //NOT currently used when testing, since minifying takes too long.
         watch: {
             scripts: {
                 files: ['js/*.js'],
@@ -103,12 +106,27 @@ module.exports = function(grunt) {
                 files: ['css/*.css'],
                 tasks: ['concat:css', 'cssmin', 'clean:buildfiles']
             }
+        },
+
+        //Creates index.html from dev.html by processing the build instructions (labeled as comments in dev.html).
+        //Currently changes CSS and JS references to point to the live (concatenated and minified) files produced during the grunt build.
+        //In other words, index.html is the production "version" of dev.html.
+        processhtml: {
+            options: {
+                // Task-specific options
+            },
+            dist: {
+                files: {
+                    'index.html': ['dev.html']  //dest : source
+                }
+            }
         }
     });
 
     //Load plugins
     grunt.loadNpmTasks('grunt-contrib-clean'); //Delete files or folders
     grunt.loadNpmTasks('grunt-newer'); //Runs grunt tasks on new and modified files only
+    grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -116,8 +134,15 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-imageoptim');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    //Tasks to execute when using the "grunt" command with no arguments
-    grunt.registerTask('default', ['clean:it','concat','cssmin','uglify','clean:buildfiles']);
-
-    //Use imageoptim manually since it compresses all images (slowly)
+    //Build process (i.e. "grunt" command with no arguments)
+    /*
+        a. Clean (Remove "live" folders)
+        b. Concat CSS and JS files into single files
+        //c. Minify HTML
+        d. Minify CSS
+        e. Minify JS
+        f. Process dev.html to create index.html (see comments for the processhtml task above)
+        g. Clean (Remove any build folders created in the process)
+     */
+    grunt.registerTask('default', ['clean:it','concat','cssmin','uglify','processhtml','clean:buildfiles']);
 };
