@@ -32,7 +32,7 @@
 /************** Base URLs ***************/
 @images: "../images";
 @icons: "../images/icons";
-@spritesheet: "../images/sprites/spritesheet.png";
+@spritesheet: "../live/images/sprites/spritesheet.png";
 
 html, body {
    background: #fff;
@@ -86,12 +86,15 @@ header {
    margin: 4px 0;
    display: inline-block;
    cursor: pointer;
-   background: url("@{images}/smile-logo-sprite.png") no-repeat;
+   //background: url("@{images}/smile-logo-sprite.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -243px 0;
    position: relative;
    left: -1px;
 
    &:hover {
-      background-position: bottom;
+      //background-position: bottom;
+      background-position: -243px -50px; //subtract height of 50
    }
 
    a {
@@ -218,7 +221,9 @@ nav {
 }
 
 .downArrow {
-   background: url("@{icons}/down-arrow-white.png");
+   //background: url("@{icons}/down-arrow-white.png");
+   background-image: url(@spritesheet);
+   background-position: -108px 0;
    height: 45px;
    width: 45px;
    margin: 0 auto;
@@ -330,7 +335,9 @@ nav {
    top: 300px;
    left: 24%; //25% would center between left edge and CSS
    margin-left: -55px;
-   background: url("@{images}/tech/htmlLogo-white.png") no-repeat;
+   //background: url("@{images}/tech/htmlLogo-white.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -1438px 0;
 }
 
 #cssLogo {
@@ -339,7 +346,9 @@ nav {
    top: 300px;
    left: 50%; //Center the middle logo (see negative margin below)
    margin-left: -55px; //Half of width is 55px
-   background: url("@{images}/tech/css-white.png") no-repeat;
+  //background: url("@{images}/tech/css-white.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -1548px 0;
 }
 
 #jsLogo {
@@ -348,7 +357,9 @@ nav {
    width: 110px;
    height: 155px;
    margin-left: -55px;
-   background: url("@{images}/tech/js-white.png") no-repeat;
+   //background: url("@{images}/tech/js-white.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -1328px 0;
 }
 
 #sassLogo {
@@ -357,7 +368,9 @@ nav {
    width: 108px;
    height: 81px;
    margin-left: -54px;
-   background: url("@{images}/tech/sass.png") no-repeat;
+   //background: url("@{images}/tech/sass.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -1220px 0;
 }
 
 #lessLogo {
@@ -366,7 +379,9 @@ nav {
    width: 120px;
    height: 51px;
    margin-left: -60px;
-   background: url("@{images}/tech/less.png") no-repeat;
+   //background: url("@{images}/tech/less.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -1770px 0;
 }
 
 #xamarinLogo {
@@ -375,7 +390,9 @@ nav {
    opacity: 0;
    width: 228px;
    height: 60px;
-   background: url("@{images}/tech/xamarin-short-spaced.png") no-repeat;
+   //background: url("@{images}/tech/xamarin-short-spaced.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -2772px 0;
    margin-left: -114px;
    -webkit-transition: left .5s ease, opacity .5s linear;
    -moz-transition: left .5s ease, opacity .5s linear;
@@ -395,7 +412,9 @@ nav {
    width: 162px;
    height: 68px;
    margin-left: -81px;
-   background: url("@{images}/tech/git-white.png") no-repeat;
+   //background: url("@{images}/tech/git-white.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -2433px 0;
    -webkit-transition: left .5s ease, opacity .5s linear;
    -moz-transition: left .5s ease, opacity .5s linear;
    -o-transition: left .5s ease, opacity .5s linear;
@@ -414,7 +433,9 @@ nav {
    width: 144px;
    height: 76px;
    margin-left: -72px;
-   background: url("@{images}/tech/php.png") no-repeat;
+   //background: url("@{images}/tech/php.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -2289px 0;
    -webkit-transition: left .5s ease, opacity .5s linear;
    -moz-transition: left .5s ease, opacity .5s linear;
    -o-transition: left .5s ease, opacity .5s linear;
@@ -432,7 +453,9 @@ nav {
    opacity: 0;
    width: 135px;
    height: 53px;
-   background: url("@{images}/tech/jira-light.png") no-repeat;
+   //background: url("@{images}/tech/jira-light.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -2011px 0;
    -webkit-transition: left .5s ease, opacity .5s linear;
    -moz-transition: left .5s ease, opacity .5s linear;
    -o-transition: left .5s ease, opacity .5s linear;
@@ -451,7 +474,9 @@ nav {
    opacity: 0;
    width: 88px;
    height: 86px;
-   background: url("@{images}/tech/photoshop.png") no-repeat;
+   //background: url("@{images}/tech/photoshop.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -747px 0;
    -webkit-transition: left .5s ease, opacity .5s linear;
    -moz-transition: left .5s ease, opacity .5s linear;
    -o-transition: left .5s ease, opacity .5s linear;
@@ -469,7 +494,9 @@ nav {
    width: 89px;
    height: 93px;
    margin-left: -45px;
-   background: url("@{images}/tech/angular.png") no-repeat;
+   //background: url("@{images}/tech/angular.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -835px 0;
    z-index: 2;
 }
 
@@ -480,7 +507,9 @@ nav {
    width: 121px;
    height: 137px;
    margin-left: -61px;
-   background: url("@{images}/tech/jquery.png") no-repeat;
+   //background: url("@{images}/tech/jquery.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -1890px 0;
 }
 
 #javaLogo {
@@ -489,7 +518,9 @@ nav {
    width: 94px;
    height: 171px;
    margin-left: -47px;
-   background: url("@{images}/tech/java.png") no-repeat;
+   //background: url("@{images}/tech/java.png") no-repeat;
+   background-image: url(@spritesheet);
+   background-position: -924px 0;
 }
 
 ///////////// END Parallax Section /////////////
@@ -546,7 +577,9 @@ nav {
 }
 
 .leftArrow {
-   background: url("@{icons}/left-arrow.png");
+   //background: url("@{icons}/left-arrow.png");
+   background-image: url(@spritesheet);
+   background-position: -402px 0;
    left: 0;
    &.dim {
       opacity: .2;
@@ -555,7 +588,9 @@ nav {
 }
 
 .rightArrow {
-   background: url("@{icons}/right-arrow.png");
+   //background: url("@{icons}/right-arrow.png");
+   background-image: url(@spritesheet);
+   background-position: -466px 0;
    right: 0;
    &.dim {
       opacity: .2;
@@ -597,7 +632,11 @@ nav {
 
    &:nth-child(1) {
       background: url("@{images}/thumbnails/twc-small2.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -1118px 0;
       //background: url("@{images}/thumbnails/twc-small.png") no-repeat;
+      /*background-image: url(@spritesheet);
+      background-position: -153px 0;*/
       width: 102px;
    }
 
@@ -605,16 +644,22 @@ nav {
       width: 177px;
       height: 45px;
       background: url("@{images}/thumbnails/xamarin-white.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -2595px 0;
       top: 3px;
       left: -3px;
       //background: url("@{images}/tech/xamarin-miny.png") no-repeat;
+      /*background-image: url(@spritesheet);
+      background-position: -198px 0;*/
    }
 
    &:nth-child(3) {
       width: 112px;
       height: 30px;
       top: -5px;
-      background: url("@{images}/thumbnails/ehow-small.png") no-repeat;
+     //background: url("@{images}/thumbnails/ehow-small.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -1658px 0;
    }
 
    &:nth-child(4) {
@@ -622,7 +667,9 @@ nav {
       height: 40px;
       top: 5px;
       margin-left: 4px;
-      background: url("@{images}/thumbnails/pennington-small.png") no-repeat;
+     //background: url("@{images}/thumbnails/pennington-small.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -2146px 0;
 
    }
 
@@ -631,7 +678,9 @@ nav {
       height: 40px;
       top: 1px;
       left: 4px;
-      background: url("@{images}/thumbnails/nfcu.png") no-repeat;
+      //background: url("@{images}/thumbnails/nfcu.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -598px 0;
    }
 }
 /////////////////// End Project Links Section ///////////////////
@@ -735,14 +784,18 @@ blockquote {
    }
 
    &:before {
-      background: url("@{icons}/quote-open-orange.png") no-repeat;
+      //background: url("@{icons}/quote-open-orange.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -13px 0;
       display: block; //Inline-block indents the text to the right, so block is used for the open quote only.
       top: 13px;
       left: -20px;
    }
 
    &:after {
-      background: url("@{icons}/quote-close-orange.png") no-repeat;
+      //background: url("@{icons}/quote-close-orange.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: 0 0;
       display: inline-block;
       top: -3px;
       left: 6px;
@@ -921,10 +974,13 @@ blockquote {
    }
 
    .headerLogo {
-      background: url("@{images}/smile-logo-sprite.png") no-repeat;
+      //background: url("@{images}/smile-logo-sprite.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -243px 0;
 
       &:hover {
-         background-position: bottom;
+         //background-position: bottom;
+         background-position: -243px -50px; //subtract height of 50
       }
    }
 } //end header
@@ -1030,12 +1086,15 @@ blockquote {
       margin-top: 5px;
       width: 38px;
       height: 38px;
-      background: url("@{images}/mobile/small-smile-logo-sprite.png") no-repeat;
+      //background: url("@{images}/mobile/small-smile-logo-sprite.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -26px 0;
       position: relative;
       left: -2px;
 
       &.selected {
-         background-position: bottom;
+         //background-position: bottom;
+         background-position: -26px -38px; //subtract height of 38
       }
    }
 
@@ -1046,10 +1105,12 @@ blockquote {
       margin-top: 15px;
       width: 27px;
       height: 17px;
-      background: url("@{images}/mobile/menu-button-sprite.png") no-repeat;
+      //background: url("@{images}/mobile/menu-button-sprite.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -64px 0;
 
       &.selected {
-         background-position: bottom;
+         background-position: -64px -17px; //subtract height of 38
       }
    }
 
@@ -1186,7 +1247,9 @@ blockquote {
       height: 45px;
       top: 4px;
       left: -3px;
-      background: url("@{images}/thumbnails/xamarin-thumbnail.png") no-repeat;
+      //background: url("@{images}/thumbnails/xamarin-thumbnail.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -293px 0;
    }
 
    .projectThumbnail {
@@ -1233,7 +1296,7 @@ blockquote {
    {
       display: none;
    }
-   
+
    .projectLinks {
       float: none;
       width: 100%;
@@ -1243,14 +1306,18 @@ blockquote {
 @media (max-width : 1051px) {
 
    #gitLogo {
-      background: url("@{images}/tech/git-tiny.png") no-repeat;
+      //background: url("@{images}/tech/git-tiny.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -530px 0;
       width: 68px;
       height: 68px;
       margin-left: -34px;
    }
 
    #jiraLogo {
-      background: url("@{images}/tech/jira-tiny.png") no-repeat;
+      //background: url("@{images}/tech/jira-tiny.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -344px 0;
       width: 58px;
       height: 77px;
       margin-left: -29px;
@@ -1258,7 +1325,9 @@ blockquote {
    }
 
    #phpLogo {
-      background: url("@{images}/tech/php-text.png") no-repeat;
+      //background: url("@{images}/tech/php-text.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -1018px 0;
       width: 100px;
       height: 48px;
       margin-left: -50px;
@@ -1269,7 +1338,9 @@ blockquote {
 @media (max-width : 1350px) {
 
    #xamarinLogo {
-      background: url("@{images}/tech/xamarin-tiny.png") no-repeat;
+      //background: url("@{images}/tech/xamarin-tiny.png") no-repeat;
+      background-image: url(@spritesheet);
+      background-position: -667px 0;
       width: 80px;
       height: 71px;
       margin-left: -40px;

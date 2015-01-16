@@ -25,29 +25,29 @@ module.exports = function(grunt) {
             }
         },
 
-        //Re-creates a spritesheet and corresponding CSS using all images in the LIVE/image folder
+        //Creates a spritesheet and corresponding CSS using all of the images in the LIVE/images folder
         //NOTE: Always use "grunt clean:spritefiles" before creating a new stylesheet
-        //This does NOT auto-update the CSS file. However, you can overrite image positions by simply appending the sprites.css file
-        //to the existing styles.less file (there is no need to manually change image positions in style.less)
+        //This does NOT auto-update style.less. Currently, sprite styles need to be updated MANUALLY.
         sprite:{
             all: {
-                src: ['live/images/**/*.png','!live/images/tech/Not-Used/*.png'],
+                src: ['live/images/**/*.png','!live/**/Not-Used/*.png'],
                 imgPath: '@spritesheet',
+                algorithm: 'left-right',
                 cssOpts: {
                     cssSelector: function (item) {
-                        return '.' + item.name; //Use original classnames instead of "icon-"
+                        return item.name; //Use original image names instead of "icon-"
                     }
                 },
                 dest: 'live/images/sprites/spritesheet.png',
-                destCss: 'css/build/sprites.css',
+                destCss: 'live/images/sprites/sprites.css',
                 engine: 'phantomjssmith'
             }
         },
 
-        //Concat all css and js files into single files. Sprite styles are also appending to styles.css
+        //Concat all css and js files into single files.
         concat: {
             css: {
-                src: [ 'css/*.css','css/build/sprites.css'],
+                src: [ 'css/*.css'],
                 dest: 'css/build/styles.css'
             },
             js: {
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
                     minifyJS: true
                 },
                 files: {
-                    'index.html': 'index.html'     // 'destination': 'source'
+                    'index.html': 'index.html'  // 'destination': 'source'
                 }
             }
         },
@@ -100,8 +100,7 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         cwd: 'css/build',
-                        src: 'styles.css',
-                        //src: ['*.css', '!*.min.css'], //Use for all files
+                        src: 'styles.css',    //Use ['*.css', '!*.min.css'] for all files
                         dest: 'live/css',
                         ext: '.min.css'
                     }
@@ -136,7 +135,7 @@ module.exports = function(grunt) {
 
         //Compresses all images in the image folder and outputs them to the live/images folder
         //WARNING: Due to a current bug with the plugin, the destination folder MUST be different than the source
-        //NOTE: Destination creates a new images folder in the live folder (i.e. it does NOT overwrite the existing images folder)
+        //NOTE: Destination creates a new live/images folder (i.e. it does NOT overwrite the existing images folder)
         imagemin: {
             allImages: {
                 files: [{
@@ -159,8 +158,19 @@ module.exports = function(grunt) {
                 files: ['css/*.css'],
                 tasks: ['concat:css', 'cssmin', 'clean:buildfiles']
             }
-        }
+        },
 
+        //Change spritefile path to production path
+        replace: {
+            spritefile: {
+                src: ['css/build/styles.css'],
+                overwrite: true,    //Overwrite styles.css with the change
+                replacements: [{
+                    from: "../live/images/sprites/spritesheet.png",
+                    to: "../images/sprites/spritesheet.png"
+                }]
+            }
+        }
     });
 
     //Load plugins
@@ -175,18 +185,30 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-imageoptim');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-spritesmith');
+    grunt.loadNpmTasks('grunt-text-replace');
 
-    //Build process (i.e. "grunt" command with no arguments)
+    //Build process
     /*
-        a. Clean (Remove "live" folders)
-        b. Create sprite file
-        c. Concat CSS files into a single file (adding the sprite styles at the end of the main styles.less
-        d. Concat JS files into single file
-        c. Process dev.html to create index.html (see comments for the processhtml task above)
-        d. Minify HTML
-        e. Minify CSS
-        f. Minify JS
-        g. Clean (Remove any build folders created in the process)
-     */
-    grunt.registerTask('default', ['clean:it','clean:spritefiles','sprite','concat','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
+        If no images changed...
+            1. Run the default "grunt" task.
+
+        If any images were added, removed, or modified...
+            1. Compress the images with imagemin if needed
+            2. Run "grunt spritefile" to create a new spritefile
+            3. MANUALLY update styles.less file with "background-position" CSS from live/image/sprites/sprites.css
+            4. Run the default "grunt" task.
+    */
+
+    /* Default "grunt" task
+            a. Clean (Remove "live" folders)
+            b. Concat CSS and JS files into single files
+            c. Change spritesheet image path in style.less (since live page uses a different path
+            c. Process dev.html to create index.html (see comments for the processhtml task above)
+            d. Minify HTML
+            e. Minify CSS
+            f. Minify JS
+            g. Clean (Remove any build folders created in the process)
+    */
+    grunt.registerTask('spritefile', ['clean:spritefiles','sprite']);
+    grunt.registerTask('default', ['clean:it','concat','replace','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
 };
