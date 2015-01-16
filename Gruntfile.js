@@ -41,6 +41,37 @@ module.exports = function(grunt) {
             }
         },
 
+        //Creates index.html from dev.html by processing the build instructions (labeled as comments in dev.html).
+        //Currently changes CSS and JS references to point to the live (concatenated and minified) files produced during the grunt build.
+        //In other words, index.html is the production "version" of dev.html.
+        processhtml: {
+            options: {
+                // Task-specific options
+            },
+            dist: {
+                files: {
+                    'index.html': ['dev.html']  //dest : source
+                }
+            }
+        },
+
+        //Minify the HTML (NOTE: processhtml MUST be done before minifying, which strips all comments
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true,
+                    removeEmptyAttributes: true,
+                    removeScriptTypeAttributes: true,
+                    removeStyleLinkTypeAttributes: true,
+                    minifyJS: true
+                },
+                files: {
+                    'index.html': 'index.html'     // 'destination': 'source'
+                }
+            }
+        },
+
         //Minify the CSS
         cssmin: {
             combined: {
@@ -106,20 +137,6 @@ module.exports = function(grunt) {
                 files: ['css/*.css'],
                 tasks: ['concat:css', 'cssmin', 'clean:buildfiles']
             }
-        },
-
-        //Creates index.html from dev.html by processing the build instructions (labeled as comments in dev.html).
-        //Currently changes CSS and JS references to point to the live (concatenated and minified) files produced during the grunt build.
-        //In other words, index.html is the production "version" of dev.html.
-        processhtml: {
-            options: {
-                // Task-specific options
-            },
-            dist: {
-                files: {
-                    'index.html': ['dev.html']  //dest : source
-                }
-            }
         }
     });
 
@@ -127,6 +144,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean'); //Delete files or folders
     grunt.loadNpmTasks('grunt-newer'); //Runs grunt tasks on new and modified files only
     grunt.loadNpmTasks('grunt-processhtml');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -138,11 +156,12 @@ module.exports = function(grunt) {
     /*
         a. Clean (Remove "live" folders)
         b. Concat CSS and JS files into single files
-        //c. Minify HTML
-        d. Minify CSS
-        e. Minify JS
-        f. Process dev.html to create index.html (see comments for the processhtml task above)
+        c. Process dev.html to create index.html (see comments for the processhtml task above)
+        d. Minify HTML
+        e. Minify CSS
+        f. Minify JS
+
         g. Clean (Remove any build folders created in the process)
      */
-    grunt.registerTask('default', ['clean:it','concat','cssmin','uglify','processhtml','clean:buildfiles']);
+    grunt.registerTask('default', ['clean:it','concat','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
 };
