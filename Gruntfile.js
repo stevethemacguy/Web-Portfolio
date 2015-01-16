@@ -137,12 +137,21 @@ module.exports = function(grunt) {
         //WARNING: Due to a current bug with the plugin, the destination folder MUST be different than the source
         //NOTE: Destination creates a new live/images folder (i.e. it does NOT overwrite the existing images folder)
         imagemin: {
-            allImages: {
+            all: {
                 files: [{
                     expand: true,
                     cwd: 'images',
                     src: ['**/*.{png,jpg,gif}'],
                     dest: 'live/images'
+                }]
+            },
+            spritefile:
+            {
+                files: [{
+                    expand: true,
+                    cwd: 'live/images/sprites',
+                    src: ['*.{png,jpg,gif}'],
+                    dest: 'live/images/sprites'
                 }]
             }
         },
@@ -193,8 +202,8 @@ module.exports = function(grunt) {
             1. Run the default "grunt" task.
 
         If any images were added, removed, or modified...
-            1. Compress the images with imagemin if needed
-            2. Run "grunt spritefile" to create a new spritefile
+            1. Compress the images with imagemin:all if needed (which does all images EXCEPT for the sprite file since it doesn't exist yet)
+            2. Run "grunt spritefile" to create a new spritefile (the spritefile itself is also optimized in the process)
             3. MANUALLY update styles.less file with "background-position" CSS from live/image/sprites/sprites.css
             4. Run the default "grunt" task.
     */
@@ -203,12 +212,12 @@ module.exports = function(grunt) {
             a. Clean (Remove "live" folders)
             b. Concat CSS and JS files into single files
             c. Change spritesheet image path in style.less (since live page uses a different path
-            c. Process dev.html to create index.html (see comments for the processhtml task above)
-            d. Minify HTML
-            e. Minify CSS
-            f. Minify JS
-            g. Clean (Remove any build folders created in the process)
+            d. Process dev.html to create index.html (see comments for the processhtml task above)
+            e. Minify HTML
+            f. Minify CSS
+            g. Minify JS
+            h. Clean (Remove any build folders created in the process)
     */
-    grunt.registerTask('spritefile', ['clean:spritefiles','sprite']);
+    grunt.registerTask('spritefile', ['clean:spritefiles','sprite', 'imagemin:spritefile']);
     grunt.registerTask('default', ['clean:it','concat','replace','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
 };
