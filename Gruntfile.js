@@ -18,6 +18,10 @@ module.exports = function(grunt) {
             },
             buildfiles: {
                 src: ["css/build","live/js/live.js"]
+            },
+            spritefiles:
+            {
+                src: ["images/sprites/*"]
             }
         },
 
@@ -137,6 +141,25 @@ module.exports = function(grunt) {
                 files: ['css/*.css'],
                 tasks: ['concat:css', 'cssmin', 'clean:buildfiles']
             }
+        },
+
+        //Create a spritesheet and corresponding CSS using all images in the image folder
+        //NOTE: If you want to just add a new image, then run 'grunt sprite".
+        //If you want to re-create the entire sprite file then clean the "sprites" folder first.
+        //This does NOT auto-update the CSS file. Currently, sprite css has to be updated manually for new images.
+        sprite:{
+            all: {
+                src: ['images/**/*.png','!images/tech/Not-Used/*.png'],
+                imgPath: '@spritesheet',
+                cssOpts: {
+                    cssSelector: function (item) {
+                        return '.' + item.name; //Use original classnames instead of "icon-"
+                    }
+                },
+                dest: 'images/sprites/spritesheet.png',
+                destCss: 'images/sprites/sprites.css',
+                engine: 'phantomjssmith'
+            }
         }
     });
 
@@ -151,6 +174,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-imageoptim');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-spritesmith');
 
     //Build process (i.e. "grunt" command with no arguments)
     /*

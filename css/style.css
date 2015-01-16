@@ -51,12 +51,13 @@ header {
   margin: 4px 0;
   display: inline-block;
   cursor: pointer;
-  background: url("../images/smile-logo-sprite.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -121px -171px;
   position: relative;
   left: -1px;
 }
 .headerLogo:hover {
-  background-position: bottom;
+  background-position: -121px -221px;
 }
 .headerLogo a {
   display: block;
@@ -159,7 +160,8 @@ nav a:hover {
   font-style: italic;
 }
 .downArrow {
-  background: url("../images/icons/down-arrow-white.png");
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -555px -152px;
   height: 45px;
   width: 45px;
   margin: 0 auto;
@@ -295,7 +297,9 @@ nav a:hover {
   top: 300px;
   left: 24%;
   margin-left: -55px;
-  background: url("../images/tech/htmlLogo-white.png") no-repeat;
+  /*background: url("@{images}/tech/htmlLogo-white.png") no-repeat;*/
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -94px 0;
 }
 #cssLogo {
   width: 110px;
@@ -303,7 +307,8 @@ nav a:hover {
   top: 300px;
   left: 50%;
   margin-left: -55px;
-  background: url("../images/tech/css-white.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -314px 0;
 }
 #jsLogo {
   top: 298px;
@@ -311,7 +316,8 @@ nav a:hover {
   width: 110px;
   height: 155px;
   margin-left: -55px;
-  background: url("../images/tech/js-white.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -204px 0;
 }
 #sassLogo {
   top: 150px;
@@ -319,7 +325,8 @@ nav a:hover {
   width: 108px;
   height: 81px;
   margin-left: -54px;
-  background: url("../images/tech/sass.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: 0 -308px;
 }
 #lessLogo {
   top: 170px;
@@ -327,7 +334,8 @@ nav a:hover {
   width: 120px;
   height: 51px;
   margin-left: -60px;
-  background: url("../images/tech/less.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -504px -53px;
 }
 #xamarinLogo {
   top: 599px;
@@ -335,7 +343,8 @@ nav a:hover {
   opacity: 0;
   width: 228px;
   height: 60px;
-  background: url("../images/tech/xamarin-short-spaced.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -162px -389px;
   margin-left: -114px;
   -webkit-transition: left .5s ease, opacity .5s linear;
   -moz-transition: left .5s ease, opacity .5s linear;
@@ -353,7 +362,8 @@ nav a:hover {
   width: 162px;
   height: 68px;
   margin-left: -81px;
-  background: url("../images/tech/git-white.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: 0 -389px;
   -webkit-transition: left .5s ease, opacity .5s linear;
   -moz-transition: left .5s ease, opacity .5s linear;
   -o-transition: left .5s ease, opacity .5s linear;
@@ -370,7 +380,8 @@ nav a:hover {
   width: 144px;
   height: 76px;
   margin-left: -72px;
-  background: url("../images/tech/php.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -204px -308px;
   -webkit-transition: left .5s ease, opacity .5s linear;
   -moz-transition: left .5s ease, opacity .5s linear;
   -o-transition: left .5s ease, opacity .5s linear;
@@ -386,7 +397,8 @@ nav a:hover {
   opacity: 0;
   width: 135px;
   height: 53px;
-  background: url("../images/tech/jira-light.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -504px 0;
   -webkit-transition: left .5s ease, opacity .5s linear;
   -moz-transition: left .5s ease, opacity .5s linear;
   -o-transition: left .5s ease, opacity .5s linear;
@@ -403,7 +415,8 @@ nav a:hover {
   opacity: 0;
   width: 88px;
   height: 86px;
-  background: url("../images/tech/photoshop.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -310px -171px;
   -webkit-transition: left .5s ease, opacity .5s linear;
   -moz-transition: left .5s ease, opacity .5s linear;
   -o-transition: left .5s ease, opacity .5s linear;
@@ -419,7 +432,8 @@ nav a:hover {
   width: 89px;
   height: 93px;
   margin-left: -45px;
-  background: url("../images/tech/angular.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -221px -171px;
   z-index: 2;
 }
 #jqueryLogo {
@@ -428,7 +442,8 @@ nav a:hover {
   width: 121px;
   height: 137px;
   margin-left: -61px;
-  background: url("../images/tech/jquery.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: 0 -171px;
 }
 #javaLogo {
   top: 874px;
@@ -436,7 +451,8 @@ nav a:hover {
   width: 94px;
   height: 171px;
   margin-left: -47px;
-  background: url("../images/tech/java.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: 0 0;
 }
 .contentContainer {
   width: 80%;
@@ -480,7 +496,8 @@ nav a:hover {
   cursor: pointer;
 }
 .leftArrow {
-  background: url("../images/icons/left-arrow.png");
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -424px -139px;
   left: 0;
 }
 .leftArrow.dim {
@@ -488,7 +505,8 @@ nav a:hover {
   cursor: auto;
 }
 .rightArrow {
-  background: url("../images/icons/right-arrow.png");
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -424px -203px;
   right: 0;
 }
 .rightArrow.dim {
@@ -523,13 +541,15 @@ nav a:hover {
   opacity: 1;
 }
 .projectThumbnail:nth-child(1) {
-  background: url("../images/thumbnails/twc-small2.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -504px -237px;
   width: 102px;
 }
 .projectThumbnail:nth-child(2) {
   width: 177px;
   height: 45px;
-  background: url("../images/thumbnails/xamarin-white.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: 0 -457px;
   top: 3px;
   left: -3px;
 }
@@ -537,21 +557,24 @@ nav a:hover {
   width: 112px;
   height: 30px;
   top: -5px;
-  background: url("../images/thumbnails/ehow-small.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -504px -316px;
 }
 .projectThumbnail:nth-child(4) {
   width: 143px;
   height: 40px;
   top: 5px;
   margin-left: 4px;
-  background: url("../images/thumbnails/pennington-small.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -177px -457px;
 }
 .projectThumbnail:nth-child(5) {
   width: 69px;
   height: 40px;
   top: 1px;
   left: 4px;
-  background: url("../images/thumbnails/nfcu.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -549px -197px;
 }
 #sliderContainer {
   width: 500%;
@@ -637,13 +660,15 @@ blockquote:after {
   position: relative;
 }
 blockquote:before {
-  background: url("../images/icons/quote-open-orange.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -624px -53px;
   display: block;
   top: 13px;
   left: -20px;
 }
 blockquote:after {
-  background: url("../images/icons/quote-close-orange.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -624px -66px;
   display: inline-block;
   top: -3px;
   left: 6px;
@@ -776,10 +801,11 @@ blockquote:after {
   background: #000;
 }
 .dark .headerLogo {
-  background: url("../images/smile-logo-sprite.png") no-repeat;
+  background-image: url("../images/sprites/spritesheet.png");
+  background-position: -121px -171px;
 }
 .dark .headerLogo:hover {
-  background-position: bottom;
+  background-position: -121px -221px;
 }
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
@@ -856,12 +882,13 @@ blockquote:after {
     margin-top: 5px;
     width: 38px;
     height: 38px;
-    background: url("../images/mobile/small-smile-logo-sprite.png") no-repeat;
+    background-image: url("../images/sprites/spritesheet.png");
+    background-position: -166px -308px;
     position: relative;
     left: -2px;
   }
   #mobile-logo.selected {
-    background-position: bottom;
+    background-position: -166px -346px;
   }
   .mobile-button {
     display: inline-block;
@@ -869,10 +896,11 @@ blockquote:after {
     margin-top: 15px;
     width: 27px;
     height: 17px;
-    background: url("../images/mobile/menu-button-sprite.png") no-repeat;
+    background-image: url("../images/sprites/spritesheet.png");
+    background-position: -549px -277px;
   }
   .mobile-button.selected {
-    background-position: bottom;
+    background-position: -549px -294px;
   }
   .quoteGroup {
     margin-left: 25px;
@@ -967,7 +995,8 @@ blockquote:after {
     height: 45px;
     top: 4px;
     left: -3px;
-    background: url("../images/thumbnails/xamarin-thumbnail.png") no-repeat;
+    background-image: url("../images/sprites/spritesheet.png");
+    background-position: -504px -152px;
   }
   .projectThumbnail {
     margin-right: 28px;
@@ -1008,20 +1037,23 @@ blockquote:after {
 }
 @media (max-width: 1051px) {
   #gitLogo {
-    background: url("../images/tech/git-tiny.png") no-repeat;
+    background-image: url("../images/sprites/spritesheet.png");
+    background-position: -424px -71px;
     width: 68px;
     height: 68px;
     margin-left: -34px;
   }
   #jiraLogo {
-    background: url("../images/tech/jira-tiny.png") no-repeat;
+    background-image: url("../images/sprites/spritesheet.png");
+    background-position: -108px -308px;
     width: 58px;
     height: 77px;
     margin-left: -29px;
     margin-top: -14px;
   }
   #phpLogo {
-    background: url("../images/tech/php-text.png") no-repeat;
+    background-image: url("../images/sprites/spritesheet.png");
+    background-position: -504px -104px;
     width: 100px;
     height: 48px;
     margin-left: -50px;
@@ -1030,7 +1062,8 @@ blockquote:after {
 }
 @media (max-width: 1350px) {
   #xamarinLogo {
-    background: url("../images/tech/xamarin-tiny.png") no-repeat;
+    background-image: url("../images/sprites/spritesheet.png");
+    background-position: -424px 0;
     width: 80px;
     height: 71px;
     margin-left: -40px;

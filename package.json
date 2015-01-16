@@ -13,7 +13,9 @@
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-imageoptim": "^1.4.1",
     "grunt-newer": "^1.1.0",
-    "grunt-processhtml": "^0.3.6"
+    "grunt-processhtml": "^0.3.6",
+    "grunt-spritesmith": "^3.5.0",
+    "phantomjssmith": "^0.5.4"
   },
   "repository": {
     "type": "git",
