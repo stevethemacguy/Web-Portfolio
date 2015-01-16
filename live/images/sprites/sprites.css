@@ -1,0 +1,205 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<i class="icon-home"></i>
+```
+*/
+down-arrow-white {
+  background-image: url(@spritesheet);
+  background-position: -108px 0px;
+  width: 45px;
+  height: 45px;
+}
+left-arrow {
+  background-image: url(@spritesheet);
+  background-position: -402px 0px;
+  width: 64px;
+  height: 64px;
+}
+quote-close-orange {
+  background-image: url(@spritesheet);
+  background-position: 0px 0px;
+  width: 13px;
+  height: 13px;
+}
+quote-open-orange {
+  background-image: url(@spritesheet);
+  background-position: -13px 0px;
+  width: 13px;
+  height: 13px;
+}
+right-arrow {
+  background-image: url(@spritesheet);
+  background-position: -466px 0px;
+  width: 64px;
+  height: 64px;
+}
+menu-button-sprite {
+  background-image: url(@spritesheet);
+  background-position: -64px 0px;
+  width: 44px;
+  height: 34px;
+}
+small-smile-logo-sprite {
+  background-image: url(@spritesheet);
+  background-position: -26px 0px;
+  width: 38px;
+  height: 76px;
+}
+smile-logo-sprite {
+  background-image: url(@spritesheet);
+  background-position: -243px 0px;
+  width: 50px;
+  height: 100px;
+}
+angular {
+  background-image: url(@spritesheet);
+  background-position: -835px 0px;
+  width: 89px;
+  height: 93px;
+}
+css-white {
+  background-image: url(@spritesheet);
+  background-position: -1548px 0px;
+  width: 110px;
+  height: 154px;
+}
+git-tiny {
+  background-image: url(@spritesheet);
+  background-position: -530px 0px;
+  width: 68px;
+  height: 68px;
+}
+git-white {
+  background-image: url(@spritesheet);
+  background-position: -2433px 0px;
+  width: 162px;
+  height: 68px;
+}
+htmlLogo-white {
+  background-image: url(@spritesheet);
+  background-position: -1438px 0px;
+  width: 110px;
+  height: 155px;
+}
+java {
+  background-image: url(@spritesheet);
+  background-position: -924px 0px;
+  width: 94px;
+  height: 171px;
+}
+jira-light {
+  background-image: url(@spritesheet);
+  background-position: -2011px 0px;
+  width: 135px;
+  height: 53px;
+}
+jira-tiny {
+  background-image: url(@spritesheet);
+  background-position: -344px 0px;
+  width: 58px;
+  height: 77px;
+}
+jquery {
+  background-image: url(@spritesheet);
+  background-position: -1890px 0px;
+  width: 121px;
+  height: 137px;
+}
+js-white {
+  background-image: url(@spritesheet);
+  background-position: -1328px 0px;
+  width: 110px;
+  height: 155px;
+}
+less {
+  background-image: url(@spritesheet);
+  background-position: -1770px 0px;
+  width: 120px;
+  height: 51px;
+}
+photoshop {
+  background-image: url(@spritesheet);
+  background-position: -747px 0px;
+  width: 88px;
+  height: 86px;
+}
+php-text {
+  background-image: url(@spritesheet);
+  background-position: -1018px 0px;
+  width: 100px;
+  height: 48px;
+}
+php {
+  background-image: url(@spritesheet);
+  background-position: -2289px 0px;
+  width: 144px;
+  height: 76px;
+}
+sass {
+  background-image: url(@spritesheet);
+  background-position: -1220px 0px;
+  width: 108px;
+  height: 81px;
+}
+xamarin-miny {
+  background-image: url(@spritesheet);
+  background-position: -198px 0px;
+  width: 45px;
+  height: 40px;
+}
+xamarin-short-spaced {
+  background-image: url(@spritesheet);
+  background-position: -2772px 0px;
+  width: 228px;
+  height: 60px;
+}
+xamarin-tiny {
+  background-image: url(@spritesheet);
+  background-position: -667px 0px;
+  width: 80px;
+  height: 71px;
+}
+ehow-small {
+  background-image: url(@spritesheet);
+  background-position: -1658px 0px;
+  width: 112px;
+  height: 30px;
+}
+nfcu {
+  background-image: url(@spritesheet);
+  background-position: -598px 0px;
+  width: 69px;
+  height: 40px;
+}
+pennington-small {
+  background-image: url(@spritesheet);
+  background-position: -2146px 0px;
+  width: 143px;
+  height: 40px;
+}
+twc-small {
+  background-image: url(@spritesheet);
+  background-position: -153px 0px;
+  width: 45px;
+  height: 39px;
+}
+twc-small2 {
+  background-image: url(@spritesheet);
+  background-position: -1118px 0px;
+  width: 102px;
+  height: 40px;
+}
+xamarin-thumbnail {
+  background-image: url(@spritesheet);
+  background-position: -293px 0px;
+  width: 51px;
+  height: 45px;
+}
+xamarin-white {
+  background-image: url(@spritesheet);
+  background-position: -2595px 0px;
+  width: 177px;
+  height: 45px;
+}

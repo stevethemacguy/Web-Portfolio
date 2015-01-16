@@ -4,37 +4,107 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        //Concat css and js files into a single file
+        //Removes output folders (removes build folders with "clean:buildfiles")
+        //Use "git clean:dry" to do a dry run.
+        clean: {
+            it: {
+                src: ["live/css", "live/js"]
+            },
+            dry: {
+                src: ["live/css", "live/js"],
+                options: {
+                    'no-write': true
+                }
+            },
+            buildfiles: {
+                src: ["css/build","live/js/live.js"]
+            },
+            spritefiles:
+            {
+                src: ["live/images/sprites/*"]
+            }
+        },
+
+        //Creates a spritesheet and corresponding CSS using all of the images in the LIVE/images folder
+        //NOTE: Always use "grunt clean:spritefiles" before creating a new stylesheet
+        //This does NOT auto-update style.less. Currently, sprite styles need to be updated MANUALLY.
+        sprite:{
+            all: {
+                src: ['live/images/**/*.png','!live/**/Not-Used/*.png'],
+                imgPath: '@spritesheet',
+                algorithm: 'left-right',
+                cssOpts: {
+                    cssSelector: function (item) {
+                        return item.name; //Use original image names instead of "icon-"
+                    }
+                },
+                dest: 'live/images/sprites/spritesheet.png',
+                destCss: 'live/images/sprites/sprites.css',
+                engine: 'phantomjssmith'
+            }
+        },
+
+        //Concat all css and js files into single files.
         concat: {
             css: {
-                src: [
-                    'css/*.css' // All css in the folder.
-                ],
+                src: [ 'css/*.css'],
                 dest: 'css/build/styles.css'
             },
             js: {
                 src: [
                     //'js/*.js' // All JS in the js folder. Not used
-                    //jQuery/ui/mobile is currently loaded as needed, so it doesn't appear here
+                    //jQuery, jQueryUI, and jQuery Mobile are currently loaded as needed, so they don't appear here
                     'js/jquery.stellar.js',
                     'js/jquery.inview.min.js',
                     'js/main.js'
                 ],
-                dest: 'live/js/index.js'
+                dest: 'live/js/live.js'
             }
         },
 
-        //Minify CSS
+        //Creates index.html from dev.html by processing the build instructions (labeled as comments in dev.html).
+        //Currently changes CSS and JS references to point to the live (concatenated and minified) files produced during the grunt build.
+        //In other words, index.html is the production "version" of dev.html.
+        processhtml: {
+            options: {
+                // Task-specific options
+            },
+            dist: {
+                files: {
+                    'index.html': ['dev.html']  //dest : source
+                }
+            }
+        },
+
+        //Minify the HTML (NOTE: processhtml MUST be done before minifying, which strips all comments
+        htmlmin: {
+            dist: {
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true,
+                    removeEmptyAttributes: true,
+                    removeScriptTypeAttributes: true,
+                    removeStyleLinkTypeAttributes: true,
+                    minifyJS: true
+                },
+                files: {
+                    'index.html': 'index.html'  // 'destination': 'source'
+                }
+            }
+        },
+
+        //Minify the CSS
         cssmin: {
             combined: {
-                files: [{
-                    expand: true,
-                    cwd: 'css/build',
-                    src: 'styles.css',
-                    //src: ['*.css', '!*.min.css'], //Use for all files
-                    dest: 'live/css',
-                    ext: '.min.css'
-                }]
+                files: [
+                    {
+                        expand: true,
+                        cwd: 'css/build',
+                        src: 'styles.css',    //Use ['*.css', '!*.min.css'] for all files
+                        dest: 'live/css',
+                        ext: '.min.css'
+                    }
+                ]
             }
         },
 
@@ -44,8 +114,8 @@ module.exports = function(grunt) {
                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build: {
-                src: 'live/js/index.js',
-                dest: 'live/js/index.min.js'
+                src: 'live/js/live.js',
+                dest: 'live/js/live.min.js'
             }
         },
 
@@ -64,7 +134,8 @@ module.exports = function(grunt) {
         },
 
         //Compresses all images in the image folder and outputs them to the live/images folder
-        //WARNING: Due to a current bug, the destination folder MUST be different than the source
+        //WARNING: Due to a current bug with the plugin, the destination folder MUST be different than the source
+        //NOTE: Destination creates a new live/images folder (i.e. it does NOT overwrite the existing images folder)
         imagemin: {
             allImages: {
                 files: [{
@@ -74,19 +145,70 @@ module.exports = function(grunt) {
                     dest: 'live/images'
                 }]
             }
+        },
+
+        //Watch folders for changes. Removes build folders created in the process.
+        //NOT currently used when testing, since minifying takes too long.
+        watch: {
+            scripts: {
+                files: ['js/*.js'],
+                tasks: ['concat:js', 'uglify']
+            },
+            css: {
+                files: ['css/*.css'],
+                tasks: ['concat:css', 'cssmin', 'clean:buildfiles']
+            }
+        },
+
+        //Change spritefile path to production path
+        replace: {
+            spritefile: {
+                src: ['css/build/styles.css'],
+                overwrite: true,    //Overwrite styles.css with the change
+                replacements: [{
+                    from: "../live/images/sprites/spritesheet.png",
+                    to: "../images/sprites/spritesheet.png"
+                }]
+            }
         }
     });
 
     //Load plugins
+    grunt.loadNpmTasks('grunt-contrib-clean'); //Delete files or folders
     grunt.loadNpmTasks('grunt-newer'); //Runs grunt tasks on new and modified files only
+    grunt.loadNpmTasks('grunt-processhtml');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-imageoptim');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-spritesmith');
+    grunt.loadNpmTasks('grunt-text-replace');
 
-    //Tasks to execute when using the "grunt" command with no arguments
-    grunt.registerTask('default', ['concat','cssmin','uglify']);
+    //Build process
+    /*
+        If no images changed...
+            1. Run the default "grunt" task.
 
-    //Use imageoptim manually since it compresses all images (slowly)
+        If any images were added, removed, or modified...
+            1. Compress the images with imagemin if needed
+            2. Run "grunt spritefile" to create a new spritefile
+            3. MANUALLY update styles.less file with "background-position" CSS from live/image/sprites/sprites.css
+            4. Run the default "grunt" task.
+    */
+
+    /* Default "grunt" task
+            a. Clean (Remove "live" folders)
+            b. Concat CSS and JS files into single files
+            c. Change spritesheet image path in style.less (since live page uses a different path
+            c. Process dev.html to create index.html (see comments for the processhtml task above)
+            d. Minify HTML
+            e. Minify CSS
+            f. Minify JS
+            g. Clean (Remove any build folders created in the process)
+    */
+    grunt.registerTask('spritefile', ['clean:spritefiles','sprite']);
+    grunt.registerTask('default', ['clean:it','concat','replace','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
 };
