@@ -25,12 +25,29 @@ module.exports = function(grunt) {
             }
         },
 
-        //Concat all css and js files into single files
+        //Re-creates a spritesheet and corresponding CSS using all images in the LIVE/image folder
+        //NOTE: Always use "grunt clean:spritefiles" before creating a new stylesheet
+        //This does NOT auto-update the CSS file. However, you can overrite image positions by simply appending the sprites.css file
+        //to the existing styles.less file (there is no need to manually change image positions in style.less)
+        sprite:{
+            all: {
+                src: ['live/images/**/*.png','!live/images/tech/Not-Used/*.png'],
+                imgPath: '@spritesheet',
+                cssOpts: {
+                    cssSelector: function (item) {
+                        return '.' + item.name; //Use original classnames instead of "icon-"
+                    }
+                },
+                dest: 'live/images/sprites/spritesheet.png',
+                destCss: 'css/build/sprites.css',
+                engine: 'phantomjssmith'
+            }
+        },
+
+        //Concat all css and js files into single files. Sprite styles are also appending to styles.css
         concat: {
             css: {
-                src: [
-                    'css/*.css' // All css in the folder.
-                ],
+                src: [ 'css/*.css','css/build/sprites.css'],
                 dest: 'css/build/styles.css'
             },
             js: {
@@ -142,26 +159,8 @@ module.exports = function(grunt) {
                 files: ['css/*.css'],
                 tasks: ['concat:css', 'cssmin', 'clean:buildfiles']
             }
-        },
-
-        //Re-creates a spritesheet and corresponding CSS using all images in the LIVE/image folder
-        //NOTE: Always use "grunt clean:spritefiles" before creating a new stylesheet
-        //This does NOT auto-update the CSS file. However, you can overrite image positions by simply adding the sprites.css file
-        //to the existing styles.less file (there is no need to manually change image positions in style.less)
-        sprite:{
-            all: {
-                src: ['live/images/**/*.png','!live/images/tech/Not-Used/*.png'],
-                imgPath: '@spritesheet',
-                cssOpts: {
-                    cssSelector: function (item) {
-                        return '.' + item.name; //Use original classnames instead of "icon-"
-                    }
-                },
-                dest: 'live/images/sprites/spritesheet.png',
-                destCss: 'live/images/sprites/sprites.css',
-                engine: 'phantomjssmith'
-            }
         }
+
     });
 
     //Load plugins
@@ -180,13 +179,14 @@ module.exports = function(grunt) {
     //Build process (i.e. "grunt" command with no arguments)
     /*
         a. Clean (Remove "live" folders)
-        b. Concat CSS and JS files into single files
+        b. Create sprite file
+        c. Concat CSS files into a single file (adding the sprite styles at the end of the main styles.less
+        d. Concat JS files into single file
         c. Process dev.html to create index.html (see comments for the processhtml task above)
         d. Minify HTML
         e. Minify CSS
         f. Minify JS
-
         g. Clean (Remove any build folders created in the process)
      */
-    grunt.registerTask('default', ['clean:it','concat','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
+    grunt.registerTask('default', ['clean:it','clean:spritefiles','sprite','concat','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
 };
