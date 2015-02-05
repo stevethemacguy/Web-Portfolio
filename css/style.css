@@ -276,7 +276,6 @@ nav a:hover {
 }
 #parallax {
   display: block;
-  height: 1000px;
   height: 1100px;
   width: 100%;
   position: relative;
@@ -457,6 +456,13 @@ nav a:hover {
   width: 80%;
   margin: 0 auto;
 }
+.content {
+  color: #e5e5e5;
+  font-size: 19px;
+  font-family: Verdana;
+  letter-spacing: .4px;
+  line-height: 1.2;
+}
 .inProgress {
   height: 650px;
   color: #e5e5e5;
@@ -471,6 +477,25 @@ nav a:hover {
 }
 .sectionHeader {
   padding-top: 26px;
+}
+#welcome {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: #0C2032;
+  height: 700px;
+}
+#welcome p {
+  clear: both;
+  margin-top: 40px;
+  font-size: 20px;
+}
+.welcomeHeader {
+  padding-top: 26px;
+  text-align: center;
+  font-family: Verdana;
+  font-size: 45px;
+  font-weight: bold;
 }
 #projects {
   width: 100%;
@@ -721,14 +746,12 @@ blockquote:after {
 .highlight {
   color: #F6BA4E;
 }
+.google {
+  color: green;
+}
 .summary {
   clear: both;
   margin-top: 40px;
-  color: #e5e5e5;
-  font-size: 19px;
-  font-family: Verdana;
-  letter-spacing: .4px;
-  line-height: 1.2;
 }
 .summary.first {
   margin-top: 46px;
@@ -782,6 +805,7 @@ blockquote:after {
 #sourceCode {
   clear: both;
   background: #253139;
+  height: 650px;
 }
 #videos {
   background: #000625;

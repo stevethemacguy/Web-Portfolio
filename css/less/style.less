@@ -305,7 +305,6 @@ nav {
 ///////////// Parallax section /////////////
 #parallax {
    display: block;
-   height: 1000px;
    height: 1100px;
    width: 100%;
    position: relative;
@@ -531,6 +530,15 @@ nav {
    margin: 0 auto;
 }
 
+.content
+{
+   color: @lightContentText;
+   font-size: 19px;
+   font-family: Verdana;
+   letter-spacing: .4px;
+   line-height: 1.2;
+}
+
 .inProgress {
    height: 650px;
    color: @lightContentText;
@@ -547,6 +555,30 @@ nav {
 
 .sectionHeader {
    padding-top: 26px;
+}
+
+//Welcome Section
+#welcome {
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+   background: #0C2032;
+   //background: #072641; //lighter blue
+   height: 700px;
+   p {
+      clear: both;
+      margin-top: 40px;
+      font-size: 20px;
+   }
+}
+
+.welcomeHeader
+{
+   padding-top: 26px;
+   text-align: center;
+   font-family: Verdana;
+   font-size: 45px;
+   font-weight: bold;
 }
 
 //Projects Section
@@ -857,14 +889,15 @@ blockquote {
    //color: #9BCADF; //blue
 }
 
+.google
+{
+   color: green;
+}
+
 .summary {
    clear: both;
    margin-top: 40px;
-   color: @lightContentText;
-   font-size: 19px;
-   font-family: Verdana;
-   letter-spacing: .4px;
-   line-height: 1.2;
+
    //font-family: Arial;
    //word-spacing: 0.3px;
    //line-height: 1.18;
@@ -939,7 +972,8 @@ blockquote {
 
 #sourceCode {
    clear:both;
-   background: #253139
+   background: #253139;
+   height: 650px;
 }
 
 #videos {
