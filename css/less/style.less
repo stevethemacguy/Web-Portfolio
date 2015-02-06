@@ -52,6 +52,28 @@ h1 {
    color: @lightContentText;
 }
 
+//Default Link colors
+a:link
+{
+   color: #F6BA4E;
+}
+a:visited
+{
+   color: #F6BA4E;
+}
+a:focus
+{
+   color: #F6BA4E;
+}
+a:hover
+{
+   text-decoration: underline;
+}
+a:active
+{
+   color: #F6BA4E;
+}
+
 .toggleTheme {
    font-size: 14px;
 }
@@ -147,6 +169,7 @@ nav {
    a:hover {
       color: @darkHeaderHover;
       border: none;
+      text-decoration: none;
       //light style
       /*border-bottom: 2px solid #ff7116;*/
       //border-bottom: 2px solid white;
@@ -577,7 +600,7 @@ nav {
    padding-top: 26px;
    text-align: center;
    font-family: Verdana;
-   font-size: 45px;
+   font-size: 40px;
    font-weight: bold;
 }
 
@@ -889,7 +912,7 @@ blockquote {
    //color: #9BCADF; //blue
 }
 
-.google
+.percent
 {
    color: green;
 }
@@ -905,43 +928,6 @@ blockquote {
 
    &.first {
       margin-top: 46px;
-   }
-
-   a:link {
-      color: @lightContentText;
-      &.highlight {
-         color: #F6BA4E;
-      }
-   }
-
-   a:visited {
-      color: @lightContentText;
-      &.highlight {
-         color: #F6BA4E;
-      }
-   }
-
-   a:focus {
-      color: @lightContentText;
-      &.highlight {
-         color: #F6BA4E;
-      }
-   }
-
-   a:hover {
-      color: #F6BA4E;
-      &.highlight
-      {
-         color: @lightContentText;
-      }
-   }
-
-   a:active {
-      color: @lightContentText;
-      &.highlight
-      {
-         color: #F6BA4E;
-      }
    }
 }
 
@@ -972,12 +958,12 @@ blockquote {
 
 #sourceCode {
    clear:both;
-   background: #253139;
+   background: #000625;
    height: 650px;
 }
 
 #videos {
-   background: #000625;
+   background: #253139;
 }
 
 #about {
