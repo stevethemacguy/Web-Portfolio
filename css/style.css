@@ -183,12 +183,6 @@ nav a:hover {
   margin: 0 auto;
   margin-top: 3px;
   -webkit-animation: arrow-bounce 2.3s infinite 0.5s;
-  -webkit-animation-duration: arrow-bounce;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-animation-direction: alternate;
-  -webkit-animation-timing-function: ease-out;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-delay: .5s;
   -moz-animation: arrow-bounce 2.3s infinite 0.5s;
   -o-animation: arrow-bounce 2.3s infinite 0.5s;
   animation: arrow-bounce 2.3s infinite 0.5s;
@@ -207,19 +201,19 @@ nav a:hover {
 }
 @-webkit-keyframes arrow-bounce {
   0% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
   }
   50% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
   }
   60% {
-    transform: translateY(8px);
+    -webkit-transform: translateY(8px);
   }
   70% {
-    transform: translateY(0);
+    -webkit-transform: translateY(0);
   }
   80% {
-    transform: translateY(8px);
+    -webkit-transform: translateY(8px);
   }
 }
 @-moz-keyframes arrow-bounce {
