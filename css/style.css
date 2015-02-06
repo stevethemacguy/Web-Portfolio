@@ -493,6 +493,7 @@ nav a:hover {
 }
 section {
   border-bottom: 1px solid #252525;
+  min-height: 750px;
 }
 .sectionHeader {
   padding-top: 26px;
@@ -793,8 +794,7 @@ blockquote:after {
 }
 #sourceCode {
   clear: both;
-  background: #000625;
-  height: 650px;
+  background: #161612;
 }
 #videos {
   background: #253139;
