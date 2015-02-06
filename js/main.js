@@ -45,7 +45,7 @@ $(document).ready(function() {
     });*/
 
     //Scroll to Anchor (Desktop)
-    $(".navContainer").find("a").click(function(event) {
+    $(".navLink").click(function(event) {
         event.preventDefault();
         //Normal div offset minus the height of the header, since it's fixed.
         var sectionTop = $(this.hash).offset().top - $("header").outerHeight();
