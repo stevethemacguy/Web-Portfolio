@@ -496,7 +496,7 @@ section {
   min-height: 750px;
 }
 .sectionHeader {
-  padding-top: 26px;
+  padding-top: 36px;
   text-align: center;
   font-family: Verdana;
   font-size: 38px;
@@ -1107,3 +1107,10 @@ blockquote:after {
 /* YOUR STYLE GOES HERE */
 /*
 }*/
+.linkedInLink {
+  font: 80% Arial, sans-serif;
+  color: #fff;
+}
+.linkedInLink img {
+  vertical-align: middle;
+}
