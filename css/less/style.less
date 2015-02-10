@@ -52,6 +52,28 @@ h1 {
    color: @lightContentText;
 }
 
+//Default Link colors
+a:link
+{
+   color: #F6BA4E;
+}
+a:visited
+{
+   color: #F6BA4E;
+}
+a:focus
+{
+   color: #F6BA4E;
+}
+a:hover
+{
+   text-decoration: underline;
+}
+a:active
+{
+   color: #F6BA4E;
+}
+
 .toggleTheme {
    font-size: 14px;
 }
@@ -147,6 +169,7 @@ nav {
    a:hover {
       color: @darkHeaderHover;
       border: none;
+      text-decoration: none;
       //light style
       /*border-bottom: 2px solid #ff7116;*/
       //border-bottom: 2px solid white;
@@ -255,11 +278,11 @@ nav {
 
 //Arrow Bounces Downward.
 @-webkit-keyframes arrow-bounce {
-   0% {transform: translateY(0);}
-   50% {transform: translateY(0);}
-   60% {transform: translateY(8px);}
-   70% {transform: translateY(0);}
-   80% {transform: translateY(8px);}
+   0% {-webkit-transform: translateY(0);}
+   50% {-webkit-transform: translateY(0);}
+   60% {-webkit-transform: translateY(8px);}
+   70% {-webkit-transform: translateY(0);}
+   80% {-webkit-transform: translateY(8px);}
 }
 
 //Arrow Bounces Downward.
@@ -305,7 +328,6 @@ nav {
 ///////////// Parallax section /////////////
 #parallax {
    display: block;
-   height: 1000px;
    height: 1100px;
    width: 100%;
    position: relative;
@@ -531,6 +553,14 @@ nav {
    margin: 0 auto;
 }
 
+.content {
+   color: @lightContentText;
+   font-size: 19px;
+   font-family: Verdana;
+   letter-spacing: .4px;
+   line-height: 1.2;
+}
+
 .inProgress {
    height: 650px;
    color: @lightContentText;
@@ -545,8 +575,32 @@ nav {
    word-spacing: .8px;
 }
 
+section {
+   border-bottom: 1px solid #252525;
+   min-height: 750px;
+}
+
 .sectionHeader {
-   padding-top: 26px;
+   padding-top: 36px;
+   text-align: center;
+   font-family: Verdana;
+   font-size: 38px;
+   font-weight: bold;
+}
+
+//Welcome Section
+#about {
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+   background: #0C2032;
+   //background: #072641; //lighter blue
+   padding-bottom: 45px;
+   p {
+      clear: both;
+      margin-top: 40px;
+      font-size: 20px;
+   }
 }
 
 //Projects Section
@@ -857,14 +911,15 @@ blockquote {
    //color: #9BCADF; //blue
 }
 
+.percent
+{
+   color: green;
+}
+
 .summary {
    clear: both;
    margin-top: 40px;
-   color: @lightContentText;
-   font-size: 19px;
-   font-family: Verdana;
-   letter-spacing: .4px;
-   line-height: 1.2;
+
    //font-family: Arial;
    //word-spacing: 0.3px;
    //line-height: 1.18;
@@ -872,43 +927,6 @@ blockquote {
 
    &.first {
       margin-top: 46px;
-   }
-
-   a:link {
-      color: @lightContentText;
-      &.highlight {
-         color: #F6BA4E;
-      }
-   }
-
-   a:visited {
-      color: @lightContentText;
-      &.highlight {
-         color: #F6BA4E;
-      }
-   }
-
-   a:focus {
-      color: @lightContentText;
-      &.highlight {
-         color: #F6BA4E;
-      }
-   }
-
-   a:hover {
-      color: #F6BA4E;
-      &.highlight
-      {
-         color: @lightContentText;
-      }
-   }
-
-   a:active {
-      color: @lightContentText;
-      &.highlight
-      {
-         color: #F6BA4E;
-      }
    }
 }
 
@@ -939,16 +957,17 @@ blockquote {
 
 #sourceCode {
    clear:both;
-   background: #253139
+   background: #161612;
+   padding-bottom: 45px;
 }
 
 #videos {
-   background: #000625;
+   background: #253139;
 }
 
-#about {
+/*#about {
    background: darkslategrey;
-}
+}*/
 
 #contact {
    background: #11110C;
@@ -1371,7 +1390,15 @@ blockquote {
    *//* YOUR STYLE GOES HERE *//*
 }*/
 
+//Styles from LinkedIn
+.linkedInLink {
+   font: 80% Arial,sans-serif;
+   color: #fff;
 
+   img{
+      vertical-align:middle;
+   }
+}
 
 
 
