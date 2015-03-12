@@ -1,11 +1,11 @@
 /************** Reusable Colors ***************/
 /************** Responsive Widths***************/
 /************** Fonts ***************/
-/*@font-face {
-  font-family: 'Segoe';
-  src: url('/fonts/segoeui.eot');
-  src: url('/fonts/segoeui.eot?#iefix') format('embedded-opentype'), url('/fonts/segoeui.ttf') format('opentype');
-}*/
+@font-face {
+  font-family: 'martel-sans-semibold';
+  src: url('../fonts/MartelSans-SemiBold-webfont.eot');
+  src: url('../fonts/MartelSans-SemiBold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/MartelSans-SemiBold-webfont.woff2') format('woff2'), url('../fonts/MartelSans-SemiBold-webfont.woff') format('woff'), url('../fonts/MartelSans-SemiBold-webfont.ttf') format('truetype'), url('../fonts/MartelSans-SemiBold-webfont.svg#martel_sanssemibold') format('svg');
+}
 /************** Base URLs ***************/
 html,
 body {
@@ -153,9 +153,8 @@ nav a:hover {
   display: inline-block;
   position: relative;
   top: 50%;
-  font-family: 'Martel Sans';
+  font-family: 'martel-sans-semibold', Sans-Serif;
   font-size: 54px;
-  font-weight: 600;
   margin-top: -21px;
   /* font-size: 48px;
    font-family: 'Montserrat';
@@ -484,7 +483,7 @@ nav a:hover {
 .content {
   color: #e5e5e5;
   font-size: 20px;
-  font-family: Verdana;
+  font-family: Verdana, Sans-Serif;
   letter-spacing: .4px;
   line-height: 1.2;
 }
@@ -702,7 +701,7 @@ blockquote {
   margin: -9px 0;
   margin-bottom: 12px;
   font-size: 18px;
-  font-family: Verdana;
+  font-family: Verdana, Sans-Serif;
   letter-spacing: .4px;
   line-height: 1.2;
   width: 88%;

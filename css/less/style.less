@@ -23,13 +23,19 @@
 @projectWidth: 100%/@numberOfProjects; //Each project div fills 100% of the screen. 500% / 5 projects= 100%
 
 /************** Fonts ***************/
-/*@font-face {
-  font-family: 'Segoe';
-  src: url('/fonts/segoeui.eot');
-  src: url('/fonts/segoeui.eot?#iefix') format('embedded-opentype'), url('/fonts/segoeui.ttf') format('opentype');
-}*/
+//TODO: Put this inline so it doesn't block "above the fold content"
+@font-face {
+   font-family: 'martel-sans-semibold'; //The name to reference with selectors
+   src: url('@{fonts}/MartelSans-SemiBold-webfont.eot');
+   src: url('@{fonts}/MartelSans-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+   url('@{fonts}/MartelSans-SemiBold-webfont.woff2') format('woff2'),
+   url('@{fonts}/MartelSans-SemiBold-webfont.woff') format('woff'),
+   url('@{fonts}/MartelSans-SemiBold-webfont.ttf') format('truetype'),
+   url('@{fonts}/MartelSans-SemiBold-webfont.svg#martel_sanssemibold') format('svg');
+}
 
 /************** Base URLs ***************/
+@fonts: "../fonts";
 @images: "../images";
 @icons: "../images/icons";
 @spritesheet: "../live/images/sprites/spritesheet.png";
@@ -217,9 +223,9 @@ nav {
    display: inline-block;
    position: relative;
    top: 50%;
-   font-family: 'Martel Sans';
+   font-family: 'martel-sans-semibold', Sans-Serif;
    font-size: 54px;
-   font-weight: 600;
+   //font-weight: 600; //Font-weight is built in. This would be for normal font
 
    //Centered Vertically on the page. Normally would be half the height (-27px), but this is a custom font.
    //Currently ignores the header. To account for the header, use -Half of height + half of header height (+31px)
@@ -571,7 +577,7 @@ nav {
 .content {
    color: @lightContentText;
    font-size: 20px;
-   font-family: Verdana;
+   font-family: Verdana, Sans-Serif;
    letter-spacing: .4px;
    line-height: 1.2;
 }
@@ -837,7 +843,7 @@ blockquote {
    margin-bottom: 12px;
    //color: #429abe;
    font-size: 18px;
-   font-family: Verdana;
+   font-family: Verdana, Sans-Serif;
    letter-spacing: .4px;
    line-height: 1.2;
    width: 88%;
