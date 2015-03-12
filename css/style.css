@@ -2,7 +2,7 @@
 /************** Responsive Widths***************/
 /************** Fonts ***************/
 @font-face {
-  font-family: 'martel-sans-semibold';
+  font-family: 'martel_sanssemibold';
   src: url('../fonts/MartelSans-SemiBold-webfont.eot');
   src: url('../fonts/MartelSans-SemiBold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/MartelSans-SemiBold-webfont.woff2') format('woff2'), url('../fonts/MartelSans-SemiBold-webfont.woff') format('woff'), url('../fonts/MartelSans-SemiBold-webfont.ttf') format('truetype'), url('../fonts/MartelSans-SemiBold-webfont.svg#martel_sanssemibold') format('svg');
 }
@@ -153,7 +153,7 @@ nav a:hover {
   display: inline-block;
   position: relative;
   top: 50%;
-  font-family: 'martel-sans-semibold', Sans-Serif;
+  font-family: 'martel_sanssemibold', Sans-Serif;
   font-size: 54px;
   margin-top: -21px;
   /* font-size: 48px;
