@@ -987,10 +987,10 @@ blockquote:after {
     margin-top: 70px;
   }
   .tagline {
-    font-size: 33px;
+    font-size: 32px;
   }
   .shift {
-    margin-left: 15px;
+    margin-left: 11px;
   }
 }
 @media (min-width: 635px) and (max-width: 914px) {
