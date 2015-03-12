@@ -217,14 +217,29 @@ nav {
    display: inline-block;
    position: relative;
    top: 50%;
-   margin-top: -23px; //Centered on page (ignore header). To account for the header, use -Half of height + half of header height (+31px)
-   font-family: Verdana;
+   font-family: 'Martel Sans';
+   font-size: 54px;
+   font-weight: 600;
+
+   //Centered Vertically on the page. Normally would be half the height (-26px), but this is a custom font.
+   //Currently ignores the header. To account for the header, use -Half of height + half of header height (+31px)
+   margin-top: -17px;
+
+   //Best Large font
+   /* font-size: 48px;
+   font-family: 'Montserrat';
    font-weight: bold;
+
+   //Old Font
+   /*font-family: Verdana;
    font-size: 45px;
+   margin-top: -23px;
+   */
 }
 
 .shift {
-   margin-left: 25px;
+   //margin-left: 25px; //Old Font
+   margin-left: 28px;
 }
 
 .arrowContainer {
@@ -936,7 +951,7 @@ blockquote {
 }
 
 #project2 {
-   background: #0C2032;
+   background: #1A3247; //Previous color: #0C2032
 }
 
 #project3 {
@@ -1375,7 +1390,7 @@ blockquote {
 //Reposition Tagline and remove scroll arrow for smaller heights
 @media (min-height : 0) and (max-height : 570px) {
    .tagline {
-      margin-top: 8px; //Centered on page (ignore header). To account for the header, use -Half of height + half of header height (+31px)
+      margin-top: 8px; //Centered on page (ignore header). To account for the header, use -(Half of height + half of header height (31px))
    }
 }
 

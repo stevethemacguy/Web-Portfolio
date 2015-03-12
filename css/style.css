@@ -153,13 +153,22 @@ nav a:hover {
   display: inline-block;
   position: relative;
   top: 50%;
-  margin-top: -23px;
-  font-family: Verdana;
-  font-weight: bold;
-  font-size: 45px;
+  font-family: 'Martel Sans';
+  font-size: 54px;
+  font-weight: 600;
+  margin-top: -17px;
+  /* font-size: 48px;
+   font-family: 'Montserrat';
+   font-weight: bold;
+
+   //Old Font
+   /*font-family: Verdana;
+   font-size: 45px;
+   margin-top: -23px;
+   */
 }
 .shift {
-  margin-left: 25px;
+  margin-left: 28px;
 }
 .arrowContainer {
   width: 200px;
@@ -778,7 +787,7 @@ blockquote:after {
   /*background: #15011C; //Darker Purple*/
 }
 #project2 {
-  background: #0C2032;
+  background: #1A3247;
 }
 #project3 {
   background: #833700;
