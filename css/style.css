@@ -1,11 +1,15 @@
 /************** Reusable Colors ***************/
 /************** Responsive Widths***************/
 /************** Fonts ***************/
-@font-face {
-  font-family: 'martel_sanssemibold';
-  src: url('../fonts/MartelSans-SemiBold-webfont.eot');
-  src: url('../fonts/MartelSans-SemiBold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/MartelSans-SemiBold-webfont.woff2') format('woff2'), url('../fonts/MartelSans-SemiBold-webfont.woff') format('woff'), url('../fonts/MartelSans-SemiBold-webfont.ttf') format('truetype'), url('../fonts/MartelSans-SemiBold-webfont.svg#martel_sanssemibold') format('svg');
-}
+/*@font-face {
+   font-family: 'martel_sanssemibold'; //The name to reference with selectors
+   src: url('@{fonts}/MartelSans-SemiBold-webfont.eot');
+   src: url('@{fonts}/MartelSans-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+   url('@{fonts}/MartelSans-SemiBold-webfont.woff2') format('woff2'),
+   url('@{fonts}/MartelSans-SemiBold-webfont.woff') format('woff'),
+   url('@{fonts}/MartelSans-SemiBold-webfont.ttf') format('truetype'),
+   url('@{fonts}/MartelSans-SemiBold-webfont.svg#martel_sanssemibold') format('svg');
+}*/
 /*//Base64 encoded font. Reduces number of http requests, but dramatically increases css file size
  //The result is a high Google Page Score, but low performance score from Pingdom.com.
 @font-face {
@@ -160,9 +164,14 @@ nav a:hover {
   display: inline-block;
   position: relative;
   top: 50%;
-  font-family: 'martel_sanssemibold', Sans-Serif;
+  font-family: 'Verdana', Sans-Serif;
+  margin-top: -25px;
   font-size: 54px;
-  margin-top: -21px;
+  /*//Current Tagline Font (when not Verdana)
+   font-family: 'martel_sanssemibold', Sans-Serif;
+   font-size: 54px;
+   font-weight: 600; //Font-weight is built in. This would be for normal font
+   margin-top: -21px;*/
   /* font-size: 48px;
    font-family: 'Montserrat';
    font-weight: bold;
@@ -174,7 +183,8 @@ nav a:hover {
    */
 }
 .shift {
-  margin-left: 28px;
+  margin-left: 25px;
+  /*margin-left: 28px; //Use with Martel Sans*/
 }
 .arrowContainer {
   width: 200px;
@@ -940,7 +950,7 @@ blockquote:after {
     background-position: -64px -17px;
   }
   .sectionHeader {
-    font-size: 29px;
+    font-size: 26px;
   }
   .quoteGroup {
     margin-left: 25px;
@@ -993,7 +1003,7 @@ blockquote:after {
     margin-top: 70px;
   }
   .tagline {
-    font-size: 32px;
+    font-size: 30px;
   }
   .shift {
     margin-left: 11px;

@@ -23,8 +23,10 @@
 @projectWidth: 100%/@numberOfProjects; //Each project div fills 100% of the screen. 500% / 5 projects= 100%
 
 /************** Fonts ***************/
+//Font options for the landing page tagline. Currently using Verdana for performance, but these are good alternatives.
+
 //Standard font-face
-@font-face {
+/*@font-face {
    font-family: 'martel_sanssemibold'; //The name to reference with selectors
    src: url('@{fonts}/MartelSans-SemiBold-webfont.eot');
    src: url('@{fonts}/MartelSans-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
@@ -32,7 +34,7 @@
    url('@{fonts}/MartelSans-SemiBold-webfont.woff') format('woff'),
    url('@{fonts}/MartelSans-SemiBold-webfont.ttf') format('truetype'),
    url('@{fonts}/MartelSans-SemiBold-webfont.svg#martel_sanssemibold') format('svg');
-}
+}*/
 
 /*//Base64 encoded font. Reduces number of http requests, but dramatically increases css file size
  //The result is a high Google Page Score, but low performance score from Pingdom.com.
@@ -231,15 +233,20 @@ nav {
    display: inline-block;
    position: relative;
    top: 50%;
-   font-family: 'martel_sanssemibold', Sans-Serif;
+   font-family: 'Verdana', Sans-Serif;
+   margin-top: -25px;
    font-size: 54px;
-   //font-weight: 600; //Font-weight is built in. This would be for normal font
-
    //Centered Vertically on the page. Normally would be half the height (-27px), but this is a custom font.
    //Currently ignores the header. To account for the header, use -Half of height + half of header height (+31px)
-   margin-top: -21px;
 
-   //Best Large font
+
+   /*//Current Tagline Font (when not Verdana)
+   font-family: 'martel_sanssemibold', Sans-Serif;
+   font-size: 54px;
+   font-weight: 600; //Font-weight is built in. This would be for normal font
+   margin-top: -21px;*/
+
+   //Good Large font
    /* font-size: 48px;
    font-family: 'Montserrat';
    font-weight: bold;
@@ -252,8 +259,8 @@ nav {
 }
 
 .shift {
-   //margin-left: 25px; //Old Font
-   margin-left: 28px;
+   margin-left: 25px; //Use with Verdana
+   /*margin-left: 28px; //Use with Martel Sans*/
 }
 
 .arrowContainer {
@@ -1169,7 +1176,7 @@ blockquote {
    }
 
    .sectionHeader {
-      font-size: 29px;
+      font-size: 26px;
    }
 
    .quoteGroup {
@@ -1248,7 +1255,8 @@ blockquote {
    }
 
    .tagline {
-      font-size: 32px;
+      font-size: 30px; //Use with Verdana
+      //font-size: 30px; //Use with Martel Sans
    }
 
    .shift {
