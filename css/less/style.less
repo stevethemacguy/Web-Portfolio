@@ -218,7 +218,7 @@ nav {
    position: relative;
    top: 50%;
    font-family: 'Martel Sans';
-   font-size: 54px;
+   font-size: 53px;
    font-weight: 600;
 
    //Centered Vertically on the page. Normally would be half the height (-26px), but this is a custom font.
@@ -570,7 +570,7 @@ nav {
 
 .content {
    color: @lightContentText;
-   font-size: 19px;
+   font-size: 20px;
    font-family: Verdana;
    letter-spacing: .4px;
    line-height: 1.2;
@@ -614,7 +614,6 @@ section {
    p {
       clear: both;
       margin-top: 40px;
-      font-size: 20px;
    }
 }
 
@@ -802,6 +801,7 @@ section {
    float: left; //Inline-block doesn't work properly for whatever reason
    color: @lightContentText;
    padding-top: 116px;
+   font-size: 19px;
 }
 
 #twcArticle {
@@ -1026,6 +1026,10 @@ blockquote {
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width : 320px) and (max-width : 767px) {
 
+   .content{
+      font-size: 17px;
+   }
+
    .arrowContainer {
       top: -80px;
    }
@@ -1148,6 +1152,10 @@ blockquote {
       }
    }
 
+   .sectionHeader {
+      font-size: 29px;
+   }
+
    .quoteGroup {
       margin-left: 25px;
    }
@@ -1157,7 +1165,7 @@ blockquote {
    }
 
    .tagline {
-      font-size: 36px;
+      font-size: 44px;
    }
 
    .projectLinks
@@ -1224,7 +1232,7 @@ blockquote {
    }
 
    .tagline {
-      font-size: 26px;
+      font-size: 33px;
    }
 
    .shift {
@@ -1245,6 +1253,14 @@ blockquote {
    //Center the nav and all content using the "medium" width
    .contentContainer {
       width: @contentWidthMedium;
+   }
+
+   .tagline {
+      font-size: 50px;
+   }
+
+   .sectionHeader {
+      font-size: 36px;
    }
 
    .navContainer {

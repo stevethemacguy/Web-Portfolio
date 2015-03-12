@@ -154,7 +154,7 @@ nav a:hover {
   position: relative;
   top: 50%;
   font-family: 'Martel Sans';
-  font-size: 54px;
+  font-size: 53px;
   font-weight: 600;
   margin-top: -17px;
   /* font-size: 48px;
@@ -483,7 +483,7 @@ nav a:hover {
 }
 .content {
   color: #e5e5e5;
-  font-size: 19px;
+  font-size: 20px;
   font-family: Verdana;
   letter-spacing: .4px;
   line-height: 1.2;
@@ -521,7 +521,6 @@ section {
 #about p {
   clear: both;
   margin-top: 40px;
-  font-size: 20px;
 }
 #projects {
   width: 100%;
@@ -673,6 +672,7 @@ section {
   float: left;
   color: #e5e5e5;
   padding-top: 116px;
+  font-size: 19px;
 }
 #twcArticle {
   position: relative;
@@ -834,6 +834,9 @@ blockquote:after {
 }
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
+  .content {
+    font-size: 17px;
+  }
   .arrowContainer {
     top: -80px;
   }
@@ -927,11 +930,14 @@ blockquote:after {
   .mobile-button.selected {
     background-position: -64px -17px;
   }
+  .sectionHeader {
+    font-size: 29px;
+  }
   .quoteGroup {
     margin-left: 25px;
   }
   .tagline {
-    font-size: 36px;
+    font-size: 44px;
   }
   .projectLinks {
     margin-left: 0;
@@ -978,7 +984,7 @@ blockquote:after {
     margin-top: 70px;
   }
   .tagline {
-    font-size: 26px;
+    font-size: 33px;
   }
   .shift {
     margin-left: 15px;
@@ -992,6 +998,12 @@ blockquote:after {
 @media (min-width: 768px) and (max-width: 1024px) {
   .contentContainer {
     width: 88%;
+  }
+  .tagline {
+    font-size: 50px;
+  }
+  .sectionHeader {
+    font-size: 36px;
   }
   .navContainer nav {
     right: 0%;
