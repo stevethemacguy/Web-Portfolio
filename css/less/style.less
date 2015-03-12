@@ -218,7 +218,7 @@ nav {
    position: relative;
    top: 50%;
    font-family: 'Martel Sans';
-   font-size: 53px;
+   font-size: 54px;
    font-weight: 600;
 
    //Centered Vertically on the page. Normally would be half the height (-26px), but this is a custom font.
@@ -801,7 +801,9 @@ section {
    float: left; //Inline-block doesn't work properly for whatever reason
    color: @lightContentText;
    padding-top: 116px;
-   font-size: 19px;
+   p {
+     font-size: 19px;
+   }
 }
 
 #twcArticle {
@@ -1026,7 +1028,7 @@ blockquote {
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width : 320px) and (max-width : 767px) {
 
-   .content{
+   .content, .project p {
       font-size: 17px;
    }
 
@@ -1337,13 +1339,11 @@ blockquote {
       background: #1C0025;
    }
 
-   .project
-   {
+   .project {
       padding-top: 116px;
    }
 
-   .projectTitle
-   {
+   .projectTitle {
       display: none;
    }
 

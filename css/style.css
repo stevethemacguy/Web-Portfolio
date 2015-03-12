@@ -154,7 +154,7 @@ nav a:hover {
   position: relative;
   top: 50%;
   font-family: 'Martel Sans';
-  font-size: 53px;
+  font-size: 54px;
   font-weight: 600;
   margin-top: -17px;
   /* font-size: 48px;
@@ -672,6 +672,8 @@ section {
   float: left;
   color: #e5e5e5;
   padding-top: 116px;
+}
+.project p {
   font-size: 19px;
 }
 #twcArticle {
@@ -834,7 +836,8 @@ blockquote:after {
 }
 /*Smartphones in portrait and landscape ----------- */
 @media (min-width: 320px) and (max-width: 767px) {
-  .content {
+  .content,
+  .project p {
     font-size: 17px;
   }
   .arrowContainer {
