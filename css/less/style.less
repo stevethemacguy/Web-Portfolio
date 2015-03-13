@@ -953,29 +953,6 @@ blockquote {
    color: #2CB32C;
 }
 
-//Striked-out numbers
-.old {
-   color: grey;
-   position: relative;
-   font-size: 16px;
-   margin-right: 3px;
-
-   //Used to make the strikeout thicker instead of just "text-decoration: line-through"
-   &::after {
-      border-bottom: 2px solid grey;
-      content: "";
-      left: 0px;
-      position: absolute;
-      right: 4px;
-      top: 50%;
-   }
-
-   &:first-child{
-      margin-right: -2px;
-   }
-
-}
-
 .summary {
    clear: both;
    margin-top: 40px;
