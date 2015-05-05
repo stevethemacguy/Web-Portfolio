@@ -795,11 +795,14 @@ blockquote:after {
   color: #2CB32C;
 }
 .summary {
-  clear: both;
   margin-top: 40px;
+  clear: both;
 }
 .summary.first {
   margin-top: 46px;
+}
+.summary.noClear {
+  clear: none;
 }
 #project1 {
   background: #1C0025;
@@ -807,6 +810,12 @@ blockquote:after {
 }
 #project2 {
   background: #1A3247;
+}
+#xamarinVideoPlayer {
+  float: right;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 5px;
 }
 #project3 {
   background: #833700;
