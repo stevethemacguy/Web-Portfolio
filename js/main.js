@@ -148,6 +148,13 @@ $(document).ready(function() {
         quoteGroup.find($(".quoteSource")).toggleClass("hide"); //Actually remove the element
     });
 
+    //When the youtube arrow is clicked, add the embedded youtube video to the page and play it
+    $(".playArrow").click(function() {
+        var videoPlayer = $('<iframe id="xamarinVideoPlayer" width="225" height="410" src="https://www.youtube.com/embed/udaNAv0IoiU?html5=1&autoplay=1" allowfullscreen></iframe>');
+        $(".playerContainer").append(videoPlayer);
+        $(this).hide();
+    });
+
     ////////////////// MOBILE JAVASCRIPT ONLY //////////////////
     //This code only affects the mobile version of the site.
     $("header").on("tap", function() {

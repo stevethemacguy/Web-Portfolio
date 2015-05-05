@@ -811,11 +811,24 @@ blockquote:after {
 #project2 {
   background: #1A3247;
 }
-#xamarinVideoPlayer {
+.playerContainer {
+  width: 225px;
+  height: 410px;
+  background: #000;
   float: right;
   margin-top: 50px;
   margin-left: 50px;
   margin-right: 5px;
+}
+.playArrow {
+  width: 225px;
+  height: 145px;
+  height: 410px;
+  background: url("../images/icons/youtube-play-arrow.png") center no-repeat;
+}
+.playArrow:hover {
+  cursor: pointer;
+  background: url("../images/icons/youtube-hover-arrow.png") center no-repeat;
 }
 #project3 {
   background: #833700;

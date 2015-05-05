@@ -980,12 +980,32 @@ blockquote {
    background: #1A3247; //Previous color: #0C2032
 }
 
-#xamarinVideoPlayer
-{
+//Empty black container for the YouTube player
+.playerContainer {
+   width: 225px;
+   height: 410px;
+   background: #000;
    float: right;
    margin-top: 50px;
    margin-left: 50px;
    margin-right: 5px;
+}
+
+
+.playArrow {
+   width: 225px;
+   height: 145px;
+   height: 410px;
+   background: url("../images/icons/youtube-play-arrow.png") center no-repeat;
+   &:hover {
+      cursor: pointer;
+      background: url("../images/icons/youtube-hover-arrow.png") center no-repeat;
+   }
+}
+
+//The actual embedded YouTube player. This element is created via JS when .playArrow is clicked.
+#xamarinVideoPlayer {
+
 }
 
 #project3 {
