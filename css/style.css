@@ -692,7 +692,8 @@ section {
 .project p {
   font-size: 19px;
 }
-#twcArticle {
+#twcArticle,
+#xamarinArticle {
   position: relative;
 }
 .quoteContainer {
