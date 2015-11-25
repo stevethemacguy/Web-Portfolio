@@ -53,7 +53,7 @@ a:active {
   font-size: 14px;
 }
 .toggleTheme:hover {
-  color: #ffa500;
+  color: orange;
   cursor: pointer;
 }
 header {
@@ -121,18 +121,43 @@ nav li {
       -o-transition: background .35s ease;
       transition: background .35s ease;*/
 }
-nav li:hover {
-  background: #31757e;
+nav li:nth-of-type(1) > a:before {
+  width: 59px;
+}
+nav li:nth-of-type(2) > a:before {
+  width: 78px;
+}
+nav li:nth-of-type(3) > a:before {
+  width: 121px;
+}
+nav li:last-of-type > a:before {
+  width: 77px;
+}
+nav a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 25px;
+  height: 2px;
+  bottom: 16px;
+  background-color: #ffffff;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.15s ease-in-out 0s;
+  transition: all 0.15s ease-in-out 0s;
 }
 nav a,
 nav a:link,
 nav a:visited {
-  cursor: pointer;
-  font-weight: bold;
   display: inline-block;
+  position: relative;
   padding: 22px 27px;
   padding-bottom: 21px;
+  cursor: pointer;
+  font-weight: bold;
   color: #40919b;
+  text-decoration: none;
 }
 nav a:active,
 nav a:focus {
@@ -141,8 +166,12 @@ nav a:focus {
 nav a:hover {
   color: #ffffff;
   border: none;
-  text-decoration: none;
   /*border-bottom: 2px solid #ff7116;*/
+}
+nav a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
 .mobileNav {
   display: none;

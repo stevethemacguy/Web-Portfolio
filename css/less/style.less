@@ -163,19 +163,59 @@ nav {
       transition: background .35s ease;*/
 
       &:hover {
-         background: @darkHeaderNavHover;
-         //currently no background color
+         //background: @darkHeaderNavHover;
+      }
+
+      //Anchor underlines unfortunately require set widths. This is to keep the anchor padding
+      //but prevent the underline from being longer than the text width.
+      &:nth-of-type(1) {
+         > a:before {
+            width: 59px;
+         }
+      }
+      &:nth-of-type(2) {
+         > a:before {
+            width: 78px;
+         }
+      }
+      &:nth-of-type(3) {
+         > a:before {
+            width: 121px;
+         }
+      }
+      &:last-of-type {
+         > a:before {
+            width: 77px;
+         }
       }
    }
 
+   //Animate link underline on hover
+   a:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      left: 25px;
+      height: 2px;
+      bottom: 16px;
+      background-color: @darkHeaderHover;
+      visibility: hidden; //Fallback for browsers that don't support CSS animations
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.15s ease-in-out 0s;
+      transition: all 0.15s ease-in-out 0s;
+   }
+
    a, a:link, a:visited {
-      cursor: pointer;
-      font-weight: bold;
       display: inline-block;
+      position: relative; //Needed for :before element
       padding: 22px 27px;
       padding-bottom: 21px; //account for bottom border
+      cursor: pointer;
+      font-weight: bold;
       //height: 26px;
       color: @darkHeaderText;
+      text-decoration: none;
    }
 
    a:active, a:focus {
@@ -185,11 +225,17 @@ nav {
    a:hover {
       color: @darkHeaderHover;
       border: none;
-      text-decoration: none;
       //light style
       /*border-bottom: 2px solid #ff7116;*/
       //border-bottom: 2px solid white;
       //color: @lightHeaderHover;
+
+      //Animate the underline
+      &:before {
+         visibility: visible;
+         -webkit-transform: scaleX(1);
+         transform: scaleX(1);
+      }
    }
 
    //Multi-color underlines
