@@ -220,9 +220,6 @@ nav {
    width: 100%;
    height: 740px;
    background: url("@{images}/searching.jpg") no-repeat center;
-   -webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
    background-size: cover;
    border-bottom: 1px solid #252525;
    background-attachment: fixed; /*not supported by mobile*/
@@ -289,25 +286,17 @@ nav {
    margin-top: 3px;
 
    //Animate the arrow
-   -webkit-animation: arrow-bounce 2.3s infinite .5s;
-   -moz-animation: arrow-bounce 2.3s infinite .5s;
-   -o-animation: arrow-bounce 2.3s infinite .5s;
+   -webkit-animation: arrow-bounce 2.3s infinite 0.5s;
    animation: arrow-bounce 2.3s infinite .5s;
 
    //Alternate animation
-   /*-webkit-animation: drop-and-bounce 2.5s infinite 2s;
-   -moz-animation: drop-and-bounce 2.5s infinite 2s;
-   -o-animation: drop-and-bounce 2.5s infinite 2s;
-   animation: drop-and-bounce 2.5s infinite 2s;*/
+   /*animation: drop-and-bounce 2.5s infinite 2s;*/
 
    //Currently not using hover to encourage scrolling instead since it's smoother
    //Pause the animation when hovered
    /*&:hover {
       cursor: pointer;
       background: url("@{icons}/down-arrow-orange.png");
-      -webkit-animation-play-state: paused;
-      -moz-animation-play-state: paused;
-      -o-animation-play-state: paused;
       animation-play-state: paused;
    }*/
 }
@@ -319,24 +308,6 @@ nav {
    60% {-webkit-transform: translateY(8px);}
    70% {-webkit-transform: translateY(0);}
    80% {-webkit-transform: translateY(8px);}
-}
-
-//Arrow Bounces Downward.
-@-moz-keyframes arrow-bounce {
-   0% {transform: translateY(0);}
-   50% {transform: translateY(0);}
-   60% {transform: translateY(8px);}
-   70% {transform: translateY(0);}
-   80% {transform: translateY(8px);}
-}
-
-//Arrow Bounces Downward.
-@-o-keyframes arrow-bounce {
-   0% {transform: translateY(0);}
-   50% {transform: translateY(0);}
-   60% {transform: translateY(8px);}
-   70% {transform: translateY(0);}
-   80% {transform: translateY(8px);}
 }
 
 //Arrow Bounces Downward.
@@ -452,9 +423,6 @@ nav {
    background-image: url(@spritesheet);
    background-position: -2772px 0;
    margin-left: -114px;
-   -webkit-transition: left .5s ease, opacity .5s linear;
-   -moz-transition: left .5s ease, opacity .5s linear;
-   -o-transition: left .5s ease, opacity .5s linear;
    transition: left .5s ease, opacity .5s linear;
 
    &.reveal{
@@ -473,9 +441,6 @@ nav {
    //background: url("@{images}/tech/git-white.png") no-repeat;
    background-image: url(@spritesheet);
    background-position: -2433px 0;
-   -webkit-transition: left .5s ease, opacity .5s linear;
-   -moz-transition: left .5s ease, opacity .5s linear;
-   -o-transition: left .5s ease, opacity .5s linear;
    transition: left .5s ease, opacity .5s linear;
 
    &.reveal{
@@ -494,9 +459,6 @@ nav {
    //background: url("@{images}/tech/php.png") no-repeat;
    background-image: url(@spritesheet);
    background-position: -2289px 0;
-   -webkit-transition: left .5s ease, opacity .5s linear;
-   -moz-transition: left .5s ease, opacity .5s linear;
-   -o-transition: left .5s ease, opacity .5s linear;
    transition: left .5s ease, opacity .5s linear;
 
    &.reveal{
@@ -514,9 +476,6 @@ nav {
    //background: url("@{images}/tech/jira-light.png") no-repeat;
    background-image: url(@spritesheet);
    background-position: -2011px 0;
-   -webkit-transition: left .5s ease, opacity .5s linear;
-   -moz-transition: left .5s ease, opacity .5s linear;
-   -o-transition: left .5s ease, opacity .5s linear;
    transition: left .5s ease, opacity .5s linear;
    margin-left: -67.5px;
 
@@ -535,9 +494,6 @@ nav {
    //background: url("@{images}/tech/photoshop.png") no-repeat;
    background-image: url(@spritesheet);
    background-position: -747px 0;
-   -webkit-transition: left .5s ease, opacity .5s linear;
-   -moz-transition: left .5s ease, opacity .5s linear;
-   -o-transition: left .5s ease, opacity .5s linear;
    transition: left .5s ease, opacity .5s linear;
 
    &.reveal{
@@ -706,9 +662,6 @@ section {
    cursor: pointer;
    margin-right: 22px;
    opacity: .3;
-   -webkit-transition: opacity .28s linear;
-   -moz-transition: opacity .28s linear;
-   -o-transition: opacity .28s linear;
    transition: opacity .28s linear;
 
    &.active {
@@ -781,37 +734,23 @@ section {
 
    //original position
    -webkit-transform: translateX(0);
-   -moz-transform: translateX(0);
-   -o-transform: translateX(0);
    transform: translateX(0);
-
-   -webkit-transition: all 0.65s ease 0s;
-   -moz-transition: all 0.65s ease 0s;
-   -o-transition: all 0.65s ease 0s;
    transition: all 0.65s ease 0s;
 
    &.trans1 {
       -webkit-transform: translateX(-@projectWidth);
-      -moz-transform: translateX(-@projectWidth);
-      -o-transform: translateX(-@projectWidth);
       transform: translateX(-@projectWidth);
    }
    &.trans2 {
       -webkit-transform: translateX(-@projectWidth * 2);
-      -moz-transform: translateX(-@projectWidth * 2);
-      -o-transform: translateX(-@projectWidth * 2);
       transform: translateX(-@projectWidth * 2);
    }
    &.trans3 {
       -webkit-transform: translateX(-@projectWidth * 3);
-      -moz-transform: translateX(-@projectWidth * 3);
-      -o-transform: translateX(-@projectWidth * 3);
       transform: translateX(-@projectWidth * 3);
    }
    &.trans4 {
       -webkit-transform: translateX(-@projectWidth * 4);
-      -moz-transform: translateX(-@projectWidth * 4);
-      -o-transform: translateX(-@projectWidth * 4);
       transform: translateX(-@projectWidth * 4);
    }
 }
@@ -841,9 +780,6 @@ section {
    left: 0;
    margin-left: 50px;
    opacity: 1;
-   -webkit-transition: opacity 1s ease;
-   -moz-transition: opacity 1s ease;
-   -o-transition: opacity 1s ease;
    transition: opacity 1s ease;
 
    &.hide {

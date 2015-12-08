@@ -1,3 +1,4 @@
+(node) util.print is deprecated. Use console.log instead.
 /************** Reusable Colors ***************/
 /************** Responsive Widths***************/
 /************** Fonts ***************/
@@ -151,9 +152,6 @@ nav a:hover {
   width: 100%;
   height: 740px;
   background: url("../images/searching.jpg") no-repeat center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   border-bottom: 1px solid #252525;
   background-attachment: fixed;
@@ -208,19 +206,11 @@ nav a:hover {
   margin: 0 auto;
   margin-top: 3px;
   -webkit-animation: arrow-bounce 2.3s infinite 0.5s;
-  -moz-animation: arrow-bounce 2.3s infinite 0.5s;
-  -o-animation: arrow-bounce 2.3s infinite 0.5s;
   animation: arrow-bounce 2.3s infinite 0.5s;
-  /*-webkit-animation: drop-and-bounce 2.5s infinite 2s;
-   -moz-animation: drop-and-bounce 2.5s infinite 2s;
-   -o-animation: drop-and-bounce 2.5s infinite 2s;
-   animation: drop-and-bounce 2.5s infinite 2s;*/
+  /*animation: drop-and-bounce 2.5s infinite 2s;*/
   /*&:hover {
       cursor: pointer;
       background: url("@{icons}/down-arrow-orange.png");
-      -webkit-animation-play-state: paused;
-      -moz-animation-play-state: paused;
-      -o-animation-play-state: paused;
       animation-play-state: paused;
    }*/
 }
@@ -239,40 +229,6 @@ nav a:hover {
   }
   80% {
     -webkit-transform: translateY(8px);
-  }
-}
-@-moz-keyframes arrow-bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  60% {
-    transform: translateY(8px);
-  }
-  70% {
-    transform: translateY(0);
-  }
-  80% {
-    transform: translateY(8px);
-  }
-}
-@-o-keyframes arrow-bounce {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  60% {
-    transform: translateY(8px);
-  }
-  70% {
-    transform: translateY(0);
-  }
-  80% {
-    transform: translateY(8px);
   }
 }
 @keyframes arrow-bounce {
@@ -385,9 +341,6 @@ nav a:hover {
   background-image: url("../live/images/sprites/spritesheet.png");
   background-position: -2772px 0;
   margin-left: -114px;
-  -webkit-transition: left .5s ease, opacity .5s linear;
-  -moz-transition: left .5s ease, opacity .5s linear;
-  -o-transition: left .5s ease, opacity .5s linear;
   transition: left .5s ease, opacity .5s linear;
 }
 #xamarinLogo.reveal {
@@ -403,9 +356,6 @@ nav a:hover {
   margin-left: -81px;
   background-image: url("../live/images/sprites/spritesheet.png");
   background-position: -2433px 0;
-  -webkit-transition: left .5s ease, opacity .5s linear;
-  -moz-transition: left .5s ease, opacity .5s linear;
-  -o-transition: left .5s ease, opacity .5s linear;
   transition: left .5s ease, opacity .5s linear;
 }
 #gitLogo.reveal {
@@ -421,9 +371,6 @@ nav a:hover {
   margin-left: -72px;
   background-image: url("../live/images/sprites/spritesheet.png");
   background-position: -2289px 0;
-  -webkit-transition: left .5s ease, opacity .5s linear;
-  -moz-transition: left .5s ease, opacity .5s linear;
-  -o-transition: left .5s ease, opacity .5s linear;
   transition: left .5s ease, opacity .5s linear;
 }
 #phpLogo.reveal {
@@ -438,9 +385,6 @@ nav a:hover {
   height: 53px;
   background-image: url("../live/images/sprites/spritesheet.png");
   background-position: -2011px 0;
-  -webkit-transition: left .5s ease, opacity .5s linear;
-  -moz-transition: left .5s ease, opacity .5s linear;
-  -o-transition: left .5s ease, opacity .5s linear;
   transition: left .5s ease, opacity .5s linear;
   margin-left: -67.5px;
 }
@@ -456,9 +400,6 @@ nav a:hover {
   height: 86px;
   background-image: url("../live/images/sprites/spritesheet.png");
   background-position: -747px 0;
-  -webkit-transition: left .5s ease, opacity .5s linear;
-  -moz-transition: left .5s ease, opacity .5s linear;
-  -o-transition: left .5s ease, opacity .5s linear;
   transition: left .5s ease, opacity .5s linear;
 }
 #photoshopLogo.reveal {
@@ -594,9 +535,6 @@ section {
   cursor: pointer;
   margin-right: 22px;
   opacity: .3;
-  -webkit-transition: opacity .28s linear;
-  -moz-transition: opacity .28s linear;
-  -o-transition: opacity .28s linear;
   transition: opacity .28s linear;
 }
 .projectThumbnail.active {
@@ -650,36 +588,23 @@ section {
 #sliderContainer {
   width: 500%;
   -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -o-transform: translateX(0);
   transform: translateX(0);
-  -webkit-transition: all 0.65s ease 0s;
-  -moz-transition: all 0.65s ease 0s;
-  -o-transition: all 0.65s ease 0s;
   transition: all 0.65s ease 0s;
 }
 #sliderContainer.trans1 {
   -webkit-transform: translateX(-20%);
-  -moz-transform: translateX(-20%);
-  -o-transform: translateX(-20%);
   transform: translateX(-20%);
 }
 #sliderContainer.trans2 {
   -webkit-transform: translateX(-40%);
-  -moz-transform: translateX(-40%);
-  -o-transform: translateX(-40%);
   transform: translateX(-40%);
 }
 #sliderContainer.trans3 {
   -webkit-transform: translateX(-60%);
-  -moz-transform: translateX(-60%);
-  -o-transform: translateX(-60%);
   transform: translateX(-60%);
 }
 #sliderContainer.trans4 {
   -webkit-transform: translateX(-80%);
-  -moz-transform: translateX(-80%);
-  -o-transform: translateX(-80%);
   transform: translateX(-80%);
 }
 .project {
@@ -705,9 +630,6 @@ section {
   left: 0;
   margin-left: 50px;
   opacity: 1;
-  -webkit-transition: opacity 1s ease;
-  -moz-transition: opacity 1s ease;
-  -o-transition: opacity 1s ease;
   transition: opacity 1s ease;
 }
 .quoteGroup.hide {
