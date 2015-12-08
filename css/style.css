@@ -22,16 +22,16 @@
 html,
 body {
   background: #fff;
-  font-family: Arial;
   color: #e5e5e5;
 }
 body {
   /*  height: 100%; //Needed?
    width: 100%; //Needed?*/
   position: relative;
+  font-family: Arial, serif;
 }
 h1 {
-  font-family: Arial;
+  font-family: Arial, serif;
   font-size: 36px;
   color: #e5e5e5;
 }
@@ -970,7 +970,7 @@ blockquote:after {
     font-size: 36px;
   }
   .navContainer nav {
-    right: 0%;
+    right: 0;
   }
   .navContainer a,
   .navContainer a:link,
