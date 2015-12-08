@@ -62,7 +62,7 @@ module.exports = function(grunt) {
             }
         },
 
-        //Run Autoprefixer on the final css file.
+        //Run PostCSS scripts (i.e. Run autoprefixer on the final css file built with concat).
         postcss: {
             options: {
                 map: true,
@@ -73,8 +73,8 @@ module.exports = function(grunt) {
                 ]
             },
             dist: {
-                src: 'css/*.css',
-                dest: 'dest/style.css'
+                src: 'css/build/styles.css',
+                dest: 'css/build/styles.css'  //Overwrite the existing file with result of autoprefixer
             }
         },
 
@@ -226,15 +226,16 @@ module.exports = function(grunt) {
     */
 
     /* Default "grunt" task
-            a. Clean (Remove "live" folders)
-            b. Concat CSS and JS files into single files
-            c. Change spritesheet image path in style.less (since live page uses a different path
-            d. Process dev.html to create index.html (see comments for the processhtml task above)
-            e. Minify HTML
-            f. Minify CSS
-            g. Minify JS
-            h. Clean (Remove any build folders created in the process)
+            1. Clean (Remove "live" folders)
+            2. Concat CSS and JS files into single files
+            3. Run autoprefixer on concatenated css file
+            4. Change spritesheet image path in style.less (since live page uses a different path
+            5. Process dev.html to create index.html (see comments for the processhtml task above)
+            6. Minify HTML
+            7. Minify CSS
+            8. Minify JS
+            9. Clean (Remove any build folders created in the process)
     */
     grunt.registerTask('spritefile', ['clean:spritefiles','sprite', 'imagemin:spritefile']);
-    grunt.registerTask('default', ['clean:it','concat','replace','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
+    grunt.registerTask('default', ['clean:it','concat','postcss','replace','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
 };
