@@ -62,6 +62,22 @@ module.exports = function(grunt) {
             }
         },
 
+        //Run Autoprefixer on the final css file.
+        postcss: {
+            options: {
+                map: true,
+                processors: [
+                    require('autoprefixer')({
+                        browsers: ['last 2 versions']
+                    })
+                ]
+            },
+            dist: {
+                src: 'css/*.css',
+                dest: 'dest/style.css'
+            }
+        },
+
         //Creates index.html from dev.html by processing the build instructions (labeled as comments in dev.html).
         //Currently changes CSS and JS references to point to the live (concatenated and minified) files produced during the grunt build.
         //In other words, index.html is the production "version" of dev.html.
@@ -185,6 +201,7 @@ module.exports = function(grunt) {
     //Load plugins
     grunt.loadNpmTasks('grunt-contrib-clean'); //Delete files or folders
     grunt.loadNpmTasks('grunt-newer'); //Runs grunt tasks on new and modified files only
+    grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
