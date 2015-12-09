@@ -188,11 +188,11 @@ module.exports = function(grunt) {
 
         //Watch css/js files for changes. Not currently used
         watch: {
-            /*//When styles.css changes, run autoprefixer on the file.
+            //When styles.css changes, run autoprefixer on the file.
             dev: {
                 files: ['css/styles.css'],
                 tasks: ['postcss:dev']
-            }*/
+            }
 
             //Watch folders for changes. Removes build folders created in the process.
             //NOT currently used when testing, since minifying takes too long.

@@ -202,7 +202,6 @@ nav a:hover {
   width: 45px;
   margin: 0 auto;
   margin-top: 3px;
-  -webkit-animation: arrow-bounce 2.3s infinite 0.5s;
   animation: arrow-bounce 2.3s infinite 0.5s;
   /*animation: drop-and-bounce 2.5s infinite 2s;*/
   /*&:hover {
@@ -210,23 +209,6 @@ nav a:hover {
       background: url("@{icons}/down-arrow-orange.png");
       animation-play-state: paused;
    }*/
-}
-@-webkit-keyframes arrow-bounce {
-  0% {
-    -webkit-transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(0);
-  }
-  60% {
-    -webkit-transform: translateY(8px);
-  }
-  70% {
-    -webkit-transform: translateY(0);
-  }
-  80% {
-    -webkit-transform: translateY(8px);
-  }
 }
 @keyframes arrow-bounce {
   0% {
@@ -584,24 +566,19 @@ section {
 }
 #sliderContainer {
   width: 500%;
-  -webkit-transform: translateX(0);
   transform: translateX(0);
   transition: all 0.65s ease 0s;
 }
 #sliderContainer.trans1 {
-  -webkit-transform: translateX(-20%);
   transform: translateX(-20%);
 }
 #sliderContainer.trans2 {
-  -webkit-transform: translateX(-40%);
   transform: translateX(-40%);
 }
 #sliderContainer.trans3 {
-  -webkit-transform: translateX(-60%);
   transform: translateX(-60%);
 }
 #sliderContainer.trans4 {
-  -webkit-transform: translateX(-80%);
   transform: translateX(-80%);
 }
 .project {
@@ -741,7 +718,6 @@ blockquote:after {
 }
 .playArrow {
   width: 225px;
-  height: 145px;
   height: 410px;
   background: url("../images/icons/youtube-play-arrow.png") center no-repeat;
 }
