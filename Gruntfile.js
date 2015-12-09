@@ -27,7 +27,7 @@ module.exports = function(grunt) {
 
         //Creates a spritesheet and corresponding CSS using all of the images in the LIVE/images folder
         //NOTE: Always use "grunt clean:spritefiles" before creating a new stylesheet
-        //This does NOT auto-update style.less. Currently, sprite styles need to be updated MANUALLY.
+        //This does NOT auto-update styles.less. Currently, sprite styles need to be updated MANUALLY.
         sprite:{
             all: {
                 src: ['live/images/**/*.png','!live/**/Not-Used/*.png'],
@@ -62,17 +62,31 @@ module.exports = function(grunt) {
             }
         },
 
-        //Run PostCSS scripts (i.e. Run autoprefixer on the final css file built with concat).
+        //Run PostCSS scripts (i.e. autoprefixer).
         postcss: {
-            options: {
-                map: true,
-                processors: [
-                    require('autoprefixer')({
-                        browsers: ['last 2 versions']
-                    })
-                ]
+            //Run autoprefixer on styles.css and overwrite the file
+            dev: {
+                options: {
+                    map: true,
+                    processors: [
+                        require('autoprefixer')({
+                            browsers: ['last 2 versions']
+                        })
+                    ]
+                },
+                src: 'css/styles.css',
+                dest: 'css/styles.css'  //Overwrites the existing file
             },
-            dist: {
+            //Before the final concatenated css file is minified, run autoprefixer on the file
+            build: {
+                options: {
+                    map: true,
+                    processors: [
+                        require('autoprefixer')({
+                            browsers: ['last 2 versions']
+                        })
+                    ]
+                },
                 src: 'css/build/styles.css',
                 dest: 'css/build/styles.css'  //Overwrite the existing file with result of autoprefixer
             }
@@ -172,17 +186,24 @@ module.exports = function(grunt) {
             }
         },
 
-        //Watch folders for changes. Removes build folders created in the process.
-        //NOT currently used when testing, since minifying takes too long.
+        //Watch css/js files for changes. Not currently used
         watch: {
-            scripts: {
-                files: ['js/*.js'],
+            /*//When styles.css changes, run autoprefixer on the file.
+            dev: {
+                files: ['css/styles.css'],
+                tasks: ['postcss:dev']
+            }*/
+
+            //Watch folders for changes. Removes build folders created in the process.
+            //NOT currently used when testing, since minifying takes too long.
+            /*scripts: {
+                files: ['js/!*.js'],
                 tasks: ['concat:js', 'uglify']
-            },
-            css: {
-                files: ['css/*.css'],
+            },*/
+            /*css: {
+                files: ['css/!*.css'],
                 tasks: ['concat:css', 'cssmin', 'clean:buildfiles']
-            }
+            }*/
         },
 
         //Change spritefile path to production path
@@ -213,6 +234,12 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-text-replace');
 
+    //Watch files
+    /*    Be sure to use "grunt watch" before starting development. Currently, this
+          watches for css changes and runs autoprefixer on the css whenever it's changed.
+          If you don't watch the code, then your un-prefixed css might not work as expected
+    */
+
     //Build process
     /*
         If no images changed...
@@ -229,7 +256,7 @@ module.exports = function(grunt) {
             1. Clean (Remove "live" folders)
             2. Concat CSS and JS files into single files
             3. Run autoprefixer on concatenated css file
-            4. Change spritesheet image path in style.less (since live page uses a different path
+            4. Change spritesheet image path in styles.less (since live page uses a different path
             5. Process dev.html to create index.html (see comments for the processhtml task above)
             6. Minify HTML
             7. Minify CSS
@@ -237,5 +264,5 @@ module.exports = function(grunt) {
             9. Clean (Remove any build folders created in the process)
     */
     grunt.registerTask('spritefile', ['clean:spritefiles','sprite', 'imagemin:spritefile']);
-    grunt.registerTask('default', ['clean:it','concat','postcss','replace','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
+    grunt.registerTask('default', ['clean:it','concat','postcss:build','replace','processhtml','htmlmin','cssmin','uglify','clean:buildfiles']);
 };

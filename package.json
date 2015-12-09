@@ -12,6 +12,7 @@
     "grunt-contrib-jshint": "~0.10.0",
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
     "grunt-imageoptim": "^1.4.1",
     "grunt-newer": "^1.1.1",
     "grunt-postcss": "^0.7.1",
