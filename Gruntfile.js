@@ -234,10 +234,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-text-replace');
 
-    //Watch files
-    /*    Be sure to use "grunt watch" before starting development. Currently, this
-          watches for css changes and runs autoprefixer on the css whenever it's changed.
-          If you don't watch the code, then your un-prefixed css might not work as expected
+    //Watch files (or run autoprefixer manually)
+    /*    Be sure to use "grunt watch" before starting development. Currently, this watches for
+          style.css changes and runs autoprefixer on the css whenever it's changed. If you don't want
+          to watch the code (because of performance), you can just run "grunt postcss:dev" to run auto-prefixer once.
+          Caution: un-prefixed css (transforms, animations, etc) might not work as expected until auto-prefixer is run.
     */
 
     //Build process
