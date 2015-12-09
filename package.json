@@ -19,6 +19,7 @@
     "grunt-processhtml": "^0.3.6",
     "grunt-spritesmith": "^3.5.0",
     "grunt-text-replace": "^0.4.0",
+    "phantomjs": "^1.9.19",
     "phantomjssmith": "^0.5.4"
   },
   "repository": {
