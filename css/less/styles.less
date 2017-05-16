@@ -22,6 +22,7 @@
 //.sliderContainer is the the parent container of all of project divs. @projectWidth is 100% of the PARENT div (whose width is 500%, etc)
 @projectWidth: 100%/@numberOfProjects; //Each project div fills 100% of the screen. 500% / 5 projects= 100%
 
+@baseFontSize: 18.4px;
 /************** Fonts ***************/
 //Font options for the landing page tagline. Currently using Verdana for performance, but these are good alternatives.
 
@@ -114,6 +115,7 @@ header {
 .navContainer {
    margin: 0 auto;
    width: @contentWidth;
+   max-width: 900px;
 }
 
 .headerLogo {
@@ -530,12 +532,17 @@ nav {
 .contentContainer {
    width: @contentWidth;
    margin: 0 auto;
-   max-width: 800px; //Limit the width to make content easier to read
+   //max-width: 800px; //Best for reading, but makes my nav look too small
+   max-width: 958px; //Limit the width to make content easier to read
+}
+
+.project-content {
+   position: relative;
 }
 
 .content {
    color: @lightContentText;
-   font-size: 1.15em;
+   font-size: @baseFontSize;
    font-family: Verdana, Sans-Serif, serif;
    letter-spacing: .4px;
    line-height: 1.2;
@@ -602,7 +609,7 @@ section {
    width: 64px;
    height: 64px;
    position: absolute;
-   top: 320px; //375px is Exactly half way. Put it slightly above
+   //top: 320px; //375px is Exactly half way. Put it slightly above
    top: 50%;
    margin-top: -32px; //account for arrow's height
    z-index: 2;
@@ -618,6 +625,9 @@ section {
       opacity: .2;
       cursor: auto;
    }
+   @media (min-width: 1400px) {
+     left: 9vw;
+   }
 }
 
 .rightArrow {
@@ -629,11 +639,18 @@ section {
       opacity: .2;
       cursor: auto;
    }
+   @media (min-width: 1400px) {
+      right: 9vw;
+   }
 }
 
 //Project Title (h1 element)
 .projectTitle {
    display: inline-block;
+
+   @media (min-width: 320px) and (max-width: 767px) {
+      display: none;
+   }
 }
 
 .projectLinks {
@@ -744,9 +761,6 @@ section {
    float: left; //Inline-block doesn't work properly for whatever reason
    color: @lightContentText;
    padding-top: 116px;
-   p {
-     font-size: 19px;
-   }
 }
 
 #twcArticle, #xamarinArticle {
@@ -879,14 +893,18 @@ blockquote {
    //word-spacing: 0.3px;
    //line-height: 1.18;
    //letter-spacing: .7px;
+   font-size: @baseFontSize;
 
    &.first {
       margin-top: 46px;
    }
 
-   &.noClear
-   {
+   &.noClear {
       clear: none;
+
+      @media (min-width: 320px) and (max-width: 767px) {
+         clear: both;
+      }
    }
 }
 
@@ -908,6 +926,14 @@ blockquote {
    margin-top: 50px;
    margin-left: 50px;
    margin-right: 5px;
+
+   @media (min-width : 320px) and (max-width : 767px) {
+      float: none;
+      margin: 85px auto 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+   }
 }
 
 
@@ -1012,7 +1038,7 @@ blockquote {
    }
 
    //Center the nav and all content using the mobile width
-   .contentContainer {
+   .contentContainer, .navContainer {
       width: @contentWidthMobile;
    }
 
@@ -1200,7 +1226,7 @@ blockquote {
    }
 
    .summary.first {
-      margin-top: 70px;
+      margin-top: 45px;
    }
 
    .tagline {
@@ -1224,7 +1250,7 @@ blockquote {
 @media (min-width : 768px) and (max-width : 1024px) {
 
    //Center the nav and all content using the "medium" width
-   .contentContainer {
+   .contentContainer,.navContainer {
       width: @contentWidthMedium;
    }
 
@@ -1246,6 +1272,14 @@ blockquote {
          padding-right: 20px;
       }
    }
+
+   .leftArrow {
+      left: -1vw;
+   }
+
+   .rightArrow {
+      right: -1vw;
+   }
 }
 
 @media (min-width : 768px) and (max-width : 1188px) {
@@ -1254,10 +1288,12 @@ blockquote {
       font-size: 50px;
    }
 
+   //Todo: Get rid of the weird media queries and use flexbox to position the links
    .projectLinks {
       float: right;
       margin-left: 0;
-      width: 81%;
+      //width: 81%; //With 5 projects
+      width: 70%;
    }
 
    h1 {
@@ -1317,10 +1353,12 @@ blockquote {
       padding-top: 116px;
    }
 
-   .projectTitle {
+   /*.projectTitle {
       display: none;
-   }
+   }*/
+}
 
+@media (max-width : 767px) {
    .projectLinks {
       float: none;
       width: 100%;
