@@ -64,8 +64,8 @@ gulp.task('serve', ['less'], function() {
         }
     });
 
-    gulp.watch("css/**/*.less", ['less'])
-        .on('change', browserSync.reload);
+    gulp.watch("css/**/*.less", ['less']).on('change', browserSync.reload);
+    gulp.watch("*.html").on('change', browserSync.reload);
 });
 
 /*
@@ -78,13 +78,13 @@ gulp.task('watch', function() {
 });
 */
 
-gulp.task('watch', function () {
+/*gulp.task('watch', function () {
     // Callback mode, useful if any plugin in the pipeline depends on the `end`/`flush` event
-    return watch('css/**/*.less', function () {
-        gulp.src('css/**/*.less')
+    return watch('css/!**!/!*.less', function () {
+        gulp.src('css/!**!/!*.less')
         .pipe(less())
     });
-});
+});*/
 
 gulp.task('default', ['serve']);
 
