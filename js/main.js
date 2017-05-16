@@ -4,6 +4,8 @@ $(document).ready(function() {
     var body = $("body");
     var mobileLogo = $("#mobile-logo");
 
+    //Used to control navigation arrows
+    var numberOfProjects = 4;
     //Resizes the main background image to fill the viewable area of the window.
     function resizeBackground() {
         var viewportHeight = $(window).height();
@@ -78,12 +80,12 @@ $(document).ready(function() {
         $(".navArrow").removeClass("dim");
 
         //If we're at the first project, dim the left-arrow so that it cannot be used
-        if (thumbIndex == 0) {
+        if (thumbIndex === 0) {
             $(".leftArrow").addClass("dim");
         }
 
         //If we're at the first project, dim the right-arrow so that it cannot be used
-        if (thumbIndex == 4) {
+        if (thumbIndex === numberOfProjects-1) {
             $(".rightArrow").addClass("dim");
         }
     }
@@ -108,7 +110,7 @@ $(document).ready(function() {
         var thumbIndex = $(".projectThumbnail.active").index();
 
         //If we're at the first project, then the left-arrow cannot be used
-        if (thumbIndex == 0) {
+        if (thumbIndex === 0) {
             return;
         }
 
@@ -122,7 +124,7 @@ $(document).ready(function() {
         var thumbIndex = $(".projectThumbnail.active").index();
 
         //If we're at the last project, then the right-arrow cannot be used
-        if (thumbIndex == 4) {
+        if (thumbIndex === numberOfProjects-1) {
             return;
         }
 
@@ -179,7 +181,7 @@ $(document).ready(function() {
     //When the user swipes left, show the next project
     sliderDiv.on("swipeleft", function() {
         //Do not attempt to swipe unless viewing on mobile (i.e. at small widths)
-        if ($(".mobileNav").css("display") == "none") {
+        if ($(".mobileNav").css("display") === "none") {
             return;
         }
         showNextProject();
@@ -189,7 +191,7 @@ $(document).ready(function() {
     //When the user swipes right, show the previous project
     sliderDiv.on("swiperight", function() {
         //Do not attempt to swipe unless viewing on mobile (i.e. at small widths)
-        if ($(".mobileNav").css("display") == "none") {
+        if ($(".mobileNav").css("display") === "none") {
             return;
         }
         showPreviousProject();

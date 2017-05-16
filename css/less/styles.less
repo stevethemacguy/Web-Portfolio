@@ -14,7 +14,7 @@
 
 //The width of .sliderContainer is always N times the viewport width, where N is the number of projects to display.
 //For example, if there are 4 projects, than the width of .sliderContainer will be 400%. //The container "moves" left and right to show each project using CSS translateX.
-@numberOfProjects: 5;
+@numberOfProjects: 4;
 
 //Note that .sliderContainer's parent is contentContainer, whose width is @contentWidth (see above).
 @sliderContainerWidth: 100% * @numberOfProjects;  //Changing this width will automatically change the widths of the project divs inside
@@ -530,12 +530,13 @@ nav {
 .contentContainer {
    width: @contentWidth;
    margin: 0 auto;
+   max-width: 800px; //Limit the width to make content easier to read
 }
 
 .content {
    color: @lightContentText;
-   font-size: 20px;
-   font-family: Verdana, Sans-Serif;
+   font-size: 1.15em;
+   font-family: Verdana, Sans-Serif, serif;
    letter-spacing: .4px;
    line-height: 1.2;
 }
@@ -691,7 +692,7 @@ section {
       background-position: -1658px 0;
    }
 
-   &:nth-child(4) {
+ /*  &:nth-child(4) {
       width: 143px;
       height: 40px;
       top: 5px;
@@ -700,9 +701,9 @@ section {
       background-image: url(@spritesheet);
       background-position: -2146px 0;
 
-   }
+   }*/
 
-   &:nth-child(5) {
+   &:nth-child(4) {
       width: 69px;
       height: 40px;
       top: 1px;
@@ -1289,13 +1290,13 @@ blockquote {
          left: 0;
       }
 
-      &:nth-child(4) {
+      /*&:nth-child(4) {
          top: 5px;
          left: 0;
          width: 143px;
-      }
+      }*/
 
-      &:nth-child(5) {
+      &:nth-child(4) {
          left: 0;
          top: 1px;
          margin-right: 14px;
