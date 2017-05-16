@@ -16,7 +16,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-imageoptim": "^1.4.1",
     "grunt-newer": "^1.1.1",
-    "grunt-postcss": "^0.7.1",
+    "grunt-postcss": "^0.8.0",
     "grunt-processhtml": "^0.3.6",
     "grunt-spritesmith": "^3.5.0",
     "grunt-text-replace": "^0.4.0",

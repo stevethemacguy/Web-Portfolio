@@ -46,11 +46,11 @@ gulp.task('hint', function() {
 
 gulp.task('less', function() {
     return gulp.src('./css/less/**/*.less')
-        .pipe(sourcemaps.init())
+        //.pipe(sourcemaps.init())
         .pipe(less({
             verbose: true,
         }))
-        .pipe(sourcemaps.write())
+        //.pipe(sourcemaps.write())
         .pipe(gulp.dest('./css'));
 });
 
