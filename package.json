@@ -32,8 +32,6 @@
     "gulp-sourcemaps": "^2.6.0",
     "gulp-watch": "^4.3.11",
     "merge-stream": "^1.0.1",
-    "phantomjs": "^1.9.19",
-    "phantomjssmith": "^0.5.4",
     "run-sequence": "^1.2.2",
     "vinyl-buffer": "^1.0.0"
   },
